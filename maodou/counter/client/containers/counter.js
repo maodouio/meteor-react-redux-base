@@ -10,19 +10,19 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch, {actions}) => ({
   onIncrement() {
-    dispatch(actions().counter.increment());
+    dispatch(actions.counter.increment());
   },
 
   onReset() {
-    dispatch(actions().counter.reset());
+    dispatch(actions.counter.reset());
   },
 
   onRandom() {
-    dispatch(actions().counter.random());
+    dispatch(actions.counter.random());
   }
 });
 
-export default composeAll(
-  connect(mapStateToProps, mapDispatchToProps),
-  useDeps()
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
 )(Counter);

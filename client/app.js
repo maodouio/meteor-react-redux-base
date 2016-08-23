@@ -1,5 +1,4 @@
 import {injectDeps} from 'react-simple-di';
-import {combineReducers, createStore} from 'redux';
 
 // TODO:
 // 1. allow modules to extend context (but overrides are not allowed)
@@ -66,12 +65,6 @@ export default class {
       ...actions
     };
 
-    const reducers = module.reducers || {};
-    this._reducers = {
-      ...this._reducers,
-      ...reducers
-    };
-
     if (module.load) {
       if (typeof module.load !== 'function') {
         const message = `module.load should be a function`;
@@ -89,15 +82,9 @@ export default class {
   init() {
     this._checkForInit();
 
-    const reducers = this._reducers;
-    if (Object.keys(reducers).length > 0) {
-      const combined = combineReducers(reducers);
-      this.context.ReduxStore = createStore(combined, {}, window.devToolsExtension && window.devToolsExtension());
-    }
-
     for (const initFn of this._initFns) {
       const inject = comp => {
-        return injectDeps(this.context, this.actions)(comp);
+        return injectDeps(this.context)(comp);
       };
 
       initFn(inject, this.context, this._bindContext(this.actions));
