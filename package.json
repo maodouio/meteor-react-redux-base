@@ -1,0 +1,17 @@
+{
+  "name": "meteor-react-redux-base",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "meteor-node-stubs": "~0.2.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-komposer": "^1.13.1",
+    "react-mounter": "^1.2.0",
+    "react-redux": "^4.4.5",
+    "react-simple-di": "^1.2.0",
+    "redux": "^3.5.2"
+  }
+}
