@@ -1,6 +1,5 @@
-import {connect} from 'react-redux';
-import {useDeps} from 'react-simple-di';
-import {composeAll} from 'react-komposer';
+import {useDeps} from 'mantra-plus';
+import {withRedux, composeAll} from 'react-komposer-plus';
 
 import Counter from '../components/counter';
 
@@ -8,21 +7,23 @@ const mapStateToProps = (state) => ({
   counter: state.counter
 });
 
-const mapDispatchToProps = (dispatch, {actions}) => ({
+const depsToProps = (context, actions) => ({
+  context,
+
   onIncrement() {
-    dispatch(actions.counter.increment());
+    context.dispatch(actions.counter.increment());
   },
 
   onReset() {
-    dispatch(actions.counter.reset());
+    context.dispatch(actions.counter.reset());
   },
 
   onRandom() {
-    dispatch(actions.counter.random());
+    context.dispatch(actions.counter.random());
   }
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+export default composeAll(
+  withRedux(mapStateToProps),
+  useDeps(depsToProps)
 )(Counter);

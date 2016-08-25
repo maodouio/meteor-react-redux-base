@@ -1,9 +1,14 @@
 import actions from './actions';
 import reducers from './reducers';
-import init from './init';
+import routes from './routes';
+
+import config from '/lib/configs/counter';
 
 export default {
   actions,
   reducers,
-  init
+  routes,
+  init(context, actions) {
+    config.initialValue && context.dispatch(actions.counter.set(context, config.initialValue));
+  }
 };
