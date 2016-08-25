@@ -2,10 +2,10 @@ import React from 'react';
 import {mount} from 'react-mounter';
 import Counter from './containers/counter';
 
-export default function(injectDeps, context) {
-  context.FlowRouter.route('/counter', {
+export default function(injectDeps, {FlowRouter, Layout}) {
+  FlowRouter.route('/counter', {
     action() {
-      mount(context.Layout, {
+      mount(Layout, {
         content: () => (<Counter />)
       });
     }
