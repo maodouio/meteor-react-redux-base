@@ -1,5 +1,13 @@
 export default {
   moduleWillLoad(module) {
+    if (module.name) {
+      if (typeof module.name !== 'string') {
+        const message = "Module's name field should be a string.";
+        throw new Error(message);
+      }
+      this._configs = this._configs || {};
+      this._configs[module.name] = require(`/lib/configs/${module.name}`).default;
+    }
     if (module.init) {
       if (typeof module.init !== 'function') {
         const message = "Module's init field should be a function.";
@@ -12,6 +20,7 @@ export default {
   },
 
   moduleWillInit() {
+    this.context.configs = this._configs;
     this._initFns.forEach(fn => fn(this.context, this.actions));
   }
 };

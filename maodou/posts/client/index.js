@@ -5,6 +5,7 @@
 // import config from '/lib/configs/counter';
 
 export default {
+  name: 'posts'
   // actions,
   // reducers,
   // routes,
