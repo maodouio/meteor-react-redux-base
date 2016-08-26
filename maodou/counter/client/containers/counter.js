@@ -1,7 +1,7 @@
 import {useDeps} from 'mantra-plus';
 import {composeAll} from 'react-komposer-plus';
 
-import withRedux from '/client/utils/compose-with-redux';
+import withRedux from '/client/lib/compose-with-redux';
 import Counter from '../components/counter';
 
 const mapStateToProps = (state) => ({
