@@ -6,7 +6,8 @@ export default {
         throw new Error(message);
       }
       this._configs = this._configs || {};
-      this._configs[module.name] = require(`/lib/configs/${module.name}`).default;
+      const moduleConfig = require(`/lib/configs/${module.name}`) || { default: {} };
+      this._configs[module.name] = moduleConfig.default;
     }
     if (module.init) {
       if (typeof module.init !== 'function') {
