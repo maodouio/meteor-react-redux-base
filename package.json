@@ -5,7 +5,6 @@
     "start": "meteor run"
   },
   "dependencies": {
-    "mantra-plus": "^2.0.7",
     "meteor-node-stubs": "~0.2.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
