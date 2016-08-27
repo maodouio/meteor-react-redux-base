@@ -1,10 +1,10 @@
 import App from './lib/app';
 
 import createContext from './context';
-import collectionsMiddleware from './middlewares/collections';
-import layoutsMiddleware from './middlewares/layouts';
-import reduxMiddleware from './middlewares/redux';
-import configMiddleware from './middlewares/configs';
+import collectionsMiddleware from '../lib/middlewares/collections';
+import layoutsMiddleware from './lib/middlewares/layouts';
+import reduxMiddleware from './lib/middlewares/redux';
+import configMiddleware from '../lib/middlewares/configs';
 import Layout from './components/layout';
 import coreModule from './';
 import counterModule from '/maodou/counter/client';
