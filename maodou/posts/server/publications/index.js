@@ -1,13 +1,7 @@
-import { Meteor } from 'meteor/meteor';
-import Collections from '../../lib/collections';
+export default ({ Meteor, Collections }) => {
+  const { Posts } = Collections;
 
-import { Roles } from 'meteor/alanning:roles';
-
-// export default function () {
-//
-// }
-const { Posts } = Collections;
-
-Meteor.publish('posts.list', function () {
-  return Posts.find({});
-});
+  Meteor.publish('posts.list', function () {
+    return Posts.find({});
+  });
+}

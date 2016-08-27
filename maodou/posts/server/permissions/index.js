@@ -1,22 +1,16 @@
-import { Meteor } from 'meteor/meteor';
-import Collections from '../../lib/collections';
+export default ({ Collections }) => {
+  const { Posts } = Collections;
 
-import { Roles } from 'meteor/alanning:roles';
-
-// export default function () {
-//
-// }
-const { Posts } = Collections;
-
-Posts.allow({
-  insert: function() {
-    return true;
-  },
-  update: function() {
-    return true;
-  },
-  remove: function() {
-    return true;
-  },
-  fetch: null
-});
+  Posts.allow({
+    insert: function() {
+      return true;
+    },
+    update: function() {
+      return true;
+    },
+    remove: function() {
+      return true;
+    },
+    fetch: null
+  });
+}
