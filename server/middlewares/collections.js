@@ -12,8 +12,6 @@ export default () => {
     },
 
     moduleWillInit() {
-      const coreCollections = require('../../lib/collections').default;
-      Object.assign(this._collections, coreCollections);
       this.context.Collections = this._collections;
     }
   };

@@ -5,7 +5,8 @@ import collectionsMiddleware from './middlewares/collections';
 import layoutsMiddleware from './middlewares/layouts';
 import reduxMiddleware from './middlewares/redux';
 import configMiddleware from './middlewares/configs';
-import Layout from './core/components/layout';
+import Layout from './components/layout';
+import coreModule from './';
 import counterModule from '/maodou/counter/client';
 import postsModule from '/maodou/posts/client';
 
@@ -19,6 +20,7 @@ app.loadMiddlewares([
   configMiddleware
 ]);
 
+app.loadModule(coreModule);
 app.loadModule(counterModule);
 app.loadModule(postsModule);
 
