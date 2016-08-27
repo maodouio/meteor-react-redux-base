@@ -1,4 +1,4 @@
-import {useDeps} from 'mantra-plus';
+import {useDeps} from 'react-simple-di';
 import {composeAll} from 'react-komposer-plus';
 
 import withRedux from '/client/lib/compose-with-redux';
