@@ -6,6 +6,7 @@ import layoutsMiddleware from './lib/middlewares/layouts';
 import reduxMiddleware from './lib/middlewares/redux';
 import configMiddleware from '../lib/middlewares/configs';
 import Layout from './components/layout';
+import adminLayout from './components/admin/layout';
 import coreModule from './';
 import counterModule from '/maodou/counter/client';
 import postsModule from '/maodou/posts/client';
@@ -15,7 +16,10 @@ const app = new App(context);
 
 app.loadMiddlewares([
   collectionsMiddleware(),
-  layoutsMiddleware(Layout),
+  layoutsMiddleware([
+    { name: 'mainLayout', component: Layout },
+    { name: 'adminLayout', component: adminLayout }
+  ]),
   reduxMiddleware({}),
   configMiddleware
 ]);

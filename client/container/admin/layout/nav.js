@@ -1,7 +1,7 @@
 import { useDeps } from 'react-simple-di';
 import { withHandlers, withTracker, withRedux, composeAll } from 'react-komposer-plus';
 
-import Nav from '../../components/admin/layout/nav';
+import Nav from '../../../components/admin/layout/nav';
 
 const userEvents = {
   login: ({ context }, event) => {
