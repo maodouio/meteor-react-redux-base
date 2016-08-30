@@ -9,6 +9,7 @@ class App {
 
     this.context = context;
     this.actions = {};
+    this._components = {};
     this._routeFns = [];
     this._moduleWillLoad = [];
     this._moduleWillInit = [];
@@ -85,6 +86,16 @@ class App {
       throw new Error(message);
     }
 
+    // load components
+    if (module.components) {
+      if (typeof module.components !== 'object') {
+        const message = "Module's components field should be an object.";
+        throw new Error(message);
+      }
+
+      Object.assign(this._components, module.components);
+    }
+
     // load routes
     if (module.routes) {
       if (typeof module.routes !== 'function') {
@@ -137,6 +148,15 @@ class App {
       for (const middleware of middlewares) {
         middleware.call(this);
       }
+    }
+
+    if (this._components) {
+      for (const key in this._components) {
+        if(this._components.hasOwnProperty(key)) {
+          this._components[key] = this._components[key](this.context, this.actions);
+        }
+      }
+      this.context.components = this._components;
     }
 
     for (const routeFn of this._routeFns) {

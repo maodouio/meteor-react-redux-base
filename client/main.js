@@ -10,6 +10,7 @@ import adminLayout from './components/admin/layout';
 import coreModule from './';
 import counterModule from '/maodou/counter/client';
 import postsModule from '/maodou/posts/client';
+import wechatModule from '/maodou/wechat/client';
 
 const context = createContext();
 const app = new App(context);
@@ -27,5 +28,6 @@ app.loadMiddlewares([
 app.loadModule(coreModule);
 app.loadModule(counterModule);
 app.loadModule(postsModule);
+app.loadModule(wechatModule);
 
 app.init();

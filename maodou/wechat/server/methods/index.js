@@ -2,7 +2,7 @@ import {check} from 'meteor/check';
 import {Accounts} from 'meteor/accounts-base';
 import {HTTP} from 'meteor/http';
 
-import commonConfig from '/lib/configs/wechat-auth';
+import commonConfig from '/lib/configs/wechat';
 import serverConfig from '/server/configs/wechat-auth';
 
 export default function() {

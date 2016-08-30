@@ -1,6 +1,6 @@
 import React from 'react';
 
-import config from '/lib/configs/wechat-auth';
+import config from '/lib/configs/wechat';
 
 function removeURLParameter(url, parameter) {
   //prefer to use l.search if you have a location/link object
