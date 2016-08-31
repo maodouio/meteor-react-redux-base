@@ -1,3 +1,5 @@
 export default {
-  appSecret: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  appSecret: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  token: 'xxxxxxxxxxx',
+  encodingAESKey: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 };
