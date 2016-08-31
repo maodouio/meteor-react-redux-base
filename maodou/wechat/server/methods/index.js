@@ -2,17 +2,14 @@ import {check} from 'meteor/check';
 import {Accounts} from 'meteor/accounts-base';
 import {HTTP} from 'meteor/http';
 
-import commonConfig from '/lib/configs/wechat';
-import serverConfig from '/server/configs/wechat-auth';
-
-export default function() {
+export default (context) => {
   Meteor.methods({
     'wechatAuth.getUserInfo'(code) {
       check(code, String);
       this.unblock();
 
       let res = HTTP.get('https://api.weixin.qq.com/sns/oauth2/access_token' +
-        `?appid=${commonConfig.appId}&secret=${serverConfig.appSecret}&code=${code}&grant_type=authorization_code`);
+        `?appid=${context.configs.wechat.appId}&secret=${context.privateConfigs.wechat.appSecret}&code=${code}&grant_type=authorization_code`);
       if (res.statusCode !== 200) {
         throw new Meteor.Error('fail-to-fetch-access-token', res.statusCode);
       }
