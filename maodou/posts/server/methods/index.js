@@ -4,9 +4,10 @@ export default (context) => {
     'posts.get'() {
       return Collections.Posts.find().fetch();
     },
-    'posts.add'(data) {
+    'posts.add'(title, content) {
       Collections.Posts.insert({
-        title: data
+        title,
+        content
       });
     }
   });
