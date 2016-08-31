@@ -1,10 +1,11 @@
+import configs from '../lib/configs/core';
 import collections from '../lib/collections';
 import actions from './actions';
 import reducers from './reducers';
 import routes from './routes';
 
 export default {
-  name: 'core',
+  configs,
   collections,
   actions,
   reducers,

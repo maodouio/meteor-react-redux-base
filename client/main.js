@@ -8,7 +8,6 @@ import configMiddleware from '../lib/middlewares/configs';
 import Layout from './components/layout';
 import adminLayout from './components/admin/layout';
 import coreModule from './';
-import counterModule from '/maodou/counter/client';
 import postsModule from '/maodou/posts/client';
 import wechatModule from '/maodou/wechat/client';
 
@@ -26,7 +25,6 @@ app.loadMiddlewares([
 ]);
 
 app.loadModule(coreModule);
-app.loadModule(counterModule);
 app.loadModule(postsModule);
 app.loadModule(wechatModule);
 

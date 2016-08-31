@@ -1,10 +1,11 @@
+import configs from '/lib/configs/posts';
 import collections from '../lib/collections';
 import actions from './actions';
 import reducers from './reducers';
 import routes from './routes';
 
 export default {
-  name: 'posts',
+  configs,
   collections,
   actions,
   reducers,
