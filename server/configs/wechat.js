@@ -1,3 +1,5 @@
 export default {
-  appSecret: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  wechat: {
+    appSecret: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  }
 };

@@ -55,6 +55,9 @@ export default function(options) {
       }
     },
     moduleWillInit() {
+      if (_.isEmpty(this._reduxReducers)) {
+        throw new Error('Can\'t create store without any reducers');
+      }
       let allReducers = this._reduxReducers;
       let allMiddlewares = [ ...middlewares ];
 

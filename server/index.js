@@ -1,10 +1,13 @@
+import configs from '/lib/configs/core';
+import privateConfigs from '/server/configs/core';
 import collections from '../lib/collections';
 import permissions from './permissions';
 import publications from './publications';
 import methods from './methods';
 
 export default {
-  name: 'core',
+  configs,
+  privateConfigs,
   collections,
   permissions,
   publications,

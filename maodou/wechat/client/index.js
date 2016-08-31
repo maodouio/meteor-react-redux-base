@@ -1,3 +1,5 @@
+import configs from '/lib/configs/wechat';
+
 export default {
-  name: 'wechat'
+  configs
 };
