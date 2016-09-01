@@ -1,11 +1,13 @@
 import configs from '/lib/configs/wechat'
 import privateConfigs from '/server/configs/wechat';
 import methods from './methods';
-import middleware from './middleware';
+
+// Uncomment middleware if you need to process messages and events
+// import middleware from './middleware';
 
 export default {
   configs,
   privateConfigs,
-  middleware,
+  // middleware,
   methods
 };

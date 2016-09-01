@@ -13,6 +13,6 @@ export default {
   },
 
   moduleWillInit() {
-    this._middlewareFns.forEach(middlewareFn => Picker.middleware(middlewareFn(this.context)));
+    this._middlewareFns && this._middlewareFns.forEach(middlewareFn => Picker.middleware(middlewareFn(this.context)));
   }
 };
