@@ -5,7 +5,17 @@ export default (props) => {
     <div>
       <p>posts add</p>
       <form onSubmit={props.addPost}>
-        <input type="text" placeholder="title" name="title" /><br/>
+        Category
+        <select name="category">
+          {
+            props.categories.map((category, index) =>
+              <option key={index} value={category}>{category}</option>
+            )
+          }
+        </select>
+        <br/>
+        <input type="text" placeholder="title" name="title" />
+        <br/>
         <textarea placeholder="content" name="content" /><br/>
         <button type="submit">Submit</button>
       </form>

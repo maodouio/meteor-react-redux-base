@@ -1,19 +1,23 @@
 import { useDeps } from 'react-simple-di';
 import { compose, withHandlers, withTracker, withRedux, composeAll } from 'react-komposer-plus';
 
-import PostsAdd from '../../components/admin/postsAdd';
+import PostsCategories from '../../components/admin/postsCategories';
 
 const userEvents = {
-  addPost: ({ context }, event) => {
+  addCategory({ context }, event)  {
     event.preventDefault();
     const category = event.target.category.value;
-    const title = event.target.title.value;
-    const content = event.target.content.value;
-    context.Meteor.call('posts.add', category, title, content, (err) => {
+    context.Meteor.call('posts.categories.add', category, (err) => {
       if (err) {
         alert(err.message);
-      } else {
-        context.FlowRouter.go('/admin/posts/list');
+      }
+    });
+  },
+  deleteCategory({ context }, category, event)  {
+    event.preventDefault();
+    context.Meteor.call('posts.categories.delete', category, (err) => {
+      if (err) {
+        alert(err.message);
       }
     });
   }
@@ -25,8 +29,8 @@ const data = ({ context }, onData) => {
   onData(null, { categories: pkg.configs.categories });
 };
 
-const mapStateToProps = (state) => ({
-  // counter: state.counter
+const mapStateToProps = (state, props) => ({
+
 });
 
 const depsToProps = (context, actions) => ({
@@ -34,8 +38,8 @@ const depsToProps = (context, actions) => ({
 });
 
 export default composeAll(
-  compose(data),
   withHandlers(userEvents),
+  withTracker(data),
   withRedux(mapStateToProps),
   useDeps(depsToProps)
-)(PostsAdd);
+)(PostsCategories);

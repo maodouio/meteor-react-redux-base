@@ -1,13 +1,35 @@
 export default (context) => {
   const { Meteor, Collections } = context;
+  const { Posts, Packages } = Collections;
   Meteor.methods({
     'posts.get'() {
-      return Collections.Posts.find().fetch();
+      return Posts.find().fetch();
     },
-    'posts.add'(title, content) {
-      Collections.Posts.insert({
+    'posts.add'(category, title, content) {
+      Posts.insert({
+        category,
         title,
         content
+      });
+    },
+    'posts.delete'(id) {
+      Posts.remove(id);
+    },
+    'posts.categories.add'(category) {
+      Packages.update({ name: 'posts' }, {
+        $push: {
+          'configs.categories': category
+        }
+      })
+    },
+    'posts.categories.delete'(category) {
+      Packages.update({ name: 'posts' }, {
+        $pull: {
+          'configs.categories': category
+        }
+      });
+      Posts.update({ category }, {
+        $set: { category: 'uncategorized' }
       });
     }
   });
