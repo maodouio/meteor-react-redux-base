@@ -6,6 +6,7 @@ export default (props) => {
       posts admin index
       <a href="/admin/posts/list">All posts</a> |
       <a href="/admin/posts/add">Add post</a> |
+      <a href="/admin/posts/categories">Categories</a> |
 
       {props.children}
     </div>

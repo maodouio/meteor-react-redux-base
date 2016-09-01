@@ -3,4 +3,18 @@ import { compose, withHandlers, withTracker, withRedux, composeAll } from 'react
 
 import PostsAdmin from '../../components/admin';
 
-export default composeAll()(PostsAdmin);
+const subscriptions = ({ context }, onData) => {
+  const { Meteor } = context;
+  if (Meteor.subscribe('posts.configs').ready()) {
+    onData(null, {});
+  }
+};
+
+const depsToProps = (context, actions) => ({
+  context
+});
+
+export default composeAll(
+  withTracker(subscriptions),
+  useDeps(depsToProps)
+)(PostsAdmin);
