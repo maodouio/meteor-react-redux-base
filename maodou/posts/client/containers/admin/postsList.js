@@ -1,7 +1,7 @@
 import { useDeps } from 'react-simple-di';
 import { compose, withHandlers, withTracker, withRedux, composeAll } from 'react-komposer-plus';
 
-import Posts from '../components/posts';
+import PostsList from '../../components/admin/postsList';
 
 const initData = ({ context }, onData) => {
   const { Meteor } = context;
@@ -22,4 +22,4 @@ export default composeAll(
   compose(initData),
   withRedux(mapStateToProps),
   useDeps(depsToProps)
-)(Posts);
+)(PostsList);
