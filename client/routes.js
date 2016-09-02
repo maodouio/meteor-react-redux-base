@@ -22,6 +22,11 @@ export default function(injectDeps, { FlowRouter, mainLayout, adminLayout }) {
   });
 
   FlowRouter.route('/admin', {
+    triggersEnter: [(context, redirect) => {
+      redirect('/admin/core');
+    }],
+  });
+  FlowRouter.route('/admin/core', {
     action() {
       mount(adminLayout, {
         content: () => (<Admin />)
