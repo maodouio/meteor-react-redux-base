@@ -5,6 +5,9 @@ export default (context) => {
     'posts.get'() {
       return Posts.find().fetch();
     },
+    'posts.get.single'(id) {
+      return Posts.findOne(id);
+    },
     'posts.add'(category, title, content) {
       Posts.insert({
         category,
