@@ -66,6 +66,7 @@ const composer = () => {
         });
       });
     } else {
+      uiState = UIState.IDLE;
       onData(null, {uiState});
     }
   };

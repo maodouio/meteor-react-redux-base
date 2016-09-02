@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from '../../../container/admin/layout/nav';
+import Nav from '../../../containers/admin/layout/nav';
 
 export default ({content = () => null }) => (
   <div>
