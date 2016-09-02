@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'react-mounter';
 import Posts from './containers/posts';
+import Post from './containers/post';
 import PostsAdmin from './containers/admin';
 import PostsList from './containers/admin/postsList';
 import PostsAdd from './containers/admin/postsAdd';
@@ -11,6 +12,13 @@ export default function(injectDeps, { FlowRouter, mainLayout, adminLayout }) {
     action() {
       mount(mainLayout, {
         content: () => (<Posts />)
+      });
+    }
+  });
+  FlowRouter.route('/posts/:id', {
+    action() {
+      mount(mainLayout, {
+        content: () => (<Post />)
       });
     }
   });
