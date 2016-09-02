@@ -1,0 +1,64 @@
+.h-modal-icon {
+  font-size: 66px;
+}
+.inmodal .color-line {
+  border-radius: 4px 4px 0 0;
+}
+.modal-content {
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.modal-backdrop.in {
+  opacity: 0.4;
+}
+.modal-backdrop {
+  position: fixed;
+  bottom: 0;
+}
+.modal-dialog {
+  margin-top: 80px;
+}
+.modal-title {
+  font-size: 30px;
+  font-weight: 300;
+}
+.modal-header {
+  padding: 40px 30px;
+  background: $color-bright;
+}
+.modal-body {
+  padding: 20px 30px;
+}
+.modal-header small {
+  color: lighten($color-text, 20%);
+}
+.modal-footer {
+  background: $color-bright;
+}
+
+.hmodal-info .color-line {
+  background: $color-blue;
+}
+.hmodal-warning .color-line {
+  background: $color-yellow;
+}
+.hmodal-success .color-line {
+  background: $color-green;
+}
+.hmodal-danger .color-line {
+  background: $color-red-deep;
+}
+
+.hmodal-info h4.modal-title {
+  color: $color-blue;
+}
+.hmodal-warning h4.modal-title {
+  color: $color-yellow;
+}
+.hmodal-success h4.modal-title {
+  color: $color-green;
+}
+.hmodal-danger h4.modal-title {
+  color: $color-red-deep;
+}

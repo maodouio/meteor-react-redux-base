@@ -1,0 +1,264 @@
+// local color variable
+$color-dark: #455463;
+$text-light: #a7afb8;
+
+.landing-page {
+
+  .navbar-form-custom, .navbar-right, #logo {
+    display: block;
+  }
+
+  .navbar-default {
+    background: #fff;
+  }
+
+  //.navbar .navbar-brand {
+  //  border-radius: 5px;
+  //  font-size: 12px;
+  //  height: auto;
+  //  margin-top: 8px;
+  //  padding: 9px 15px;
+  //  font-weight: 700;
+  //  border-radius: 5px;
+  //  color: #fff;
+  //  display: block;
+  //  background-color: $color-green !important;
+  //  margin-left: 0;
+  //  &:hover {
+  //    color: #fff;
+  //    background-color: $color-green;
+  //  }
+  //}
+
+  .navbar-default .navbar-toggle:hover,
+  .navbar-default .navbar-toggle:focus {
+    background: $color-green;
+  }
+
+  .navbar-default .navbar-toggle:hover .icon-bar,
+  .navbar-default .navbar-toggle:focus .icon-bar{
+    background-color: #fff !important;
+  }
+
+  .navbar-default .navbar-nav > .active > a,
+  .navbar-default .navbar-nav > .active > a:hover,
+  .navbar-default .navbar-nav > .active > a:focus {
+    background-color: transparent;
+    color: $color-green;
+    border: none;
+  }
+
+  .navbar-default li a:hover {
+    border-bottom: none;
+  }
+
+  .brand-desc {
+    color: $color-dark;
+    margin: 17px 10px 0 90px;
+    width: 180px;
+  }
+
+  .navbar-nav > li > a {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 15px;
+    color: $color-dark;
+  }
+  .navbar-nav > li, .navbar-nav > li > a {
+    height: 55px;
+  }
+
+  header {
+    background: url('../images/landing/header.jpg') 50% 0 no-repeat;
+    height: 480px;
+    padding-top: 50px;
+    margin-bottom: 30px;
+  }
+
+  section {
+    padding: 50px 0 50px 0;
+    border-bottom: 1px solid $border-color;
+  }
+
+  section h2 {
+    margin-top: 0;
+  }
+
+  section p {
+    margin-top: 0px;
+  }
+
+  header .container {
+    position: relative;
+  }
+
+  .heading {
+    margin-top: 60px;
+    color:#edf0f5
+  }
+
+  .heading h1 {
+    font-weight: 600;
+    font-size: 34px;
+    margin-bottom: 5px;
+    letter-spacing: -0.5px
+  }
+
+  h4 {
+    font-weight: 600;
+  }
+
+  p {
+    color: $text-light;
+  }
+
+  .heading span {
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .heading p.small {
+    margin-top: 10px;
+    color: $text-light;
+    max-width: 260px;
+  }
+
+  .heading-image {
+    position: absolute;
+    right: 60px;
+    top: 120px;
+    text-align: right;
+  }
+
+  .heading-image p {
+    color: $text-light;
+    margin-bottom: 5px;
+  }
+
+  .heading-image img {
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(51,51,51,1);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(51,51,51,1);
+    box-shadow: 0px 0px 8px 0px rgba(51,51,51,1);
+
+    margin-left: 12px;
+    margin-top: 12px;
+
+    width: 180px;
+    border-radius: 1px;
+  }
+
+  .navy-link {
+    background: $color-dark;
+    color: #fff;
+  }
+
+  .icon-big {
+    font-size: 70px;
+  }
+
+  .team-member img {
+    height: 72px;
+  }
+
+  .social-icon a {
+    background: $color-green;
+    color: #fff;
+    text-align: center;
+    padding: 4px 8px;
+    height: 28px;
+    width: 28px;
+    display: block;
+    border-radius: 4px;
+  }
+
+  .list-inline > li {
+    padding: 0;
+  }
+
+  .social-icon a:hover {
+    background: darken($color-green, 4%);
+  }
+
+  .pricing-plan {
+    margin: 20px 10px 0 10px;
+    border-radius: 4px;
+
+    padding-bottom: 20px;
+    background: #fff;
+    border: 1px solid $border-color;
+  }
+
+  .pricing-plan.selected {
+//    transform: scale(1.1);
+//    background:$color-green ;
+//    color: #fff !important;
+  }
+
+  .pricing-plan li {
+    padding: 10px 16px;
+    text-align: center;
+    color: #aeaeae;
+  }
+
+  .pricing-plan .pricing-price span {
+    font-weight: 700;
+    font-size: 30px;
+    color: $color-green;
+  }
+
+  .pricing-title .label {
+    font-size: 12px;
+  }
+
+  li.pricing-desc {
+    font-size: 13px;
+    border-top: none;
+    padding:20px 16px 0px 16px;
+  }
+
+  li.pricing-title {
+    color: $color-dark;
+    padding: 25px 10px 0px 10px;
+    border-radius: 4px 4px 0 0;
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .client {
+    color: $text-light;
+    background: $color-bright;
+    padding: 30px 10px;
+    margin: 0px 0 20px 0;
+    text-transform: uppercase;
+    font-weight: 600;
+
+  }
+
+  @media (max-width: 1200px) {
+
+    .heading-image {
+      display: none;
+    }
+
+    .heading {
+      text-align: center;
+    }
+
+    .heading p.small {
+      margin: 10px auto;
+    }
+
+    .brand-desc {
+      display: none;
+    }
+
+    //.navbar .navbar-brand {
+    //  margin-left: 10px;
+    //  &:hover {
+    //    color: #fff;
+    //    background-color: $color-green;
+    //  }
+    //}
+  }
+
+}

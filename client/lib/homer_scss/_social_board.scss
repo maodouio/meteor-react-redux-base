@@ -1,0 +1,43 @@
+.social-board {
+
+  .social-profile img {
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+  }
+
+  .social-profile h5 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+  }
+
+  .social-form {
+    margin: 10px 0;
+  }
+
+  .social-form input {
+    font-size: 12px;
+    padding: 2px 12px;
+    height: 28px;
+  }
+
+}
+
+.social-talk .social-profile img {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+}
+
+.social-talk .text-muted {
+  color: lighten($color-text, 25%);
+}
+
+.social-talk {
+  margin-bottom: 10px;
+}
+
+.social-talk .social-content {
+  margin-top: 2px;
+}
+

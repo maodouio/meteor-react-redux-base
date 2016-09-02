@@ -1,0 +1,117 @@
+.chat-avatar {
+  width: 36px;
+  height: 36px;
+  float: left;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.chat-user-name {
+  padding: 10px;
+}
+
+.chat-user {
+  padding: 8px 10px;
+  border-bottom: 1px solid #e7eaec;
+}
+
+.chat-user a {
+  color: inherit;
+}
+
+.chat-view {
+  z-index: 1070;
+}
+
+.chat-users, .chat-statistic {
+  margin-left: -30px;
+}
+
+@media (max-width: 992px) {
+  .chat-users,.chat-statistic {
+    margin-left: 0px;
+  }
+}
+.chat-view .ibox-content {
+  padding: 0;
+}
+
+.chat-message {
+  padding: 10px 20px;
+}
+
+.message-avatar {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  margin-top: 1px;
+}
+
+.chat-discussion .chat-message .message-avatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.chat-discussion .message {
+  background-color: lighten($color-background,2%);
+  text-align: left;
+  display: block;
+  padding: 10px 20px;
+  position: relative;
+  border-radius: 4px;
+}
+
+.chat-discussion .chat-message .message-date {
+  float: right;
+}
+
+.chat-discussion .chat-message .message {
+  text-align: left;
+  margin-left: 55px;
+}
+
+.message-date {
+  font-size: 10px;
+  color: #888888;
+}
+
+.message-content {
+  display: block;
+}
+
+.chat-users, .chat-discussion {
+  overflow-y: auto;
+  height: 500px;
+}
+
+.chat-discussion .chat-message.left .message-date {
+  float: right;
+}
+
+.chat-discussion .chat-message.right .message-date {
+  float: left;
+}
+
+.chat-discussion .chat-message.left .message {
+  text-align: left;
+  margin-left: 55px;
+}
+
+.chat-discussion .chat-message.right .message {
+  text-align: right;
+  margin-right: 55px;
+}
+
+.chat-discussion .chat-message.left .message-avatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.chat-discussion .chat-message.right .message-avatar {
+  float: right;
+  margin-left: 10px;
+}
+
+.chat-discussion {
+  padding: 15px 10px;
+}

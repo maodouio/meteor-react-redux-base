@@ -1,0 +1,36 @@
+.projects .project-label {
+  font-weight: 600;
+}
+
+.projects .hpanel .panel-body  {
+  border-bottom: none;
+}
+
+.projects .hpanel:last-child .panel-body  {
+  border-bottom: 1px solid $border-color;
+}
+
+.projects .hpanel:last-child .panel-body{
+  border-bottom: 1px solid $border-color;
+}
+
+.projects .hpanel h4 a {
+  color: $color-text;
+}
+
+.projects .project-people img {
+  width: 28px;
+  height: 28px;
+  margin-left: 2px;
+  margin-bottom: 4px;
+}
+
+.projects .project-info {
+  text-align: right;
+}
+
+@media(max-width:768px) {
+  .projects .project-info {
+    text-align: left;
+  }
+}

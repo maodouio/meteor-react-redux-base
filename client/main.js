@@ -1,3 +1,4 @@
+import 'bootstrap-sass';
 import App from './lib/app';
 
 import createContext from './context';
