@@ -1,0 +1,39 @@
+.ngHeaderCell {
+  border-right: none;
+  border-bottom: 1px solid $border-color;
+}
+.ngCell {
+  border-right: none;
+}
+.ngTopPanel {
+  background: #fff;
+}
+.ngRow.even {
+  background: #f9f9f9;
+}
+.ngRow.selected {
+  background: darken($color-background, 4%);
+}
+.ngRow {
+  border-bottom: 1px solid $border-color;
+}
+.ngCell {
+  background-color: transparent;
+}
+.ngHeaderCell {
+  border-right: none;
+}
+.gridStyle {
+  border: 1px solid $border-color;
+  height: 400px
+}
+.show-grid [class^="col-"] {
+  background-color: $color-background !important;
+  border: 1px solid #ddd;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.show-grid {
+  margin: 15px 0;
+}

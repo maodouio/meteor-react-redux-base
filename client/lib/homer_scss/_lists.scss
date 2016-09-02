@@ -1,0 +1,44 @@
+/* Lists */
+.list .list-item-container {
+  float: left;
+}
+
+.list-item-container div:first-child {
+  border-top: none;
+}
+
+.list .list-item .list-item-content p {
+  margin-bottom: 3px;
+  margin-top: 0;
+}
+.list .list-item-date {
+  color: #AAAAAA;
+  font-size: 10px;
+  text-align: center;
+}
+.list .list-item {
+  float: left;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  padding-top: 10px;
+  margin-top: 10px;
+  border-top: 1px solid $border-color;
+}
+.list .list-item-container-small {
+  min-width: 80px;
+  text-align: center;
+}
+.list .list-item .list-item-content .list-item-right {
+  height: 100%;
+  padding: 0 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.list .list-item .list-item-content h1, .list .list-item .list-item-content h2, .list .list-item .list-item-content h3, .list .list-item .list-item-content h4, .list .list-item .list-item-content h5, .list .list-item .list-item-content h6, .list .list-item .list-item-content .list-item-title {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+}

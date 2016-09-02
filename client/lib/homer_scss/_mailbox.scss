@@ -1,0 +1,81 @@
+ul.mailbox-list, ul.h-list {
+  list-style: none;
+  padding: 0;
+}
+
+ul.mailbox-list li a, ul.h-list li a {
+  padding: 10px 15px;
+  display: block;
+}
+
+ul.mailbox-list li a i, ul.h-list li a i {
+  margin-right: 6px;
+  display: inline-block;
+}
+
+ul.mailbox-list li.active a, ul.h-list li.active a {
+  background: #f7f9fa;
+  border: 1px solid #e4e5e7;
+  font-weight: 600;
+  border-radius: 1px;
+}
+ul.mailbox-list li:hover a, ul.h-list li:hover a {
+  font-weight: 600;
+}
+
+.table-mailbox {
+  .radio, .checkbox {
+    margin: 0;
+  }
+  .radio label, .checkbox label {
+    cursor: default;
+  }
+
+  tr.unread td a {
+    font-weight: 600;
+  }
+
+  tr td span.label {
+    margin-left: 10px;
+  }
+
+  tr:first-child td {
+    border-top: none;
+  }
+
+  tr td:first-child {
+    width: 33px;
+    padding-right: 0;
+  }
+}
+
+.mailbox-pagination {
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .mailbox-pagination {
+    text-align: left;
+  }
+}
+
+.email-compose .note-editor {
+  border: none;
+}
+
+.email-compose .note-editor .note-editable {
+  padding: 15px 25px;
+}
+
+.email-compose .note-toolbar {
+  padding: 5px 15px;
+}
+
+.note-popover .popover .popover-content>.btn-group, .note-toolbar>.btn-group {
+  margin-bottom: 5px;
+}
+
+.note-editor .note-toolbar {
+  /* Background from footer panel */
+  background-color: $color-bright;
+}

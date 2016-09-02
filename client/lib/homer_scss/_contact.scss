@@ -1,0 +1,45 @@
+.contact-panel h3 {
+  margin-bottom: 2px;
+}
+
+.contact-panel h3 a {
+  color: inherit;
+}
+
+.contact-panel p {
+  font-size: 11px;
+  line-height: 16px;
+  margin-bottom: 0;
+}
+
+.contact-panel img {
+  width: 76px;
+  height: 76px;
+}
+
+.contact-footer {
+  padding: 0 15px;
+}
+
+.contact-stat span {
+  font-size: 10px;
+  font-weight: 500;
+  display: block;
+  color: lighten($color-text, 20%);
+  text-transform: uppercase;
+}
+
+.contact-stat {
+  padding: 8px 0px;
+  text-align: center;
+}
+
+.contact-panel:hover .panel-body {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-name: pulse;
+  -webkit-animation-name: pulse;
+  z-index: 1;
+}

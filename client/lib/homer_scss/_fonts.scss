@@ -1,0 +1,31 @@
+/* Fonts */
+.font-light {
+  font-weight: 300;
+}
+.font-normal {
+  font-weight: 400;
+}
+.font-bold {
+  font-weight: 600;
+}
+.font-extra-bold {
+  font-weight: 700;
+}
+
+.font-uppercase {
+  text-transform: uppercase;
+}
+
+.font-trans {
+  opacity: 0.5 !important;
+}
+
+.text-big {
+  font-size: 60px;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 200;
+}

@@ -1,0 +1,62 @@
+body.blank {
+  background-color: $color-background;
+}
+
+.login-container {
+  max-width: 420px;
+  margin:auto;
+  padding-top: 6%;
+}
+
+.register-container {
+  max-width: 720px;
+  margin:auto;
+  padding-top: 6%;
+}
+
+.lock-container {
+  max-width: 420px;
+  margin:auto;
+  padding-top: 6%;
+}
+
+.error-container {
+  max-width: 620px;
+  margin:auto;
+  padding-top: 6%;
+}
+
+.big-icon {
+  font-size: 120px;
+}
+
+.error-container h1 {
+  font-size: 44px;
+}
+
+.back-link {
+  float: left;
+  width: 100%;
+  margin: 10px;
+}
+
+@media(max-width: 420px) {
+  .login-container, .lock-container {
+    margin: auto 10px;
+  }
+}
+
+@media(max-width: 720px) {
+  .register-container {
+    margin: auto 10px;
+  }
+  .lock-container {
+    padding-top: 15%;
+  }
+}
+
+@media(max-width: 620px) {
+  .error-container {
+    margin: auto 10px;
+  }
+}

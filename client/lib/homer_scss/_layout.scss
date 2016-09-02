@@ -1,0 +1,216 @@
+/* Layout */
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden!important;
+}
+
+body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  font-size: 13px;
+  color: $color-text;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#header {
+  background-color: #fff;
+  display: block;
+  height: 62px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  border-bottom: 1px solid $border-color;
+}
+
+#menu {
+  width: $menu-width;
+  bottom: 0;
+  float: left;
+  left: 0;
+  position: absolute;
+  top: 62px;
+  transition: all 0.4s ease 0s;
+
+}
+
+
+#wrapper {
+  margin: 0 0 0 $menu-width;
+  padding: 0;
+  background: $color-background;
+  border-left: 1px solid $border-color;
+  transition: all 0.4s ease 0s;
+  position: relative;
+  min-height: 100%;
+}
+
+.content {
+  padding: 25px 40px 40px 40px;
+  min-width: 320px;
+}
+
+.footer {
+  padding: 10px 18px;
+  background: #ffffff;
+  border-top: 1px solid $border-color;
+  transition: all 0.4s ease 0s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@media(max-width: 768px) {
+
+  .content {
+    padding: 15px 15px 15px 15px;
+    min-width: 320px;
+  }
+
+}
+
+.content-boxed {
+  max-width: 1100px;
+  margin: auto;
+  padding-top: 60px;
+
+}
+
+#page-header {
+  padding: 20px 40px;
+}
+
+.color-line {
+  background: $color-bright;
+  height: 6px;
+  background-image: -webkit-linear-gradient(left, $color-navy-blue, $color-navy-blue 25%, $color-violet 25%, $color-violet 35%, $color-blue 35%, $color-blue 45%, $color-green 45%, $color-green 55%, $color-yellow 55%, $color-yellow 65%, $color-orange 65%, $color-orange 75%, $color-red 85%, $color-red 85%,$color-red-deep 85%, $color-red-deep 100%);
+  background-image: -moz-linear-gradient(left, $color-navy-blue, $color-navy-blue 25%, $color-violet 25%, $color-violet 35%, $color-blue 35%, $color-blue 45%, $color-green 45%, $color-green 55%, $color-yellow 55%, $color-yellow 65%, $color-orange 65%, $color-orange 75%, $color-red 85%, $color-red 85%,$color-red-deep 85%, $color-red-deep 100%);
+  background-image: -ms-linear-gradient(left, $color-navy-blue, $color-navy-blue 25%, $color-violet 25%, $color-violet 35%, $color-blue 35%, $color-blue 45%, $color-green 45%, $color-green 55%, $color-yellow 55%, $color-yellow 65%, $color-orange 65%, $color-orange 75%, $color-red 85%, $color-red 85%,$color-red-deep 85%, $color-red-deep 100%);
+  background-image: linear-gradient(to right, $color-navy-blue, $color-navy-blue 25%, $color-violet 25%, $color-violet 35%, $color-blue 35%, $color-blue 45%, $color-green 45%, $color-green 55%, $color-yellow 55%, $color-yellow 65%, $color-orange 65%, $color-orange 75%, $color-red 85%, $color-red 85%,$color-red-deep 85%, $color-red-deep 100%);
+  background-size: 100% 6px;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+.fixed-navbar #header {
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+
+}
+
+.fixed-navbar #wrapper {
+  top: 62px;
+}
+
+.fixed-sidebar #menu {
+  position: fixed;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 197px;
+  padding-right: 17px;
+}
+
+.fixed-sidebar.show-sidebar #menu {
+  width: 180px;
+}
+
+.fixed-footer .footer {
+  position: fixed;
+  z-index: 1001;
+  bottom: 0;
+  left: 181px;
+  right: 0;
+}
+
+.fixed-footer.hide-sidebar .footer {
+  left: 0;
+}
+
+@media(max-width: 768px) {
+
+  .fixed-footer .footer {
+    left: 0;
+  }
+
+  .fixed-footer.show-sidebar .footer {
+    left: 181px;
+  }
+
+}
+
+#right-sidebar {
+  background-color: #fff;
+  border-left: 1px solid $border-color;
+  position: fixed;
+  top: 0;
+  width: 260px !important;
+  z-index: 1009;
+  bottom: 0;
+  right: 0;
+  display: none;
+  overflow: auto;
+}
+
+#right-sidebar.sidebar-open {
+  display: block;
+}
+
+
+
+.fixed-small-header .small-header {
+  position: fixed;
+  top: 62px;
+  left: 0;
+  right: 0;
+  margin-left: 181px;
+  z-index: 100;
+}
+
+.fixed-small-header .content {
+  padding-top: 80px;
+}
+
+.fixed-small-header.hide-sidebar .small-header {
+  margin-left: 0;
+}
+
+.fixed-small-header.page-small .small-header {
+  margin-left: 0;
+}
+
+.fixed-small-header.page-small .content {
+  padding-top: 120px;
+}
+
+.fixed-small-header.page-small.show-sidebar .small-header {
+  margin-left: 181px;
+  overflow: hidden;
+}
+
+.boxed {
+
+  background-color: #ffffff;
+
+  .profile-picture {
+    background-color: white;
+  }
+
+  .boxed-wrapper {
+    display: block;
+    max-width: 1200px;
+    margin:0 auto;
+    position: relative;
+    overflow: hidden;
+
+    -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.55);
+    -moz-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.55);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.55);
+  }
+
+
+}

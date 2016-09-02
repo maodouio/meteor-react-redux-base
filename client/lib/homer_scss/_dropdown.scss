@@ -1,0 +1,57 @@
+.dropdown-menu.hdropdown {
+  padding: 0;
+  z-index: 1060;
+}
+
+.dropdown-menu.hdropdown .title {
+  padding: 12px 12px;
+  text-align: center;
+  border-bottom:1px solid $border-color ;
+}
+
+.dropdown-menu.hdropdown li {
+  padding: 6px 12px;
+  text-align: left;
+  background: lighten($color-background, 3%);
+  border-bottom:1px solid $border-color;
+}
+
+.dropdown-menu.filedropdown li {
+  padding: 6px 6px;
+  text-align: left;
+  background: lighten($color-background, 3%);
+  border-bottom:1px solid $border-color;
+}
+
+.dropdown-menu.filedropdown li i {
+  margin-right: 10px;
+
+}
+
+.dropdown-menu.hdropdown.notification li {
+  padding: 12px 12px;
+}
+
+.dropdown-menu.hdropdown.notification li .label{
+  margin-right: 10px;
+}
+
+.dropdown-menu.hdropdown li > a:hover, .dropdown-menu.filedropdown li > a:hover {
+  background: inherit;
+}
+
+.dropdown-menu.hdropdown li:hover, .dropdown-menu.filedropdown li:hover {
+  background: $color-background;
+}
+
+.dropdown-menu.hdropdown li.summary {
+  padding: 6px 12px;
+  text-align: center;
+  background: #fff;
+}
+
+.navbar-nav > li > a:hover, .navbar-nav > li > a:focus, .navbar-nav .open > a, .navbar-nav .open > a:hover, .navbar-nav .open > a:focus {
+  color: inherit;
+  background: lighten($color-background, 2%);
+  border-bottom:1px solid $border-color;
+}

@@ -5,8 +5,10 @@
     "start": "meteor run"
   },
   "dependencies": {
+    "bootstrap-sass": "^3.3.7",
     "express": "^4.14.0",
     "meteor-node-stubs": "~0.2.0",
+    "pixeden-stroke-7-icon": "^1.2.3",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-komposer-plus": "^2.2.3",

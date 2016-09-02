@@ -1,0 +1,264 @@
+/* Panels */
+.hpanel > .panel-heading {
+  color: inherit;
+  font-weight: 600;
+  padding: 10px 4px;
+  transition: all .3s;
+  border: 1px solid transparent;
+}
+
+.hpanel .hbuilt.panel-heading {
+  border-bottom: none;
+}
+
+.hpanel > .panel-footer, .hpanel > .panel-section {
+  color: inherit;
+  border: 1px solid $border-color;
+  border-top: none;
+  font-size: 90%;
+  background: $color-bright;
+  padding: 10px 15px;
+}
+
+.hpanel.panel-collapse > .panel-heading, .hpanel .hbuilt {
+  background: #fff;
+  border-color: $border-color;
+  border: 1px solid $border-color;
+  padding: 10px 10px;
+  border-radius: 2px;
+}
+
+.hpanel .panel-body {
+  background: #fff;
+  border: 1px solid $border-color;
+  border-radius: 2px;
+  padding: 20px;
+  position: relative;
+}
+
+
+.hpanel.panel-group .panel-body:first-child {
+  border-top: 1px solid $border-color;
+}
+
+.hpanel.panel-group .panel-body {
+  border-top: none;
+}
+
+.panel-collapse .panel-body {
+  border: none;
+}
+
+.hpanel {
+  background-color: none;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 25px;
+}
+
+.panel-tools {
+  display: inline-block;
+  float: right;
+  margin-top: 0;
+  padding: 0;
+  position: relative;
+}
+
+.hpanel .alert {
+  margin-bottom: 0;
+  border-radius: 0;
+  border: 1px solid $border-color;
+  border-bottom: none;
+}
+
+.panel-tools a {
+  margin-left: 5px;
+  color: lighten($color-text, 20%);
+  cursor: pointer;
+}
+
+.hpanel.hgreen .panel-body {
+  border-top: 2px solid $color-green;
+}
+
+.hpanel.hblue .panel-body {
+  border-top: 2px solid $color-blue;
+}
+
+.hpanel.hyellow .panel-body {
+  border-top: 2px solid $color-yellow;
+}
+
+.hpanel.hviolet .panel-body {
+  border-top: 2px solid $color-violet;
+}
+
+.hpanel.horange .panel-body {
+  border-top: 2px solid $color-orange;
+}
+
+.hpanel.hred .panel-body {
+  border-top: 2px solid $color-red;
+}
+
+.hpanel.hreddeep .panel-body {
+  border-top: 2px solid $color-red-deep;
+}
+
+.hpanel.hnavyblue .panel-body {
+  border-top: 2px solid $color-navy-blue;
+}
+
+.hpanel.hbggreen .panel-body {
+  background: $color-green;
+  color: #fff;
+  border:none;
+}
+
+.hpanel.hbgblue .panel-body {
+  background: $color-blue;
+  color: #fff;
+  border:none;
+}
+
+.hpanel.hbgyellow .panel-body {
+  background: $color-yellow;
+  color: #fff;
+  border:none;
+}
+
+.hpanel.hbgviolet .panel-body {
+  background: $color-violet;
+  color: #fff;
+  border:none;
+}
+
+.hpanel.hbgorange .panel-body {
+  background: $color-orange;
+  color: #fff;
+  border:none;
+}
+
+.hpanel.hbgred .panel-body {
+  background: $color-red;
+  color: #fff;
+  border:none;
+}
+
+.hpanel.hbgreddeep .panel-body {
+  background: $color-red-deep;
+  color: #fff;
+  border:none;
+}
+
+.hpanel.hbgnavyblue .panel-body {
+  background: $color-navy-blue;
+  color: #fff;
+  border:none;
+}
+
+.panel-group .panel-heading {
+  background-color: $color-bright;
+}
+
+.small-header .hpanel {
+  margin-bottom: 0;
+}
+
+.small-header {
+  padding: 0 !important;
+}
+
+.small-header .panel-body {
+  padding: 15px 25px;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  border-radius: 0;
+  //  background: $color-bright;
+}
+
+.panel-body h5, .panel-body h4 {
+  font-weight: 600;
+}
+
+.small-header .panel-body h2 {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 0 0 0;
+}
+
+.small-header .panel-body small {
+  color: lighten($color-text, 10%);
+}
+
+.hbreadcrumb {
+  padding: 2px 0px;
+  margin-top: 6px;
+  margin-bottom: 0px;
+  list-style: none;
+  background-color: #fff;
+  font-size: 11px;
+
+  > li {
+    display: inline-block;
+
+    + li:before {
+      padding: 0 5px;
+      color: $color-navy-blue;
+    }
+  }
+
+  > .active {
+    color: lighten($color-text,20%);
+  }
+}
+
+.wrapper {
+  padding: 10px 20px;
+}
+
+.hpanel.collapsed .panel-body, .hpanel.collapsed .panel-footer {
+  display: none;
+}
+
+.hpanel.collapsed .fa.fa-chevron-up:before {
+  content: "\f078";
+}
+.hpanel.collapsed .fa.fa-chevron-down:before {
+  content: "\f077";
+}
+
+.hpanel.collapsed.panel-collapse .panel-body {
+  border-width: 0 1px 1px 1px;
+  border-color: $border-color;
+  border-style: solid;
+}
+
+.hpanel.collapsed .hbuilt.panel-heading {
+  border-bottom: 1px solid $border-color;
+}
+
+body.fullscreen-panel-mode {
+  overflow-y: hidden;
+}
+
+.hpanel.fullscreen {
+  z-index: 2030;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  margin-bottom: 0;
+}
+
+.hpanel.fullscreen .showhide {
+  display: none;
+}
+
+.hpanel.fullscreen .panel-body {
+  min-height: calc(100% - 77px);
+}
