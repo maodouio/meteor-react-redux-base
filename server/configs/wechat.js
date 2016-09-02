@@ -1,6 +1,6 @@
 export default {
   wechat: {
-    appSecret: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    appSecret: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
     token: 'xxxxxxxxxxx',
     encodingAESKey: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
   }

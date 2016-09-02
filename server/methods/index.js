@@ -1,3 +1,5 @@
-export default (context) => {
+import users from './users';
 
+export default (context) => {
+  users(context);
 }
