@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'react-mounter';
-import Home from './components/home';
+import Home from './containers/home';
 import Admin from './components/admin';
 import ResetPassword from './containers/users/reset-password';
 
