@@ -5,10 +5,10 @@ export default (props) => {
     <div>
       {
         props.posts.map((post, index) =>
-          <p key={index}>
+          <h4 key={index}>
             [{post.category || 'uncategorized'}] {post.title}
-            <a onClick={(e) => props.deletePost(post._id, e)} href="#">Delete</a>
-          </p>
+            <a onClick={(e) => props.deletePost(post._id, e)} href="#"> Delete</a>
+          </h4>
         )
       }
     </div>

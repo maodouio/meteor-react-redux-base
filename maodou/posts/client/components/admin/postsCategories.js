@@ -10,8 +10,12 @@ export default (props) => {
         )
       }
       <form onSubmit={props.addCategory}>
-        <input type="text" name="category" />
-        <button type="submit">Add</button>
+        <div className="input-group">
+          <input className="form-control" type="text" name="category" />
+          <span className="input-group-btn">
+            <button className="btn btn-default" type="submit">添加分类</button>
+          </span>
+        </div>
       </form>
     </div>
   );
