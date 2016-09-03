@@ -1,4 +1,14 @@
 @import "{}/node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "{}/node_modules/pixeden-stroke-7-icon/pe-icon-7-stroke/scss/pe-icon-7-stroke.scss";
 @import "./lib/imports/theme-homer/style.scss";
 
 /* Overwrites */
+#navigation {
+  z-index: 1000;
+  height: 100%;
+  background: #f7f9fa;
+}
+
+#wrapper {
+  position: static;
+}
