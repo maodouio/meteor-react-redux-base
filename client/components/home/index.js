@@ -4,10 +4,11 @@ import EmailForm from '../../containers/users/email-enrollment-form';
 import LoginForm from '../../containers/users/login-form';
 
 export default (props) => (
-  <div>
-    Home page
+  <div className="container">
     <EmailForm/>
     <LoginForm/>
-    <WeChatSignIn/>
+    <div className="text-center">
+      <WeChatSignIn/>
+    </div>
   </div>
 );

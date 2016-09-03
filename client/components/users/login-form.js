@@ -16,10 +16,32 @@ export default class extends React.Component {
     if (this.props.loggingIn) return <div>正在登录</div>;
 
     return (
-      <form onSubmit={this.onSubmit}>
-        邮箱：<input type="text" ref={(c) => this._emailInput = c}/>
-        密码：<input type="password" ref={(c) => this._passwordInput = c}/>
-        <input type="submit" value="登录" />
-      </form>);
+      <div className="login-container">
+        <div className="row">
+          <div className="col-md-12">
+            {/*<div className="text-center m-b-md">*/}
+              {/*<h3>PLEASE LOGIN TO APP</h3>*/}
+              {/*<small>This is the best app ever!</small>*/}
+            {/*</div>*/}
+            <div className="hpanel">
+              <div className="panel-body">
+                <form onSubmit={this.onSubmit} id="loginForm">
+                  <div className="form-group">
+                    <label className="control-label" htmlFor="username">邮箱</label>
+                    <input type="text" ref={(c) => this._emailInput = c} placeholder="example@gmail.com" title="Please enter you username" required="" name="username" id="username" className="form-control" />
+                  </div>
+                  <div className="form-group">
+                    <label className="control-label" htmlFor="password">密码</label>
+                    <input type="password" ref={(c) => this._passwordInput = c} title="Please enter your password" placeholder="******" required="" name="password" id="password" className="form-control" />
+                  </div>
+                  <button type="submit" className="btn btn-success btn-block">登陆</button>
+                  <a className="btn btn-default btn-block" href="#">注册</a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
