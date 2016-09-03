@@ -4,7 +4,15 @@ import { withHandlers, withTracker, withRedux, composeAll } from 'react-komposer
 import Nav from '../../../components/admin/layout/nav';
 
 const userEvents = {
-  login: ({ context }, event) => {
+  sidebar({ context }, event) {
+    event.preventDefault();
+    if ($(window).width() < 769) {
+      $('body').toggleClass('show-sidebar');
+    } else {
+      $('body').toggleClass('hide-sidebar');
+    }
+  },
+  login ({ context }, event) {
 
   }
 };
