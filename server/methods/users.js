@@ -4,7 +4,7 @@ import {Accounts} from 'meteor/accounts-base';
 
 export default (context) => {
   Accounts.emailTemplates.siteName = "Maodou";
-  Accounts.emailTemplates.from = "Maodou <accounts@maodou.io>";
+  Accounts.emailTemplates.from = "Maodou <dev@maodou.io>";
   Accounts.urls.enrollAccount = (token) => {
     return Meteor.absoluteUrl(`reset-password/${token}`);
   };
