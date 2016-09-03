@@ -7,7 +7,7 @@ export default (props) => {
         <div className="col-lg-12">
           <div className="hpanel blog-article-box">
             <div className="panel-heading">
-              <h4>{props.post.title}</h4>
+              <h4>[{props.post.category}] {props.post.title}</h4>
               <div className="text-muted small">
                 Created by: <span className="font-bold">Mike Smith</span>
                 21.03.2015, 06:45 pm

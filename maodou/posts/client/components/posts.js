@@ -22,7 +22,7 @@ export default (props) => {
                 </div>
                 <div className="panel-body">
                   <a href={`/posts/${post._id}`}>
-                    <h4>{post.title}</h4>
+                    <h4>[{post.category}] {post.title}</h4>
                     <p>{post.content}</p>
                   </a>
                 </div>
