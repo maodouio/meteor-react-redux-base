@@ -6,9 +6,7 @@ import LoginForm from '../../containers/users/login-form';
 export default (props) => (
   <div className="container">
     {props.email ? `欢迎，${props.email}` : <EmailForm/>}
-    <LoginForm/>
-    <div className="text-center">
-      <WeChatSignIn/>
-    </div>
+    {props.loggedIn || <LoginForm/>}
+    {props.loggedIn || <div className="text-center"><WeChatSignIn/></div>}
   </div>
 );

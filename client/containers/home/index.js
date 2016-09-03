@@ -8,9 +8,9 @@ function composer({context}, onData)  {
   const user = context().Meteor.user();
 
   if (user && Array.isArray(user.emails) && user.emails.length > 0 && user.emails[0].verified) {
-    onData(null, {email: user.emails[0].address})
+    onData(null, {loggedIn: !!user, email: user.emails[0].address})
   } else {
-    onData(null, {});
+    onData(null, {loggedIn: user});
   }
 }
 
