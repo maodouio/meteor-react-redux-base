@@ -8,7 +8,7 @@ export default ({content = () => null }) => (
     <Aside />
     <div id="wrapper" style={{marginTop: '56px'}}>
       {content()}
-      <div className="footer"></div>
+      {/*<div className="footer"></div>*/}
     </div>
   </div>
 );
