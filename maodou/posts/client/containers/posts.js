@@ -8,6 +8,7 @@ const initData = ({ context }, onData) => {
   Meteor.call('posts.get', (err, posts) => {
     onData(null, { posts });
   });
+  onData(null, { posts: [] });
 };
 
 const mapStateToProps = (state) => ({

@@ -1,4 +1,5 @@
 import React from 'react';
+import Loading from '/client/components/common/loading';
 
 export default (props) => {
   return (
@@ -6,9 +7,11 @@ export default (props) => {
       <div className="col-sm-12">
         <h1>Posts categories</h1>
         {
-          props.categories.map((category, index) =>
-            <p key={index}>{category} <a href="#" onClick={(e) => props.deleteCategory(category, e)}>Delete</a></p>
-          )
+          props.categories.length > 0 ?
+            props.categories.map((category, index) =>
+              <p key={index}>{category} <a href="#" onClick={(e) => props.deleteCategory(category, e)}>Delete</a></p>
+            ) :
+            <Loading />
         }
         <form onSubmit={props.addCategory}>
           <div className="input-group">

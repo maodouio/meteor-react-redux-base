@@ -19,6 +19,8 @@ const subscription = ({ context }, onData) => {
   if (Meteor.subscribe('posts.list').ready()) {
     const posts = Collections.Posts.find().fetch();
     onData(null, { posts });
+  } else {
+    onData(null, {posts: []});
   }
 };
 

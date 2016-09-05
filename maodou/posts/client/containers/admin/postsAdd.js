@@ -29,22 +29,18 @@ const lifeCycle = {
 
 const data = ({ context }, onData) => {
   const { Collections } = context;
-  const pkg = Collections.Packages.findOne({ name: 'posts' });
-  onData(null, { categories: pkg.configs.categories });
+  const pkg = Collections.Packages.findOne({ name: 'posts' }) || {};
+  const configs = pkg.configs || {};
+  onData(null, { categories: configs.categories || [] });
 };
-
-const mapStateToProps = (state) => ({
-  // counter: state.counter
-});
 
 const depsToProps = (context, actions) => ({
   context
 });
 
 export default composeAll(
-  compose(data),
   withHandlers(userEvents),
   withLifecycle(lifeCycle),
-  withRedux(mapStateToProps),
+  withTracker(data),
   useDeps(depsToProps)
 )(PostsAdd);

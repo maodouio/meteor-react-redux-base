@@ -10,16 +10,18 @@ export default (props) => {
             <label htmlFor="select-category">选择分类</label>
             <select id="select-category" className="form-control" name="category">
               {
-                props.categories.map((category, index) =>
-                  <option key={index} value={category}>{category}</option>
-                )
+                props.categories.length > 0 ?
+                  props.categories.map((category, index) =>
+                    <option key={index} value={category}>{category}</option>
+                  ) :
+                  <option>Loading...</option>
               }
             </select>
           </div>
           <br/>
           <input className="form-control" type="text" placeholder="title" name="title" />
           <br />
-          <div id="editor"></div>
+          <div id="editor" />
           <button className="btn btn-default" type="submit">Submit</button>
         </form>
       </div>
