@@ -1,10 +1,10 @@
 import { useDeps } from 'react-simple-di';
 import { withHandlers, withTracker, withLifecycle, composeAll } from 'react-komposer-plus';
-
 import Aside from '../../../components/admin/layout/aside';
 
 const lifeCircle = {
   componentDidMount() {
+    $('#side-menu').metisMenu();
     const toggleMenu = () => {
       if ($(window).width() < 769) {
         $('body').addClass('page-small');

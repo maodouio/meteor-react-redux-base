@@ -7,7 +7,7 @@ import PostsList from './containers/admin/postsList';
 import PostsAdd from './containers/admin/postsAdd';
 import PostsCategories from './containers/admin/postsCategories';
 
-export default function(injectDeps, { FlowRouter, mainLayout, adminLayout }) {
+export default function(injectDeps, { FlowRouter, mainLayout, adminLayout, configs }) {
   FlowRouter.route('/posts', {
     action() {
       mount(mainLayout, {
@@ -29,25 +29,20 @@ export default function(injectDeps, { FlowRouter, mainLayout, adminLayout }) {
       });
     }
   });
-  FlowRouter.route('/admin/posts/list', {
-    action() {
-      mount(adminLayout, {
-        content: () => (<PostsAdmin><PostsList /></PostsAdmin>)
-      });
-    }
-  });
-  FlowRouter.route('/admin/posts/add', {
-    action() {
-      mount(adminLayout, {
-        content: () => (<PostsAdmin><PostsAdd /></PostsAdmin>)
-      });
-    }
-  });
-  FlowRouter.route('/admin/posts/categories', {
-    action() {
-      mount(adminLayout, {
-        content: () => (<PostsAdmin><PostsCategories /></PostsAdmin>)
-      });
-    }
+
+  const subMenu = configs.posts.subMenu;
+  const subMenuComponents = [
+    <PostsList />,
+    <PostsAdd />,
+    <PostsCategories />
+  ];
+  subMenu.map((menu, index) => {
+    FlowRouter.route(menu.href, {
+      action() {
+        mount(adminLayout, {
+          content: () => (<PostsAdmin>{subMenuComponents[index]}</PostsAdmin>)
+        });
+      }
+    });
   });
 }

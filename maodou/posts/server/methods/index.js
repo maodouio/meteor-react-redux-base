@@ -32,7 +32,7 @@ export default (context) => {
         }
       });
       Posts.update({ category }, {
-        $set: { category: 'uncategorized' }
+        $set: { category: '' }
       });
     }
   });
