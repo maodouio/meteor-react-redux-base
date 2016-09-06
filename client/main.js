@@ -9,8 +9,8 @@ import configMiddleware from '../lib/middlewares/configs';
 import Layout from './components/layout';
 import adminLayout from './components/admin/layout';
 import coreModule from './';
-import postsModule from '/maodou/posts/client';
-import wechatModule from '/maodou/wechat/client';
+import postsModule from 'maodou/posts/client';
+import wechatModule from 'maodou/wechat/client';
 
 const context = createContext();
 const app = new App(context);
@@ -30,3 +30,4 @@ app.loadModule(postsModule);
 app.loadModule(wechatModule);
 
 app.init();
+context.FlowRouter.initialize();
