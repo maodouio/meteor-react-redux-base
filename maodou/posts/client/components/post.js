@@ -1,5 +1,5 @@
 import React from 'react';
-import Loading from '/client/components/common/loading';
+import Loading from 'client/components/common/loading';
 
 export default (props) => {
   return (

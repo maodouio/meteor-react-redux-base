@@ -1,5 +1,5 @@
-import configs from '/lib/configs/core';
-import privateConfigs from '/server/configs/core';
+import configs from 'lib/configs/core';
+import privateConfigs from './configs/core';
 import collections from '../lib/collections';
 import permissions from './permissions';
 import publications from './publications';

@@ -5,8 +5,8 @@ import collectionsMiddleware from '../lib/middlewares/collections';
 import configMiddleware from '../lib/middlewares/configs';
 import middlewareMiddleware from './lib/middlewares/middleware';
 import coreModule from './';
-import postsModule from '/maodou/posts/server';
-import wechatModule from '/maodou/wechat/server';
+import postsModule from 'maodou/posts/server';
+import wechatModule from 'maodou/wechat/server';
 
 const context = createContext();
 const app = new App(context);

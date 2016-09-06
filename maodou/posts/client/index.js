@@ -1,4 +1,4 @@
-import configs from '/lib/configs/posts';
+import configs from 'lib/configs/posts';
 import collections from '../lib/collections';
 import actions from './actions';
 import reducers from './reducers';
