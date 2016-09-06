@@ -6,7 +6,11 @@ export default (context) => {
       return Posts.find().fetch();
     },
     'posts.get.single'(id) {
-      return Posts.findOne(id);
+      const post = Posts.findOne(id);
+      if (!post) {
+        throw new Meteor.Error('404', 'not found');
+      }
+      return post;
     },
     'posts.add'(category, title, content) {
       Posts.insert({
