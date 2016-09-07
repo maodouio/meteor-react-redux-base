@@ -6,9 +6,13 @@ import Posts from '../components/posts';
 const initData = ({ context }, onData) => {
   const { Meteor } = context;
   Meteor.call('posts.get', (err, posts) => {
-    onData(null, { posts });
+    onData(null, {
+      posts: { status: 'ready', data: posts }
+    });
   });
-  onData(null, { posts: [] });
+  onData(null, {
+    posts: { status: 'pending', data: [] }
+  });
 };
 
 const mapStateToProps = (state) => ({

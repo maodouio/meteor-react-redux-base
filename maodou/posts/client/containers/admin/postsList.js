@@ -18,9 +18,13 @@ const subscription = ({ context }, onData) => {
   const { Meteor, Collections } = context;
   if (Meteor.subscribe('posts.list').ready()) {
     const posts = Collections.Posts.find().fetch();
-    onData(null, { posts });
+    onData(null, {
+      posts: { status: 'ready', data: posts }
+    });
   } else {
-    onData(null, {posts: []});
+    onData(null, {
+      posts: { status: 'pending', data: [] }
+    });
   }
 };
 
