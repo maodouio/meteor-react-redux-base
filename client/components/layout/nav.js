@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default (props) => (
   <nav className="navbar navbar-default">
@@ -10,12 +11,12 @@ export default (props) => (
           <span className="icon-bar" />
           <span className="icon-bar" />
         </button>
-        <a href="/" className="navbar-brand">My App</a>
+        <Link to="/" className="navbar-brand">My App</Link>
       </div>
       <div id="navbar" className="navbar-collapse collapse">
         <ul className="nav navbar-nav navbar-left">
-          <li><a href="/posts">Posts</a></li>
-          <li><a href="/admin">Admin</a></li>
+          <li><Link to="/posts">Posts</Link></li>
+          <li><Link to="/admin">Admin</Link></li>
         </ul>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default ({ code, info, description }) => (
   <div className="error-container text-center">
@@ -6,8 +7,8 @@ export default ({ code, info, description }) => (
     <h1><strong>{code}</strong></h1>
     <h2>{info}</h2>
     <p>{description}</p>
-    <a style={{ marginTop: '15px' }} href="/" className="btn btn-lg btn-success">
+    <Link style={{ marginTop: '15px' }} to="/" className="btn btn-lg btn-success">
       Go back to home
-    </a>
+    </Link>
   </div>
 );

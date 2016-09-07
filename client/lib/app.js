@@ -1,5 +1,7 @@
 import { injectDeps } from 'react-simple-di';
 
+import combineRoutes from 'client/combine-routes';
+
 class App {
   constructor(context) {
     if (!context) {
@@ -139,13 +141,12 @@ class App {
       }
     }
 
-    for (const routeFn of this._routeFns) {
-      const inject = comp => (
-        injectDeps(this.context, this.actions)(comp)
-      );
+    const inject = comp => (
+      injectDeps(this.context, this.actions)(comp)
+    );
 
-      routeFn(inject, this.context, this.actions);
-    }
+    this.routes = this._routeFns.map(routeFn => routeFn(inject, this.context, this.actions));
+    this.routes = combineRoutes(inject, this.routes);
 
     this._routeFns = [];
     this._modulesWillLoad = [];

@@ -1,5 +1,6 @@
 import { useDeps } from 'react-simple-di';
 import { compose, withHandlers, withTracker, withRedux, withLifecycle, composeAll } from 'react-komposer-plus';
+import { browserHistory } from 'react-router'
 
 import PostsAdd from '../../components/admin/postsAdd';
 
@@ -13,7 +14,7 @@ const userEvents = {
       if (err) {
         alert(err.message);
       } else {
-        context.FlowRouter.go('/admin/posts/list');
+        browserHistory.push('/admin/posts/list');
       }
     });
   }

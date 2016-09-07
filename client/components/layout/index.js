@@ -2,10 +2,10 @@ import React from 'react';
 import Nav from '../../containers/layout/nav';
 // import Footer from './footer';
 
-export default ({content = () => null }) => (
+export default (props) => (
   <div className="landing-page">
     <Nav />
-    {content()}
+    {props.children}
     {/*<Footer />*/}
   </div>
 );

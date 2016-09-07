@@ -27,12 +27,21 @@ function removeURLParameter(url, parameter) {
   }
 }
 
+function getParameterByName(name) {
+  name = name.replace(/[\[\]]/g, "\\$&");
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    results = regex.exec(window.location.href);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
 const composer = () => {
   let uiState = UIState.IDLE; // closure variable
 
-  return ({context}, onData) => {
-    const {Meteor, Accounts, FlowRouter} = context;
-    let code = FlowRouter.getQueryParam('code');
+  return ({context, location}, onData) => {
+    const {Meteor, Accounts} = context;
+    const code = getParameterByName('code');
 
     if (Meteor.loggingIn()) {
       uiState = UIState.LOGGING_IN;

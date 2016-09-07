@@ -2,12 +2,12 @@ import React from 'react';
 import Nav from '../../../containers/admin/layout/nav';
 import Aside from '../../../containers/admin/layout/aside';
 
-export default ({content = () => null }) => (
+export default (props) => (
   <div className="admin">
     <Nav />
     <Aside />
     <div id="wrapper" style={{marginTop: '56px'}}>
-      {content()}
+      {props.children}
       {/*<div className="footer"></div>*/}
     </div>
   </div>

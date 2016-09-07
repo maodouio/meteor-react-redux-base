@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default (props) => (
   <aside id="menu">
@@ -7,16 +8,16 @@ export default (props) => (
         {
           _.values(props.context.configs).map((config, index) => (
             <li key={index}>
-              <a href={config.adminHref} onClick={!config.subMenu ? props.handleLink : null}>
+              <Link to={config.adminHref || ''} onClick={!config.subMenu ? props.handleLink : null}>
                 <span className="nav-label">{config.adminLabel}</span>
                 {config.subMenu ? <i className="fa arrow" /> : <span />}
-              </a>
+              </Link>
               {
                 config.subMenu ?
                   <ul className="nav nav-second-level collapse">
                     {
                       config.subMenu.map((menu, index) =>
-                        <li key={index}><a href={menu.href} onClick={props.handleLink}>{menu.label}</a></li>
+                        <li key={index}><Link to={menu.href} onClick={props.handleLink}>{menu.label}</Link></li>
                       )
                     }
                   </ul> :
