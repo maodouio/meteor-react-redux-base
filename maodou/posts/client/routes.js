@@ -7,28 +7,19 @@ import PostsList from './containers/admin/postsList';
 import PostsAdd from './containers/admin/postsAdd';
 import PostsCategories from './containers/admin/postsCategories';
 
-export default function(injectDeps, { FlowRouter, mainLayout, adminLayout, configs }) {
-  FlowRouter.route('/posts', {
-    action() {
-      mount(mainLayout, {
-        content: () => (<Posts />)
-      });
-    }
-  });
-  FlowRouter.route('/posts/:id', {
-    action() {
-      mount(mainLayout, {
-        content: () => (<Post />)
-      });
-    }
-  });
-  FlowRouter.route('/admin/posts', {
-    action() {
-      mount(adminLayout, {
-        content: () => (<PostsAdmin />)
-      });
-    }
-  });
+export default function (injectDeps, { configs }) {
+  const routes = {
+    '/admin': [
+      {path: 'posts', component: PostsAdmin}
+    ],
+
+    // insert routes for other layouts here
+
+    '/': [
+      {path: 'posts', component: Posts},
+      {path: 'post/:id', component: Post}
+    ]
+  };
 
   const subMenu = configs.posts.subMenu;
   const subMenuComponents = [
@@ -37,12 +28,11 @@ export default function(injectDeps, { FlowRouter, mainLayout, adminLayout, confi
     <PostsCategories />
   ];
   subMenu.map((menu, index) => {
-    FlowRouter.route(menu.href, {
-      action() {
-        mount(adminLayout, {
-          content: () => (<PostsAdmin>{subMenuComponents[index]}</PostsAdmin>)
-        });
-      }
+    routes['/admin'].push({
+      path: menu.href,
+      component: () => <PostsAdmin>{subMenuComponents[index]}</PostsAdmin>
     });
   });
+
+  return routes;
 }

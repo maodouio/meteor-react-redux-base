@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default (props) => (
   <div>
@@ -10,7 +11,7 @@ export default (props) => (
         </span>
     </div>
     <nav role="navigation">
-      <a href="#" className="header-link hide-menu" onClick={(e) => props.sidebar(e)}><i className="fa fa-bars" /></a>
+      <Link to="#" className="header-link hide-menu" onClick={(e) => props.sidebar(e)}><i className="fa fa-bars" /></Link>
       <div className="small-logo">
         <span className="text-primary">HOMER APP</span>
       </div>
@@ -21,19 +22,19 @@ export default (props) => (
         <div className="collapse mobile-navbar" id="mobile-collapse">
           <ul className="nav navbar-nav">
             <li>
-              <a className="" >Login</a>
+              <Link to="#" className="" >Login</Link>
             </li>
             <li>
-              <a className="" >Logout</a>
+              <Link to="#" className="" >Logout</Link>
             </li>
             <li>
-              <a className="" href="/">Main Site</a>
+              <Link className="" to="/">Main Site</Link>
             </li>
           </ul>
         </div>
       </div>
       <div className="navbar-right">
-        <a href="/" className="btn btn-info" style={{margin: '10px 20px'}}>Main Site <i className="pe-7s-upload pe-rotate-90" /></a>
+        <Link to="/" className="btn btn-info" style={{margin: '10px 20px'}}>Main Site <i className="pe-7s-upload pe-rotate-90" /></Link>
       </div>
     </nav>
   </div>

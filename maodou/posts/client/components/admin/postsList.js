@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router';
+
 import Loading from 'client/components/common/loading';
 
 export default (props) => {
@@ -23,10 +25,10 @@ export default (props) => {
                     </div>
                   </div>
                   <div className="panel-body">
-                    <a href={`/posts/${post._id}`}>
+                    <Link to={`/post/${post._id}`}>
                       <h4>[{post.category}] {post.title}</h4>
                       <p>{post.content}</p>
-                    </a>
+                    </Link>
                   </div>
                   <div className="panel-footer">
                   <span className="pull-right">

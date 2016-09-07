@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router';
+
 import Loading from 'client/components/common/loading';
 
 export default (props) => {
@@ -9,7 +11,7 @@ export default (props) => {
         {
           props.categories.length > 0 ?
             props.categories.map((category, index) =>
-              <p key={index}>{category} <a href="#" onClick={(e) => props.deleteCategory(category, e)}>Delete</a></p>
+              <p key={index}>{category} <Link to="#" onClick={(e) => props.deleteCategory(category, e)}>Delete</Link></p>
             ) :
             <Loading />
         }

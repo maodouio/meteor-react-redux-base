@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router';
+
 import Loading from 'client/components/common/loading';
 
 export default (props) => {
@@ -12,9 +14,9 @@ export default (props) => {
                 <div className="hpanel blog-box">
                   <div className="panel-heading">
                     <div className="media clearfix">
-                      <a className="pull-left">
+                      <Link to="#" className="pull-left">
                         <img src="/images/a8.jpg" alt="profile-picture" />
-                      </a>
+                      </Link>
                       <div className="media-body">
                         <small>Created by: <span className="font-bold">Mike Smith</span></small>
                         <br />
@@ -23,10 +25,10 @@ export default (props) => {
                     </div>
                   </div>
                   <div className="panel-body">
-                    <a href={`/posts/${post._id}`}>
+                    <Link to={`/post/${post._id}`}>
                       <h4>[{post.category}] {post.title}</h4>
                       <p>{post.content}</p>
-                    </a>
+                    </Link>
                   </div>
                   <div className="panel-footer">
                   <span className="pull-right">

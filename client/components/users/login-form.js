@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default class extends React.Component {
   constructor(props) {
@@ -35,7 +36,7 @@ export default class extends React.Component {
                     <input type="password" ref={(c) => this._passwordInput = c} title="Please enter your password" placeholder="******" required="" name="password" id="password" className="form-control" />
                   </div>
                   <button type="submit" className="btn btn-success btn-block">登陆</button>
-                  <a className="btn btn-default btn-block" href="#">注册</a>
+                  <Link className="btn btn-default btn-block" to="#">注册</Link>
                 </form>
               </div>
             </div>

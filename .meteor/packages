@@ -16,7 +16,6 @@ standard-minifier-css   # CSS minifier run for production mode
 standard-minifier-js    # JS minifier run for production mode
 es5-shim@4.6.14                # ECMAScript 5 compatibility for older browsers.
 shell-server            # Server-side component of the `meteor shell` command
-kadira:flow-router
 accounts-base
 http
 aldeed:simple-schema
