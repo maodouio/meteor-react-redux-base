@@ -17,8 +17,9 @@ const initData = ({ context, params }, onData) => {
         });
         browserHistory.push('/posts');
       }
+    } else {
+      onData(null, { post });
     }
-    onData(null, { post });
   });
   onData(null, {});
 };

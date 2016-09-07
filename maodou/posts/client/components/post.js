@@ -16,9 +16,7 @@ export default (props) => {
                     21.03.2015, 06:45 pm
                   </div>
                 </div>
-                <div className="panel-body">
-                  {props.post.content}
-                </div>
+                <div className="panel-body" dangerouslySetInnerHTML={{ __html: props.post.content }} />
                 <div className="panel-footer">
                 <span className="pull-right">
                     <i className="fa fa-comments-o" /> 22 comments
