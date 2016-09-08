@@ -6,6 +6,7 @@ import collectionsMiddleware from '../lib/middlewares/collections';
 import layoutsMiddleware from './lib/middlewares/layouts';
 import reduxMiddleware from './lib/middlewares/redux';
 import configMiddleware from '../lib/middlewares/configs';
+import i18nMiddleware from './lib/middlewares/i18n';
 
 import coreModule from './';
 import postsModule from 'maodou/posts/client';
@@ -15,12 +16,13 @@ import { render } from 'react-dom';
 import { Router, browserHistory } from 'react-router'
 
 const context = createContext();
-const app = new App(context);
+export const app = new App(context);
 
 app.loadMiddlewares([
   collectionsMiddleware(),
   reduxMiddleware({}),
-  configMiddleware
+  configMiddleware,
+  i18nMiddleware(['enUS', 'zhCN'])
 ]);
 
 app.loadModule(coreModule);

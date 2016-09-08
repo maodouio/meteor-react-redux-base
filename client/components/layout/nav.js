@@ -13,12 +13,23 @@ export default (props) => (
         </button>
         <Link to="/" className="navbar-brand">My App</Link>
       </div>
-      <div id="navbar" className="navbar-collapse collapse">
-        <ul className="nav navbar-nav navbar-left">
+      <div id="navbar" className="navbar-collapse navbar-left collapse">
+        <ul className="nav navbar-nav">
           <li><Link to="/posts">Posts</Link></li>
           <li><Link to="/admin">Admin</Link></li>
         </ul>
       </div>
+      <ul className="nav navbar-nav navbar-right hidden-xs">
+        <li className="dropdown">
+          <a className="dropdown-toggle" id="drop1" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            Language <span className="caret" />
+          </a>
+          <ul className="dropdown-menu" aria-labelledby="drop1">
+            <li><a href="#" onClick={(e) => props.setLang(e, 'enUS')}>English</a></li>
+            <li><a href="#" onClick={(e) => props.setLang(e, 'zhCN')}>Chinese</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </nav>
 );

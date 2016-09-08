@@ -4,6 +4,7 @@ import {Link} from 'react-router';
 import Loading from 'client/components/common/loading';
 
 export default (props) => {
+  const T = props.context.T;
   return (
     <div className="container">
       <div className="row">
@@ -33,7 +34,7 @@ export default (props) => {
                     </div>
                     <div className="panel-footer">
                     <span className="pull-right">
-                        <i className="fa fa-comments-o" /> 22 comments
+                        <i className="fa fa-comments-o" /> 22 <T.text text={{ key: 'comments' }} />
                     </span>
                       <i className="fa fa-eye" /> 142 views
                     </div>

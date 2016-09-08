@@ -3,6 +3,7 @@ import {Accounts} from 'meteor/accounts-base';
 import {Tracker} from 'meteor/tracker';
 import { Roles } from 'meteor/alanning:roles';
 import swal from 'sweetalert';
+import T from 'i18n-react';
 
 export default function() {
   return {
@@ -10,6 +11,7 @@ export default function() {
     Accounts,
     Tracker,
     Roles,
-    swal
+    swal,
+    T
   };
 }
