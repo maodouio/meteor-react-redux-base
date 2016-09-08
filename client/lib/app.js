@@ -149,7 +149,7 @@ class App {
     this.routes = combineRoutes(inject, this.routes);
 
     this._routeFns = [];
-    this._modulesWillLoad = [];
+    this._moduleWillLoad = [];
     this._moduleWillInit = [];
     this.__initialized = true;
   }
