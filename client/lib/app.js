@@ -146,7 +146,7 @@ class App {
     );
 
     this.routes = this._routeFns.map(routeFn => routeFn(inject, this.context, this.actions));
-    this.routes = combineRoutes(inject, this.routes);
+    this.routes = combineRoutes(this.routes, inject, this.context);
 
     this._routeFns = [];
     this._moduleWillLoad = [];
