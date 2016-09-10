@@ -3,7 +3,6 @@ import App from './lib/app';
 
 import createContext from './context';
 import collectionsMiddleware from '../lib/middlewares/collections';
-import layoutsMiddleware from './lib/middlewares/layouts';
 import reduxMiddleware from './lib/middlewares/redux';
 import configMiddleware from '../lib/middlewares/configs';
 import i18nMiddleware from './lib/middlewares/i18n';
