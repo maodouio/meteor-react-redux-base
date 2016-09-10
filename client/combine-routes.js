@@ -4,7 +4,7 @@ import _ from 'lodash';
 import Home from './containers/home';
 import ResetPassword from './containers/users/reset-password';
 import ErrorPage from './components/common/errorPage';
-import Layout from './components/layout';
+import Layout from './containers/layout';
 import AdminLayout from './components/admin/layout';
 
 export default function (routes, injectDeps, context) {

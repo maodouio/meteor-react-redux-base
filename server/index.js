@@ -13,6 +13,12 @@ export default {
   publications,
   methods,
   init(context) {
-    // do something like Meteor.startup()
+    const { Collections } = context;
+    if (!Collections.Packages.findOne({ name: 'core' })) {
+      Collections.Packages.insert({
+        name: 'core',
+        configs: context.configs.core || {}
+      });
+    }
   }
 };
