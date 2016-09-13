@@ -6,6 +6,7 @@ import configMiddleware from '../lib/middlewares/configs';
 import middlewareMiddleware from './lib/middlewares/middleware';
 import coreModule from './';
 import postsModule from 'maodou/posts/server';
+import eventsModule from 'maodou/events/server';
 import wechatModule from 'maodou/wechat/server';
 
 const context = createContext();
@@ -19,6 +20,7 @@ app.loadMiddlewares([
 
 app.loadModule(coreModule);
 app.loadModule(postsModule);
+app.loadModule(eventsModule);
 app.loadModule(wechatModule);
 
 app.init();
