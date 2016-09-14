@@ -6,6 +6,7 @@ import ResetPassword from './containers/users/reset-password';
 import ErrorPage from './components/common/errorPage';
 import Layout from './containers/layout';
 import AdminLayout from './components/admin/layout';
+import Register from './containers/users/register';
 
 export default function (routes, injectDeps, context) {
 
@@ -37,6 +38,7 @@ export default function (routes, injectDeps, context) {
       component: injectDeps(Layout),
       indexRoute: {component: Home},
       childRoutes: [
+        { path: '/register', component: () => <Register /> },
         {path: '401', component: () => <ErrorPage code="401" info="Unauthorized" />},
         {path: 'reset-password/:token', component: () => <ResetPassword />},
         ...aggregate['/'],
