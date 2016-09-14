@@ -21,12 +21,12 @@ http
 aldeed:simple-schema
 aldeed:collection2
 accounts-password
-alanning:roles
+alanning:roles          # TODO: This package has blaze included. We need to get rid of blaze.
 underscore
 meteorhacks:picker
 fourseven:scss
 fortawesome:fontawesome
-summernote:summernote
+summernote:summernote    # TODO: This package has bootstrap included. However we have npm version bootstrap.
 onokumus:metismenu
 webpack:webpack
 webpack:react
