@@ -2,7 +2,7 @@ import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
 import {Accounts} from 'meteor/accounts-base';
 
-export default (context) => {
+export default ({ Roles }) => {
   Accounts.emailTemplates.siteName = "Maodou";
   Accounts.emailTemplates.from = "Maodou <dev@maodou.io>";
   Accounts.urls.enrollAccount = (token) => {
@@ -38,7 +38,30 @@ Maodou team
         }
       });
 
+      // Use this line instead?
+      // Accounts.addEmail(Meteor.userId(), email, false);
+
       Accounts.sendEnrollmentEmail(Meteor.userId(), email);
+    },
+    'users.register'(data) {
+      check(data, Object);
+      let userId;
+      try {
+        userId = Accounts.createUser({
+          email: data.email,
+          password: data.password,
+          profile: {}
+        });
+      } catch (err) {
+        throw new Meteor.Error(400, err.message);
+      }
+      Roles.addUsersToRoles(userId, ['user']);
+      try {
+        Accounts.sendVerificationEmail(userId, data.email);
+      } catch (e) {
+        Meteor.users.remove(userId);
+        throw new Meteor.Error(400, 'Couldn\'t send verify email');
+      }
     }
   });
 };
