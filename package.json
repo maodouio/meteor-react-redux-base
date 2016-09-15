@@ -5,6 +5,7 @@
     "start": "meteor run"
   },
   "dependencies": {
+    "bcrypt": "^0.8.7",
     "bootstrap-sass": "^3.3.7",
     "express": "^4.14.0",
     "i18n-react": "^0.3.0",
@@ -12,6 +13,7 @@
     "meteor-node-stubs": "~0.2.0",
     "pixeden-stroke-7-icon": "^1.2.3",
     "qiniu": "git+https://github.com/seanjsong/nodejs-sdk.v6.git",
+    "qiniu-js": "^1.0.14-beta",
     "react": "^15.3.1",
     "react-addons-pure-render-mixin": "^15.0.0",
     "react-dom": "^15.3.1",
