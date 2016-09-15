@@ -18,6 +18,13 @@ export default (props) => {
               }
             </select>
           </div>
+          <div id="upload-container">
+            <a className="btn btn-default btn-lg " id="pickfiles">
+              <i className="glyphicon glyphicon-plus" />
+              <span>选择文件</span>
+            </a>
+          </div>
+          <img src={props.coverUrl || ''} alt="post cover" />
           <br/>
           <input className="form-control" type="text" placeholder="title" name="title" />
           <br />

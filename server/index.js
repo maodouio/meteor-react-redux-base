@@ -13,7 +13,11 @@ export default {
   publications,
   methods,
   init(context) {
-    const { Collections } = context;
+    const { Collections, Qiniu, privateConfigs } = context;
+    Qiniu.conf.ACCESS_KEY = privateConfigs.core.qiniu.ACCESS_KEY;
+    Qiniu.conf.SECRET_KEY = privateConfigs.core.qiniu.SECRET_KEY;
+    Qiniu.conf.BUCKET_NAME = privateConfigs.core.qiniu.BUCKET_NAME;
+    Qiniu.conf.DOMAIN_NAME = privateConfigs.core.qiniu.DOMAIN_NAME;
     if (!Collections.Packages.findOne({ name: 'core' })) {
       Collections.Packages.insert({
         name: 'core',
