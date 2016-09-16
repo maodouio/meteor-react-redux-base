@@ -5,7 +5,7 @@ export default (props) => {
     <div className="row">
       <div className="col-sm-12">
         <h1>Add Post</h1>
-        <form onSubmit={props.addPost}>
+        <form onSubmit={props.submitNewPost}>
           <div className="form-group">
             <label htmlFor="select-category">选择分类</label>
             <select id="select-category" className="form-control" name="category">

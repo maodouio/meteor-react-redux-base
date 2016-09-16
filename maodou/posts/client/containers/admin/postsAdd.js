@@ -1,6 +1,5 @@
 import { useDeps } from 'react-simple-di';
 import { compose, withHandlers, withTracker, withRedux, withLifecycle, composeAll } from 'react-komposer-plus';
-import { browserHistory } from 'react-router'
 import 'client/lib/plupload/js/moxie';
 import 'client/lib/plupload/js/plupload.dev.js';
 import 'qiniu-js/dist/qiniu.min';
@@ -8,21 +7,12 @@ import 'qiniu-js/dist/qiniu.min';
 import PostsAdd from '../../components/admin/postsAdd';
 
 const userEvents = {
-  addPost({ context, coverUrl }, event) {
+  submitNewPost({ context, coverUrl, addPost }, event) {
     event.preventDefault();
     const category = event.target.category.value;
     const title = event.target.title.value;
     const content = $('#editor').summernote('code');
-    if (!coverUrl) {
-      return alert('need cover image');
-    }
-    context.Meteor.call('posts.add', category, coverUrl, title, content, (err) => {
-      if (err) {
-        alert(err.message);
-      } else {
-        browserHistory.push('/admin/posts/list');
-      }
-    });
+    context.dispatch(addPost(category, coverUrl, title, content));
   }
 };
 
@@ -131,7 +121,8 @@ const depsToProps = (context, actions) => ({
   context,
   qiniuDomain: context.configs.core.qiniu.DOMAIN_NAME,
   dispatch: context.dispatch,
-  addCover: actions.posts.addCover
+  addCover: actions.posts.addCover,
+  addPost: actions.posts.addPost
 });
 
 export default composeAll(

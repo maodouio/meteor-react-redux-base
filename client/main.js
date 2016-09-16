@@ -1,6 +1,7 @@
 import 'bootstrap-sass';
 import App from './lib/app';
 
+import thunk from 'redux-thunk';
 import createContext from './context';
 import collectionsMiddleware from '../lib/middlewares/collections';
 import reduxMiddleware from './lib/middlewares/redux';
@@ -20,7 +21,9 @@ export const app = new App(context);
 
 app.loadMiddlewares([
   collectionsMiddleware(),
-  reduxMiddleware({}),
+  reduxMiddleware({
+    middlewares: [thunk]
+  }),
   configMiddleware,
   i18nMiddleware(['enUS', 'zhCN'])
 ]);
