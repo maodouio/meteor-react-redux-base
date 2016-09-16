@@ -28,7 +28,7 @@ export default (props) => {
                     <div className="panel-body">
                       <Link to={`/post/${post._id}`}>
                         <h4>[{post.category}] {post.title}</h4>
-                        <p>{post.content}</p>
+                        <p>{post.plainContent}</p>
                       </Link>
                     </div>
                     <div className="panel-footer">
