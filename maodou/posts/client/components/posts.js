@@ -27,6 +27,9 @@ export default (props) => {
                       </div>
                     </div>
                     <div className="panel-body">
+                      <div className="pull-left cover-img-wrapper">
+                        <img style={{ width: '100%' }} src={post.coverUrl} alt="cover picture"/>
+                      </div>
                       <Link to={`/post/${post._id}`}>
                         <h4>[{post.category}] {post.title}</h4>
                         <p>{post.plainContent}</p>

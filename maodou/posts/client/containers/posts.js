@@ -3,28 +3,37 @@ import { compose, withHandlers, withTracker, withRedux, composeAll } from 'react
 
 import Posts from '../components/posts';
 
-const initData = ({ context }, onData) => {
-  const { Meteor } = context;
-  Meteor.call('posts.get', (err, posts) => {
+const userEvents = {
+  deletePost({ context }, id, event)  {
+    event.preventDefault();
+    context.Meteor.call('posts.delete', id, (err) => {
+      if (err) {
+        alert(err.message);
+      }
+    });
+  }
+};
+
+const subscription = ({ context }, onData) => {
+  const { Meteor, Collections } = context;
+  if (Meteor.subscribe('posts.list').ready()) {
+    const posts = Collections.Posts.find().fetch();
     onData(null, {
       posts: { status: 'ready', data: posts }
     });
-  });
-  onData(null, {
-    posts: { status: 'pending', data: [] }
-  });
+  } else {
+    onData(null, {
+      posts: { status: 'pending', data: [] }
+    });
+  }
 };
-
-const mapStateToProps = (state) => ({
-  // counter: state.counter
-});
 
 const depsToProps = (context, actions) => ({
   context
 });
 
 export default composeAll(
-  compose(initData),
-  withRedux(mapStateToProps),
+  withHandlers(userEvents),
+  withTracker(subscription),
   useDeps(depsToProps)
 )(Posts);
