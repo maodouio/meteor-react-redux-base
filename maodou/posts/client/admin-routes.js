@@ -1,5 +1,5 @@
 import PostsAdmin from './containers/admin';
-import PostsList from './containers/admin/postsList';
+import PostsList from './containers/posts';
 import PostsAdd from './containers/admin/postsAdd';
 import PostsCategories from './containers/admin/postsCategories';
 
