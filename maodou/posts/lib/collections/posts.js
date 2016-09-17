@@ -22,7 +22,9 @@ Posts.attachSchema(
       autoValue() {
         const content = this.field('content');
         if (content.isSet) {
-          return content.value.replace(/<\/?[^>]+(>|$)/g, "");
+          let textToSave = content.value.replace(/<\/?[^>]+(>|$)/g, '');
+          textToSave = textToSave.replace(/&nbsp;/g, ' ');
+          return textToSave;
         } else {
           this.unset();
         }

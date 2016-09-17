@@ -1,4 +1,5 @@
 import React from 'react';
+import LaddaButton from 'react-ladda';
 
 export default (props) => {
   return (
@@ -18,13 +19,15 @@ export default (props) => {
               }
             </select>
           </div>
+
           <div id="upload-container">
-            <a className="btn btn-default btn-lg " id="pickfiles">
-              <i className="glyphicon glyphicon-plus" />
-              <span>选择文件</span>
-            </a>
+            <LaddaButton className="btn btn-success" loading={false} id="pickfiles" buttonStyle="zoom-in">Choose file</LaddaButton>
           </div>
-          <img src={props.coverUrl || ''} alt="post cover" />
+          {
+            props.coverUrl ?
+              <img src={props.coverUrl} alt="post cover" /> :
+              <span />
+          }
           <br/>
           <input className="form-control" type="text" placeholder="title" name="title" />
           <br />
