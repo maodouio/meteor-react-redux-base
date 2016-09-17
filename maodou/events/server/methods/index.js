@@ -12,10 +12,16 @@ export default (context) => {
       }
       return event;
     },
-    'events.add'(title, content) {
+    'events.add'(title, coverUrl, time, location, limit, unit, fee, desc) {
       Events.insert({
         title,
-        content
+        coverUrl,
+        time,
+        location,
+        limit,
+        unit,
+        fee,
+        desc
       });
     },
     'events.delete'(id) {

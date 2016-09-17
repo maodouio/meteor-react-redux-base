@@ -8,8 +8,14 @@ const userEvents = {
   addEvent: ({ context }, event) => {
     event.preventDefault();
     const title = event.target.title.value;
-    const content = $('#editor').summernote('code');
-    context.Meteor.call('events.add', title, content, (err) => {
+    const coverUrl = 'url'; // TODO
+    const time = event.target.time.value;
+    const location = event.target.location.value;
+    const limit = event.target.limit.value;
+    const unit = event.target.unit.value;
+    const fee = event.target.fee.value;
+    const desc = $('#editor').summernote('code');
+    context.Meteor.call('events.add', title, coverUrl, time, location, limit, unit, fee, desc, (err) => {
       if (err) {
         alert(err.message);
       } else {
