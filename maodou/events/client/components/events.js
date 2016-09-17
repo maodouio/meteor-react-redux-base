@@ -28,8 +28,8 @@ export default (props) => {
                     </div>
                     <div className="panel-body">
                       <Link to={`/events/${event._id}`}>
-                        <h4>[{event.category}] {event.title}</h4>
-                        <p>{event.content}</p>
+                        <h4>{event.title}</h4>
+                        <p>{event.plainDesc}</p>
                       </Link>
                     </div>
                     <div className="panel-footer">

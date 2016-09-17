@@ -1,9 +1,20 @@
 import { useDeps } from 'react-simple-di';
 import { compose, withHandlers, withTracker, withRedux, composeAll } from 'react-komposer-plus';
 
-import Posts from '../components/events';
+import Events from '../components/events';
 
-const initData = ({ context }, onData) => {
+const userEvents = {
+  deleteEvent({ context }, id, event) {
+    event.preventDefault();
+    context.Meteor.call('events.delete', id, (err) => {
+      if (err) {
+        alert(err.message);
+      }
+    });
+  }
+};
+
+const subscription = ({ context }, onData) => {
   const { Meteor, Collections } = context;
   if (Meteor.subscribe('events.list').ready()) {
     const events = Collections.Events.find().fetch();
@@ -17,16 +28,12 @@ const initData = ({ context }, onData) => {
   }
 };
 
-const mapStateToProps = (state) => ({
-  // counter: state.counter
-});
-
 const depsToProps = (context, actions) => ({
   context
 });
 
 export default composeAll(
-  withTracker(initData),
-  withRedux(mapStateToProps),
+  withHandlers(userEvents),
+  withTracker(subscription),
   useDeps(depsToProps)
-)(Posts);
+)(Events);
