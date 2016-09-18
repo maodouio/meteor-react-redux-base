@@ -4,3 +4,6 @@
 [submodule "maodou/events"]
 	path = maodou/events
 	url = git@github.com:maodouio/maodou-events.git
+[submodule "maodou/wechat"]
+	path = maodou/wechat
+	url = git@github.com:maodouio/maodou-wechat.git
