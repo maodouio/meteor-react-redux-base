@@ -15,8 +15,8 @@ export default (props) => (
       </div>
       <div id="navbar" className="navbar-collapse navbar-left collapse">
         <ul className="nav navbar-nav">
-          <li><Link to="/posts">Posts</Link></li>
-          <li><Link to="/events">Events</Link></li>
+          {/*<li><Link to="/posts">Posts</Link></li>*/}
+          {/*<li><Link to="/events">Events</Link></li>*/}
           <li><Link to="/admin">Admin</Link></li>
         </ul>
       </div>

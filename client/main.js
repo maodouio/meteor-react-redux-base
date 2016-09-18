@@ -9,9 +9,6 @@ import configMiddleware from '../lib/middlewares/configs';
 import i18nMiddleware from './lib/middlewares/i18n';
 
 import coreModule from './';
-import postsModule from 'maodou/posts/client';
-import eventsModule from 'maodou/events/client';
-import wechatModule from 'maodou/wechat/client';
 
 import { render } from 'react-dom';
 import { Router, browserHistory } from 'react-router'
@@ -29,9 +26,6 @@ app.loadMiddlewares([
 ]);
 
 app.loadModule(coreModule);
-app.loadModule(postsModule);
-app.loadModule(eventsModule);
-app.loadModule(wechatModule);
 
 app.init();
 
