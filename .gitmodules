@@ -1,0 +1,3 @@
+[submodule "maodou/posts"]
+	path = maodou/posts
+	url = git@github.com:maodouio/maodou-posts.git
