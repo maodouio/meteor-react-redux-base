@@ -12,6 +12,7 @@
     "ladda": "^1.0.0",
     "lodash": "^4.15.0",
     "meteor-node-stubs": "~0.2.0",
+    "moment": "^2.15.0",
     "pixeden-stroke-7-icon": "^1.2.3",
     "qiniu": "git+https://github.com/seanjsong/nodejs-sdk.v6.git",
     "qiniu-js": "^1.0.14-beta",
