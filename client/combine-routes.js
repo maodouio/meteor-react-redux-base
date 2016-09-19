@@ -5,7 +5,7 @@ import Home from './containers/home';
 import ResetPassword from './containers/users/reset-password';
 import ErrorPage from './components/common/errorPage';
 import Layout from './containers/layout';
-import AdminLayout from './components/admin/layout';
+import AdminLayout from './containers/admin/layout';
 import Register from './containers/users/register';
 
 export default function (routes, injectDeps, context) {

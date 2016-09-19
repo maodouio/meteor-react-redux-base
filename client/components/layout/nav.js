@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 
 export default (props) => (
-  <nav className="navbar navbar-default">
+  <nav className="navbar navbar-default navbar-fixed-top">
     <div className="container">
       <div className="navbar-header">
         <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" className="navbar-toggle collapsed" type="button">

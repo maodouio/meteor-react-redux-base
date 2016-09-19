@@ -6,7 +6,7 @@ export default ({ Meteor, Collections }) => {
     return Packages.find({ name: 'core' });
   });
 
-  Meteor.publish('core.configs.admin', function () {
+  Meteor.publish('core.configs', function () {
     return Packages.find({ name: 'core' });
   });
 }
