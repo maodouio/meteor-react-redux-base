@@ -21,7 +21,12 @@ const lifecycle = {
 
 const subscriptions = ({ context }, onData) => {
   const { Meteor, Collections } = context;
-  onData(null, {});
+  const corePkg = Collections.Packages.findOne({ name: 'core' });
+  if (corePkg) {
+    onData(null, { appName: corePkg.configs.appName });
+  } else {
+    onData(null, {});
+  }
 };
 
 const mapStateToProps = (state) => ({
@@ -30,7 +35,6 @@ const mapStateToProps = (state) => ({
 
 const depsToProps = (context, actions) => ({
   context,
-  appName: context.configs.core.appName,
   setLanguage: actions.core.setLanguage
 });
 

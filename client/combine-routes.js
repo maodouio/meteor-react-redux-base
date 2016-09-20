@@ -22,7 +22,7 @@ export default function (routes, injectDeps, context) {
 
       getChildRoutes(nextState, cb) {
         require.ensure([], (require) => {
-          let routes = [{path: 'core', component: require('./components/admin')}];
+          let routes = [{path: 'core', component: require('./containers/admin')}];
 
           routes = routes.concat(_.flatten(aggregate['/admin'].map(module =>
             require.context('../maodou', true, /^.*admin-routes$/)(`./${module}/client/admin-routes`)(injectDeps, context)

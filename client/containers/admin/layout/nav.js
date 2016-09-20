@@ -19,7 +19,12 @@ const userEvents = {
 
 const subscriptions = ({ context }, onData) => {
   const { Meteor, Collections } = context;
-  onData(null, {});
+  const corePkg = Collections.Packages.findOne({ name: 'core' });
+  if (corePkg) {
+    onData(null, { appName: corePkg.configs.appName });
+  } else {
+    onData(null, { appName: '' });
+  }
 };
 
 const mapStateToProps = (state) => ({

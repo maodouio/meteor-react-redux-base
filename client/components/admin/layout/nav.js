@@ -7,7 +7,7 @@ export default (props) => (
     </div>
     <div id="logo" className="light-version">
         <span>
-            Homer Theme
+          {props.appName}
         </span>
     </div>
     <nav role="navigation">
