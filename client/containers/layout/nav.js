@@ -30,6 +30,7 @@ const mapStateToProps = (state) => ({
 
 const depsToProps = (context, actions) => ({
   context,
+  appName: context.configs.core.appName,
   setLanguage: actions.core.setLanguage
 });
 

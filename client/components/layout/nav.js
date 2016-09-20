@@ -11,7 +11,7 @@ export default (props) => (
           <span className="icon-bar" />
           <span className="icon-bar" />
         </button>
-        <Link to="/" className="navbar-brand">My App</Link>
+        <Link to="/" className="navbar-brand">{props.appName}</Link>
       </div>
       <div id="navbar" className="navbar-collapse navbar-left collapse">
         <ul className="nav navbar-nav">
