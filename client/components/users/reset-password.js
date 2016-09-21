@@ -9,7 +9,7 @@ export default class extends React.Component {
 
   onSubmit(e) {
     e.preventDefault();
-    this.setState({uiState: 'SENDING'});
+    this.setState({uiState: 'SENDING'});console.log(this._input.value);
     this.props.resetPassword(this._input.value, (err) => {
       if (err) {
         console.log(err);
@@ -21,8 +21,8 @@ export default class extends React.Component {
   }
 
   render() {
-    if (this.state.uiState === 'SENDING') return <div>正在设置密码...</div>;
-    if (this.state.uiState === 'SUCCESS') return <div>密码设置成功</div>;
+    if (this.state.uiState === 'SENDING') return <div style={{marginTop: 60, marginLeft: 10}}>正在设置密码...</div>;
+    if (this.state.uiState === 'SUCCESS') return <div style={{marginTop: 60, marginLeft: 10}}>密码设置成功</div>;
 
     return (
       <form style={{marginTop: 60, marginLeft: 10}} onSubmit={this.onSubmit}>

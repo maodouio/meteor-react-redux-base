@@ -40,7 +40,7 @@ export default function (routes, injectDeps, context) {
       childRoutes: [
         { path: '/register', component: () => <Register /> },
         {path: '401', component: () => <ErrorPage code="401" info="Unauthorized" />},
-        {path: 'reset-password/:token', component: () => <ResetPassword />},
+        {path: 'reset-password/:token', component: (props) => <ResetPassword token={props.params.token} />},
         ...aggregate['/'],
         {path: '*', component: () => <ErrorPage code="404" info="Page Not Found" />}
       ]
