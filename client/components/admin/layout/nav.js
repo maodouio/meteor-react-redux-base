@@ -13,7 +13,7 @@ export default (props) => (
     <nav role="navigation">
       <Link to="#" className="header-link hide-menu" onClick={(e) => props.sidebar(e)}><i className="fa fa-bars" /></Link>
       <div className="small-logo">
-        <span className="text-primary">HOMER APP</span>
+        <span className="text-primary">{props.appName}</span>
       </div>
       <div className="mobile-menu">
         <button type="button" className="navbar-toggle mobile-menu-toggle" data-toggle="collapse" data-target="#mobile-collapse">
@@ -28,7 +28,7 @@ export default (props) => (
               <Link to="#" className="" >Logout</Link>
             </li>
             <li>
-              <Link className="" to="/">Main Site</Link>
+              <Link className="" to="/">回到主页</Link>
             </li>
           </ul>
         </div>
