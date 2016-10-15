@@ -1,0 +1,28 @@
+{
+  "public": {
+    "core": {
+      "appName": "MyApp测试",
+      "appLogo": "/images/logo.png",
+      "ownerEmail": "app@example.com"
+    },
+    "posts": {
+      "showType": "list",
+      "categories": ["cate1", "cate2", "cate3"],
+      "UI": {
+        "categoriesPosition": "top"
+      }
+    },
+    "wechat": {
+      "appId": ""
+    }
+  },
+  "core": {
+    "qiniu": {
+      "ACCESS_KEY": "",
+      "SECRET_KEY": ""
+    }
+  },
+  "wechat": {
+    "appSecret": ""
+  }
+}                                                                         
