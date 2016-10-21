@@ -1,7 +1,7 @@
 {
   "public": {
     "core": {
-      "appName": "MyApp测试",
+      "appName": "创投加速器",
       "appLogo": "/images/logo.png",
       "ownerEmail": "app@example.com"
     },
@@ -25,4 +25,4 @@
   "wechat": {
     "appSecret": ""
   }
-}                                                                         
+}
