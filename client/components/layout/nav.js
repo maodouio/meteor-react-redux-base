@@ -27,7 +27,7 @@ export default (props) => (
           </a>
           <ul className="dropdown-menu" aria-labelledby="drop1">
             <li><a href="#" onClick={(e) => props.setLang(e, 'enUS')}>English</a></li>
-            <li><a href="#" onClick={(e) => props.setLang(e, 'zhCN')}>Chinese</a></li>
+            <li><a href="#" onClick={(e) => props.setLang(e, 'zhCN')}>中文</a></li>
           </ul>
         </li>
       </ul>

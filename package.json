@@ -2,7 +2,7 @@
   "name": "meteor-react-redux-base",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor --settings settings.json"
   },
   "dependencies": {
     "bcrypt": "^0.8.7",

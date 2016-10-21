@@ -22,10 +22,10 @@ export default (props) => (
         <div className="collapse mobile-navbar" id="mobile-collapse">
           <ul className="nav navbar-nav">
             <li>
-              <Link to="#" className="" >Login</Link>
+              <Link to="#" className="" >登录</Link>
             </li>
             <li>
-              <Link to="#" className="" >Logout</Link>
+              <Link to="#" className="" >退出</Link>
             </li>
             <li>
               <Link className="" to="/">回到主页</Link>
@@ -34,7 +34,7 @@ export default (props) => (
         </div>
       </div>
       <div className="navbar-right">
-        <Link to="/" className="btn btn-info" style={{margin: '10px 20px'}}>Main Site <i className="pe-7s-upload pe-rotate-90" /></Link>
+        <Link to="/" className="btn btn-info" style={{margin: '10px 20px'}}>回到主页<i className="pe-7s-upload pe-rotate-90" /></Link>
       </div>
     </nav>
   </div>
