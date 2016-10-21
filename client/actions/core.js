@@ -2,20 +2,13 @@ export default {
   setLanguage(i18n) {
     return { type: 'SET_LANGUAGE', i18n };
   },
-  saveConfigs({ Meteor, swal }, configs) {
+  saveConfigs({ Meteor, toastr }, configs) {
     return (disptch) => {
       Meteor.call('core.saveConfigs', configs, (err) => {
         if (err) {
-          swal({
-            title: "配置保存失败",
-            text: err.message,
-            type: "error"
-          });
+          toastr["error"]("配置保存失败", "Error!");
         } else {
-          swal({
-            title: "配置保存成功",
-            type: "success"
-          });
+          toastr["success"]("保存配置成功", "Success!");
         }
       });
     };
