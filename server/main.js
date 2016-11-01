@@ -9,6 +9,9 @@ import postsModule from 'maodou/posts/server';
 import eventsModule from 'maodou/events/server';
 import wechatModule from 'maodou/wechat/server';
 
+//系统变量MAIL_URL配置，暂时放在这里
+process.env.MAIL_URL = Meteor.settings.mailUrl;
+
 const context = createContext();
 const app = new App(context);
 

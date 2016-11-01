@@ -45,7 +45,8 @@ export default (props) => {
                         </div>
                       </div>
                       <div className="panel-footer">
-                        {moment(post.createdAt).format('MM-DD-YYYY')}
+                        <span style={style.item}><i className='fa fa-user' style={style.fa}></i>Admin</span>
+                        <span><i className='fa fa-clock-o' style={style.fa}></i>{moment(post.createdAt).format('YYYY.MM.DD')}</span>
                         {/*<span className="pull-right">*/}
                         {/*<i className="fa fa-comments-o" /> 22 <T.text text={{ key: 'comments' }} />*/}
                         {/*</span>*/}
@@ -54,7 +55,7 @@ export default (props) => {
                     </div>
                   </div>
                 ) :
-                <div>no post</div> :
+                <div>抱歉，目前还没有文章！</div> :
               <Loading />
           }
         </div>
@@ -66,4 +67,13 @@ export default (props) => {
       }
     </div>
   );
+}
+
+let style = {
+  item: {
+    marginRight: '40px'
+  },
+  fa: {
+    marginRight: '5px'
+  }
 }
