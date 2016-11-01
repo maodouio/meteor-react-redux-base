@@ -13,8 +13,8 @@ export default (props) => {
                 <div className="panel-heading">
                   <h4>{props.event.title}</h4>
                   <div className="text-muted small">
-                    Created by: <span className="font-bold">Admin</span>&nbsp;
-                    {moment(props.event.createdAt).format('YYYY-MM-DD')}
+                    作者：<span className="font-bold">Admin</span>&nbsp;
+                    日期：{moment(props.event.createdAt).format('YYYY-MM-DD')}
                   </div>
                   <br />
                   <p>时间：{moment(props.event.time).format('YYYY-MM-DD')}</p>

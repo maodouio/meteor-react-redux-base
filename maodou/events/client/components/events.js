@@ -32,19 +32,19 @@ export default (props) => {
                       </div>
                       <Link to={`/events/${event._id}`}>
                         <h4>{event.title}</h4>
-                        {/*<p>{event.plainDesc}</p>*/}
+                        <p className="event-desc">{event.plainDesc}</p>
                       </Link>
                     </div>
                     <div className="panel-footer">
                     <span className="pull-right">
-                      Fee: {event.unit === 'dollar' ? '$' : '¥'} {event.fee}
+                      费用: {event.unit === 'dollar' ? '$' : '¥'} {event.fee}
                     </span>
-                      {moment(event.time).format('MM-DD-YYYY')} | {event.location}
+                      <i className='fa fa-clock-o'></i>{ moment(event.time).format('YYYY-MM-DD')} | <i className='fa fa-location-arrow'></i>{event.location}
                     </div>
                   </div>
                 </div>
               ) :
-              <div>no events</div> :
+              <div>抱歉，目前还没有活动！</div> :
             <Loading />
         }
       </div>
