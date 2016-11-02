@@ -12,7 +12,6 @@ Then, follow these commands in your console
 >
 $ git clone https://github.com/maodouio/meteor-react-redux-base.git  
 $ cd meteor-react-redux-base/  
-$ git submodule update --init  
 $ npm install  
 $ meteor --settings settings.json  
 
