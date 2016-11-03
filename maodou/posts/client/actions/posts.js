@@ -16,12 +16,19 @@ export default {
       const category = event.target.category.value;
       const title = event.target.title.value;
       const content = $('#editor').summernote('code');
-      if (!coverUrl) {
-        return alert('need cover image');
-      }
+      // if (!coverUrl) {
+      //   toastr["error"]("请先添加图片", "Error!");
+      // }
       Meteor.call('posts.add', category, coverUrl, title, content, (err) => {
         if (err) {
-          toastr["error"]("发布失败", "Error!");
+          console.log(err);
+          if (err.reason === "Title is required") {
+            toastr["error"]("发布失败，请先添加标题", "Error!");
+          } else if (err.reason === "Cover url is required") {
+            toastr["error"]("发布失败，请先添加封面图片", "Error!");
+          } else {
+            toastr["error"]("发布失败", "Error!");
+          }
         } else {
           swal({
             title: '发布成功',

@@ -21,18 +21,18 @@ export default (props) => {
           </div>
 
           <div id="upload-container">
-            <LaddaButton className="btn btn-success" loading={false} id="pickfiles" buttonStyle="zoom-in">上传封面</LaddaButton>
+            <a className="btn btn-success" id="pickfiles" href="#">上传封面</a>
           </div>
-          {
-            props.coverUrl ?
+          <div className="post-coverImg">
+            { props.coverUrl ?
               <img src={props.coverUrl} alt="post cover" /> :
-              <span />
-          }
-          <br/>
+              <p>{/*正在上传，请稍候... */}</p>
+            }
+          </div>
           <input className="form-control" type="text" placeholder="标题" name="title" />
           <br />
           <div id="editor" />
-          <button className="btn btn-default" type="submit">发布</button>
+          <button className="btn btn-success" type="submit">发布</button>
         </form>
       </div>
     </div>
