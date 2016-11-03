@@ -17,6 +17,14 @@
   height: 150px;
 }
 
+.post-coverImg {
+  margin: 10px;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 .posts-tab {
   z-index: 1;
   position: fixed;

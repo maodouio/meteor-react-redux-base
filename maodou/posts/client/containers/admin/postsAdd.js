@@ -14,6 +14,10 @@ const lifeCycle = {
     $('#editor').summernote({
       height: 250
     });
+
+    // 再次添加新文章时，图片已经存在，未解决
+    dispatch(addCover(''));
+
     Meteor.call('files.token', function(err, token) {
       if (err) {
         alert('Failed to get token');
