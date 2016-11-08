@@ -1,8 +1,7 @@
 import React from 'react';
-import LaddaButton from 'react-ladda';
+// import LaddaButton from 'react-ladda';
 
 export default (props) => {
-  console.log(props);
   return (
     <div className="admin-package-wrapper row">
       <div className="col-sm-12">
@@ -25,10 +24,11 @@ export default (props) => {
             <a className="btn btn-success" id="pickfiles" href="#">上传封面</a>
           </div>
           <div className="post-coverImg">
+            { props.state.beginUpload ? <p>正在上传，请稍候...</p> : <span /> }
+            { props.state.fileUploaded ? <p>图片上传完成．</p> : <span /> }
             { props.coverUrl ?
               <img src={props.coverUrl} alt="post cover" /> : <span />
             }
-            { props.state.beginUpload ? <p>正在上传，请稍候...</p> : <span /> }
           </div>
           <input className="form-control" type="text" placeholder="标题" name="title" />
           <br />

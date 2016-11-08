@@ -7,23 +7,16 @@ import 'qiniu-js/dist/qiniu.min';
 import PostsAdd from '../../components/admin/postsAdd';
 
 const lifeCycle = {
-  componentWillMount() {
-    const dispatch = this.props.dispatch;
-    const addCover = this.props.addCover;
-    console.log('componentWillMount');
+  // 离开页面时，清除图片url地址
+  componentWillUnmount() {
+    const {dispatch, addCover} = this.props;
     dispatch(addCover(''));
   },
   componentDidMount() {
-    const qiniuDomain = this.props.qiniuDomain;
-    const dispatch = this.props.dispatch;
-    const addCover = this.props.addCover;
-    const setState = this.props.setState;
+    const {qiniuDomain, dispatch, addCover, setState} = this.props;
     $('#editor').summernote({
       height: 250
     });
-
-    // 再次添加新文章时，图片已经存在，未解决
-    dispatch(addCover(''));
 
     Meteor.call('files.token', function(err, token) {
       if (err) {
@@ -70,7 +63,7 @@ const lifeCycle = {
             'BeforeUpload': function(up, file) {
               // 每个文件上传前,处理相关的事情
               console.log('img begin to upload!');
-              setState({ beginUpload: true});
+              setState({ beginUpload: true, fileUploaded: false});
             },
             'UploadProgress': function(up, file) {
               // 每个文件上传时,处理相关的事情
@@ -83,7 +76,8 @@ const lifeCycle = {
               //    "key": "gogopher.jpg"
               //  }
               // 参考http://developer.qiniu.com/docs/v6/api/overview/up/response/simple-response.html
-              setState({ beginUpload: false});
+              setState({ beginUpload: false, fileUploaded: true});
+
               const domain = up.getOption('domain');
               const sourceLink = domain + JSON.parse(info).key; //获取上传成功后的文件的Url
               dispatch(addCover(sourceLink));
@@ -93,6 +87,7 @@ const lifeCycle = {
             },
             'UploadComplete': function() {
               //队列文件处理完毕后,处理相关的事情
+              setState({ beginUpload: false, fileUploaded: false});
             },
             // 'Key': function(up, file) {
             //   // 若想在前端对每个文件的key进行个性化处理，可以配置该函数
@@ -122,6 +117,7 @@ const mapStateToProps = (state)=> ({
 
 const state = () => ({
   beginUpload: false,
+  fileUploaded: false,
 });
 
 const depsToProps = (context, actions) => ({
