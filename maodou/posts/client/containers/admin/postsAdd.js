@@ -1,5 +1,5 @@
 import { useDeps } from 'react-simple-di';
-import { compose, withHandlers, withTracker, withRedux, withLifecycle, composeAll } from 'react-komposer-plus';
+import { compose, withHandlers, withTracker, withState, withRedux, withLifecycle, composeAll } from 'react-komposer-plus';
 import 'client/lib/plupload/js/moxie';
 import 'client/lib/plupload/js/plupload.dev.js';
 import 'qiniu-js/dist/qiniu.min';
@@ -7,10 +7,17 @@ import 'qiniu-js/dist/qiniu.min';
 import PostsAdd from '../../components/admin/postsAdd';
 
 const lifeCycle = {
+  componentWillMount() {
+    const dispatch = this.props.dispatch;
+    const addCover = this.props.addCover;
+    console.log('componentWillMount');
+    dispatch(addCover(''));
+  },
   componentDidMount() {
     const qiniuDomain = this.props.qiniuDomain;
     const dispatch = this.props.dispatch;
     const addCover = this.props.addCover;
+    const setState = this.props.setState;
     $('#editor').summernote({
       height: 250
     });
@@ -20,7 +27,7 @@ const lifeCycle = {
 
     Meteor.call('files.token', function(err, token) {
       if (err) {
-        alert('Failed to get token');
+        alert('初始化图片上传组件失败');
       } else {
         var uploader = Qiniu.uploader({
           runtimes: 'html5,flash,html4',    //上传模式,依次退化
@@ -62,6 +69,8 @@ const lifeCycle = {
             },
             'BeforeUpload': function(up, file) {
               // 每个文件上传前,处理相关的事情
+              console.log('img begin to upload!');
+              setState({ beginUpload: true});
             },
             'UploadProgress': function(up, file) {
               // 每个文件上传时,处理相关的事情
@@ -74,9 +83,9 @@ const lifeCycle = {
               //    "key": "gogopher.jpg"
               //  }
               // 参考http://developer.qiniu.com/docs/v6/api/overview/up/response/simple-response.html
+              setState({ beginUpload: false});
               const domain = up.getOption('domain');
               const sourceLink = domain + JSON.parse(info).key; //获取上传成功后的文件的Url
-
               dispatch(addCover(sourceLink));
             },
             'Error': function(up, err, errTip) {
@@ -111,6 +120,10 @@ const mapStateToProps = (state)=> ({
   coverUrl: state.postTmpCover
 });
 
+const state = () => ({
+  beginUpload: false,
+});
+
 const depsToProps = (context, actions) => ({
   context,
   dispatch: context.dispatch,
@@ -122,6 +135,7 @@ const depsToProps = (context, actions) => ({
 export default composeAll(
   withLifecycle(lifeCycle),
   withTracker(data),
+  withState(state),
   withRedux(mapStateToProps),
   useDeps(depsToProps)
 )(PostsAdd);

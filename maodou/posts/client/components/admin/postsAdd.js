@@ -2,6 +2,7 @@ import React from 'react';
 import LaddaButton from 'react-ladda';
 
 export default (props) => {
+  console.log(props);
   return (
     <div className="admin-package-wrapper row">
       <div className="col-sm-12">
@@ -25,9 +26,9 @@ export default (props) => {
           </div>
           <div className="post-coverImg">
             { props.coverUrl ?
-              <img src={props.coverUrl} alt="post cover" /> :
-              <p>{/*正在上传，请稍候... */}</p>
+              <img src={props.coverUrl} alt="post cover" /> : <span />
             }
+            { props.state.beginUpload ? <p>正在上传，请稍候...</p> : <span /> }
           </div>
           <input className="form-control" type="text" placeholder="标题" name="title" />
           <br />
