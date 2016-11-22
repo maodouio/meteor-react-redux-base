@@ -30,7 +30,9 @@ export default (props) => {
               <img src={`${props.coverUrl}?imageView2/2/w/600/h/300/interlace/0/q/100`} alt="post cover" /> : <span />
             }
           </div>
-          <input className="form-control" type="text" placeholder="标题" name="title" />
+          <input className="form-control" type="text" placeholder="添加文章标题" name="title" />
+          <br />
+          <input className="form-control" type="text" placeholder="文章作者或者文章来源" name="author" />
           <br />
           <div id="editor" />
           <button className="btn btn-success" type="submit">发布</button>

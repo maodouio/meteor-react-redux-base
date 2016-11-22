@@ -1,7 +1,7 @@
 import { useDeps } from 'react-simple-di';
 import { compose, withTracker, withRedux, composeAll } from 'react-komposer-plus';
 
-import PostsCategories from '../../components/admin/postsCategories';
+import PostsConfigure from '../../components/admin/postsConfigure';
 
 const data = ({ context }, onData) => {
   const { Collections } = context;
@@ -28,4 +28,4 @@ const depsToProps = (context, actions) => ({
 export default composeAll(
   withTracker(data),
   useDeps(depsToProps)
-)(PostsCategories);
+)(PostsConfigure);

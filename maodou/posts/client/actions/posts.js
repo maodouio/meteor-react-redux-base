@@ -15,19 +15,34 @@ export default {
       event.preventDefault();
       const category = event.target.category.value;
       const title = event.target.title.value;
+      const author = event.target.author.value;
       const content = $('#editor').summernote('code');
       // if (!coverUrl) {
       //   toastr["error"]("请先添加图片", "Error!");
       // }
-      Meteor.call('posts.add', category, coverUrl, title, content, (err) => {
+      Meteor.call('posts.add', category, coverUrl, title, author, content, (err) => {
         if (err) {
           console.log(err);
           if (err.reason === "Title is required") {
-            toastr["error"]("发布失败，请先添加标题", "Error!");
+            swal({
+              title: '发布失败，请先添加文章标题',
+              type: 'error'
+            });
           } else if (err.reason === "Cover url is required") {
-            toastr["error"]("发布失败，请先添加封面图片", "Error!");
+            swal({
+              title: '发布失败，请先添加封面图片',
+              type: 'error'
+            });
+          } else if (err.reason === "Author is required") {
+            swal({
+              title: '发布失败，请先添加文章作者',
+              type: 'error'
+            });
           } else {
-            toastr["error"]("发布失败", "Error!");
+            swal({
+              title: '发布失败',
+              type: 'error'
+            });
           }
         } else {
           swal({
@@ -44,12 +59,28 @@ export default {
   addCover(context, url) {
     return { type: 'ADD_POST_COVER', url };
   },
-  deletePost({ Meteor }, post, id) {
+  deletePost({ Meteor, swal, toastr }, event, id) {
     return ()=> {
       event.preventDefault();
-      Meteor.call('post.delete', id, (err) => {
-        if (err) {
-          toastr["error"]("删除失败", "Error!");
+      swal({
+        title: '确定删除吗？',
+        text: '此操作不可撤销',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonText: '删除',
+        cancelButtonText: '取消'
+      }).then( () => {
+        Meteor.call('posts.delete', id, (err) => {
+          if (err) {
+            console.log(err);
+            toastr["error"]("删除失败", "Error!");
+          } else {
+            toastr["success"]("删除成功", "Error!");
+          }
+        });
+      }, (dismiss) => {
+        if (dismiss === 'cancel') {
+          console.log('cancel');
         }
       });
     }

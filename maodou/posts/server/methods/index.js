@@ -12,11 +12,12 @@ export default (context) => {
       }
       return post;
     },
-    'posts.add'(category, coverUrl, title, content) {
+    'posts.add'(category, coverUrl, title, author, content) {
       Posts.insert({
         category,
         coverUrl,
         title,
+        author,
         content
       });
     },

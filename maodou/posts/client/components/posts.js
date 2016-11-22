@@ -45,7 +45,7 @@ export default (props) => {
                         </div>
                       </div>
                       <div className="panel-footer">
-                        <span style={style.item}><i className='fa fa-user' style={style.fa}></i>Admin</span>
+                        <span style={style.item}><i className='fa fa-user' style={style.fa}></i>{post.author}</span>
                         <span><i className='fa fa-clock-o' style={style.fa}></i>{moment(post.createdAt).format('YYYY.MM.DD')}</span>
                         {/*<span className="pull-right">*/}
                         {/*<i className="fa fa-comments-o" /> 22 <T.text text={{ key: 'comments' }} />*/}

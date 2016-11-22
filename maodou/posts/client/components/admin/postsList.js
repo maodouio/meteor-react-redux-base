@@ -1,0 +1,54 @@
+import React, { Component } from 'react';
+import {Link} from 'react-router';
+import Loading from 'client/components/common/loading';
+import moment from 'moment';
+
+export default class PostsList extends Component {
+  render() {
+    const { data, status } = this.props.posts;
+    return(
+      <div className="admin-package-wrapper row">
+        <div className="col-sm-12">
+          <h1>管理文章</h1>
+          { this.props.posts.status === 'ready' ?
+            data.length > 0 ? this.renderPosts(data) : <div>抱歉，目前还没有文章！</div>
+            : <Loading />
+          }
+        </div>
+      </div>
+    );
+  }
+
+  renderPosts(posts) {
+    return (
+      <div className="table-responsive">
+      <table className="table table-striped">
+        <thead>
+          <tr style={{fontSize: '16px'}}>
+          <th>文章标题</th>
+          <th>文章分类</th>
+          <th>文章作者</th>
+          <th>发布时间</th>
+          <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          {posts.map((post, index) =>
+            <tr key={post._id} style={{fontSize: '16px'}}>
+              <td style={{lineHeight: '50px'}}><Link to={`/post/${post._id}`}>{post.title}</Link></td>
+              <td style={{lineHeight: '50px'}}>{post.category}</td>
+              <td style={{lineHeight: '50px'}}>{post.author}</td>
+              <td style={{lineHeight: '50px'}}>{moment(post.createdAt).format('YYYY-MM-DD')}</td>
+              <td style={{lineHeight: '50px'}}>
+                <button className="btn btn-danger" onClick={(e) => this.props.dispatch((this.props.deletePost(e, post._id)))}>删除</button>
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </table>
+      </div>
+    );
+  }
+}
+
+
