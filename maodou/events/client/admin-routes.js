@@ -1,5 +1,5 @@
 import EventsAdmin from './components/admin';
-import EventsList from './containers/events';
+import EventsList from './containers/admin/eventsList';
 import EventsAdd from './containers/admin/eventsAdd';
 
 export default function (injectDeps, { configs }) {

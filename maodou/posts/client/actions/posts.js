@@ -125,7 +125,7 @@ export default {
             console.log(err);
             toastr["error"]("删除失败", "Error!");
           } else {
-            toastr["success"]("删除成功", "Error!");
+            toastr["success"]("删除成功", "Success!");
           }
         });
       }, (dismiss) => {

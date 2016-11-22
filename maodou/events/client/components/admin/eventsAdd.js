@@ -14,14 +14,26 @@ export default class EventAdd extends React.Component {
     }
   }
   render() {
+    const { beginUpload, fileUploaded } = this.props.state;
+    const { dispatch, addEvent, coverUrl } = this.props;
     return (
       <div className="row">
         <div className="col-sm-12">
           <h1>新建活动</h1>
-          <form onSubmit={(e) => this.props.dispatch(this.props.addEvent(e))}>
+          <form onSubmit={(e) => dispatch(addEvent(e, coverUrl))}>
+            <div id="upload-container">
+              <a className="btn btn-success" id="pickfiles" href="#">上传封面</a>
+            </div>
+            <div className="post-coverImg">
+              { beginUpload ? <p>正在上传，请稍候...</p> : <span /> }
+              { fileUploaded ? <p>图片上传完成．</p> : <span /> }
+              { coverUrl ?
+                <img src={`${coverUrl}?imageView2/2/w/600/h/300/interlace/0/q/100`} alt="post cover" /> : <span />
+              }
+            </div>
             <div className="form-group">
               <label>活动名称</label>
-              <input className="form-control" type="text" placeholder="title" name="title" />
+              <input className="form-control" type="text" placeholder="请输入活动标题" name="title" />
             </div>
             <div className="form-group">
               <label>日期</label>
@@ -29,11 +41,11 @@ export default class EventAdd extends React.Component {
             </div>
             <div className="form-group">
               <label>地点</label>
-              <input className="form-control" type="text" placeholder="location" name="location" />
+              <input className="form-control" type="text" placeholder="请输入活动地点" name="location" />
             </div>
             <div className="form-group">
               <label>人数限制</label>
-              <input className="form-control" type="text" placeholder="limit" name="limit" />
+              <input className="form-control" type="text" placeholder="请输入活动人数限制" name="limit" />
             </div>
             <div className="row">
               <div className="col-xs-5">
@@ -50,7 +62,7 @@ export default class EventAdd extends React.Component {
                   <label>费用</label>
                   <div className="input-group m-b">
                     <span className="input-group-addon">{this.state.unit}</span>
-                    <input type="text" name="fee" className="form-control"/>
+                    <input type="text" name="fee" className="form-control" placeholder="请输入所需每人花费的费用"/>
                   </div>
                 </div>
               </div>
@@ -58,7 +70,7 @@ export default class EventAdd extends React.Component {
             <br />
             <label>活动描述</label>
             <div id="editor" />
-            <button className="btn btn-default" type="submit">Submit</button>
+            <button className="btn btn-success" type="submit">发布</button>
           </form>
         </div>
       </div>

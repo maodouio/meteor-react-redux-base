@@ -6,9 +6,9 @@ import EventsList from '../../components/admin/eventsList';
 const subscription = ({ context }, onData) => {
   const { Meteor, Collections } = context;
   if (Meteor.subscribe('events.list').ready()) {
-    const events = Collections.Events.find().fetch();
+    const data = Collections.Events.find().fetch();
     onData(null, {
-      events: { status: 'ready', data: events }
+      events: { status: 'ready', data }
     });
   } else {
     onData(null, {
@@ -18,7 +18,9 @@ const subscription = ({ context }, onData) => {
 };
 
 const depsToProps = (context, actions) => ({
-  context
+  context,
+  dispatch: context.dispatch,
+  deleteEvent: actions.events.deleteEvent
 });
 
 export default composeAll(

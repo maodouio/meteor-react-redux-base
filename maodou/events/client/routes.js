@@ -9,7 +9,7 @@ export default function (injectDeps, { configs }) {
 
     '/': [
       {path: 'events', component: Events},
-      {path: 'events/:id', component: Event}
+      {path: 'event/:id', component: Event}
     ]
   };
 

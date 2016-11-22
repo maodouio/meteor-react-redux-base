@@ -30,7 +30,7 @@ export default (props) => {
                       <div className="event-img">
                         <img src={event.coverUrl} alt="event picture"/>
                       </div>
-                      <Link to={`/events/${event._id}`}>
+                      <Link to={`/event/${event._id}`}>
                         <h4>{event.title}</h4>
                         <p className="event-desc">{event.plainDesc}</p>
                       </Link>
