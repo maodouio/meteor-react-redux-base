@@ -28,7 +28,8 @@ export default class PostsList extends Component {
           <th>文章标题</th>
           <th>文章分类</th>
           <th>文章作者</th>
-          <th>发布时间</th>
+          <th>发布日期</th>
+          <th>更新日期</th>
           <th>操作</th>
           </tr>
         </thead>
@@ -39,7 +40,9 @@ export default class PostsList extends Component {
               <td style={{lineHeight: '50px'}}>{post.category}</td>
               <td style={{lineHeight: '50px'}}>{post.author}</td>
               <td style={{lineHeight: '50px'}}>{moment(post.createdAt).format('YYYY-MM-DD')}</td>
+              <td style={{lineHeight: '50px'}}>{moment(post.updatedAt).format('YYYY-MM-DD')}</td>
               <td style={{lineHeight: '50px'}}>
+                <Link to={`/admin/posts/edit/${post._id}`} className="btn btn-success" style={{marginRight: '10px'}}>编辑</Link>
                 <button className="btn btn-danger" onClick={(e) => this.props.dispatch((this.props.deletePost(e, post._id)))}>删除</button>
               </td>
             </tr>

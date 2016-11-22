@@ -56,6 +56,56 @@ export default {
       });
     }
   },
+  updatePost({ Meteor, swal, toastr }, event, id, coverUrl) {
+    return () => {
+      event.preventDefault();
+      const category = event.target.category.value;
+      const title = event.target.title.value;
+      const author = event.target.author.value;
+      const content = $('#editor').summernote('code');
+      const postData = {
+        category,
+        title,
+        coverUrl,
+        author,
+        content
+      };
+      Meteor.call('posts.edit', id, postData, (err) => {
+        if (err) {
+          console.log(err);
+          if (err.reason === "Title is required") {
+            swal({
+              title: '发布失败，请先添加文章标题',
+              type: 'error'
+            });
+          } else if (err.reason === "Cover url is required") {
+            swal({
+              title: '发布失败，请先添加封面图片',
+              type: 'error'
+            });
+          } else if (err.reason === "Author is required") {
+            swal({
+              title: '发布失败，请先添加文章作者',
+              type: 'error'
+            });
+          } else {
+            swal({
+              title: '发布失败',
+              type: 'error'
+            });
+          }
+        } else {
+          swal({
+            title: '编辑文章成功',
+            type: 'success',
+            onClose() {
+              browserHistory.push('/admin/posts/list');
+            }
+          });
+        }
+      });
+    }
+  },
   addCover(context, url) {
     return { type: 'ADD_POST_COVER', url };
   },

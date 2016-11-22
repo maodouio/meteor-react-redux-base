@@ -1,5 +1,6 @@
 import PostsAdmin from './components/admin';
 import PostsList from './containers/admin/postsList';
+import PostsEdit from './containers/admin/postsEdit';
 import PostsAdd from './containers/admin/postsAdd';
 import PostsConfigure from './containers/admin/postsConfigure';
 
@@ -12,7 +13,8 @@ export default function (injectDeps, { configs }) {
   const subMenuComponents = [
     PostsList,
     PostsAdd,
-    PostsConfigure
+    PostsEdit,
+    PostsConfigure,
   ];
   subMenu.map((menu, index) => {
     routes[0].childRoutes.push({

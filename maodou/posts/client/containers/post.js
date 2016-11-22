@@ -11,8 +11,8 @@ const initData = ({ context, params }, onData) => {
     if (err) {
       if (err.error === '404'){
         swal({
-          title: "Post Not Found",
-          text: "Jumping to post list",
+          title: "文章没有找到",
+          text: "返回原来页面",
           type: "error"
         });
         browserHistory.push('/posts');

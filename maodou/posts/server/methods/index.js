@@ -12,6 +12,9 @@ export default (context) => {
       }
       return post;
     },
+    'posts.edit'(id, postData) {
+      Posts.update(id, { $set: postData});
+    },
     'posts.add'(category, coverUrl, title, author, content) {
       Posts.insert({
         category,

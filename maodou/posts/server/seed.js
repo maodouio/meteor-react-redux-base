@@ -3,7 +3,7 @@ export default {
     title: '为什么产业升级和双创对现在的中国如此重要？',
     category: '初创公司',
     author: 'Admin',
-    coverUrl: 'http://odhge55gv.bkt.clouddn.com/base/base-post-pic1.jpg?imageView2/2/w/200/h/150/interlace/0/q/100',
+    coverUrl: 'http://odhge55gv.bkt.clouddn.com/base/base-post-pic1.jpg',
     content: `<p>10月9日，第八届“北京大学企业家论坛——中国创业者2016峰会暨北京大学全球大学生创新创业中心落成仪式”在北大百周年纪念讲堂隆重举行。</p>
           <p>经济学泰斗厉以宁、新东方教育集团董事长俞敏洪、北京大学校长林建华、李宁公司创始人李宁......可谓大咖云集。</p>
           <p>高峰对话环节，作为嘉宾主持，创业邦CEO兼出版人南立新与北京大学高新区战略发展研究院院长武常岐、招商局金融集团总经理苏敏、北科建集团董事长郭莹辉、腾讯集团副总裁马斌、中国航天科工集团培训中心副主任翟昱涛等就“产业升级与创新创业”“青年创业离不开大学生创业”等话题进行了深入探讨。</p>
@@ -76,7 +76,7 @@ export default {
     title: '消费升级 | 准备挖消费升级这桶金？',
     category: '创业学院',
     author: 'Admin',
-    coverUrl: 'http://odhge55gv.bkt.clouddn.com/base/base-post-pic2.png?imageView2/2/w/200/h/150/interlace/0/q/100',
+    coverUrl: 'http://odhge55gv.bkt.clouddn.com/base/base-post-pic2.png',
     content: `<p>经过资本寒冬的洗礼，今年上半年成为各类创业项目由资本热捧走向理性的过渡期。消费升级、SaaS服务无疑是2016年最受投资人和创业者关注的两个关键词。SaaS服务的火热景象，在7月5号品途举办的“2016ESIC企业服务创新大会”上投资人和创业者都已现身说法。但对于消费升级，升级什么、什么算升级似乎还都是说不清道不明的问题。在消费升级成为创业者BP必备关键词的时候，人们对于它的误解也不少。有人总结了现在对于消费升级普遍的三个误解：</p>
           <h4>一、对于消费升级的三大误解：买越贵、买有名、买奢品</h4>
           <p>花点时间创始人兼CEO花怡太撰文称，有些人认为过去买一支牙膏20元，现在买40元的，就是消费升级。错，这是对于消费升级的典型误解。不是越卖越贵，反而越卖越便宜;并非越有名越好，而是代表某种价值观或精神主张;重视性价比，性价比会成为基础，泛轻奢将成为常态;这才是认识这一轮消费升级的正确姿势。</p>
@@ -112,7 +112,7 @@ export default {
     title: '源码资本曹毅：“互联网＋”告一段落，下一波浪潮是“智能＋”和“全球＋”',
     category: '孵化服务',
     author: 'Admin',
-    coverUrl: 'http://odhge55gv.bkt.clouddn.com/base/base-post-pic3.jpg?imageView2/2/w/200/h/150/interlace/0/q/100',
+    coverUrl: 'http://odhge55gv.bkt.clouddn.com/base/base-post-pic3.jpg',
     content: `<p>2014年曹毅创建源码资本，投资涵盖多个细分领域，包括互联网金融、产业互联网、游戏娱乐、O2O、出海互联网等。</p>
           <p>源码资本专注于TMT行业早期投资，目前管理规模约5亿美元和15亿人民币。源码资本的一大特点在于——集合了近30家IT产业领袖企业创始人及高管，形成由产业资本与金融资本结合的“码会”生态圈，形成产业资本超级连接器。</p>
           <p>曹毅曾任职于红杉资本，有着十多年创业投资经验。两年多来，源码资本投资了包括：</p>
