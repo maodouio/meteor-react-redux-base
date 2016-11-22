@@ -62,6 +62,13 @@ Maodou team
         Meteor.users.remove(userId);
         throw new Meteor.Error(400, 'Couldn\'t send verify email');
       }
+    },
+    'validateAdmin' (user) {
+      if (Roles.userIsInRole(user, ['admin'])) {
+        return true;
+      } else {
+        throw new Meteor.Error(500);
+      }
     }
   });
 };

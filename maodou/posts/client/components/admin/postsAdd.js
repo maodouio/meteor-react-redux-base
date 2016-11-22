@@ -27,7 +27,7 @@ export default (props) => {
             { props.state.beginUpload ? <p>正在上传，请稍候...</p> : <span /> }
             { props.state.fileUploaded ? <p>图片上传完成．</p> : <span /> }
             { props.coverUrl ?
-              <img src={props.coverUrl} alt="post cover" /> : <span />
+              <img src={`${props.coverUrl}?imageView2/2/w/600/h/300/interlace/0/q/100`} alt="post cover" /> : <span />
             }
           </div>
           <input className="form-control" type="text" placeholder="标题" name="title" />
