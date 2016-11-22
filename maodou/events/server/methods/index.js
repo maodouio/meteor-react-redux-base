@@ -28,7 +28,7 @@ export default (context) => {
       Events.remove(id);
     },
     'events.edit'(id, data) {
-      Events.update(id, { $set: { data }});
+      Events.update(id, { $set: data});
     }
   });
 };

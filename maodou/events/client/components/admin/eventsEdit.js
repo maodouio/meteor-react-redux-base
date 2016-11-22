@@ -16,11 +16,12 @@ export default class EventAdd extends React.Component {
   render() {
     const { beginUpload, fileUploaded } = this.props.state;
     const { dispatch, updateEvent, coverUrl, event } = this.props;
+    const url = coverUrl ? coverUrl : event.coverUrl;
     return (
       <div className="row">
         <div className="col-sm-12">
           <h1>编辑活动</h1>
-          <form onSubmit={(e) => dispatch(updateEvent(e, event._id, coverUrl))}>
+          <form onSubmit={(e) => dispatch(updateEvent(e, event._id, url))}>
             <div id="upload-container">
               <a className="btn btn-success" id="pickfiles" href="#">更换封面</a>
             </div>

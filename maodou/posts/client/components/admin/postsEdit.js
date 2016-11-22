@@ -4,11 +4,12 @@ export default (props) => {
   const { dispatch, coverUrl, updatePost } = props;
   const { categories, post } = props.data;
   const { beginUpload, fileUploaded } = props.state;
+  const url = coverUrl ? coverUrl : post.coverUrl;
   return (
     <div className="admin-package-wrapper row">
       <div className="col-sm-12">
         <h1>编辑文章</h1>
-        <form onSubmit={(e) => dispatch(updatePost(e, post._id, coverUrl))}>
+        <form onSubmit={(e) => dispatch(updatePost(e, post._id, url))}>
           <div className="form-group">
             <label htmlFor="select-category">选择分类</label>
             <select id="select-category" className="form-control" name="category">
