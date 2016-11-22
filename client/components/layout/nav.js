@@ -17,7 +17,11 @@ export default (props) => (
         <ul className="nav navbar-nav">
           <li><Link to="/posts">新闻</Link></li>
           <li><Link to="/events">活动</Link></li>
-          <li><Link to="/admin">管理员后台</Link></li>
+          {props.isAdmin ? <li><Link to="/admin">管理员后台</Link></li> : <span />}
+          {props.loggedIn ?
+            <li><Link to="#" onClick={(e) => Meteor.logout()} style={{color: '#f44', fontSize: '16px'}}>退出登录</Link></li>
+            : <span />
+          }
         </ul>
       </div>
       <ul className="nav navbar-nav navbar-right hidden-xs">

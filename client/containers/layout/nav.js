@@ -20,10 +20,14 @@ const lifecycle = {
 };
 
 const subscriptions = ({ context }, onData) => {
-  const { Meteor, Collections } = context;
+  const { Meteor, Collections, Roles } = context;
   const corePkg = Collections.Packages.findOne({ name: 'core' });
   if (corePkg) {
-    onData(null, { appName: corePkg.configs.appName });
+    onData(null, {
+      appName: corePkg.configs.appName,
+      loggedIn: !!context.Meteor.user(),
+      isAdmin: Roles.userIsInRole(Meteor.user(), ['admin'])
+    });
   } else {
     onData(null, {});
   }
