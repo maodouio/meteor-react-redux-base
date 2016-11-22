@@ -40,7 +40,7 @@ export default class PostsList extends Component {
               <td style={{lineHeight: '50px'}}>{event.location}</td>
               <td style={{lineHeight: '50px'}}>{moment(event.createdAt).format('YYYY-MM-DD')}</td>
               <td style={{lineHeight: '50px'}}>
-                <Link to={`/admin/posts/edit/${event._id}`} className="btn btn-success" style={{marginRight: '10px'}}>编辑</Link>
+                <Link to={`/admin/events/edit/${event._id}`} className="btn btn-success" style={{marginRight: '10px'}}>编辑</Link>
                 <button className="btn btn-danger" onClick={(e) => this.props.dispatch((this.props.deleteEvent(e, event._id)))}>删除</button>
               </td>
             </tr>

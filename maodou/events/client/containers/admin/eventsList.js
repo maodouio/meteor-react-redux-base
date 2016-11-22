@@ -7,6 +7,7 @@ const subscription = ({ context }, onData) => {
   const { Meteor, Collections } = context;
   if (Meteor.subscribe('events.list').ready()) {
     const data = Collections.Events.find().fetch();
+    document.title = '活动列表';
     onData(null, {
       events: { status: 'ready', data }
     });

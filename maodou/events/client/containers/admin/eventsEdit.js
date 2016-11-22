@@ -1,10 +1,11 @@
+import { browserHistory } from 'react-router';
 import { useDeps } from 'react-simple-di';
 import { compose, withHandlers, withTracker, withState, withRedux, withLifecycle, composeAll } from 'react-komposer-plus';
 import 'client/lib/plupload/js/moxie';
 import 'client/lib/plupload/js/plupload.dev.js';
 import 'qiniu-js/dist/qiniu.min';
 
-import EventsAdd from '../../components/admin/eventsAdd';
+import EventsEdit from '../../components/admin/eventsEdit';
 
 const lifeCycle = {
   // 离开页面时，清除图片url地址
@@ -15,7 +16,7 @@ const lifeCycle = {
   componentDidMount() {
     const {qiniuDomain, dispatch, addCover, setState} = this.props;
     $('#editor').summernote({
-      height: 250
+      height: 350
     });
 
     Meteor.call('files.token', function(err, token) {
@@ -104,12 +105,25 @@ const lifeCycle = {
   }
 };
 
-const data = ({ context }, onData) => {
-  const { Collections } = context;
-  const pkg = Collections.Packages.findOne({ name: 'events' }) || {};
-  const configs = pkg.configs || {};
-  document.title = '新建活动';
-  onData(null, { categories: configs.categories || [] });
+const data = ({ context, params }, onData) => {
+  const { Meteor, Collections, swal } = context;
+  const eventId = params.id;
+  Meteor.call('events.get.single', eventId, (err, event) => {
+    if (err) {
+      if (err.error === '404'){
+        swal({
+          title: "活动没有找到",
+          text: "返回原来页面",
+          type: "error"
+        });
+        browserHistory.push('admin/events/list');
+      }
+    } else {
+      document.title = event.title;
+      onData(null, { event });
+    }
+  });
+  // onData(null, {});
 };
 
 const mapStateToProps = (state)=> ({
@@ -126,7 +140,7 @@ const depsToProps = (context, actions) => ({
   dispatch: context.dispatch,
   qiniuDomain: context.configs.core.qiniu.DOMAIN_NAME,
   addCover: actions.events.addCover,
-  addEvent: actions.events.addEvent
+  updateEvent: actions.events.updateEvent
 });
 
 export default composeAll(
@@ -135,4 +149,4 @@ export default composeAll(
   withState(state),
   withRedux(mapStateToProps),
   useDeps(depsToProps)
-)(EventsAdd);
+)(EventsEdit);

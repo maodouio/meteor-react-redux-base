@@ -7,6 +7,7 @@ const data = ({ context }, onData) => {
   const { Collections } = context;
   const pkg = Collections.Packages.findOne({ name: 'posts' }) || {};
   const configs = pkg.configs || { UI: '' };
+  document.title = '配置文章页面';
   onData(null, {
     categories: configs.categories || [],
     imgPosition: configs.UI.listImgPosition || 'left',
