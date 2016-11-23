@@ -35,6 +35,11 @@ export default {
               title: '注册失败，邮箱已经被注册了',
               type: 'error'
             });
+          } else if (err.reason === "Couldn't send verify email") {
+            swal({
+              title: '注册失败，不能发送验证邮箱',
+              type: 'error'
+            });
           }
         }
       });

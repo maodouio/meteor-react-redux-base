@@ -22,10 +22,7 @@ export default (props) => (
         <div className="collapse mobile-navbar" id="mobile-collapse">
           <ul className="nav navbar-nav">
             <li>
-              <Link to="#" className="" >登录</Link>
-            </li>
-            <li>
-              <Link to="#" className="" >退出</Link>
+              <Link to="/" className="" onClick={(e) => Meteor.logout()}>退出</Link>
             </li>
             <li>
               <Link className="" to="/">回到主页</Link>
