@@ -34,11 +34,11 @@ export default (props) => {
             }
           </div>
           <div className='form-group'>
-            <label for="title">文章标题</label>
+            <label htmlFor="title">文章标题</label>
             <input className="form-control" type="text" name="title" id="title" defaultValue={post.title}/>
           </div>
           <div className='form-group'>
-            <label for="author">文章作者</label>
+            <label htmlFor="author">文章作者</label>
             <input className="form-control" type="text" name="author" id="author" defaultValue={post.author}/>
           </div>
           <br />
