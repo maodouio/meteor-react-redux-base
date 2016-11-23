@@ -34,6 +34,9 @@ export default (props) => (
           </li>
         </ul> */}
         <ul className="nav navbar-nav navbar-right">
+          {props.isAdmin ? <li><Link to="/admin">管理员后台</Link></li> : <span />}
+        </ul>
+        <ul className="nav navbar-nav navbar-right">
           <li className="dropdown">
             <a className="dropdown-toggle" id="drop2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               {props.loggedIn ? renderUser(props.nickname): <span />}
@@ -45,9 +48,6 @@ export default (props) => (
               }
             </ul>
           </li>
-        </ul>
-        <ul className="nav navbar-nav navbar-right">
-          {props.isAdmin ? <li><Link to="/admin">管理员后台</Link></li> : <span />}
         </ul>
       </div>
     </div>

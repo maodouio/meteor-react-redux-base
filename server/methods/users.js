@@ -54,7 +54,7 @@ Maodou team
           profile: { nickname: data.username },
         });
       } catch (err) {
-        throw new Meteor.Error(400, err.message);
+        throw new Meteor.Error(400, err.reason);
       }
       Roles.addUsersToRoles(userId, ['user']);
       // try {

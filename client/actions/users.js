@@ -17,7 +17,27 @@ export default {
       const email = event.target.email.value;
       const password = event.target.password.value;
       const data = { username, email, password };
-
+      if (username === '') {
+        swal({
+          title: '注册失败，用户名不能为空',
+          type: 'error'
+        });
+        return;
+      }
+      if (email === '') {
+        swal({
+          title: '注册失败，邮箱不能为空',
+          type: 'error'
+        });
+        return;
+      }
+      if (password.length < 6) {
+        swal({
+          title: '注册失败，密码长度必须６位以上',
+          type: 'error'
+        });
+        return;
+      }
       Meteor.call('users.register', data, (err) => {
         if (!err) {
           toastr["success"]("注册成功", "Success!");
@@ -25,12 +45,12 @@ export default {
           browserHistory.push('/');
         } else {
           console.log(err.reason);
-          if (err.reason === "Username already exists. [403]") {
+          if (err.reason === "Username already exists.") {
             swal({
               title: '注册失败，用户名已经存在',
               type: 'error'
             });
-          } else if (err.reason === "Email already exists. [403]") {
+          } else if (err.reason === "Email already exists.") {
             swal({
               title: '注册失败，邮箱已经被注册了',
               type: 'error'
@@ -38,6 +58,11 @@ export default {
           } else if (err.reason === "Couldn't send verify email") {
             swal({
               title: '注册失败，不能发送验证邮箱',
+              type: 'error'
+            });
+          } else if (err.reason === "Need to set a username or email") {
+            swal({
+              title: '注册失败，请填写用户名或邮箱',
               type: 'error'
             });
           }
