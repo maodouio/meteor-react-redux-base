@@ -4,9 +4,32 @@ export default {
   enrollWithEmail({Meteor}, email, callback) {
     Meteor.call("users.enrollWithEmail", email, callback);
   },
-  loginWithPassword({Meteor}, email, password, callback) {
-    Meteor.loginWithPassword(email, password, callback);
+  loginWithPassword({ Meteor, swal, toastr }, email, password, callback) {
+    Meteor.loginWithPassword(email, password, (err) => {
+      if (err) {
+        console.log(err);
+        if (err.reason === "User not found") {
+          swal({
+            title: '登录失败，用户不存在',
+            type: 'error'
+          });
+        } else if (err.reason === "Incorrect password") {
+          swal({
+            title: '登录失败，密码错误',
+            type: 'error'
+          });
+        } else {
+          swal({
+            title: '登录失败',
+            type: 'error'
+          });
+        }
+      } else {
+        toastr["success"]("登录成功", "Success!");
+      }
+    });
   },
+
   resetPassword({Accounts}, token, password, callback) {
     Accounts.resetPassword(token, password, callback);
   },
@@ -63,6 +86,11 @@ export default {
           } else if (err.reason === "Need to set a username or email") {
             swal({
               title: '注册失败，请填写用户名或邮箱',
+              type: 'error'
+            });
+          } else {
+            swal({
+              title: '注册失败',
               type: 'error'
             });
           }

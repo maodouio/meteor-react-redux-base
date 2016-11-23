@@ -1,10 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-const renderUser = (nickname) => {
-  return <div>欢迎，{nickname}<span className="caret" /></div>;
-};
-
 export default (props) => (
   <nav className="navbar navbar-default navbar-fixed-top">
     <div className="container">
@@ -33,22 +29,24 @@ export default (props) => (
             </ul>
           </li>
         </ul> */}
-        <ul className="nav navbar-nav navbar-right">
-          {props.isAdmin ? <li><Link to="/admin">管理员后台</Link></li> : <span />}
-        </ul>
-        <ul className="nav navbar-nav navbar-right">
-          <li className="dropdown">
-            <a className="dropdown-toggle" id="drop2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              {props.loggedIn ? renderUser(props.nickname): <span />}
-            </a>
-            <ul className="dropdown-menu" aria-labelledby="drop2">
-              {props.loggedIn ?
+        {props.isAdmin ?
+          <ul className="nav navbar-nav navbar-right">
+            <li><Link to="/admin">管理员后台</Link></li>
+          </ul>
+           : <span />
+         }
+        { props.loggedIn ?
+          <ul className="nav navbar-nav navbar-right">
+            <li className="dropdown">
+              <a className="dropdown-toggle" id="drop2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                欢迎，{props.nickname}<span className="caret" />
+              </a>
+              <ul className="dropdown-menu" aria-labelledby="drop2">
                 <li><Link to="/" onClick={(e) => Meteor.logout()} style={{fontSize: '16px'}}>退出</Link></li>
-                : <span />
-              }
-            </ul>
-          </li>
-        </ul>
+              </ul>
+            </li>
+          </ul> : <span />
+        }
       </div>
     </div>
   </nav>
