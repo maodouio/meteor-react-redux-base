@@ -30,7 +30,7 @@ export default {
       email: 'admin@example.com',
       password: '123456',
       emails: [{address: 'admin@example.com', verified: true}],
-      profile: {name: 'Admin'},
+      profile: {nickname: 'Admin'},
       };
       const userId = Accounts.createUser(adminUser);
       Roles.addUsersToRoles(userId, ['admin']);
