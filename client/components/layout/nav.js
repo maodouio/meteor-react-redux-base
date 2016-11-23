@@ -35,18 +35,16 @@ export default (props) => (
           </ul>
            : <span />
          }
-        { props.loggedIn ?
-          <ul className="nav navbar-nav navbar-right">
-            <li className="dropdown">
-              <a className="dropdown-toggle" id="drop2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                欢迎，{props.nickname}<span className="caret" />
-              </a>
-              <ul className="dropdown-menu" aria-labelledby="drop2">
-                <li><Link to="/" onClick={(e) => Meteor.logout()} style={{fontSize: '16px'}}>退出</Link></li>
-              </ul>
-            </li>
-          </ul> : <span />
-        }
+        <ul className="nav navbar-nav navbar-right">
+          <li className="dropdown">
+            <a className="dropdown-toggle" id="drop2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              { props.loggedIn ? <div>欢迎，{props.nickname}<span className="caret" /></div> : <span /> }
+            </a>
+            <ul className="dropdown-menu" aria-labelledby="drop2">
+              <li><Link to="/" onClick={(e) => Meteor.logout()} style={{fontSize: '16px'}}>退出</Link></li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
