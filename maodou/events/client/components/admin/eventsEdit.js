@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class EventAdd extends React.Component {
+export default class EventsEdit extends React.Component {
   constructor(props) {
     super(props);
     this.state = { unit: '$' };

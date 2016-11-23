@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 import Loading from 'client/components/common/loading';
 import moment from 'moment';
 
-export default class PostsList extends Component {
+export default class EventsList extends Component {
   render() {
     const { data, status } = this.props.events;
     return(
