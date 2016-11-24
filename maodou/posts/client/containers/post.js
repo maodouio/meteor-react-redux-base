@@ -5,16 +5,12 @@ import { browserHistory } from 'react-router'
 import Post from '../components/post';
 
 const initData = ({ context, params }, onData) => {
-  const { Meteor, swal } = context;
+  const { Meteor, toastr } = context;
   const postId = params.id;
   Meteor.call('posts.get.single', postId, (err, post) => {
     if (err) {
       if (err.error === '404'){
-        swal({
-          title: "文章没有找到",
-          text: "返回原来页面",
-          type: "error"
-        });
+        toastr.error("文章没有找到,返回到原来页面");
         browserHistory.push('/posts');
       }
     } else {

@@ -10,53 +10,33 @@ export default {
   },
 
   /**** Admin Actions ****/
-  addPost({ Meteor, swal, toastr }, event, coverUrl) {
+  addPost({ Meteor, toastr }, event, coverUrl) {
     return () => {
       event.preventDefault();
       const category = event.target.category.value;
       const title = event.target.title.value;
       const author = event.target.author.value;
       const content = $('#editor').summernote('code');
-      // if (!coverUrl) {
-      //   toastr["error"]("请先添加图片", "Error!");
-      // }
       Meteor.call('posts.add', category, coverUrl, title, author, content, (err) => {
         if (err) {
           console.log(err);
           if (err.reason === "Title is required") {
-            swal({
-              title: '发布失败，请先添加文章标题',
-              type: 'error'
-            });
+            toastr.info("请先添加文章标题");
           } else if (err.reason === "Cover url is required") {
-            swal({
-              title: '发布失败，请先添加封面图片',
-              type: 'error'
-            });
+            toastr.info("请先添加封面图片");
           } else if (err.reason === "Author is required") {
-            swal({
-              title: '发布失败，请先添加文章作者',
-              type: 'error'
-            });
+            toastr.info("请先添加文章作者");
           } else {
-            swal({
-              title: '发布失败',
-              type: 'error'
-            });
+            toastr.error("发布失败");
           }
         } else {
-          swal({
-            title: '发布成功',
-            type: 'success',
-            onClose() {
-              browserHistory.push('/admin/posts/list');
-            }
-          });
+          toastr.success("发布成功");
+          browserHistory.push('/admin/posts/list');
         }
       });
     }
   },
-  updatePost({ Meteor, swal, toastr }, event, id, coverUrl) {
+  updatePost({ Meteor, toastr }, event, id, coverUrl) {
     return () => {
       event.preventDefault();
       const category = event.target.category.value;
@@ -74,34 +54,17 @@ export default {
         if (err) {
           console.log(err);
           if (err.reason === "Title is required") {
-            swal({
-              title: '发布失败，请先添加文章标题',
-              type: 'error'
-            });
+            toastr.info("请先添加文章标题");
           } else if (err.reason === "Cover url is required") {
-            swal({
-              title: '发布失败，请先添加封面图片',
-              type: 'error'
-            });
+            toastr.info("请先添加封面图片");
           } else if (err.reason === "Author is required") {
-            swal({
-              title: '发布失败，请先添加文章作者',
-              type: 'error'
-            });
+            toastr.info("请先添加文章作者");
           } else {
-            swal({
-              title: '发布失败',
-              type: 'error'
-            });
+            toastr.info("发布失败");
           }
         } else {
-          swal({
-            title: '编辑文章成功',
-            type: 'success',
-            onClose() {
-              browserHistory.push('/admin/posts/list');
-            }
-          });
+          toastr.success("编辑文章成功");
+          browserHistory.push('/admin/posts/list');
         }
       });
     }
@@ -123,9 +86,9 @@ export default {
         Meteor.call('posts.delete', id, (err) => {
           if (err) {
             console.log(err);
-            toastr["error"]("删除失败", "Error!");
+            toastr.error("删除失败");
           } else {
-            toastr["success"]("删除成功", "Success!");
+            toastr.success("删除成功");
           }
         });
       }, (dismiss) => {
@@ -139,9 +102,9 @@ export default {
     return () => {
       Meteor.call('posts.imgPosition', event.target.value, (err) => {
         if (err) {
-          toastr["error"]("删除失败", "Error!");
+          toastr.error("删除失败");
         } else {
-          toastr["success"]("保存成功", "Success!");
+          toastr.success("保存成功");
         }
       });
     };
@@ -150,9 +113,9 @@ export default {
     return (dispatch) => {
       Meteor.call('posts.categories.tabsPosition', event.target.value, (err) => {
         if (err) {
-          toastr["error"]("保存失败", "Error!");
+          toastr.error("删除失败");
         } else {
-          toastr["success"]("保存成功", "Success!");
+          toastr.success("保存成功");
         }
       });
     };
@@ -161,9 +124,9 @@ export default {
     return (dispatch) => {
       Meteor.call('posts.categories.color', event.target.value, (err) => {
         if (err) {
-          toastr["error"]("修改失败", "Error!");
+          toastr.error("删除失败");
         } else {
-          toastr["success"]("保存成功", "Success!");
+          toastr.success("保存成功");
         }
       });
     };

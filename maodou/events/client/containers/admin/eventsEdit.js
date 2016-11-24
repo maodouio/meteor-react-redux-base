@@ -106,16 +106,12 @@ const lifeCycle = {
 };
 
 const data = ({ context, params }, onData) => {
-  const { Meteor, Collections, swal } = context;
+  const { Meteor, Collections, toastr } = context;
   const eventId = params.id;
   Meteor.call('events.get.single', eventId, (err, event) => {
     if (err) {
       if (err.error === '404'){
-        swal({
-          title: "活动没有找到",
-          text: "返回原来页面",
-          type: "error"
-        });
+        toastr.error("活动没有找到,返回到原来页面");
         browserHistory.push('admin/events/list');
       }
     } else {
