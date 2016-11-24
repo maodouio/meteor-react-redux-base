@@ -2,3 +2,5 @@ node_modules
 .idea
 deploy/
 npm-debug.log
+.DS_Store
+

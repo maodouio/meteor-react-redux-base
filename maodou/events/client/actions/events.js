@@ -6,7 +6,7 @@ export default {
     return { type: 'ADD_POST_COVER', url };
   },
   /**** Admin Actions ****/
-  addEvent({ Meteor, swal, toastr }, event, coverUrl) {
+  addEvent({ Meteor, toastr }, event, coverUrl) {
     return () => {
       event.preventDefault();
       const title = event.target.title.value;
@@ -20,59 +20,30 @@ export default {
         if (err) {
           console.log(err);
           if (err.reason === "Title is required") {
-            swal({
-              title: '发布失败，请先添加文章标题',
-              type: 'error'
-            });
+            toastr.info("发布失败，请先添加文章标题");
           } else if (err.reason === "Time is required") {
-            swal({
-              title: '发布失败，请先添加活动日期',
-              type: 'error'
-            });
+            toastr.info("发布失败，请先添加活动日期");
           } else if (err.reason === "Cover url is required") {
-            swal({
-              title: '发布失败，请先添加活动封面',
-              type: 'error'
-            });
+            toastr.info("发布失败，请先添加活动封面");
           } else if (err.reason === "Location is required") {
-            swal({
-              title: '发布失败，请先添加活动地点',
-              type: 'error'
-            });
+            toastr.info("发布失败，请先添加活动地点");
           } else if (err.reason === "Fee is required") {
-            swal({
-              title: '发布失败，请先添加活动费用',
-              type: 'error'
-            });
+            toastr.info("发布失败，请先添加活动费用");
           } else if (err.reason === "Limit is required") {
-            swal({
-              title: '发布失败，请先添加活动人数限制',
-              type: 'error'
-            });
+            toastr.info("发布失败，请先添加活动人数限制");
           } else if (err.reason === "Limit must be a number") {
-            swal({
-              title: '发布失败，活动人数限制必须是数字',
-              type: 'error'
-            });
+            toastr.info("发布失败，活动人数限制必须是数字");
           } else {
-            swal({
-              title: '发布失败',
-              type: 'error'
-            });
+            toastr.info("发布失败");
           }
         } else {
-          swal({
-            title: '发布成功',
-            type: 'success',
-            onClose() {
-              browserHistory.push('/admin/events/list');
-            }
-          });
+          toastr.success("发布成功");
+          browserHistory.push('/admin/events/list');
         }
       });
     }
   },
-  updateEvent({ Meteor, swal, toastr }, event, id, coverUrl) {
+  updateEvent({ Meteor, toastr }, event, id, coverUrl) {
     return () => {
       event.preventDefault();
       const title = event.target.title.value;
@@ -96,54 +67,25 @@ export default {
         if (err) {
           console.log(err);
           if (err.reason === "Title is required") {
-            swal({
-              title: '发布失败，请先添加文章标题',
-              type: 'error'
-            });
+            toastr.info("发布失败，请先添加文章标题");
           } else if (err.reason === "Time is required") {
-            swal({
-              title: '发布失败，请先添加活动日期',
-              type: 'error'
-            });
+            toastr.info("发布失败，请先添加活动日期");
           } else if (err.reason === "Cover url is required") {
-            swal({
-              title: '发布失败，请先添加活动封面',
-              type: 'error'
-            });
+            toastr.info("发布失败，请先添加活动封面");
           } else if (err.reason === "Location is required") {
-            swal({
-              title: '发布失败，请先添加活动地点',
-              type: 'error'
-            });
+            toastr.info("发布失败，请先添加活动地点");
           } else if (err.reason === "Fee is required") {
-            swal({
-              title: '发布失败，请先添加活动费用',
-              type: 'error'
-            });
+            toastr.info("发布失败，请先添加活动费用");
           } else if (err.reason === "Limit is required") {
-            swal({
-              title: '发布失败，请先添加活动人数限制',
-              type: 'error'
-            });
+            toastr.info("发布失败，请先添加活动人数限制");
           } else if (err.reason === "Limit must be a number") {
-            swal({
-              title: '发布失败，活动人数限制必须是数字',
-              type: 'error'
-            });
+            toastr.info("发布失败，活动人数限制必须是数字");
           } else {
-            swal({
-              title: '发布失败',
-              type: 'error'
-            });
+            toastr.info("发布失败");
           }
         } else {
-          swal({
-            title: '编辑活动成功',
-            type: 'success',
-            onClose() {
-              browserHistory.push('/admin/events/list');
-            }
-          });
+          toastr.success("编辑活动成功");
+          browserHistory.push('/admin/events/list');
         }
       });
     }
@@ -161,9 +103,9 @@ export default {
       }).then(() => {
         Meteor.call('events.delete', id, (err) => {
           if (err) {
-            toastr["error"]("删除失败", "Error!");
+            toastr.error("删除失败");
           } else {
-            toastr["success"]("删除成功", "Success!");
+            toastr.success("删除成功");
           }
         });
       }, (dismiss) => {
