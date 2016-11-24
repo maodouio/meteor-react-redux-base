@@ -11,8 +11,8 @@ const initData = ({ context, params }, onData) => {
     if (err) {
       if (err.error === '404'){
         swal({
-          title: "Event Not Found",
-          text: "Jumping to event list",
+          title: "活动没有找到",
+          text: "返回到原来页面",
           type: "error"
         });
         browserHistory.push('/events');

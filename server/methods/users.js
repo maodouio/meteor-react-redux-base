@@ -48,19 +48,27 @@ Maodou team
       let userId;
       try {
         userId = Accounts.createUser({
+          username: data.username,
           email: data.email,
           password: data.password,
-          profile: {}
+          profile: { nickname: data.username },
         });
       } catch (err) {
-        throw new Meteor.Error(400, err.message);
+        throw new Meteor.Error(400, err.reason);
       }
       Roles.addUsersToRoles(userId, ['user']);
-      try {
-        Accounts.sendVerificationEmail(userId, data.email);
-      } catch (e) {
-        Meteor.users.remove(userId);
-        throw new Meteor.Error(400, 'Couldn\'t send verify email');
+      // try {
+      //   Accounts.sendVerificationEmail(userId, data.email);
+      // } catch (e) {
+      //   Meteor.users.remove(userId);
+      //   throw new Meteor.Error(400, 'Couldn\'t send verify email');
+      // }
+    },
+    'validateAdmin' (user) {
+      if (Roles.userIsInRole(user, ['admin'])) {
+        return true;
+      } else {
+        throw new Meteor.Error(500);
       }
     }
   });

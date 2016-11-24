@@ -8,6 +8,9 @@ Posts.attachSchema(
     title: {
       type: String
     },
+    author: {
+      type: String
+    },
     coverUrl: {
       type: String
     },

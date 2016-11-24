@@ -13,7 +13,7 @@ export default {
   publications,
   methods,
   init(context) {
-    const { Collections, Qiniu, privateConfigs } = context;
+    const { Collections, Qiniu, privateConfigs, Meteor } = context;
     Qiniu.conf.ACCESS_KEY = privateConfigs.core.qiniu.ACCESS_KEY;
     Qiniu.conf.SECRET_KEY = privateConfigs.core.qiniu.SECRET_KEY;
     Qiniu.conf.BUCKET_NAME = privateConfigs.core.qiniu.BUCKET_NAME;
@@ -23,6 +23,17 @@ export default {
         name: 'core',
         configs: context.configs.core || {}
       });
+    }
+    if (Meteor.users.find().count() === 0) {
+      const adminUser = {
+      username: 'admin',
+      email: 'admin@example.com',
+      password: '123456',
+      emails: [{address: 'admin@example.com', verified: true}],
+      profile: {nickname: 'Admin'},
+      };
+      const userId = Accounts.createUser(adminUser);
+      Roles.addUsersToRoles(userId, ['admin']);
     }
   }
 };

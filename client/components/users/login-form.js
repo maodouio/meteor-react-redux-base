@@ -35,8 +35,8 @@ export default class extends React.Component {
                     <label className="control-label" htmlFor="password">密码</label>
                     <input type="password" ref={(c) => this._passwordInput = c} title="Please enter your password" placeholder="******" required="" name="password" id="password" className="form-control" />
                   </div>
-                  <button type="submit" className="btn btn-success btn-block">登陆</button>
-                  <Link className="btn btn-default btn-block" to="#">注册</Link>
+                  <button type="submit" className="btn btn-success btn-block">登录</button>
+                  <Link className="btn btn-default btn-block" to="/register">注册</Link>
                 </form>
               </div>
             </div>

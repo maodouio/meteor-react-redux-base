@@ -108,6 +108,7 @@ const data = ({ context }, onData) => {
   const { Collections } = context;
   const pkg = Collections.Packages.findOne({ name: 'posts' }) || {};
   const configs = pkg.configs || {};
+  document.title = '新建文章';
   onData(null, { categories: configs.categories || [] });
 };
 

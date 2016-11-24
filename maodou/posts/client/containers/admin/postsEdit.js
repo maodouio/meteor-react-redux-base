@@ -1,10 +1,11 @@
 import { useDeps } from 'react-simple-di';
-import { compose, withHandlers, withTracker, withState, withRedux, withLifecycle, composeAll } from 'react-komposer-plus';
+import {compose, withHandlers, withTracker, withState, withRedux, withLifecycle, composeAll } from 'react-komposer-plus';
+import { browserHistory } from 'react-router'
 import 'client/lib/plupload/js/moxie';
 import 'client/lib/plupload/js/plupload.dev.js';
 import 'qiniu-js/dist/qiniu.min';
 
-import EventsAdd from '../../components/admin/eventsAdd';
+import PostsEdit from '../../components/admin/postsEdit';
 
 const lifeCycle = {
   // 离开页面时，清除图片url地址
@@ -15,7 +16,7 @@ const lifeCycle = {
   componentDidMount() {
     const {qiniuDomain, dispatch, addCover, setState} = this.props;
     $('#editor').summernote({
-      height: 250
+      height: 450
     });
 
     Meteor.call('files.token', function(err, token) {
@@ -104,16 +105,33 @@ const lifeCycle = {
   }
 };
 
-const data = ({ context }, onData) => {
-  const { Collections } = context;
-  const pkg = Collections.Packages.findOne({ name: 'events' }) || {};
-  const configs = pkg.configs || {};
-  document.title = '新建活动';
-  onData(null, { categories: configs.categories || [] });
+const initData = ({ context, params }, onData) => {
+  const { Meteor, Collections, swal } = context;
+  const postId = params.id;
+  Meteor.call('posts.get.single', postId, (err, post) => {
+    if (err) {
+      if (err.error === '404'){
+        swal({
+          title: "文章没有找到",
+          text: "返回原来页面",
+          type: "error"
+        });
+        browserHistory.push('admin/posts/list');
+      }
+    } else {
+      document.title = post.title;
+      const pkg = Collections.Packages.findOne({ name: 'posts' }) || {};
+      const configs = pkg.configs || {};
+      onData(null, {
+        data: {categories: configs.categories, post }
+      });
+    }
+  });
+  // onData(null, {});
 };
 
 const mapStateToProps = (state)=> ({
-  coverUrl: state.eventTmpCover
+  coverUrl: state.postTmpCover
 });
 
 const state = () => ({
@@ -125,14 +143,14 @@ const depsToProps = (context, actions) => ({
   context,
   dispatch: context.dispatch,
   qiniuDomain: context.configs.core.qiniu.DOMAIN_NAME,
-  addCover: actions.events.addCover,
-  addEvent: actions.events.addEvent
+  addCover: actions.posts.addCover,
+  updatePost: actions.posts.updatePost
 });
 
 export default composeAll(
   withLifecycle(lifeCycle),
-  withTracker(data),
+  withTracker(initData),
   withState(state),
   withRedux(mapStateToProps),
   useDeps(depsToProps)
-)(EventsAdd);
+)(PostsEdit);

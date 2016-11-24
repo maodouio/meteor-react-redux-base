@@ -1,6 +1,7 @@
 import EventsAdmin from './components/admin';
-import EventsList from './containers/events';
+import EventsList from './containers/admin/eventsList';
 import EventsAdd from './containers/admin/eventsAdd';
+import EventsEdit from './containers/admin/eventsEdit';
 
 export default function (injectDeps, { configs }) {
   const routes = [
@@ -10,7 +11,8 @@ export default function (injectDeps, { configs }) {
   const subMenu = configs.events.subMenu;
   const subMenuComponents = [
     EventsList,
-    EventsAdd
+    EventsAdd,
+    EventsEdit,
   ];
   subMenu.map((menu, index) => {
     routes[0].childRoutes.push({
