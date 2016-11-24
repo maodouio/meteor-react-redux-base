@@ -30,9 +30,9 @@ app.loadMiddlewares([
 ]);
 
 app.loadModule(coreModule);
+app.loadModule(wechatModule);
 app.loadModule(postsModule);
 app.loadModule(eventsModule);
-app.loadModule(wechatModule);
 app.loadModule(bizplansModule);
 
 app.init();
