@@ -7,7 +7,7 @@ export default function (injectDeps, { configs }) {
 
     // insert routes for other layouts here
     '/': [
-      {path: 'posts', component: Posts},
+      {path: 'posts/list', component: Posts},
       {path: 'post/:id', component: Post}
     ]
   };

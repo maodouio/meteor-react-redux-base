@@ -15,8 +15,9 @@ export default (props) => (
       </div>
       <div id="navbar" className="navbar-collapse collapse">
         <ul className="nav navbar-nav navbar-left">
-          <li><Link to="/posts">新闻</Link></li>
-          <li><Link to="/events">活动</Link></li>
+          <li><Link to="/posts/list">新闻</Link></li>
+          <li><Link to="/events/list">活动</Link></li>
+          <li><Link to="/bizplans/list">项目</Link></li>
         </ul>
         {/*<ul className="nav navbar-nav navbar-right hidden-xs">
           <li className="dropdown">
