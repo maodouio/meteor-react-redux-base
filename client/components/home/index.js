@@ -6,7 +6,7 @@ import LoginForm from '../../containers/users/login-form';
 export default (props) => (
   <div className="container" style={{ paddingTop: '70px'}}>
     {props.isWechatVerified ? <div>欢迎回来，{props.nickname}</div> : props.notWechat ? <div>欢迎回来，{props.nickname}</div> :<EmailForm/>}
-    {props.avatar ? <img src={props.avatar} style={styles.avatar}></img> : <span />}
+    {/* props.avatar ? <img src={props.avatar} style={styles.avatar}></img> : <span /> */}
     {props.loggedIn || <LoginForm/>}
     {props.loggedIn || <div className="text-center"><WeChatSignIn/></div>}
     {props.loggedIn ? renderMaodou() : <span />}
@@ -37,7 +37,7 @@ const styles = {
   },
   intro: {
     color: '#000',
-    marginTop: '100px',
+    marginTop: '20px',
     fontSize: '16px',
     padding: '6px'
   }

@@ -6,15 +6,15 @@ import PostsConfigure from './containers/admin/postsConfigure';
 
 export default function (injectDeps, { configs }) {
   const routes = [
-    {path: 'posts', component: PostsAdmin, childRoutes:[]}
+    {path: 'posts', component: PostsAdmin, childRoutes:[]},
+    {path: 'posts/edit/:id', component: PostsEdit, childRoutes: []}
   ];
 
   const subMenu = configs.posts.subMenu;
   const subMenuComponents = [
-    PostsList,
-    PostsAdd,
-    PostsEdit,
     PostsConfigure,
+    PostsList,
+    PostsAdd
   ];
   subMenu.map((menu, index) => {
     routes[0].childRoutes.push({

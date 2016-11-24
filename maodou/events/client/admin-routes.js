@@ -5,14 +5,14 @@ import EventsEdit from './containers/admin/eventsEdit';
 
 export default function (injectDeps, { configs }) {
   const routes = [
-    {path: 'events', component: EventsAdmin, childRoutes:[]}
+    {path: 'events', component: EventsAdmin, childRoutes:[]},
+    {path: 'events/edit/:id', component: EventsEdit, childRoutes:[]}
   ];
 
   const subMenu = configs.events.subMenu;
   const subMenuComponents = [
     EventsList,
     EventsAdd,
-    EventsEdit,
   ];
   subMenu.map((menu, index) => {
     routes[0].childRoutes.push({
