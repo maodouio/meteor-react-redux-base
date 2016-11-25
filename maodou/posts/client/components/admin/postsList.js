@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router';
 import Loading from 'client/components/common/loading';
 import moment from 'moment';
+import { shortText } from 'lib/helpers';
 
 export default class PostsList extends Component {
   render() {
@@ -36,7 +37,7 @@ export default class PostsList extends Component {
         <tbody>
           {posts.map((post, index) =>
             <tr key={post._id} style={{fontSize: '16px'}}>
-              <td style={{lineHeight: '50px'}}><Link to={`/post/${post._id}`}>{post.title}</Link></td>
+              <td style={{lineHeight: '50px'}}><Link to={`/post/${post._id}`}>{shortText(post.title)}</Link></td>
               <td style={{lineHeight: '50px'}}>{post.category}</td>
               <td style={{lineHeight: '50px'}}>{post.author}</td>
               <td style={{lineHeight: '50px'}}>{moment(post.createdAt).format('YYYY-MM-DD')}</td>

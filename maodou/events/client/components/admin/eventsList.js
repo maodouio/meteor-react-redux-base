@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router';
 import Loading from 'client/components/common/loading';
 import moment from 'moment';
+import { shortText } from 'lib/helpers';
 
 export default class EventsList extends Component {
   render() {
@@ -28,6 +29,7 @@ export default class EventsList extends Component {
           <th>活动标题</th>
           <th>活动日期</th>
           <th>活动地点</th>
+          <th>人数限制</th>
           <th>发布日期</th>
           <th>操作</th>
           </tr>
@@ -35,9 +37,10 @@ export default class EventsList extends Component {
         <tbody>
           {events.map((event, index) =>
             <tr key={event._id} style={{fontSize: '16px'}}>
-              <td style={{lineHeight: '50px'}}><Link to={`/event/${event._id}`}>{event.title}</Link></td>
+              <td style={{lineHeight: '50px'}}><Link to={`/event/${event._id}`}>{shortText(event.title)}</Link></td>
               <td style={{lineHeight: '50px'}}>{moment(event.time).format('YYYY-MM-DD')}</td>
-              <td style={{lineHeight: '50px'}}>{event.location}</td>
+              <td style={{lineHeight: '50px'}}>{shortText(event.location)}</td>
+              <td style={{lineHeight: '50px'}}>{shortText(event.limit)}</td>
               <td style={{lineHeight: '50px'}}>{moment(event.createdAt).format('YYYY-MM-DD')}</td>
               <td style={{lineHeight: '50px'}}>
                 <Link to={`/admin/event/edit/${event._id}`} className="btn btn-success" style={{marginRight: '10px'}}>编辑</Link>
