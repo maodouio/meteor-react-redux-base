@@ -1,4 +1,4 @@
-import configs from 'lib/configs/core';
+import configs from '../lib/configs';
 import privateConfigs from './configs/core';
 import collections from '../lib/collections';
 import permissions from './permissions';

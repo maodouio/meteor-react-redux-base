@@ -64,7 +64,7 @@ export default class CustomerEdit extends React.Component {
               <input className="checkbox-inline" type="number" defaultValue={this.props.customer.money} name="money" />元
               </label>
             </div>
-            <button className="btn btn-default" type="submit">Submit</button>
+            <button className="btn btn-default" type="submit">提交</button>
           </form>
         </div>
       </div>

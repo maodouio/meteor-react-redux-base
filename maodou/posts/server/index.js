@@ -2,7 +2,7 @@ import collections from '../lib/collections';
 import permissions from './permissions';
 import publications from './publications';
 import methods from './methods';
-import configs from 'lib/configs/posts';
+import configs from '../lib/configs';
 import privateConfigs from 'server/configs/posts';
 import seeds from './seed.js';
 
