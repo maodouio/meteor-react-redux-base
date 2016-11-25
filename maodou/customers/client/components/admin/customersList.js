@@ -42,13 +42,13 @@ export default class CustomersList extends Component {
               <td>{customer.index}</td>
               <td>{customer.category}</td>
               <td>{customer.customerName}</td>
-              <td><Link to={`/customers/${customer._id}`}>{customer.title}</Link></td>
+              <td><Link to={`/customer/${customer._id}`}>{customer.title}</Link></td>
               <td>{customer.schedule}</td>
               <td>{customer.salesName}</td>
               <td>{customer.money}</td>
               <td>{showTimeAgo(customer.updatedAt||customer.createdAt)}</td>
               <td>
-                <Link to={`/admin/customers/edit/${customer._id}`} className="btn btn-xs btn-default" role="button">更新</Link>
+                <Link to={`/admin/customer/edit/${customer._id}`} className="btn btn-xs btn-default" role="button">更新</Link>
                 <button className="btn btn-xs btn-danger"  onClick={(c) => this.props.dispatch(this.props.deleteCustomer(c, customer._id))}>删除</button>
               </td>
             </tr>

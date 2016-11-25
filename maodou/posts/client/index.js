@@ -1,5 +1,5 @@
-import configs from 'lib/configs/posts';
-import i18n from 'lib/configs/posts/i18n';
+import configs from '../lib/configs';
+import i18n from '../lib/configs/i18n';
 import collections from '../lib/collections';
 import actions from './actions';
 import reducers from './reducers';
