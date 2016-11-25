@@ -42,7 +42,7 @@ export default class PostsList extends Component {
               <td style={{lineHeight: '50px'}}>{moment(post.createdAt).format('YYYY-MM-DD')}</td>
               <td style={{lineHeight: '50px'}}>{moment(post.updatedAt).format('YYYY-MM-DD')}</td>
               <td style={{lineHeight: '50px'}}>
-                <Link to={`/admin/posts/edit/${post._id}`} className="btn btn-success" style={{marginRight: '10px'}}>编辑</Link>
+                <Link to={`/admin/post/edit/${post._id}`} className="btn btn-success" style={{marginRight: '10px'}}>编辑</Link>
                 <button className="btn btn-danger" onClick={(e) => this.props.dispatch((this.props.deletePost(e, post._id)))}>删除</button>
               </td>
             </tr>

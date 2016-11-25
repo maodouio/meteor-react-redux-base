@@ -30,11 +30,16 @@
     "redux-thunk": "^2.1.0",
     "sweetalert2": "^5.0.7",
     "toastr": "^2.1.2",
-    "wechat": "^2.0.3"
+    "wechat": "^2.0.3",
+    "react-helmet": "^3.2.2",
+    "sortablejs": "^1.5.0-rc1"
   },
   "main": "server/main.js",
   "browser": "client/main.js",
   "devDependencies": {
+    "eslint": "^3.5.0",
+    "eslint-plugin-meteor": "^4.0.0",
+    "eslint-plugin-react": "^6.3.0",
     "webpack": "^1.13.0",
     "webpack-hot-middleware": "^2.10.0",
     "url-loader": "^0.5.7",

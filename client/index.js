@@ -1,5 +1,5 @@
-import configs from '../lib/configs/core';
-import i18n from 'lib/configs/core/i18n';
+import configs from '../lib/configs';
+import i18n from '../lib/configs/i18n';
 import collections from '../lib/collections';
 import actions from './actions';
 import reducers from './reducers';

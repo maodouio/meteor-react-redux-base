@@ -1,4 +1,4 @@
-import configs from 'lib/configs/wechat'
+import configs from '../configs'
 import publications from './publications';
 import privateConfigs from 'server/configs/wechat';
 import methods from './methods';

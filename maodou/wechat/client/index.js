@@ -1,6 +1,6 @@
 import actions from '../actions';
-import configs from 'lib/configs/wechat';
-import i18n from 'lib/configs/wechat/i18n';
+import configs from '../configs';
+import i18n from '../configs/i18n';
 import routes from './routes';
 
 export default {

@@ -54,7 +54,7 @@ const listCustomers = (customers) => {
               <td>{customer.index}</td>
               <td>{customer.category}</td>
               <td>{customer.customerName}</td>
-              <td><Link to={`/customers/${customer._id}`}>{customer.title}</Link></td>
+              <td><Link to={`/customer/${customer._id}`}>{customer.title}</Link></td>
               <td>{customer.schedule}</td>
               <td>{customer.salesName}</td>
               <td>{showTimeAgo(customer.updatedAt||customer.createdAt)}</td>

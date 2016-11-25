@@ -17,6 +17,7 @@ export default {
         }
       } else {
         toastr.success("登录成功");
+        browserHistory.push('/');
       }
     });
   },
