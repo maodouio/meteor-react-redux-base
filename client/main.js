@@ -14,6 +14,7 @@ import eventsModule from 'maodou/events/client';
 import wechatModule from 'maodou/wechat/client';
 import bizplansModule from 'maodou/bizplans/client';
 import customersModule from 'maodou/customers/client'
+import singlePagesModule from 'maodou/singlePages/client'
 
 import { render } from 'react-dom';
 import { Router, browserHistory } from 'react-router'
@@ -36,6 +37,7 @@ app.loadModule(postsModule);
 app.loadModule(eventsModule);
 app.loadModule(bizplansModule);
 app.loadModule(customersModule);
+app.loadModule(singlePagesModule);
 
 app.init();
 
