@@ -43,16 +43,16 @@ export default class CustomersAdd extends React.Component {
             <div className="form-group">
               <label>当前状态：
                 <select className='checkbox-inline' defaultValue="已经建立联系，正在讨论项目需求" name="schedule">
-                  <option value="已经建立联系，正在讨论项目需求">已经建立联系，正在讨论项目需求</option>
-                  <option value="已经明确需求，正在讨论原型设计">已经明确需求，正在讨论原型设计</option>
-                  <option value="已经完成原型，正在讨论报价方案">已经完成原型，正在讨论报价方案</option>
-                  <option value="已经确定报价，正在讨论合同细节">已经确定报价，正在讨论合同细节</option>
-                  <option value="已经签署合同，正在等待项目首款">已经签署合同，正在等待项目首款</option>
-                  <option value="已经收到首款，正在开发">已经收到首款，正在开发</option>
-                  <option value="已经完成开发，正在测试">已经完成开发，正在测试</option>
-                  <option value="已经完成测试，正在部署上线">已经完成测试，正在部署上线</option>
-                  <option value="已经完成上线，正在等待项目尾款">已经完成上线，正在等待项目尾款</option>
-                  <option value="已经收到尾款，项目圆满结束">已经收到尾款，项目圆满结束</option>
+                <option value="10% 已经建立联系，正在讨论项目需求">10% 已经建立联系，正在讨论项目需求</option>
+                <option value="20% 已经明确需求，正在讨论原型设计">20% 已经明确需求，正在讨论原型设计</option>
+                <option value="30% 已经完成原型，正在讨论报价方案">30% 已经完成原型，正在讨论报价方案</option>
+                <option value="40% 已经确定报价，正在讨论合同细节">40% 已经确定报价，正在讨论合同细节</option>
+                <option value="50% 已经签署合同，正在等待项目首款">50% 已经签署合同，正在等待项目首款</option>
+                <option value="60% 已经收到首款，正在开发">60% 已经收到首款，正在开发</option>
+                <option value="70% 已经完成开发，正在测试">70% 已经完成开发，正在测试</option>
+                <option value="80% 已经完成测试，正在部署上线">80% 已经完成测试，正在部署上线</option>
+                <option value="90% 已经完成上线，正在等待项目尾款">90% 已经完成上线，正在等待项目尾款</option>
+                <option value="100% 已经收到尾款，项目圆满结束">100% 已经收到尾款，项目圆满结束</option>
                 </select>
               </label>
             </div>
