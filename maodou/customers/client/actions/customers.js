@@ -15,7 +15,8 @@ export default {
       const desc = customer.target.desc.value;
       const schedule = customer.target.schedule.value;
       const money = customer.target.money.value;
-      Meteor.call('customers.add', index, title, category, customerName, salesName, desc, schedule, money, (err) => {
+      const author = Meteor.user()?Meteor.user().profile.nickname:"Guest";
+      Meteor.call('customers.add', index, title, category, customerName, salesName, desc, schedule, money, author, (err) => {
         if (err) {
           toastr["error"]("发布失败", "Error!");
         } else {
