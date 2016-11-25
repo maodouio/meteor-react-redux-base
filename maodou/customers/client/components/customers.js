@@ -8,7 +8,8 @@ export default (props) => {
     <div className="row" style={styles.root}>
       <div className="col-md-12">
         <h1>客户列表 (总计 {props.customers.data.length}个)</h1>
-        <table className="table table-striped">
+        <div className="table-responsive">
+        <table className="table table-striped table-hover ">
           <thead>
             <tr>
               <th>编号</th>
@@ -18,6 +19,7 @@ export default (props) => {
               <th>当前状态</th>
               <th>跟单人</th>
               <th>最近更新</th>
+              <th>创建者</th>
             </tr>
           </thead>
           <tbody>
@@ -38,7 +40,7 @@ export default (props) => {
           }
           </tbody>
         </table>
-
+        </div>
       </div>
     </div>
   )
@@ -56,6 +58,7 @@ const listCustomers = (customers) => {
               <td>{customer.schedule}</td>
               <td>{customer.salesName}</td>
               <td>{showTimeAgo(customer.updatedAt||customer.createdAt)}</td>
+              <td>{customer.author}</td>
             </tr>
           )
         })

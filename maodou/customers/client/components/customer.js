@@ -22,6 +22,7 @@ export default (props)=>{
                   <p style={styles.mLR35}>客户类别：{props.customer.category}</p>
                   <p style={styles.mLR35}>客户联系人：{props.customer.customerName}</p>
                   <hr />
+                  <p style={styles.mLR15}>创建者：{props.customer.author}</p>
                   <p style={styles.mLR35}>创建于 {showPrettyTimestamp(props.customer.createdAt)}</p>
                   <p style={styles.mLR35}>签单金额：{props.customer.money}元</p>
                   <br /><br />

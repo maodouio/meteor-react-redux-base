@@ -33,6 +33,7 @@ export default class CustomersList extends Component {
             <th>跟单人</th>
             <th>签单金额</th>
             <th>最近更新</th>
+            <th>创建者</th>
             <th>操作</th>
           </tr>
         </thead>
@@ -47,16 +48,29 @@ export default class CustomersList extends Component {
               <td>{customer.salesName}</td>
               <td>{customer.money}</td>
               <td>{showTimeAgo(customer.updatedAt||customer.createdAt)}</td>
-              <td>
-                <Link to={`/admin/customers/edit/${customer._id}`} className="btn btn-xs btn-default" role="button">更新</Link>
-                <button className="btn btn-xs btn-danger"  onClick={(c) => this.props.dispatch(this.props.deleteCustomer(c, customer._id))}>删除</button>
-              </td>
+              <td>{customer.author}</td>
+              <td>{this.renderOperate(customer)}</td>
             </tr>
           )}
         </tbody>
       </table>
       </div>
     );
+  }
+
+  renderOperate(customer) {
+    // if(( Meteor.user().profile.nickname === "Admin" ) || (Meteor.user().profile.nickname === customer.author))
+    //   {
+        return (
+          <div>
+          <Link to={`/admin/customers/edit/${customer._id}`} className="btn btn-xs btn-default" role="button">更新</Link>
+          <button className="btn btn-xs btn-danger"  onClick={(c) => this.props.dispatch(this.props.deleteCustomer(c, customer._id))}>删除</button>
+          </div>
+        )
+      // }
+      // else {
+      //   return
+      // }
   }
 }
 
