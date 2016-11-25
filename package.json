@@ -37,6 +37,9 @@
   "main": "server/main.js",
   "browser": "client/main.js",
   "devDependencies": {
+    "eslint": "^3.5.0",
+    "eslint-plugin-meteor": "^4.0.0",
+    "eslint-plugin-react": "^6.3.0",
     "webpack": "^1.13.0",
     "webpack-hot-middleware": "^2.10.0",
     "url-loader": "^0.5.7",
