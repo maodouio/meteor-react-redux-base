@@ -75,6 +75,11 @@ Customers.attachSchema(
       },
       denyInsert: true,
       optional: true
+    },
+    author: {
+      type: String,
+      max: 120,
+      optional: false
     }
   })
 );
