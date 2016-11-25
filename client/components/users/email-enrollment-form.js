@@ -21,9 +21,6 @@ export default class extends React.Component {
   }
 
   render() {
-    if (this.props.loggingIn) return <div>正在登录</div>;
-    if (!this.props.loggedIn) return <div>尚未登录，请登录后绑定邮箱</div>;
-
     if (this.state.uiState === 'SENDING') return <div>正在发送邮件...</div>;
     if (this.state.uiState === 'SUCCESS') return <div>邮件已发送，请查看您的邮箱</div>;
 

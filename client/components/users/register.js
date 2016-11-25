@@ -28,7 +28,7 @@ export default class Register extends Component {
                     <input type="password" title="Please enter your password" placeholder="******" required="" name="password" id="password" className="form-control" />
                   </div>
                   <button type="submit" className="btn btn-success btn-block">立即注册</button>
-                  <Link className="btn btn-default btn-block" to="/">已有账号，马上登录</Link>
+                  <Link className="btn btn-default btn-block" to="/login">已有账号，马上登录</Link>
                 </form>
               </div>
             </div>

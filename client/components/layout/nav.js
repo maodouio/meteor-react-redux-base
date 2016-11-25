@@ -38,17 +38,24 @@ export default (props) => (
           </ul>
            : <span />
          }
-        <ul className="nav navbar-nav navbar-right">
-          <li className="dropdown">
-            <a className="dropdown-toggle" id="drop2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              { props.loggedIn ? <div>欢迎，{props.nickname}<span className="caret" /></div> : <span /> }
-            </a>
-            <ul className="dropdown-menu" aria-labelledby="drop2">
-              <li><Link to="/" onClick={(e) => Meteor.logout()} style={{fontSize: '16px'}}>退出</Link></li>
-            </ul>
-          </li>
-        </ul>
+         { props.loggedIn ? renderUser(props.nickname) : renerLogin() }
       </div>
     </div>
   </nav>
+);
+
+const renderUser = (nickname) => {
+  return (
+    <ul className="nav navbar-nav navbar-right">
+      <li><Link>欢迎，{nickname}<span className="caret" /></Link></li>
+      <li><Link to="/" onClick={(e) => Meteor.logout()}>退出</Link></li>
+    </ul>
+  );
+}
+
+const renerLogin = () => (
+  <ul className="nav navbar-nav navbar-right">
+    <li><Link to="/login">登录</Link></li>
+    <li><Link to="/register">注册</Link></li>
+  </ul>
 );
