@@ -18,24 +18,24 @@ export default class MainPage extends Component {
     return (
       <div>
         <Helmet title={headTitle} />
-        <nav className="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-          <div className="container-fluid">
-            <div className="navbar-header">
-              <button type="button" data-target="#main-navbar" data-toggle="collapse" className="navbar-toggle collapsed">
-                <span className="sr-only">Toggle navigation</span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-              </button>
-              <a className="navbar-brand" href="#">{logoName}</a>
-            </div>
-            <div className="collapse navbar-collapse" id="main-navbar">
-              <ul className="nav navbar-nav">
-                { sections.map((section) => this.renderHeader(section)) }
-              </ul>
-            </div>
-          </div>
-        </nav>
+        {/* <nav className="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+                  <div className="container-fluid">
+                    <div className="navbar-header">
+                      <button type="button" data-target="#main-navbar" data-toggle="collapse" className="navbar-toggle collapsed">
+                        <span className="sr-only">Toggle navigation</span>
+                        <span className="icon-bar"></span>
+                        <span className="icon-bar"></span>
+                        <span className="icon-bar"></span>
+                      </button>
+                      <a className="navbar-brand" href="/">{logoName}</a>
+                    </div>
+                    <div className="collapse navbar-collapse" id="main-navbar">
+                      <ul className="nav navbar-nav">
+                        { sections.map((section) => this.renderHeader(section)) }
+                      </ul>
+                    </div>
+                  </div>
+                </nav> */}
         <div id={templateName}>
           {
             sections.length > 0 ?

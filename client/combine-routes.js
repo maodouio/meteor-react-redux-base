@@ -7,6 +7,7 @@ import ErrorPage from './components/common/errorPage';
 import Layout from './containers/layout';
 import AdminLayout from './containers/admin/layout';
 import Register from './containers/users/register';
+import Login from './containers/users/login';
 
 export default function (routes, injectDeps, context) {
 
@@ -39,6 +40,7 @@ export default function (routes, injectDeps, context) {
       indexRoute: {component: Home},
       childRoutes: [
         { path: '/register', component: () => <Register /> },
+        { path: '/login', component: () => <Login /> },
         {path: '401', component: () => <ErrorPage code="401" info="Unauthorized" />},
         {path: 'reset-password/:token', component: (props) => <ResetPassword token={props.params.token} />},
         ...aggregate['/'],

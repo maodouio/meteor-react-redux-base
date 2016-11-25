@@ -13,9 +13,6 @@ export default class extends React.Component {
   }
 
   render() {
-    if (this.props.loggedIn) return <div>已登录</div>;
-    if (this.props.loggingIn) return <div>正在登录</div>;
-
     return (
       <div className="login-container">
         <div className="row">
