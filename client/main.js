@@ -1,6 +1,6 @@
 import 'bootstrap-sass';
 import App from './lib/app';
-
+import React from 'react';
 import thunk from 'redux-thunk';
 import createContext from './context';
 import collectionsMiddleware from '../lib/middlewares/collections';
@@ -13,11 +13,11 @@ import postsModule from 'maodou/posts/client';
 import eventsModule from 'maodou/events/client';
 import wechatModule from 'maodou/wechat/client';
 import bizplansModule from 'maodou/bizplans/client';
-import customersModule from 'maodou/customers/client'
-import singlePagesModule from 'maodou/singlePages/client'
+import customersModule from 'maodou/customers/client';
+import singlePagesModule from 'maodou/singlePages/client';
 
 import { render } from 'react-dom';
-import { Router, browserHistory } from 'react-router'
+import { Router, browserHistory } from 'react-router';
 
 const context = createContext();
 export const app = new App(context);

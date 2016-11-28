@@ -27,8 +27,8 @@ module.exports = {
     quotes: [2, 'single'],
     semi: [2, 'always'],
     'no-unused-vars': 1,
-    'no-console': 0,
-    'react/prop-types': 0, // disabled for dev
+    'no-console': 1,
+    'react/prop-types': 1, // disabled for dev
     'react/no-danger': 0
   }
 };

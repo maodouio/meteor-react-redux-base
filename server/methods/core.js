@@ -6,7 +6,7 @@ export default ({ Meteor, Collections }) => {
         $set: {
           'configs.appName': configs.appName
         }
-      })
+      });
     }
-  }))
-}
+  }));
+};

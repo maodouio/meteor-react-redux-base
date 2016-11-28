@@ -1,4 +1,5 @@
-import { browserHistory } from 'react-router'
+import { browserHistory } from 'react-router';
+import { handleEventError } from 'lib/helpers';
 
 export default {
   /**** User Actions ****/
@@ -19,29 +20,13 @@ export default {
       Meteor.call('events.add', title, coverUrl, time, location, limit, unit, fee, desc, (err) => {
         if (err) {
           console.log(err);
-          if (err.reason === "Title is required") {
-            toastr.info("发布失败，请先添加文章标题");
-          } else if (err.reason === "Time is required") {
-            toastr.info("发布失败，请先添加活动日期");
-          } else if (err.reason === "Cover url is required") {
-            toastr.info("发布失败，请先添加活动封面");
-          } else if (err.reason === "Location is required") {
-            toastr.info("发布失败，请先添加活动地点");
-          } else if (err.reason === "Fee is required") {
-            toastr.info("发布失败，请先添加活动费用");
-          } else if (err.reason === "Limit is required") {
-            toastr.info("发布失败，请先添加活动人数限制");
-          } else if (err.reason === "Limit must be a number") {
-            toastr.info("发布失败，活动人数限制必须是数字");
-          } else {
-            toastr.info("发布失败");
-          }
+          handleEventError(err);
         } else {
-          toastr.success("发布成功");
+          toastr.success('发布成功');
           browserHistory.push('/admin/events/list');
         }
       });
-    }
+    };
   },
   updateEvent({ Meteor, toastr }, event, id, coverUrl) {
     return () => {
@@ -66,29 +51,13 @@ export default {
       Meteor.call('events.edit', id, eventData, (err) => {
         if (err) {
           console.log(err);
-          if (err.reason === "Title is required") {
-            toastr.info("发布失败，请先添加文章标题");
-          } else if (err.reason === "Time is required") {
-            toastr.info("发布失败，请先添加活动日期");
-          } else if (err.reason === "Cover url is required") {
-            toastr.info("发布失败，请先添加活动封面");
-          } else if (err.reason === "Location is required") {
-            toastr.info("发布失败，请先添加活动地点");
-          } else if (err.reason === "Fee is required") {
-            toastr.info("发布失败，请先添加活动费用");
-          } else if (err.reason === "Limit is required") {
-            toastr.info("发布失败，请先添加活动人数限制");
-          } else if (err.reason === "Limit must be a number") {
-            toastr.info("发布失败，活动人数限制必须是数字");
-          } else {
-            toastr.info("发布失败");
-          }
+          handleEventError(err);
         } else {
-          toastr.success("编辑活动成功");
+          toastr.success('编辑活动成功');
           browserHistory.push('/admin/events/list');
         }
       });
-    }
+    };
   },
   deleteEvent({ Meteor, toastr, swal }, event, id) {
     return () => {
@@ -103,9 +72,9 @@ export default {
       }).then(() => {
         Meteor.call('events.delete', id, (err) => {
           if (err) {
-            toastr.error("删除失败");
+            toastr.error('删除失败');
           } else {
-            toastr.success("删除成功");
+            toastr.success('删除成功');
           }
         });
       }, (dismiss) => {
@@ -113,7 +82,7 @@ export default {
           console.log('cancel');
         }
       });
-    }
+    };
   }
 
 };

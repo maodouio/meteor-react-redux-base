@@ -37,32 +37,19 @@ export default {
       const content = $('.editor').summernote('code');
       Meteor.call('singlePages.changeContent', sectionName, content, (err) => {
         if (err) {
-          // swal({
-          //   title: '内容替换失败',
-          //   text: err.reason,
-          //   type: 'error',
-          // });
           toastr.error('失败', 'Error!');
         } else {
-          // swal({
-          //   title: '内容替换成功',
-          //   type: 'success',
-          // });
           toastr.success('成功', 'Success!');
         }
       });
     };
   },
-  changeReturnPrev({ Meteor, swal }, sectionName, callback) {
+  changeReturnPrev({ Meteor, toastr }, sectionName, callback) {
     return () => {
       const content = $('.editor').summernote('code');
       Meteor.call('singlePages.changeReturnPrev', sectionName, content, (err) => {
         if (err) {
-          swal({
-            title: '错误信息',
-            text: err.reason,
-            type: 'error',
-          });
+          toastr.error(`错误信息:${err.reason}`);
         } else {
           // $('.editor').summernote('disable');
           callback();
@@ -76,9 +63,9 @@ export default {
       Meteor.call('setTemplate', templateName, (err) => {
         if (err) {
           console.log(err);
-          toastr.error('更换模板失败', 'Error!');
+          toastr.error('更换模板失败');
         } else {
-          toastr.success('更换模板成功', 'Success!');
+          toastr.success('更换模板成功');
         }
       });
     };
@@ -87,9 +74,9 @@ export default {
     return () => {
       Meteor.call('singlePages.changeLogoName', logoName, (err) => {
         if (err) {
-          toastr.error('更换模板失败', 'Error!');
+          toastr.error('更换模板失败');
         } else {
-          toastr.success('更换模板成功', 'Success!');
+          toastr.success('更换模板成功');
         }
       });
     };
@@ -98,26 +85,20 @@ export default {
     return () => {
       Meteor.call('singlePages.changeHeadTitle', headTitle, (err) => {
         if (err) {
-          toastr.error('更换模板失败', 'Error!');
+          toastr.error('更换模板失败');
         } else {
-          toastr.success('更换模板成功', 'Success!');
+          toastr.success('更换模板成功');
         }
       });
     };
   },
-  changeToOrigin({ Meteor, swal }) {
+  changeToOrigin({ Meteor, toastr }) {
     return () => {
       Meteor.call('singlePages.changeToOrigin', (err) => {
         if (err) {
-          swal({
-            title: '模板还原失败',
-            type: 'error',
-          });
+          toastr.error('模板还原失败');
         } else {
-          swal({
-            title: '模板还原成功',
-            type: 'success',
-          });
+          toastr.success('模板还原成功');
         }
       });
     };
