@@ -24,7 +24,7 @@ export default (props)=>{
                   <hr />
                   <p style={styles.mLR15}>创建者：{props.customer.author}</p>
                   <p style={styles.mLR15}>创建于 {showPrettyTimestamp(props.customer.createdAt)}</p>
-                  <p style={styles.mLR15}>签单金额：{props.customer.money}元</p>
+                  <p style={styles.mLR15}>签单金额：{props.customer.amount}元</p>
                   <br /><br />
                 </div>
               </div> :
