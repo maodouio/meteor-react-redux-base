@@ -12,7 +12,7 @@ export default (context) => {
       }
       return customer;
     },
-    'customers.add'(index, title, category, customerName, salesName, desc, schedule, money, author) {
+    'customers.add'(index, title, category, customerName, salesName, desc, schedule, amount, author) {
       Customers.insert({
         index,
         title,
@@ -21,7 +21,7 @@ export default (context) => {
         salesName,
         desc,
         schedule,
-        money,
+        amount,
         author
       });
     },

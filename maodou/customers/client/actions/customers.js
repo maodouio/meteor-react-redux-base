@@ -14,10 +14,11 @@ export default {
       const salesName = customer.target.salesName.value;
       const desc = customer.target.desc.value;
       const schedule = customer.target.schedule.value;
-      const money = customer.target.money.value;
+      const amount = customer.target.amount.value;
       const author = Meteor.user()?Meteor.user().profile.nickname:"Guest";
-      Meteor.call('customers.add', index, title, category, customerName, salesName, desc, schedule, money, author, (err) => {
+      Meteor.call('customers.add', index, title, category, customerName, salesName, desc, schedule, amount, author, (err) => {
         if (err) {
+          console.log(err)
           toastr["error"]("发布失败", "Error!");
         } else {
           swal({
@@ -41,7 +42,7 @@ export default {
       const salesName = customer.target.salesName.value;
       const desc = customer.target.desc.value;
       const schedule = customer.target.schedule.value;
-      const money = customer.target.money.value;
+      const amount = customer.target.amount.value;
       const customerData = {
         index,
         title,
@@ -50,7 +51,7 @@ export default {
         salesName,
         desc,
         schedule,
-        money
+        amount
       };
       Meteor.call('customers.edit', id, customerData, (err) => {
         if (err) {
@@ -80,7 +81,7 @@ export default {
               title: '发布失败，请先添加项目负责人',
               type: 'error'
             });
-          } else if (err.reason === "Money must be a number") {
+          } else if (err.reason === "amount must be a number") {
             swal({
               title: '发布失败，项目金额必须是数字',
               type: 'error'

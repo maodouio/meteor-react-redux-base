@@ -49,7 +49,7 @@ Customers.attachSchema(
       max: 1000,
       optional: true
     },
-    money:{
+    amount:{
       type: Number,
       label:"签单金额",
       optional: true
