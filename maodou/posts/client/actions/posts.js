@@ -1,4 +1,5 @@
 import { browserHistory } from 'react-router';
+import { handlePostError } from 'lib/helpers';
 
 export default {
   /**** User Actions ****/
@@ -20,17 +21,9 @@ export default {
       Meteor.call('posts.add', category, coverUrl, title, author, content, (err) => {
         if (err) {
           console.log(err);
-          if (err.reason === "Title is required") {
-            toastr.info("请先添加文章标题");
-          } else if (err.reason === "Cover url is required") {
-            toastr.info("请先添加封面图片");
-          } else if (err.reason === "Author is required") {
-            toastr.info("请先添加文章作者");
-          } else {
-            toastr.error("发布失败");
-          }
+          handlePostError(err);
         } else {
-          toastr.success("发布成功");
+          toastr.success('发布成功');
           browserHistory.push('/admin/posts/list');
         }
       });
@@ -53,17 +46,9 @@ export default {
       Meteor.call('posts.edit', id, postData, (err) => {
         if (err) {
           console.log(err);
-          if (err.reason === "Title is required") {
-            toastr.info("请先添加文章标题");
-          } else if (err.reason === "Cover url is required") {
-            toastr.info("请先添加封面图片");
-          } else if (err.reason === "Author is required") {
-            toastr.info("请先添加文章作者");
-          } else {
-            toastr.info("发布失败");
-          }
+          handlePostError(err);
         } else {
-          toastr.success("编辑文章成功");
+          toastr.success('编辑文章成功');
           browserHistory.push('/admin/posts/list');
         }
       });
@@ -75,36 +60,47 @@ export default {
   deletePost({ Meteor, swal, toastr }, event, id) {
     return ()=> {
       event.preventDefault();
-      swal({
-        title: '确定删除吗？',
-        text: '此操作不可撤销',
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonText: '删除',
-        cancelButtonText: '取消'
-      }).then( () => {
+      const isCon = confirm('此操作不可撤销,你确定要删除吗？');
+      if (isCon) {
         Meteor.call('posts.delete', id, (err) => {
           if (err) {
             console.log(err);
-            toastr.error("删除失败");
+            toastr.error('删除失败');
           } else {
-            toastr.success("删除成功");
+            toastr.success('删除成功');
           }
         });
-      }, (dismiss) => {
-        if (dismiss === 'cancel') {
-          console.log('cancel');
-        }
-      });
-    }
+      }
+      // swal({
+      //   title: '确定删除吗？',
+      //   text: '此操作不可撤销',
+      //   type: 'warning',
+      //   showCancelButton: true,
+      //   confirmButtonText: '删除',
+      //   cancelButtonText: '取消'
+      // }).then( () => {
+      //   Meteor.call('posts.delete', id, (err) => {
+      //     if (err) {
+      //       console.log(err);
+      //       toastr.error("删除失败");
+      //     } else {
+      //       toastr.success("删除成功");
+      //     }
+      //   });
+      // }, (dismiss) => {
+      //   if (dismiss === 'cancel') {
+      //     console.log('cancel');
+      //   }
+      // });
+    };
   },
   changeImgPosition({ Meteor, toastr }, event) {
     return () => {
       Meteor.call('posts.imgPosition', event.target.value, (err) => {
         if (err) {
-          toastr.error("删除失败");
+          toastr.error('删除失败');
         } else {
-          toastr.success("保存成功");
+          toastr.success('保存成功');
         }
       });
     };
@@ -113,9 +109,9 @@ export default {
     return (dispatch) => {
       Meteor.call('posts.categories.tabsPosition', event.target.value, (err) => {
         if (err) {
-          toastr.error("删除失败");
+          toastr.error('删除失败');
         } else {
-          toastr.success("保存成功");
+          toastr.success('保存成功');
         }
       });
     };
@@ -124,9 +120,9 @@ export default {
     return (dispatch) => {
       Meteor.call('posts.categories.color', event.target.value, (err) => {
         if (err) {
-          toastr.error("删除失败");
+          toastr.error('删除失败');
         } else {
-          toastr.success("保存成功");
+          toastr.success('保存成功');
         }
       });
     };
