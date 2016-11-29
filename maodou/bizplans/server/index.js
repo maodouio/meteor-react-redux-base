@@ -17,6 +17,8 @@ export default {
     if (!Collections.Packages.findOne({ name: 'bizplans' })) {
       Collections.Packages.insert({
         name: 'bizplans',
+        moduleName: '项目模块',
+        display: false,
         configs: context.configs.bizplans || {}
       });
     }

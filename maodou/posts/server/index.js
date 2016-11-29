@@ -18,6 +18,8 @@ export default {
     if (!Collections.Packages.findOne({ name: 'posts' })) {
       Collections.Packages.insert({
         name: 'posts',
+        moduleName: '文章模块',
+        display: true,
         configs: context.configs.posts || {}
       });
     }

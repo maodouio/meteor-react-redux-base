@@ -18,6 +18,8 @@ export default {
     if (!Collections.Packages.findOne({ name: 'events' })) {
       Collections.Packages.insert({
         name: 'events',
+        moduleName: '活动模块',
+        display: true,
         configs: context.configs.events || {}
       });
     }

@@ -1,8 +1,8 @@
-// import React from 'react';
-// import {useDeps} from 'react-simple-di';
-// import {composeAll, withTracker, withLifecycle} from 'react-komposer-plus';
+import React from 'react';
+import {useDeps} from 'react-simple-di';
+import {composeAll, withTracker, withLifecycle} from 'react-komposer-plus';
 
-// import Home from '../../components/home';
+import Home from '../../components/home';
 
 // function composer({context}, onData)  {
 //   const user = context().Meteor.user();
@@ -23,15 +23,16 @@
 //   }
 // }
 
-// function configsComposer({context}, onData) {
-//   const { Meteor } = context();
-//   if (Meteor.subscribe('core.configs.user').ready()) {
-//     const coreConfigs = context().Collections.Packages.findOne({ name: 'core' }).configs;
-//     onData(null, { title: coreConfigs.appName });
-//   } else {
-//     onData(null, { title: '' });
-//   }
-// }
+function data({context}, onData) {
+  const { Meteor } = context();
+  Meteor.call('packages.posts', (err, data) => {
+    if (err) {
+      onData(null, { display: false });
+    } else {
+      onData(null, { display: data.display });
+    }
+  });
+}
 
 // const lifecycle = {
 //   componentWillReceiveProps(nextProps) {
@@ -41,9 +42,7 @@
 //   }
 // };
 
-// export default composeAll(
-//   withLifecycle(lifecycle),
-//   withTracker(composer),
-//   withTracker(configsComposer),
-//   useDeps()
-// )(Home);
+export default composeAll(
+  withTracker(data),
+  useDeps()
+)(Home);

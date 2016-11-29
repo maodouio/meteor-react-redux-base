@@ -6,8 +6,8 @@ export default {
   changeCategory(context, event, category) {
     return (dispatch) => {
       event.preventDefault();
-      dispatch({ type: 'CHANGE_POSTS_CATEGORY', category })
-    }
+      dispatch({ type: 'CHANGE_POSTS_CATEGORY', category });
+    };
   },
 
   /**** Admin Actions ****/
@@ -27,7 +27,7 @@ export default {
           browserHistory.push('/admin/posts/list');
         }
       });
-    }
+    };
   },
   updatePost({ Meteor, toastr }, event, id, coverUrl) {
     return () => {
@@ -52,7 +52,7 @@ export default {
           browserHistory.push('/admin/posts/list');
         }
       });
-    }
+    };
   },
   addCover(context, url) {
     return { type: 'ADD_POST_COVER', url };
@@ -60,7 +60,7 @@ export default {
   deletePost({ Meteor, swal, toastr }, event, id) {
     return ()=> {
       event.preventDefault();
-      const isCon = confirm('此操作不可撤销,你确定要删除吗？');
+      const isCon = confirm('此操作不可撤销,确定要删除吗？');
       if (isCon) {
         Meteor.call('posts.delete', id, (err) => {
           if (err) {
@@ -71,27 +71,6 @@ export default {
           }
         });
       }
-      // swal({
-      //   title: '确定删除吗？',
-      //   text: '此操作不可撤销',
-      //   type: 'warning',
-      //   showCancelButton: true,
-      //   confirmButtonText: '删除',
-      //   cancelButtonText: '取消'
-      // }).then( () => {
-      //   Meteor.call('posts.delete', id, (err) => {
-      //     if (err) {
-      //       console.log(err);
-      //       toastr.error("删除失败");
-      //     } else {
-      //       toastr.success("删除成功");
-      //     }
-      //   });
-      // }, (dismiss) => {
-      //   if (dismiss === 'cancel') {
-      //     console.log('cancel');
-      //   }
-      // });
     };
   },
   changeImgPosition({ Meteor, toastr }, event) {

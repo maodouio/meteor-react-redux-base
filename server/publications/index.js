@@ -9,4 +9,8 @@ export default ({ Meteor, Collections }) => {
   Meteor.publish('core.configs', function () {
     return Packages.find({ name: 'core' });
   });
-}
+
+  Meteor.publish('packages.list', () => {
+    return Packages.find({});
+  });
+};

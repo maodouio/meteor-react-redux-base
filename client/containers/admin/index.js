@@ -13,18 +13,29 @@ const userEvents = {
     dispatch(saveConfigs(configs));
   }
 };
+
 const subscriptions = ({ context }, onData) => {
-  const { Collections } = context;
-  const corePkg = Collections.Packages.findOne({ name: 'core' });
-  if (corePkg) {
-    const appName = corePkg.configs.appName;
-    onData(null, { appName });
+  const { Meteor, Collections } = context;
+  if (Meteor.subscribe('packages.list').ready()) {
+    const packages = Collections.Packages.find({}, {fields: {'name': 1, 'display': 1, 'moduleName': 1}}).fetch();
+    const corePkg = Collections.Packages.findOne({ name: 'core' });
+    if (corePkg) {
+      onData(null, {
+        appName: corePkg.configs.appName,
+        packages,
+        isReady: true,
+      });
+    }
+  } else {
+    onData(null, {isReady: false});
   }
 };
 
 const depsToProps = (context, actions) => ({
   context,
-  saveConfigs: actions.core.saveConfigs
+  dispatch: context.dispatch,
+  saveConfigs: actions.core.saveConfigs,
+  setModuleName: actions.core.setModuleName
 });
 
 export default composeAll(

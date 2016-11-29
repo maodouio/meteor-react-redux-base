@@ -21,17 +21,22 @@ const lifecycle = {
 
 const subscriptions = ({ context }, onData) => {
   const { Meteor, Collections, Roles } = context;
-  const corePkg = Collections.Packages.findOne({ name: 'core' });
-  if (corePkg) {
-    const nickname = Meteor.user() ? Meteor.user().profile.nickname : '';
-    onData(null, {
-      appName: corePkg.configs.appName,
-      loggedIn: !!context.Meteor.user(),
-      nickname,
-      isAdmin: Roles.userIsInRole(Meteor.user(), ['admin'])
-    });
+  if (Meteor.subscribe('packages.list').ready()) {
+    const packages = Collections.Packages.find({display: true}, {fields: {'name': 1}}).fetch();
+    const corePkg = Collections.Packages.findOne({ name: 'core' });
+    if (corePkg) {
+      const nickname = Meteor.user() ? Meteor.user().profile.nickname : '';
+      onData(null, {
+        appName: corePkg.configs.appName,
+        loggedIn: !!context.Meteor.user(),
+        nickname,
+        packages,
+        isReady: true,
+        isAdmin: Roles.userIsInRole(Meteor.user(), ['admin'])
+      });
+    }
   } else {
-    onData(null, {});
+    onData(null, {isReady: false});
   }
 };
 

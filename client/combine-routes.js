@@ -1,14 +1,14 @@
 import React from 'react';
 import { mount } from 'react-mounter';
 import _ from 'lodash';
-import Home from './components/home';
+import Home from './containers/home';
 import ResetPassword from './containers/users/reset-password';
 import ErrorPage from './components/common/errorPage';
 import Layout from './containers/layout';
 import AdminLayout from './containers/admin/layout';
 import Register from './containers/users/register';
 import Login from './containers/users/login';
-import MainPage from '../maodou/singlePages/client/containers/mainPage';
+// import MainPage from '../maodou/singlePages/client/containers/mainPage';
 
 export default function (routes, injectDeps, context) {
 
@@ -38,7 +38,7 @@ export default function (routes, injectDeps, context) {
     {
       path: '/',
       component: injectDeps(Layout),
-      indexRoute: {component: MainPage},
+      indexRoute: {component: Home},
       childRoutes: [
         { path: '/register', component: () => <Register /> },
         { path: '/login', component: () => <Login /> },

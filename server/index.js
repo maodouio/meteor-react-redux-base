@@ -21,6 +21,8 @@ export default {
     if (!Collections.Packages.findOne({ name: 'core' })) {
       Collections.Packages.insert({
         name: 'core',
+        moduleName: '核心模块',
+        display: true,
         configs: context.configs.core || {}
       });
     }

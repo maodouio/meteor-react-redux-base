@@ -15,11 +15,7 @@ export default (props) => (
       </div>
       <div id="navbar" className="navbar-collapse collapse">
         <ul className="nav navbar-nav navbar-left">
-          <li><Link to="/">首页</Link></li>
-          <li><Link to="/posts/list">新闻</Link></li>
-          <li><Link to="/events/list">活动</Link></li>
-          <li><Link to="/bizplans/list">项目</Link></li>
-          <li><Link to="/customers/list">客户</Link></li>
+          { props.isReady ? props.packages.map( (module) => renderNav(module)) : ''}
         </ul>
         {/*<ul className="nav navbar-nav navbar-right hidden-xs">
           <li className="dropdown">
@@ -44,6 +40,25 @@ export default (props) => (
   </nav>
 );
 
+const renderNav = (module) => {
+  switch (module.name) {
+    case 'posts':
+      return <li key={module.name}><Link to="/posts/list">新闻</Link></li>;
+    case 'events':
+      return <li key={module.name}><Link to="/events/list">活动</Link></li>;
+    case 'bizplans':
+      return <li key={module.name}><Link to="/bizplans/list">项目</Link></li>;
+    case 'customers':
+      return <li key={module.name}><Link to="/customers/list">客户</Link></li>;
+    case 'core':
+      return <span key='core'></span>;
+    case 'wechat':
+      return <span key='wechat'></span>;
+    default:
+      return <span key='default'></span>;
+  }
+};
+
 const renderUser = (nickname) => {
   return (
     <ul className="nav navbar-nav navbar-right">
@@ -51,7 +66,7 @@ const renderUser = (nickname) => {
       <li><Link to="/" onClick={(e) => Meteor.logout()}>退出</Link></li>
     </ul>
   );
-}
+};
 
 const renerLogin = () => (
   <ul className="nav navbar-nav navbar-right">
