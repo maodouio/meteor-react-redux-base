@@ -6,7 +6,7 @@ import CustomersEdit from './containers/admin/customersEdit';
 export default function (injectDeps, { configs }) {
   const routes = [
     {path: 'customers', component: CustomersAdmin, childRoutes:[]},
-    {path: 'customer/edit/:id', component: CustomersEdit, childRoutes:[]}
+    {path: 'customers/edit/:id', component: CustomersEdit, childRoutes:[]}
   ];
 
   const subMenu = configs.customers.subMenu;

@@ -34,7 +34,7 @@ export default (props) => (
           </ul>
            : <span />
          }
-         { props.loggedIn ? renderUser(props.nickname) : renerLogin() }
+         { props.loggedIn ? renderUser(props.nickname) : renderLogin() }
       </div>
     </div>
   </nav>
@@ -68,7 +68,7 @@ const renderUser = (nickname) => {
   );
 };
 
-const renerLogin = () => (
+const renderLogin = () => (
   <ul className="nav navbar-nav navbar-right">
     <li><Link to="/login">登录</Link></li>
     <li><Link to="/register">注册</Link></li>
