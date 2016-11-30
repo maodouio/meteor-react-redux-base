@@ -15,9 +15,12 @@ import wechatModule from 'maodou/wechat/client';
 import bizplansModule from 'maodou/bizplans/client';
 import customersModule from 'maodou/customers/client';
 import singlePagesModule from 'maodou/singlePages/client';
+import usersModule from 'maodou/users/client';
 
 import { render } from 'react-dom';
 import { Router, browserHistory } from 'react-router';
+import { Tracker } from 'meteor/tracker';
+import Packages  from '../lib/collections/packages';
 
 const context = createContext();
 export const app = new App(context);
@@ -31,9 +34,13 @@ app.loadMiddlewares([
   i18nMiddleware(['enUS', 'zhCN'])
 ]);
 
-Meteor.call('packages.list', (err, data) => {
-  if (!err) {
-    for (const module of data) {
+var subscription = Meteor.subscribe('packages.list');
+
+Tracker.autorun(() => {
+  if (subscription.ready()) {
+    const modules = Packages.find({ display: true }, { fields: { 'name': 1 } }).fetch();
+    console.log(modules);
+    for (const module of modules) {
       if (module.name === 'core') {
         app.loadModule(coreModule);
       } else if (module.name === 'events') {
@@ -48,16 +55,46 @@ Meteor.call('packages.list', (err, data) => {
         app.loadModule(bizplansModule);
       } else if (module.name === 'wechat') {
         app.loadModule(wechatModule);
+      } else if (module.name === 'users') {
+        app.loadModule(usersModule);
       } else {
         console.log(`模块${module.name}需要加入到main.js文件中`);
       }
     }
     app.init();
     render(<Router history={browserHistory} routes={app.routes} />, document.getElementById('body'));
-  } else {
-    console.log(err);
   }
 });
+
+// Meteor.call('packages.list', (err, data) => {
+//   if (!err) {
+//     for (const module of data) {
+//       if (module.name === 'core') {
+//         app.loadModule(coreModule);
+//       } else if (module.name === 'events') {
+//         app.loadModule(eventsModule);
+//       } else if (module.name === 'posts') {
+//         app.loadModule(postsModule);
+//       } else if (module.name === 'singlePages') {
+//         app.loadModule(singlePagesModule);
+//       } else if (module.name === 'customers') {
+//         app.loadModule(customersModule);
+//       } else if (module.name === 'bizplans') {
+//         app.loadModule(bizplansModule);
+//       } else if (module.name === 'wechat') {
+//         app.loadModule(wechatModule);
+//       } else if (module.name === 'users') {
+//         app.loadModule(usersModule);
+//       } else {
+//         console.log(`模块${module.name}需要加入到main.js文件中`);
+//       }
+//     }
+//     app.init();
+//     render(<Router history={browserHistory} routes={app.routes} />, document.getElementById('body'));
+//   } else {
+//     console.log(err);
+//   }
+// });
 // app.loadModule(coreModule);
 // app.loadModule(wechatModule);
 // app.loadModule(postsModule);

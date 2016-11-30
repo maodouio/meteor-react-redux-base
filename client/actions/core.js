@@ -13,9 +13,15 @@ export default {
       });
     };
   },
-  setModuleName({ Meteor, toastr }, e, moduleName, display) {
+  setModuleName({ Meteor, toastr, Collections }, e, moduleName, display) {
     return () => {
       e.preventDefault();
+      const limit = Collections.Packages.find({display: true, name: {$ne: 'core'}}).fetch();
+      const module = Collections.Packages.findOne({name: moduleName});
+      if (!module.display && limit.length>3) {
+        toastr.error('最多选择4个模块');
+        return null;
+      }
       Meteor.call('setModuleName', moduleName, display, (err) => {
         if (err) {
           console.log(err);

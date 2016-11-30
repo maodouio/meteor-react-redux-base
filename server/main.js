@@ -11,6 +11,7 @@ import wechatModule from 'maodou/wechat/server';
 import bizplansModule from 'maodou/bizplans/server';
 import customersModule from 'maodou/customers/server';
 import singlePagesModule from 'maodou/singlePages/server';
+import usersModule from 'maodou/users/server';
 
 //系统变量MAIL_URL配置，暂时放在这里
 process.env.MAIL_URL = Meteor.settings.mailUrl;
@@ -31,5 +32,6 @@ app.loadModule(eventsModule);
 app.loadModule(bizplansModule);
 app.loadModule(customersModule);
 app.loadModule(singlePagesModule);
+app.loadModule(usersModule);
 
 app.init();

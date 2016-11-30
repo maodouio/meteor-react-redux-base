@@ -13,6 +13,7 @@ function composer({context}, onData) {
 
 const depsToProps = (context, actions) => ({
   context,
+  dispatch: context.dispatch,
   loginWithPassword: actions.users.loginWithPassword
 });
 

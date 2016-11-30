@@ -9,7 +9,8 @@ export default class extends React.Component {
 
   onSubmit(e) {
     e.preventDefault();
-    this.props.loginWithPassword(this._emailInput.value, this._passwordInput.value);
+    const { dispatch, loginWithPassword } = this.props;
+    dispatch(loginWithPassword(this._emailInput.value, this._passwordInput.value));
   }
 
   render() {

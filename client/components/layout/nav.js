@@ -50,6 +50,10 @@ const renderNav = (module) => {
       return <li key={module.name}><Link to="/bizplans/list">项目</Link></li>;
     case 'customers':
       return <li key={module.name}><Link to="/customers/list">客户</Link></li>;
+    case 'users':
+      return <li key={module.name}><Link to="/user">个人中心</Link></li>;
+    case 'singlePages':
+      return <li key={module.name}><Link to="/main">单页面</Link></li>;
     case 'core':
       return <span key='core'></span>;
     case 'wechat':

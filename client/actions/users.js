@@ -1,27 +1,30 @@
 import { browserHistory } from 'react-router';
 
 export default {
-  enrollWithEmail({Meteor}, email, callback) {
-    Meteor.call("users.enrollWithEmail", email, callback);
+  enrollWithEmail({ Meteor }, email, callback) {
+    return () => {
+      Meteor.call("users.enrollWithEmail", email, callback);
+    };
   },
   loginWithPassword({ Meteor, toastr }, email, password, callback) {
-    Meteor.loginWithPassword(email, password, (err) => {
-      if (err) {
-        console.log(err);
-        if (err.reason === "User not found") {
-          toastr.error("登录失败，用户不存在");
-        } else if (err.reason === "Incorrect password") {
-          toastr.error("登录失败，密码错误");
+    return () => {
+      Meteor.loginWithPassword(email, password, (err) => {
+        if (err) {
+          console.log(err);
+          if (err.reason === "User not found") {
+            toastr.error("登录失败，用户不存在");
+          } else if (err.reason === "Incorrect password") {
+            toastr.error("登录失败，密码错误");
+          } else {
+            toastr.error("登录失败");
+          }
         } else {
-          toastr.error("登录失败");
+          toastr.success("登录成功");
+          browserHistory.push('/');
         }
-      } else {
-        toastr.success("登录成功");
-        browserHistory.push('/');
-      }
-    });
+      });
+    }
   },
-
   resetPassword({Accounts}, token, password, callback) {
     Accounts.resetPassword(token, password, callback);
   },

@@ -9,7 +9,7 @@ export default class AdminCore extends Component {
 
   render() {
     const { isReady, packages } = this.props;
-    console.log(packages);
+    // console.log(packages);
     const selectedModule = filter(packages, 'display');
     if (!isReady) {
       return <Loding />;
@@ -19,7 +19,7 @@ export default class AdminCore extends Component {
         <div className="row">
           {this.renderCoreName()}
           <div className="col-xs-12">
-            <h4>模块配置，请至少选择一个模块(已选择{selectedModule.length-1}个)</h4>
+            <h4>模块配置，最多选择4个模块(已选择{selectedModule.length-1}个)</h4>
             {packages.map( (module) => this.renderModule(module))}
           </div>
         </div>
