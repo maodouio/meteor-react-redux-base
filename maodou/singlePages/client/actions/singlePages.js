@@ -27,7 +27,7 @@ export default {
         if (err) {
           toastr.error('失败', 'Error!');
         } else {
-          toastr.success('成功', 'Success!');
+          // toastr.success('成功', 'Success!');
         }
       });
     };
@@ -74,9 +74,9 @@ export default {
     return () => {
       Meteor.call('singlePages.changeLogoName', logoName, (err) => {
         if (err) {
-          toastr.error('更换模板失败');
+          toastr.error('更新网站名称失败');
         } else {
-          toastr.success('更换模板成功');
+          // toastr.success('更新网站名称成功');
         }
       });
     };
@@ -85,9 +85,9 @@ export default {
     return () => {
       Meteor.call('singlePages.changeHeadTitle', headTitle, (err) => {
         if (err) {
-          toastr.error('更换模板失败');
+          toastr.error('更新网站title失败');
         } else {
-          toastr.success('更换模板成功');
+          // toastr.success('更新网站title成功');
         }
       });
     };
