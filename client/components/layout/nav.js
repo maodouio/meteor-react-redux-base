@@ -15,9 +15,9 @@ export default (props) => (
       </div>
       <div id="navbar" className="navbar-collapse collapse">
         <ul className="nav navbar-nav navbar-left">
+          <li><Link to="/">首页</Link></li>
           <li><Link to="/posts/list">新闻</Link></li>
           <li><Link to="/events/list">活动</Link></li>
-          <li><Link to="/main">页面</Link></li>
           <li><Link to="/bizplans/list">项目</Link></li>
           <li><Link to="/customers/list">客户</Link></li>
         </ul>

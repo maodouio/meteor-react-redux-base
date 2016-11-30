@@ -9,7 +9,7 @@ export default class Iframe extends Component {
           height='480'
           frameBorder='0'
           allowFullScreen
-          src='/main'>
+          src='/'>
         </iframe>
       </div>
     );
