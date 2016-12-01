@@ -15,7 +15,7 @@ import wechatModule from 'maodou/wechat/client';
 import bizplansModule from 'maodou/bizplans/client';
 import customersModule from 'maodou/customers/client';
 import singlePagesModule from 'maodou/singlePages/client';
-import usersModule from 'maodou/users/client';
+import usersManageModule from 'maodou/usersManage/client';
 
 import { render } from 'react-dom';
 import { Router, browserHistory } from 'react-router';
@@ -55,8 +55,8 @@ Tracker.autorun(() => {
         app.loadModule(bizplansModule);
       } else if (module.name === 'wechat') {
         app.loadModule(wechatModule);
-      } else if (module.name === 'users') {
-        app.loadModule(usersModule);
+      } else if (module.name === 'usersManage') {
+        app.loadModule(usersManageModule);
       } else {
         console.log(`模块${module.name}需要加入到main.js文件中`);
       }

@@ -3,10 +3,10 @@ import UsersList from './components/admin/usersList';
 
 export default function (injectDeps, { configs }) {
   const routes = [
-    {path: 'users/list', component: UsersAdmin, childRoutes:[]},
+    {path: 'usersManage', component: UsersAdmin, childRoutes:[]},
   ];
 
-  const subMenu = configs.users.subMenu;
+  const subMenu = configs.usersManage.subMenu;
   const subMenuComponents = [
     UsersList,
   ];

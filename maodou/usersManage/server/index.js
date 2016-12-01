@@ -8,12 +8,12 @@ export default {
   methods,
   init(context) {
     const { Collections } = context;
-    if (!Collections.Packages.findOne({ name: 'users' })) {
+    if (!Collections.Packages.findOne({ name: 'usersManage' })) {
       Collections.Packages.insert({
-        name: 'users',
+        name: 'usersManage',
         moduleName: '用户管理模块',
         display: false,
-        configs: context.configs.users || {}
+        configs: context.configs.usersManage || {}
       });
     }
   }
