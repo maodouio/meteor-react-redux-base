@@ -1,11 +1,9 @@
-import collections from '../lib/collections';
 import publications from './publications';
 import methods from './methods';
 import configs from '../lib/configs';
 
 export default {
   configs,
-  collections,
   publications,
   methods,
   init(context) {
