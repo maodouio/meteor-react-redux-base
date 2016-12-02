@@ -20,7 +20,7 @@ export default {
           }
         } else {
           toastr.success("登录成功");
-          browserHistory.push('/');
+          browserHistory.push('/user');
         }
       });
     }
@@ -51,7 +51,7 @@ export default {
         if (!err) {
           toastr["success"]("注册成功");
           Meteor.loginWithPassword(email, password);
-          browserHistory.push('/');
+          browserHistory.push('/user');
         } else {
           console.log(err.reason);
           if (err.reason === "Username already exists.") {

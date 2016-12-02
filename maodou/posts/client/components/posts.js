@@ -60,11 +60,11 @@ export default (props) => {
           }
         </div>
       </div>
-      {
+      {/*
         props.configs && props.configs.UI.categoriesPosition === 'bottom' ?
           <Tabs position="bottom" color={props.configs.UI.categoriesTabsColor} /> :
           <div />
-      }
+      */}
     </div>
   );
 }

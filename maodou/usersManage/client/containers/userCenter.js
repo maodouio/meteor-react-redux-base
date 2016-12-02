@@ -14,7 +14,8 @@ const initData = ({ context }, onData) => {
       loggedIn: !!user,
       nickname,
       isWechat,
-      avatarWechat
+      avatarWechat,
+      isAdmin: Roles.userIsInRole(Meteor.user(), ['admin'])
     });
   } else {
     onData(null, { loggedIn: user});
