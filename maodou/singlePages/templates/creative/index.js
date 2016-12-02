@@ -2,7 +2,7 @@ export default {
   templateName: 'Creative',
   logoName: 'Creative',
   headTitle: 'Creative Template',
-  preview: 'http://odhge55gv.bkt.clouddn.com/creative.png?imageView2/2/w/200/h/300/interlace/0/q/100',
+  preview: 'https://ohjdeohom.qnssl.com/creative.png?imageView2/2/w/200/h/300/interlace/0/q/100',
   selected: false,
   sections: [
     {
@@ -103,8 +103,8 @@ export default {
           <div class="container-fluid">
               <div class="row no-gutter popup-gallery">
                   <div class="col-lg-4 col-sm-6">
-                      <a href="http://odhge55gv.bkt.clouddn.com/base/singlepages/template/creative-1.jpg" class="portfolio-box">
-                          <img src="http://odhge55gv.bkt.clouddn.com/base/singlepages/template/creative-1.jpg" class="img-responsive" alt="">
+                      <a href="https://ohjdeohom.qnssl.com/base/singlepages/template/creative-1.jpg" class="portfolio-box">
+                          <img src="https://ohjdeohom.qnssl.com/base/singlepages/template/creative-1.jpg" class="img-responsive" alt="">
                           <div class="portfolio-box-caption">
                               <div class="portfolio-box-caption-content">
                                   <div class="project-category text-faded">
@@ -118,8 +118,8 @@ export default {
                       </a>
                   </div>
                   <div class="col-lg-4 col-sm-6">
-                      <a href="http://odhge55gv.bkt.clouddn.com/base/singlepages/template/creative-2.jpg" class="portfolio-box">
-                          <img src="http://odhge55gv.bkt.clouddn.com/base/singlepages/template/creative-2.jpg" class="img-responsive" alt="">
+                      <a href="https://ohjdeohom.qnssl.com/base/singlepages/template/creative-2.jpg" class="portfolio-box">
+                          <img src="https://ohjdeohom.qnssl.com/base/singlepages/template/creative-2.jpg" class="img-responsive" alt="">
                           <div class="portfolio-box-caption">
                               <div class="portfolio-box-caption-content">
                                   <div class="project-category text-faded">
@@ -133,8 +133,8 @@ export default {
                       </a>
                   </div>
                   <div class="col-lg-4 col-sm-6">
-                      <a href="http://odhge55gv.bkt.clouddn.com/base/singlepages/template/creative-3.jpg" class="portfolio-box">
-                          <img src="http://odhge55gv.bkt.clouddn.com/base/singlepages/template/creative-3.jpg" class="img-responsive" alt="">
+                      <a href="https://ohjdeohom.qnssl.com/base/singlepages/template/creative-3.jpg" class="portfolio-box">
+                          <img src="https://ohjdeohom.qnssl.com/base/singlepages/template/creative-3.jpg" class="img-responsive" alt="">
                           <div class="portfolio-box-caption">
                               <div class="portfolio-box-caption-content">
                                   <div class="project-category text-faded">
@@ -148,8 +148,8 @@ export default {
                       </a>
                   </div>
                   <div class="col-lg-4 col-sm-6">
-                      <a href="http://odhge55gv.bkt.clouddn.com/base/singlepages/template/creative-4.jpg" class="portfolio-box">
-                          <img src="http://odhge55gv.bkt.clouddn.com/base/singlepages/template/creative-4.jpg" class="img-responsive" alt="">
+                      <a href="https://ohjdeohom.qnssl.com/base/singlepages/template/creative-4.jpg" class="portfolio-box">
+                          <img src="https://ohjdeohom.qnssl.com/base/singlepages/template/creative-4.jpg" class="img-responsive" alt="">
                           <div class="portfolio-box-caption">
                               <div class="portfolio-box-caption-content">
                                   <div class="project-category text-faded">
@@ -163,8 +163,8 @@ export default {
                       </a>
                   </div>
                   <div class="col-lg-4 col-sm-6">
-                      <a href="http://odhge55gv.bkt.clouddn.com/base/singlepages/template/creative-5.jpg" class="portfolio-box">
-                          <img src="http://odhge55gv.bkt.clouddn.com/base/singlepages/template/creative-5.jpg" class="img-responsive" alt="">
+                      <a href="https://ohjdeohom.qnssl.com/base/singlepages/template/creative-5.jpg" class="portfolio-box">
+                          <img src="https://ohjdeohom.qnssl.com/base/singlepages/template/creative-5.jpg" class="img-responsive" alt="">
                           <div class="portfolio-box-caption">
                               <div class="portfolio-box-caption-content">
                                   <div class="project-category text-faded">
@@ -178,8 +178,8 @@ export default {
                       </a>
                   </div>
                   <div class="col-lg-4 col-sm-6">
-                      <a href="http://odhge55gv.bkt.clouddn.com/base/singlepages/template/creative-6.jpg" class="portfolio-box">
-                          <img src="http://odhge55gv.bkt.clouddn.com/base/singlepages/template/creative-6.jpg" class="img-responsive" alt="">
+                      <a href="https://ohjdeohom.qnssl.com/base/singlepages/template/creative-6.jpg" class="portfolio-box">
+                          <img src="https://ohjdeohom.qnssl.com/base/singlepages/template/creative-6.jpg" class="img-responsive" alt="">
                           <div class="portfolio-box-caption">
                               <div class="portfolio-box-caption-content">
                                   <div class="project-category text-faded">

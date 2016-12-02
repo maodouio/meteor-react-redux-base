@@ -13,10 +13,10 @@ export default class BizplansList extends Component {
             <h4 className='glyphicon glyphicon-hand-down'>
               项目列表
             </h4>
+            <Link to='/bizplan/add' style={styles.linkAdd}>
+              <i className='fa fa-plus fa-lg' aria-hidden='true'></i>
+            </Link>
           </div>
-          <Link to='/bizplan/add' style={styles.linkAdd}>
-            <i className='fa fa-plus fa-lg' aria-hidden='true'></i>
-          </Link>
         </div>
         {this.renderBizplans(bizplans)}
       </div>
