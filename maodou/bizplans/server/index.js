@@ -20,9 +20,8 @@ export default {
         configs: context.configs.bizplans || {}
       });
     }
-    if (Collections.Bizplans.find().count() < 3) {
+    if (Collections.Bizplans.find().count() < 2) {
       Collections.Bizplans.insert({
-        _id: "fYFXLYYM9qBzJCCEn",
         PDFName: "CMS based on Meteor and React.pptx",
         PDFUrl: "http://og0f8itra.bkt.clouddn.com/FlCXthxYnYpTMz_9RyaCuaHTFUtf",
         name: "ofo 共享单车",
@@ -34,7 +33,6 @@ export default {
         desc: "随时随地有车骑"
       });
       Collections.Bizplans.insert({
-        _id: "uLMiaiQ6DkDtWNgH8",
         PDFName: "Real项目需求分析书 .xlsx",
         PDFUrl: "http://og0f8itra.bkt.clouddn.com/Ft-hZ1elMxk0AuQMuKdBUr1uS1_S",
         name: "毛豆网",
