@@ -1,4 +1,4 @@
-import UserCenter from './components/userCenter';
+import UserCenter from './containers/userCenter';
 import UserInfo from './components/userInfo';
 
 export default function (injectDeps, { configs }) {

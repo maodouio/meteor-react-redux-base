@@ -18,10 +18,17 @@ export default class AdminCore extends Component {
       <div className="container">
         <div className="row">
           {this.renderCoreName()}
-          <div className="col-xs-12">
-            <h4>模块配置，最多选择4个模块(已选择{selectedModule.length-1}个)</h4>
-            {packages.map( (module) => this.renderModule(module))}
-          </div>
+          {/* <div className="col-xs-12" style={{padding: '10px'}}>
+                      <h3>模块配置，最多选择4个模块(已选择{selectedModule.length-1}个)</h3>
+                      <div>
+                        <h4>已选模块</h4>
+                        {packages.map( (module) => this.renderDisplayedModule(module))}
+                      </div>
+                      <div>
+                        <h4>未选模块</h4>
+                        {packages.map( (module) => this.renderModule(module))}
+                      </div>
+                    </div> */}
         </div>
       </div>
     );
@@ -42,22 +49,38 @@ export default class AdminCore extends Component {
     );
   }
 
-  renderModule(module) {
-    if (module.name === 'core') {
-      return null;
-    }
-    const btnClass = module.display ? 'btn btn-info' : 'btn btn-warning';
-    return (
-      <div className="btn-group" style={{margin: '10px'}} key={module.name}>
-        <button className={btnClass} type="button" onClick={(e) => this.handleClick(e, module.name, module.display)}>{module.moduleName}</button>
-      </div>
-    );
-  }
+  // renderDisplayedModule(module) {
+  //   if (module.name === 'core') {
+  //     return null;
+  //   }
+  //   const btnClass = module.display ? 'btn btn-info' : 'btn btn-warning';
+  //   if (module.display) {
+  //     return (
+  //       <div className="btn-group" style={{margin: '10px'}} key={module.name}>
+  //         <button className={btnClass} type="button" onClick={(e) => this.handleClick(e, module.name, module.display)}>{module.moduleName}</button>
+  //       </div>
+  //     );
+  //   }
+  // }
 
-  handleClick(e, moduleName, display) {
-    const { dispatch, setModuleName } = this.props;
-    dispatch(setModuleName(e, moduleName, display));
-  }
+  // renderModule(module) {
+  //   if (module.name === 'core') {
+  //     return null;
+  //   }
+  //   const btnClass = module.display ? 'btn btn-info' : 'btn btn-warning';
+  //   if (!module.display) {
+  //     return (
+  //       <div className="btn-group" style={{margin: '10px'}} key={module.name}>
+  //         <button className={btnClass} type="button" onClick={(e) => this.handleClick(e, module.name, module.display)}>{module.moduleName}</button>
+  //       </div>
+  //     );
+  //   }
+  // }
+
+  // handleClick(e, moduleName, display) {
+  //   const { dispatch, setModuleName } = this.props;
+  //   dispatch(setModuleName(e, moduleName, display));
+  // }
 }
 
 AdminCore.propTypes = {

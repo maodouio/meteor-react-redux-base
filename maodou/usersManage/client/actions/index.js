@@ -1,5 +1,5 @@
-import users from './users';
+import usersManage from './usersManage';
 
 export default {
-  users
+  usersManage
 };

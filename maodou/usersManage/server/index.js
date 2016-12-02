@@ -12,7 +12,7 @@ export default {
       Collections.Packages.insert({
         name: 'usersManage',
         moduleName: '用户管理模块',
-        display: false,
+        display: true,
         configs: context.configs.usersManage || {}
       });
     }

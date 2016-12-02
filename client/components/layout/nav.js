@@ -43,7 +43,7 @@ export default (props) => (
 const renderNav = (module) => {
   switch (module.name) {
     case 'posts':
-      return <li key={module.name}><Link to="/posts/list">新闻</Link></li>;
+      return <li key={module.name}><Link to="/posts/list">文章</Link></li>;
     case 'events':
       return <li key={module.name}><Link to="/events/list">活动</Link></li>;
     case 'bizplans':
