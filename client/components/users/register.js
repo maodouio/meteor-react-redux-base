@@ -21,7 +21,7 @@ export default class Register extends Component {
                   </div>
                   <div className="form-group">
                     <label className="control-label" htmlFor="email">邮箱</label>
-                    <input type="text" placeholder="example@gmail.com" title="Please enter you email" required="" name="email" id="email" className="form-control" />
+                    <input type="text" placeholder="admin@example.com" title="Please enter you email" required="" name="email" id="email" className="form-control" />
                   </div>
                   <div className="form-group">
                     <label className="control-label" htmlFor="password">密码</label>

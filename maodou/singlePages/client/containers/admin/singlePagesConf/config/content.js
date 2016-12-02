@@ -29,7 +29,7 @@ const lifeCycle = {
   },
   componentDidUpdate() {
     $('.editor').summernote('reset');
-    $('.editor').summernote('focus');
+    // $('.edsitor').summernote('focus');
   },
   componentWillUnmount() {
     const { dispatch, selectSection } = this.props;

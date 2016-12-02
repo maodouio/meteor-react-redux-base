@@ -22,5 +22,29 @@ export default {
         configs: context.configs.bizplans || {}
       });
     }
+    if (Collections.Bizplans.find().count() < 2) {
+      Collections.Bizplans.insert({
+        PDFName: "CMS based on Meteor and React.pptx",
+        PDFUrl: "http://og0f8itra.bkt.clouddn.com/FlCXthxYnYpTMz_9RyaCuaHTFUtf",
+        name: "ofo 共享单车",
+        contact: "18500557934",
+        types: [
+            "智能硬件",
+            "体育"
+        ],
+        desc: "随时随地有车骑"
+      });
+      Collections.Bizplans.insert({
+        PDFName: "Real项目需求分析书 .xlsx",
+        PDFUrl: "http://og0f8itra.bkt.clouddn.com/Ft-hZ1elMxk0AuQMuKdBUr1uS1_S",
+        name: "毛豆网",
+        contact: "https://www.maodou.io/",
+        types: [
+            "互联网与信息技术",
+            "SaaS/PaaS工具"
+        ],
+        desc: "专注内容创业的云平台"
+      });
+    }
   }
 };

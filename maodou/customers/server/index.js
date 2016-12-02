@@ -28,11 +28,11 @@ export default {
         title: 'CRM项目重构',
         category: 'C类,产品无关定制项目客户',
         salesName: 'Shann',
-        customerName: 'CEO',
+        customerName: '张文',
         desc: '对已有的基于blaze的CRM项目进行重构，整合的meteor-react-redux-base的模版中，扩展数据库，扩展筛选功能。',
         schedule: '60% 已经收到首款，正在开发',
         amount: 54321,
-        author: 'God'
+        author: 'test'
       });
       Collections.Customers.insert({
         index: 2,
@@ -46,7 +46,7 @@ export default {
         author: '白云'
       });
       Collections.Customers.insert({
-        index: 2,
+        index: 3,
         title: '视频直播',
         category: 'B类,产品相关定制项目客户'	,
         salesName: '小白',
