@@ -25,15 +25,43 @@ export default {
       });
     }
     if (Meteor.users.find().count() === 0) {
+      const ownerUser = {
+        username: 'owner',
+        email: 'owner@example.com',
+        password: '123456',
+        emails: [{ address: 'owner@example.com', verified: true }],
+        profile: { nickname: 'owner' },
+      };
+      const ownerId = Accounts.createUser(ownerUser);
+      context.Roles.addUsersToRoles(ownerId, ['owner', 'admin', 'member', 'user']);
       const adminUser = {
         username: 'admin',
         email: 'admin@example.com',
         password: '123456',
         emails: [{ address: 'admin@example.com', verified: true }],
-        profile: { nickname: 'Admin' },
+        profile: { nickname: 'admin' },
       };
-      const userId = Accounts.createUser(adminUser);
-      context.Roles.addUsersToRoles(userId, ['admin']);
+      const adminId = Accounts.createUser(adminUser);
+      context.Roles.addUsersToRoles(adminId, ['admin', 'member', 'user']);
+      const memberUser = {
+        username: 'member',
+        email: 'member@example.com',
+        password: '123456',
+        emails: [{ address: 'member@example.com', verified: true }],
+        profile: { nickname: 'member' },
+      };
+      const memberId = Accounts.createUser(memberUser);
+      context.Roles.addUsersToRoles(memberId, ['member', 'user']);
+      const userUser = {
+        username: 'user',
+        email: 'user@example.com',
+        password: '123456',
+        emails: [{ address: 'user@example.com', verified: true }],
+        profile: { nickname: 'user' },
+      };
+      const userId = Accounts.createUser(userUser);
+      context.Roles.addUsersToRoles(userId, ['user']);
+
     }
   }
 };

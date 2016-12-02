@@ -20,6 +20,7 @@
     "react": "^15.3.1",
     "react-addons-pure-render-mixin": "^15.0.0",
     "react-dom": "^15.3.1",
+    "react-helmet": "^3.2.2",
     "react-komposer-plus": "^2.2.3",
     "react-ladda": "^4.0.5",
     "react-mounter": "^1.2.0",
@@ -28,11 +29,10 @@
     "react-simple-di": "^1.2.0",
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
+    "sortablejs": "^1.5.0-rc1",
     "sweetalert2": "^5.0.7",
     "toastr": "^2.1.2",
-    "wechat": "^2.0.3",
-    "react-helmet": "^3.2.2",
-    "sortablejs": "^1.5.0-rc1"
+    "wechat": "^2.0.3"
   },
   "main": "server/main.js",
   "browser": "client/main.js",

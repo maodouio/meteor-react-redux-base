@@ -28,6 +28,7 @@ const subscriptions = ({ context }, onData) => {
       appName: corePkg.configs.appName,
       loggedIn: !!context.Meteor.user(),
       nickname,
+      isOwner: Roles.userIsInRole(Meteor.user(), ['owner']),
       isAdmin: Roles.userIsInRole(Meteor.user(), ['admin'])
     });
   } else {

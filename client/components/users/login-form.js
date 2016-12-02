@@ -26,7 +26,7 @@ export default class extends React.Component {
                 <form onSubmit={this.onSubmit} id="loginForm">
                   <div className="form-group">
                     <label className="control-label" htmlFor="username">邮箱</label>
-                    <input type="text" ref={(c) => this._emailInput = c} placeholder="admin@example.com" title="Please enter you username" required="" name="username" id="username" className="form-control" />
+                    <input type="text" ref={(c) => this._emailInput = c} placeholder="owner@example.com" title="Please enter you username" required="" name="username" id="username" className="form-control" />
                   </div>
                   <div className="form-group">
                     <label className="control-label" htmlFor="password">密码</label>
