@@ -36,8 +36,8 @@ export default class UserCenter extends Component {
 
   renderUserLogin() {
     return (
-      <div>
-        <h3>还没有登录，登录后享受更多权利!</h3>
+      <div style={this.getStyles().notLogin}>
+        <h3>未登录，请先登录！</h3>
         <Link to='/login' className='btn btn-success'>登录</Link>
         <Link to='/register' className='btn btn-success'>注册</Link>
       </div>
@@ -90,6 +90,11 @@ export default class UserCenter extends Component {
         color: '#fff',
         backgroundColor: '#3E66D1',
       },
+      notLogin: {
+        textAlign: 'center',
+        marginTop: '20px',
+        padding: '20px',
+      },
       userConf: {
         flex: '0 1 auto',
         padding: '10px',
@@ -121,12 +126,11 @@ export default class UserCenter extends Component {
       userInfo: {
         flexFlow: 'column wrap',
         display: 'flex',
-        justifyContent: 'center',
+        alignItems: 'center',
       },
       avatar: {
         width: '60px',
         height: '60px',
-        marginLeft: '20px',
         lineHeight: '60px',
         fontSize: '30px',
         backgroundColor: '#999',
@@ -138,7 +142,6 @@ export default class UserCenter extends Component {
       wechatAvatar: {
         width: '60px',
         height: '60px',
-        marginLeft: '20px',
         lineHeight: '60px',
         borderRadius: '50%',
         border: '2px solid #fff',
