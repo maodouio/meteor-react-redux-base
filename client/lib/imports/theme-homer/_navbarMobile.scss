@@ -8,7 +8,7 @@
   padding: 10px;
   color: #fff;
   background-color: #2196F3;
-  height: 8vh;
+  height: 10vh;
   align-items: center;
   border-bottom: 2px solid #fff59d;
   flex-shrink: 0;
@@ -39,13 +39,13 @@
 }
 
 .app-footer {
-  height: 8vh;
   background-color: #2196F3;
   border-top: 1px solid #e6e6e6;
   display: flex;
+  height: 8vh;
   flex-shrink: 0;
   a {
-    padding: 15px;
+    padding: 10px;
     text-align: center;
     color: #fff;
     border-left: 2px solid rgba(0,0,0,0.1);

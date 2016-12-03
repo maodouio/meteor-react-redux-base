@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'react-mounter';
 import _ from 'lodash';
-import Home from './containers/home';
+import Home from './components/home';
 import ResetPassword from './containers/users/reset-password';
 import ErrorPage from './components/common/errorPage';
 import Layout from './containers/layout';
