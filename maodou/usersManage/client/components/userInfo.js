@@ -9,7 +9,7 @@ export default class UserInfo extends Component {
     const styles = this.getStyles();
     const { nickname, email, sex, city, job, hobby} = this.props;
     return(
-      <div className='container' style={styles.wrapper}>
+      <div style={styles.wrapper}>
         <h3>个人资料</h3>
         <ul className="list-group">
           <li className="list-group-item"><p> <span style={styles.text}>用户名：</span><span style={styles.info}>{nickname}</span></p></li>
@@ -27,6 +27,7 @@ export default class UserInfo extends Component {
   getStyles() {
     return {
       wrapper: {
+        width: '100%',
         fontSize: '20px',
         display: 'flex',
         flexFlow: 'column wrap',

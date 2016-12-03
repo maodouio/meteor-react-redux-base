@@ -5,6 +5,7 @@ import methods from './methods';
 import configs from '../lib/configs';
 import privateConfigs from 'server/configs/posts';
 import seeds from './seed.js';
+import { addInstancesCount } from 'lib/helpers/instancesHelper';
 
 export default {
   configs,
@@ -26,6 +27,7 @@ export default {
     if (Collections.Posts.find().count() < seeds.data.length) {
       for (let i = 0; i < seeds.data.length; i++) {
         Collections.Posts.insert(seeds.data[i]);
+        addInstancesCount('post');
       }
     }
   }

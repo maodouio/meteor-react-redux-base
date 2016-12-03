@@ -7,7 +7,7 @@ export default class UserCollections extends Component {
 
   render() {
     return(
-      <div className='container'>
+      <div>
         <h1>我的收藏</h1>
       </div>
     );

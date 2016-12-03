@@ -7,7 +7,7 @@ export default class UserShare extends Component {
 
   render() {
     return(
-      <div className='container'>
+      <div>
         <h1>My share</h1>
       </div>
     );

@@ -1,6 +1,7 @@
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
 import {Accounts} from 'meteor/accounts-base';
+import { addInstancesCount } from 'lib/helpers/instancesHelper';
 
 export default ({ Roles }) => {
   Accounts.emailTemplates.siteName = "Maodou";
@@ -53,6 +54,7 @@ Maodou team
           password: data.password,
           profile: { nickname: data.username },
         });
+        addInstancesCount('user');
       } catch (err) {
         throw new Meteor.Error(400, err.reason);
       }

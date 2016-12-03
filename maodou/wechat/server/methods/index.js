@@ -1,6 +1,7 @@
 import {check} from 'meteor/check';
 import {Accounts} from 'meteor/accounts-base';
 import {HTTP} from 'meteor/http';
+import { addInstancesCount } from 'lib/helpers/instancesHelper';
 
 export default (context) => {
   const { Collections } = context;
@@ -54,6 +55,7 @@ export default (context) => {
     let userId;
     if(!user) {
       userId = Meteor.users.insert({username: openid, ...rest});
+      addInstancesCount('user');
     } else {
       userId = user._id;
     }

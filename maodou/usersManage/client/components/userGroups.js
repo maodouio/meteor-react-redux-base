@@ -7,7 +7,7 @@ export default class UserGroups extends Component {
 
   render() {
     return(
-      <div className='container'>
+      <div>
         <h1>小组</h1>
       </div>
     );

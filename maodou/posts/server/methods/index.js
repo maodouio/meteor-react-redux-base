@@ -1,3 +1,5 @@
+import { addInstancesCount, minusInstancesCount } from 'lib/helpers/instancesHelper';
+
 export default (context) => {
   const { Meteor, Collections } = context;
   const { Posts, Packages } = Collections;
@@ -23,9 +25,11 @@ export default (context) => {
         author,
         content
       });
+      addInstancesCount('post');
     },
     'posts.delete'(id) {
       Posts.remove(id);
+      minusInstancesCount('post');
     },
     'posts.categories.add'(category) {
       Packages.update({ name: 'posts' }, {

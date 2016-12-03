@@ -7,7 +7,7 @@ export default class MemberInfo extends Component {
 
   render() {
     return(
-      <div className='container'>
+      <div>
         <h1>VIP</h1>
       </div>
     );

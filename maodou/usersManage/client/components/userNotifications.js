@@ -7,7 +7,7 @@ export default class UserNotifications extends Component {
 
   render() {
     return(
-      <div className='container'>
+      <div>
         <h1>我的消息</h1>
       </div>
     );
