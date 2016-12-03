@@ -6,7 +6,7 @@ import Loading from 'client/components/common/loading';
 export default (props) => {
   const T = props.context.T;
   return (
-    <div className="container" style={{ paddingTop: '60px'}}>
+    <div className="container">
       <div className="row">
         {
           props.events.status === 'ready' ?

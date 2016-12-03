@@ -8,7 +8,7 @@ export default class UserInfo extends Component {
   render() {
     return(
       <div className='admin-package-wrapper row'>
-        <h1 style={{paddingTop: '100px'}}>users list</h1>
+        <h1>users list</h1>
       </div>
     );
   }

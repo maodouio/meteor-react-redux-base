@@ -8,7 +8,7 @@ export default class UserGroups extends Component {
   render() {
     return(
       <div className='container'>
-        <h1 style={{paddingTop: '100px'}}>小组</h1>
+        <h1>小组</h1>
       </div>
     );
   }

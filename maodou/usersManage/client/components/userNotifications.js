@@ -8,7 +8,7 @@ export default class UserNotifications extends Component {
   render() {
     return(
       <div className='container'>
-        <h1 style={{paddingTop: '100px'}}>我的消息</h1>
+        <h1>我的消息</h1>
       </div>
     );
   }

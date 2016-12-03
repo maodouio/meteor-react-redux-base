@@ -4,7 +4,7 @@ import moment from 'moment';
 
 export default (props) => {
   return (
-    <div className="container" style={{ paddingTop: '60px'}}>
+    <div className="container">
       <div className="row">
         <div className="col-lg-12">
           {

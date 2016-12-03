@@ -7,12 +7,12 @@ import moment from 'moment';
 export default (props) => {
   const T = props.context.T;
   return (
-    <div style={{ paddingTop: '50px' }}>
-      {
+    <div>
+      {/*
         props.configs && props.configs.UI.categoriesPosition === 'top' ?
           <Tabs position="top" color={props.configs.UI.categoriesTabsColor} /> :
           <div />
-      }
+      */}
       <div className="container">
         <div className="row" style={{ marginTop: '25px' }}>
           {

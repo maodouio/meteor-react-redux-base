@@ -27,7 +27,6 @@ export default class UserInfo extends Component {
   getStyles() {
     return {
       wrapper: {
-        paddingTop: '100px',
         fontSize: '20px',
         display: 'flex',
         flexFlow: 'column wrap',

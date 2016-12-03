@@ -1,12 +1,12 @@
 import React from 'react';
 import Nav from '../../containers/layout/nav';
-import NavWrapper from './navWrapper';
-// import Footer from './footer';
+import MobileNav from '../../containers/layout/mobileNav';
+import Footer from './footer';
 
 export default (props) => (
-  <div className="landing-page">
-    <Nav />
-    {props.children}
-    {/*<Footer />*/}
+  <div className="app-wrap">
+    <MobileNav />
+    <div className='app-content'>{props.children}</div>
+    {<Footer />}
   </div>
 );

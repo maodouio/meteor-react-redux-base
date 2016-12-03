@@ -8,7 +8,7 @@ export default class UserShare extends Component {
   render() {
     return(
       <div className='container'>
-        <h1 style={{paddingTop: '100px'}}>My share</h1>
+        <h1>My share</h1>
       </div>
     );
   }

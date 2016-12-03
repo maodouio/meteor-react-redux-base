@@ -8,8 +8,16 @@ export default class MemberInfo extends Component {
   render() {
     return(
       <div className='container'>
-        <h1 style={{paddingTop: '100px'}}>VIP</h1>
+        <h1>VIP</h1>
       </div>
     );
+  }
+
+  getStyles() {
+    return {
+      wrapper: {
+
+      }
+    }
   }
 }

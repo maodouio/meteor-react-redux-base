@@ -67,7 +67,7 @@ export default class UserCenter extends Component {
         </div>
         <div>
           { props.isAdmin ?  <Link to="/admin" className='btn btn-success'>管理员后台</Link> : <div /> }
-          <Link to='#' className='btn btn-success'>我的推广</Link>
+          <Link to='/user/share' className='btn btn-success'>我的推广</Link>
         </div>
       </div>
     );
@@ -76,7 +76,6 @@ export default class UserCenter extends Component {
   getStyles() {
     return {
       userWrapper: {
-        paddingTop: '80px',
         display: 'flex',
         flexFlow: 'column nowrap',
         justifyContent: 'center',
