@@ -1,14 +1,56 @@
 import React, { Component, PropTypes } from 'react';
+import Loading from 'client/components/common/loading';
+import moment from 'moment';
 
-export default class UserInfo extends Component {
+export default class UsersList extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
+    const { data, status } = this.props.users;
     return(
-      <div className='admin-package-wrapper row'>
-        <h1>users list</h1>
+      <div className="admin-package-wrapper row">
+        <div className="col-sm-12">
+          <h1>管理用户</h1>
+          { this.props.users.status === 'ready' ?
+            data.length > 0 ? this.renderUsers(data) : <div>抱歉，目前还没有用户！</div>
+            : <Loading />
+          }
+        </div>
+      </div>
+    );
+  }
+
+  renderUsers(users) {
+    return (
+      <div className="table-responsive">
+      <table className="table table-striped">
+        <thead>
+          <tr style={{fontSize: '16px'}}>
+          <th>序号</th>
+          <th>名称</th>
+          <th>邮箱</th>
+          <th>注册日期</th>
+          <th>角色</th>
+          <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((user, index) =>
+            <tr key={user._id} style={{fontSize: '16px'}}>
+              <td style={{lineHeight: '50px'}}>{index}</td>
+              <td style={{lineHeight: '50px'}}>{user.profile.nickname}</td>
+              <td style={{lineHeight: '50px'}}>{user.emails[0].address}</td>
+              <td style={{lineHeight: '50px'}}>{moment(user.createdAt).format('YYYY-MM-DD')}</td>
+              <td style={{lineHeight: '50px'}}>{user.roles[0]}</td>
+              <td style={{lineHeight: '50px'}}>
+                <button className="btn btn-danger" onClick={(e) => this.props.dispatch((this.props.deleteuser(e, user._id)))}>删除</button>
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </table>
       </div>
     );
   }
