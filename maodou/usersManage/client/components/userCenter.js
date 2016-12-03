@@ -30,6 +30,7 @@ export default class UserCenter extends Component {
         <Link to='/user/collections' className='btn btn-default btn-block'><i className="fa fa-heart" style={this.getStyles().iconLeft}></i>我的收藏<i className="fa fa-arrow-right" style={this.getStyles().icon}></i></Link>
         <Link to='/user/groups' className='btn btn-default btn-block'><i className="fa fa-group" style={this.getStyles().iconLeft}></i>我的小组<i className="fa fa-arrow-right" style={this.getStyles().icon}></i></Link>
         <Link to='/user/notifications' className='btn btn-default btn-block'><i className="fa fa-bell" style={this.getStyles().iconLeft}></i>我的消息<i className="fa fa-arrow-right" style={this.getStyles().icon}></i></Link>
+        <Link to='/' className='btn btn-success btn-block' onClick={(e) => Meteor.logout()}>退出登录</Link>
       </div>
     );
   }

@@ -3,7 +3,8 @@ import Posts from '../../../maodou/posts/client/containers/posts';
 
 export default (props) => (
   <div className="container">
-    {props.display ? <Posts /> : renderMaodou() }
+    {/* props.display ? <Posts /> : renderMaodou() */}
+    <Posts />
   </div>
 );
 

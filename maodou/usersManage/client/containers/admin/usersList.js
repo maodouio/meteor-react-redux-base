@@ -7,13 +7,9 @@ const data = ({ context }, onData) => {
   if (Meteor.subscribe('users.list').ready()) {
     const users = Meteor.users.find({}).fetch();
     document.title = '用户列表';
-    onData(null, {
-      users: { status: 'ready', data: users }
-    });
+    onData(null, { status: 'ready', users});
   } else {
-    onData(null, {
-      users: { status: 'pending', data: [] }
-    });
+    onData(null, { status: 'pending', users: [] });
   }
 };
 

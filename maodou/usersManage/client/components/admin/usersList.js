@@ -8,13 +8,13 @@ export default class UsersList extends Component {
   }
 
   render() {
-    const { data, status } = this.props.users;
+    const { users, status } = this.props;
     return(
       <div className="admin-package-wrapper row">
         <div className="col-sm-12">
           <h1>管理用户</h1>
-          { this.props.users.status === 'ready' ?
-            data.length > 0 ? this.renderUsers(data) : <div>抱歉，目前还没有用户！</div>
+          { status === 'ready' ?
+            users.length > 0 ? this.renderUsers(users) : <div>抱歉，目前还没有用户！</div>
             : <Loading />
           }
         </div>
@@ -39,13 +39,13 @@ export default class UsersList extends Component {
         <tbody>
           {users.map((user, index) =>
             <tr key={user._id} style={{fontSize: '16px'}}>
-              <td style={{lineHeight: '50px'}}>{index}</td>
+              <td style={{lineHeight: '50px'}}>{index+1}</td>
               <td style={{lineHeight: '50px'}}>{user.profile.nickname}</td>
               <td style={{lineHeight: '50px'}}>{user.emails[0].address}</td>
               <td style={{lineHeight: '50px'}}>{moment(user.createdAt).format('YYYY-MM-DD')}</td>
               <td style={{lineHeight: '50px'}}>{user.roles[0]}</td>
               <td style={{lineHeight: '50px'}}>
-                <button className="btn btn-danger" onClick={(e) => this.props.dispatch((this.props.deleteuser(e, user._id)))}>删除</button>
+                <button className="btn btn-danger" onClick={(e) => this.props.dispatch((this.props.deleteUser(e, user._id)))}>删除</button>
               </td>
             </tr>
           )}
