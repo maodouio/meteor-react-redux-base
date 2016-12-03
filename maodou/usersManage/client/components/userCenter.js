@@ -25,11 +25,11 @@ export default class UserCenter extends Component {
   renderConf() {
     return (
       <div style={this.getStyles().list}>
-        <Link to='/user/vip' className='btn btn-default btn-block'>会员中心</Link>
-        <Link to='/user/info' className='btn btn-default btn-block'>个人资料</Link>
-        <Link to='/user/collections' className='btn btn-default btn-block'>我的收藏</Link>
-        <Link to='/user/groups' className='btn btn-default btn-block'>我的小组</Link>
-        <Link to='/user/notifications' className='btn btn-default btn-block'>我的消息</Link>
+        <Link to='/user/vip' className='btn btn-default btn-block'><i className="fa fa-user" style={this.getStyles().iconLeft}></i>会员中心<i className="fa fa-arrow-right" style={this.getStyles().icon}></i></Link>
+        <Link to='/user/info' className='btn btn-default btn-block'><i className="fa fa-book" style={this.getStyles().iconLeft}></i>个人资料<i className="fa fa-arrow-right" style={this.getStyles().icon}></i></Link>
+        <Link to='/user/collections' className='btn btn-default btn-block'><i className="fa fa-heart" style={this.getStyles().iconLeft}></i>我的收藏<i className="fa fa-arrow-right" style={this.getStyles().icon}></i></Link>
+        <Link to='/user/groups' className='btn btn-default btn-block'><i className="fa fa-group" style={this.getStyles().iconLeft}></i>我的小组<i className="fa fa-arrow-right" style={this.getStyles().icon}></i></Link>
+        <Link to='/user/notifications' className='btn btn-default btn-block'><i className="fa fa-bell" style={this.getStyles().iconLeft}></i>我的消息<i className="fa fa-arrow-right" style={this.getStyles().icon}></i></Link>
       </div>
     );
   }
@@ -48,8 +48,8 @@ export default class UserCenter extends Component {
     if (props.isWechat) {
       return (
         <div>
-          <div>
-            <img url={props.avatarWechat} style={this.getStyles().avatar}></img>
+          <div style={this.getStyles().userInfo}>
+            <img url={props.avatarWechat} style={this.getStyles().wechatAvatar}></img>
             <h4 style={this.getStyles().name}>{props.nickname}</h4>
           </div>
           <div>
@@ -61,7 +61,7 @@ export default class UserCenter extends Component {
     }
     return (
       <div style={this.getStyles().user}>
-        <div>
+        <div style={this.getStyles().userInfo}>
           <div style={this.getStyles().avatar}>{userAvatar(props.nickname)}</div>
           <h4 style={this.getStyles().name}>{props.nickname}</h4>
         </div>
@@ -100,6 +100,13 @@ export default class UserCenter extends Component {
         fontSize: '20px',
         color: '#000',
       },
+      icon: {
+        float: 'right',
+        marginRight: '10px',
+      },
+      iconLeft: {
+        marginRight: '5px',
+      },
       user: {
         display: 'flex',
         flexFlow: 'column wrap',
@@ -111,17 +118,30 @@ export default class UserCenter extends Component {
         margin: '10px',
         padding: '10px',
       },
+      userInfo: {
+        flexFlow: 'column wrap',
+        display: 'flex',
+        justifyContent: 'center',
+      },
       avatar: {
         width: '60px',
         height: '60px',
-        margin: '10px',
+        marginLeft: '20px',
         lineHeight: '60px',
         fontSize: '30px',
         backgroundColor: '#999',
         color: '#fff',
-        border: '2px solid #fff',
         borderRadius: '50%',
+        border: '2px solid #fff',
         textAlign: 'center'
+      },
+      wechatAvatar: {
+        width: '60px',
+        height: '60px',
+        marginLeft: '20px',
+        lineHeight: '60px',
+        borderRadius: '50%',
+        border: '2px solid #fff',
       }
     };
   }

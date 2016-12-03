@@ -16,11 +16,6 @@ export default (props) => (
       <div id="navbar" className="navbar-collapse collapse">
         <ul className="nav navbar-nav navbar-left">
           { props.isReady ? props.packages.map( (module) => renderNav(module)) : ''}
-          <li><Link to="/">首页</Link></li>
-          <li><Link to="/posts/list">文章</Link></li>
-          <li><Link to="/events/list">活动</Link></li>
-          <li><Link to="/bizplans/list">项目</Link></li>
-          <li><Link to="/customers/list">客户</Link></li>
         </ul>
         {/*<ul className="nav navbar-nav navbar-right hidden-xs">
           <li className="dropdown">
@@ -33,13 +28,17 @@ export default (props) => (
             </ul>
           </li>
         </ul> */}
-        {props.isAdmin ?
+        { props.loggedIn ?
+          <ul className="nav navbar-nav navbar-right">
+            <li><Link to="/" onClick={(e) => Meteor.logout()}>退出</Link></li>
+          </ul> : <span />}
+        {/* props.isAdmin ?
           <ul className="nav navbar-nav navbar-right">
             <li><Link to="/admin">管理员后台</Link></li>
           </ul>
            : <span />
          }
-         { props.loggedIn ? renderUser(props.nickname) : renderLogin() }
+         { props.loggedIn ? renderUser(props.nickname) : renderLogin() */}
       </div>
     </div>
   </nav>
