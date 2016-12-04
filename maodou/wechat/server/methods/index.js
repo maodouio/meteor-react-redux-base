@@ -55,6 +55,7 @@ export default (context) => {
     let userId;
     if(!user) {
       userId = Meteor.users.insert({username: openid, ...rest});
+      context.Roles.addUsersToRoles(userId, ['user']);
       addInstancesCount('user');
     } else {
       userId = user._id;

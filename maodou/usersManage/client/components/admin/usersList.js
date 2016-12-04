@@ -23,6 +23,7 @@ export default class UsersList extends Component {
   }
 
   renderUsers(users) {
+    console.log(users);
     return (
       <div className="table-responsive">
       <table className="table table-striped">
@@ -41,9 +42,9 @@ export default class UsersList extends Component {
             <tr key={user._id} style={{fontSize: '16px'}}>
               <td style={{lineHeight: '50px'}}>{index+1}</td>
               <td style={{lineHeight: '50px'}}>{user.profile.nickname}</td>
-              <td style={{lineHeight: '50px'}}>{user.emails[0].address}</td>
+              <td style={{lineHeight: '50px'}}>{this.renderEmail(user)}</td>
               <td style={{lineHeight: '50px'}}>{moment(user.createdAt).format('YYYY-MM-DD')}</td>
-              <td style={{lineHeight: '50px'}}>{user.roles[0]}</td>
+              <td style={{lineHeight: '50px'}}>{this.renderRole(user)}</td>
               <td style={{lineHeight: '50px'}}>
                 <button className="btn btn-danger" onClick={(e) => this.props.dispatch((this.props.deleteUser(e, user._id)))}>删除</button>
               </td>
@@ -53,5 +54,18 @@ export default class UsersList extends Component {
       </table>
       </div>
     );
+  }
+
+  renderEmail(user) {
+    if (user.profile.headimgurl) {
+      return '未知';
+    }
+    return user.emails[0].address;
+  }
+  renderRole(user) {
+    if (user.roles) {
+      return user.roles[0];
+    }
+    return 'user';
   }
 }

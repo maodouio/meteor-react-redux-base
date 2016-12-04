@@ -34,7 +34,6 @@
   background-color: #fafafa;
   flex-grow: 1;
   line-height: 1.8;
-  padding: 16px;
   overflow-y: scroll;
 }
 
@@ -50,6 +49,7 @@
     color: #fff;
     border-left: 2px solid rgba(0,0,0,0.1);
     flex-grow: 1;
+    font-size: 12px;
     &:first-child {
       border-left: 0;
     }
@@ -57,10 +57,11 @@
       color: white;
       display: block;
       text-shadow: 3px 3px 0 rgba(0,0,0,0.1);
-      padding-bottom: 10px;
+      padding-bottom: 5px;
     }
     &:hover {
-      border-top: 4px solid #E040FB;
+      // border-top: 4px solid #E040FB;
+      background-color: rgba(0,0,0,0.1);
     }
    }
    a.active {
