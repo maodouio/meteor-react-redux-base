@@ -1,6 +1,9 @@
-import React, { Component, PropTypes } from 'react';
-import { Link } from 'react-router';
+import React, {Component, PropTypes} from 'react';
+import { Link, browserHistory } from 'react-router';
+import { List, Button, Flex } from 'antd-mobile/dist/antd-mobile';
 import { userAvatar } from 'lib/helpers';
+
+const Item = List.Item;
 
 export default class UserCenter extends Component {
   constructor(props) {
@@ -8,39 +11,18 @@ export default class UserCenter extends Component {
   }
 
   render() {
-    const styles = this.getStyles();
-    const { loggedIn, avatarWechat, nickname, isWechat } =this.props;
-    return(
-      <div style={styles.userWrapper}>
-        <div className='user-login' style={styles.userLogin}>
-          { loggedIn ? this.renderUser(this.props) : this.renderUserLogin()}
-        </div>
-        <div className='user-conf' style={styles.userConf}>
-          {this.renderConf()}
-        </div>
-      </div>
-    );
-  }
-
-  renderConf() {
+    const { loggedIn } =this.props;
     return (
-      <div style={this.getStyles().list}>
-        <Link to='/user/vip' className='btn btn-default btn-block' style={this.getStyles().link}><i className="fa fa-user" style={this.getStyles().iconLeft}></i>会员中心<i className="fa fa-arrow-right" style={this.getStyles().icon}></i></Link>
-        <Link to='/user/info' className='btn btn-default btn-block' style={this.getStyles().link}><i className="fa fa-book" style={this.getStyles().iconLeft}></i>个人资料<i className="fa fa-arrow-right" style={this.getStyles().icon}></i></Link>
-        <Link to='/user/collections' className='btn btn-default btn-block' style={this.getStyles().link}><i className="fa fa-heart" style={this.getStyles().iconLeft}></i>我的收藏<i className="fa fa-arrow-right" style={this.getStyles().icon}></i></Link>
-        <Link to='/user/groups' className='btn btn-default btn-block' style={this.getStyles().link}><i className="fa fa-group" style={this.getStyles().iconLeft}></i>我的小组<i className="fa fa-arrow-right" style={this.getStyles().icon}></i></Link>
-        <Link to='/user/notifications' className='btn btn-default btn-block' style={this.getStyles().link}><i className="fa fa-bell" style={this.getStyles().iconLeft}></i>我的消息<i className="fa fa-arrow-right" style={this.getStyles().icon}></i></Link>
-        { this.props.loggedIn ? <Link to='/' className='btn btn-success btn-block' style={this.getStyles().link} onClick={(e) => Meteor.logout()}>退出登录</Link> : <span/>}
-      </div>
-    );
-  }
-
-  renderUserLogin() {
-    return (
-      <div style={this.getStyles().notLogin}>
-        <h3>未登录，请先登录！</h3>
-        <Link to='/login' className='btn btn-success'>登录</Link>
-        <Link to='/register' className='btn btn-success'>注册</Link>
+      <div>
+        { loggedIn ? this.renderUser(this.props) : this.renderUserLogin()}
+        <List>
+          <Link to='/user/vip'><Item arrow="horizontal">会员中心</Item></Link>
+          <Link to='/user/info'><Item arrow="horizontal">个人资料</Item></Link>
+          <Link to='/user/collections'><Item arrow="horizontal">我的收藏</Item></Link>
+          <Link to='/user/groups'><Item arrow="horizontal">我的小组</Item></Link>
+          <Link to='/user/notifications'><Item arrow="horizontal">我的消息</Item></Link>
+          { this.props.loggedIn ? <Link to='/'><Item onClick={() => Meteor.logout()}>退出登录</Item></Link> : <span/>}
+        </List>
       </div>
     );
   }
@@ -48,110 +30,45 @@ export default class UserCenter extends Component {
   renderUser(props) {
     if (props.isWechat) {
       return (
+        <Flex justify="around" direction="column" style={{height: '6rem', paddingTop: '1rem'}}>
         <div>
-          <div style={this.getStyles().userInfo}>
-            <img src={props.avatarWechat} style={this.getStyles().wechatAvatar}></img>
-            <h4 style={this.getStyles().name}>{props.nickname}</h4>
-          </div>
-          <div style={this.getStyles().btns}>
-            { props.isAdmin ?  <Link to="/admin" className='btn btn-success'>管理员后台</Link> : <div /> }
-            <Link to='/user/share' className='btn btn-success'>推荐给好友</Link>
-          </div>
+          <img src={props.avatarWechat} style={{width: '1.5rem', height: '1.5rem', borderRadius: '50%', lineHeight: '1.5rem'}}></img>
         </div>
+        <h4 style={{fontSize: '.3rem'}}>{props.nickname}</h4>
+        <p style={{fontSize: '.3rem'}}>生命不息，奋斗不止</p>
+        <Flex justify="between" style={{ width: '3.3rem' }}>
+          { props.isAdmin ? <Button inline onClick={() => {browserHistory.push('/admin');}}>管理员后台</Button> : <div /> }
+          <Button type="primary" inline onClick={() => {browserHistory.push('/user/share');}}>推荐给好友</Button>
+        </Flex>
+      </Flex>
       );
     }
     return (
-      <div style={this.getStyles().user}>
-        <div style={this.getStyles().userInfo}>
-          <div style={this.getStyles().avatar}>{userAvatar(props.nickname)}</div>
-          <h4 style={this.getStyles().name}>{props.nickname}</h4>
+      <Flex justify="around" direction="column" style={{height: '6rem', paddingTop: '1rem'}}>
+        <div style={{width: '1.5rem', height: '1.5rem', borderRadius: '50%', backgroundColor: 'rebeccapurple', textAlign: 'center', color: '#fff', lineHeight: '1.5rem', fontSize: '1rem'}}>
+          {userAvatar(props.nickname)}
         </div>
-        <div style={this.getStyles().btns}>
-          { props.isAdmin ?  <Link to="/admin" className='btn btn-success'>管理员后台</Link> : <div /> }
-          <Link to='/user/share' className='btn btn-success'>推荐给好友</Link>
-        </div>
-      </div>
+        <h4 style={{fontSize: '.3rem'}}>{props.nickname}</h4>
+        <p style={{fontSize: '.3rem'}}>生命不息，奋斗不止</p>
+        <Flex justify="between" style={{ width: '3.3rem' }}>
+          { props.isAdmin ? <Button inline onClick={() => {browserHistory.push('/admin');}}>管理员后台</Button> : <div /> }
+          <Button type="primary" inline onClick={() => {browserHistory.push('/user/share');}}>推荐给好友</Button>
+        </Flex>
+      </Flex>
     );
   }
 
-  getStyles() {
-    return {
-      userWrapper: {
-        width: '100%',
-        display: 'flex',
-        flexFlow: 'column nowrap',
-      },
-      userLogin: {
-        flex: '0 1 250px',
-        border: '2px solid #fff',
-        margin: '-5px',
-        color: '#fff',
-        backgroundColor: '#3E66D1',
-      },
-      notLogin: {
-        textAlign: 'center',
-        marginTop: '80px',
-      },
-      userConf: {
-        flex: '0 1 auto',
-        padding: '8px',
-        flexGrow: 1,
-      },
-      list: {
-        padding: '20px',
-        marginTop: '20px',
-        fontSize: '20px',
-        color: '#000',
-      },
-      link: {
-        marginBottom: '10px',
-      },
-      icon: {
-        float: 'right',
-        marginRight: '10px',
-      },
-      iconLeft: {
-        marginRight: '5px',
-      },
-      user: {
-        display: 'flex',
-        flexFlow: 'column wrap',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '20px',
-      },
-      name: {
-        margin: '10px',
-        padding: '10px',
-      },
-      userInfo: {
-        flexFlow: 'column wrap',
-        display: 'flex',
-        alignItems: 'center',
-      },
-      btns: {
-        display: 'flex',
-        marginTop: '15px',
-        justifyContent: 'center',
-      },
-      avatar: {
-        width: '60px',
-        height: '60px',
-        lineHeight: '60px',
-        fontSize: '30px',
-        color: '#fff',
-        borderRadius: '50%',
-        border: '2px solid #fff',
-        textAlign: 'center'
-      },
-      wechatAvatar: {
-        width: '60px',
-        height: '60px',
-        lineHeight: '60px',
-        borderRadius: '50%',
-        border: '2px solid #fff',
-      }
-    };
+  renderUserLogin() {
+    return (
+      <Flex justify="around" direction="column" style={{height: '6rem', paddingTop: '1rem'}}>
+        <div style={{width: '2rem', height: '2rem', borderRadius: '50%', backgroundColor: 'rebeccapurple'}}></div>
+        <p style={{fontSize: '.3rem'}}>生命不息，奋斗不止</p>
+        <Flex justify="between" style={{ width: '3.3rem' }}>
+          <Button inline onClick={() => {browserHistory.push('/login');}}>登录</Button>
+          <Button type="primary" inline onClick={() => {browserHistory.push('/register');}}>注册</Button>
+        </Flex>
+      </Flex>
+    );
   }
 }
 
