@@ -16,11 +16,11 @@ export default class UserCenter extends Component {
       <div>
         { loggedIn ? this.renderUser(this.props) : this.renderUserLogin()}
         <List>
-          <Item arrow="horizontal" onClick={() => {browserHistory.push('/user/vip');}}>会员中心</Item>
-          <Item arrow="horizontal" onClick={() => {browserHistory.push('/user/info');}}>个人资料</Item>
-          <Item arrow="horizontal" onClick={() => {browserHistory.push('/user/collections');}}>我的收藏</Item>
-          <Item arrow="horizontal" onClick={() => {browserHistory.push('/user/groups');}}>我的小组</Item>
-          <Item arrow="horizontal" onClick={() => {browserHistory.push('/user/notifications');}}>我的消息</Item>
+          <Link to='/user/vip'><Item arrow="horizontal">会员中心</Item></Link>
+          <Link to='/user/info'><Item arrow="horizontal">个人资料</Item></Link>
+          <Link to='/user/collections'><Item arrow="horizontal">我的收藏</Item></Link>
+          <Link to='/user/groups'><Item arrow="horizontal">我的小组</Item></Link>
+          <Link to='/user/notifications'><Item arrow="horizontal">我的消息</Item></Link>
           { this.props.loggedIn ? <Link to='/'><Item onClick={() => Meteor.logout()}>退出登录</Item></Link> : <span/>}
         </List>
       </div>
@@ -31,10 +31,10 @@ export default class UserCenter extends Component {
     if (props.isWechat) {
       return (
         <Flex justify="around" direction="column" style={{height: '6rem', paddingTop: '1rem'}}>
-        <div style={{width: '2rem', height: '2rem', borderRadius: '50%', backgroundColor: 'rebeccapurple'}}>
-          <img src={props.avatarWechat}></img>
+        <div>
+          <img src={props.avatarWechat} style={{width: '1.5rem', height: '1.5rem', borderRadius: '50%', lineHeight: '1.5rem'}}></img>
         </div>
-        <h4>{props.nickname}</h4>
+        <h4 style={{fontSize: '.3rem'}}>{props.nickname}</h4>
         <p style={{fontSize: '.3rem'}}>生命不息，奋斗不止</p>
         <Flex justify="between" style={{ width: '3.3rem' }}>
           { props.isAdmin ? <Button inline onClick={() => {browserHistory.push('/admin');}}>管理员后台</Button> : <div /> }
@@ -45,10 +45,10 @@ export default class UserCenter extends Component {
     }
     return (
       <Flex justify="around" direction="column" style={{height: '6rem', paddingTop: '1rem'}}>
-        <div style={{width: '2rem', height: '2rem', borderRadius: '50%', backgroundColor: 'rebeccapurple'}}>
+        <div style={{width: '1.5rem', height: '1.5rem', borderRadius: '50%', backgroundColor: 'rebeccapurple', textAlign: 'center', color: '#fff', lineHeight: '1.5rem', fontSize: '1rem'}}>
           {userAvatar(props.nickname)}
         </div>
-        <h4>{props.nickname}</h4>
+        <h4 style={{fontSize: '.3rem'}}>{props.nickname}</h4>
         <p style={{fontSize: '.3rem'}}>生命不息，奋斗不止</p>
         <Flex justify="between" style={{ width: '3.3rem' }}>
           { props.isAdmin ? <Button inline onClick={() => {browserHistory.push('/admin');}}>管理员后台</Button> : <div /> }

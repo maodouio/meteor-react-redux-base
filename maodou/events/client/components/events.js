@@ -4,11 +4,13 @@ import {Link} from 'react-router';
 import { Card, WingBlank, WhiteSpace } from 'antd-mobile/dist/antd-mobile';
 import Loading from 'client/components/common/loading';
 import moment from 'moment';
+import LiveBroadCast from './LiveBroadCast';
 
 export default (props) => {
   const T = props.context.T;
   return (
     <div style={{ paddingTop: '1rem' }}>
+      <LiveBroadCast />
       {
         props.events.status === 'ready' ?
           props.events.data.length > 0 ?
@@ -32,10 +34,10 @@ export default (props) => {
                       overflow: 'hidden'
                     }}>{event.plainDesc}</p>
                   </Card.Body>
-                  <Card.Footer content={`费用：${event.fee}`} extra={
+                  <Card.Footer extra={
                     <div>
-                      <span><i className="fa fa-map-marker" aria-hidden="true"></i>{event.location}</span>
-                      <span><i className="fa fa-calendar" aria-hidden="true"></i>{moment(event.createdAt).format('YYYY.MM.DD')}</span>
+                      <span style={{marginRight: '20px'}}><i className="fa fa-map-marker" aria-hidden="true"></i>{event.location}</span>
+                      <span style={{marginRight: '10px'}}><i className="fa fa-calendar" aria-hidden="true"></i>{moment(event.createdAt).format('YYYY.MM.DD')}</span>
                     </div>
                     } />
                 </Card>
