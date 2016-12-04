@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    ["antd", [
+      {
+        "libraryName": "antd-mobile",
+        "style": true
+      }
+    ]]
+  ]
+}
