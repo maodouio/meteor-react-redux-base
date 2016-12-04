@@ -131,7 +131,7 @@ export default class UserCenter extends Component {
       },
       btns: {
         display: 'flex',
-        marginTop: '20px',
+        marginTop: '10px',
         justifyContent: 'center',
       },
       avatar: {
