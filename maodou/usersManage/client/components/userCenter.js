@@ -90,8 +90,7 @@ export default class UserCenter extends Component {
       },
       notLogin: {
         textAlign: 'center',
-        marginTop: '20px',
-        padding: '20px',
+        marginTop: '80px',
       },
       userConf: {
         flex: '0 1 auto',
