@@ -82,7 +82,7 @@ export default class UserCenter extends Component {
         flexFlow: 'column nowrap',
       },
       userLogin: {
-        flex: '0 1 250px',
+        flex: '0 1 200px',
         border: '2px solid #fff',
         margin: '-5px',
         color: '#fff',
@@ -131,12 +131,13 @@ export default class UserCenter extends Component {
       },
       btns: {
         display: 'flex',
-        marginTop: '15px',
+        marginTop: '20px',
         justifyContent: 'center',
       },
       avatar: {
         width: '60px',
         height: '60px',
+        marginTop: '10px',
         lineHeight: '60px',
         fontSize: '30px',
         color: '#fff',
@@ -147,6 +148,7 @@ export default class UserCenter extends Component {
       wechatAvatar: {
         width: '60px',
         height: '60px',
+        marginTop: '10px',
         lineHeight: '60px',
         borderRadius: '50%',
         border: '2px solid #fff',
