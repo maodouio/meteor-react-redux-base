@@ -12,7 +12,7 @@ export default class Register extends Component {
       <div className="login-container">
         <div className="row">
           <div className="col-md-12">
-            <div className="hpanel" style={{ paddingTop: '60px'}}>
+            <div className="hpanel">
               <div className="panel-body">
                 <form onSubmit={(e) => dispatch(createNewUser(e))} id="loginForm">
                   <div className="form-group">

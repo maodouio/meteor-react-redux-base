@@ -2,8 +2,9 @@ import React from 'react';
 import Posts from '../../../maodou/posts/client/containers/posts';
 
 export default (props) => (
-  <div className="container" style={{ paddingTop: '70px'}}>
-    {props.display ? <Posts /> : renderMaodou() }
+  <div className="container">
+    {/* props.display ? <Posts /> : renderMaodou() */}
+    <Posts />
   </div>
 );
 

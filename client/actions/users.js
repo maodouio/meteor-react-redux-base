@@ -50,8 +50,13 @@ export default {
       Meteor.call('users.register', data, (err) => {
         if (!err) {
           toastr["success"]("注册成功");
-          Meteor.loginWithPassword(email, password);
-          browserHistory.push('/user');
+          Meteor.loginWithPassword(email, password, (err) => {
+            if (err) {
+              console.log(err);
+            }else {
+              browserHistory.push('/user');
+            }
+          });
         } else {
           console.log(err.reason);
           if (err.reason === "Username already exists.") {

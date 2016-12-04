@@ -1,14 +1,14 @@
 import { useDeps } from 'react-simple-di';
 import { compose, withTracker, withRedux, composeAll } from 'react-komposer-plus';
-
+import { isEmpty } from 'lodash/lang';
 import UserCenter from '../components/userCenter';
 
 const initData = ({ context }, onData) => {
-  const { Meteor, toastr } = context;
+  const { Meteor, Roles } = context;
   const user = Meteor.user();
   if (user) {
     const nickname = user.profile.nickname;
-    const isWechat = user.profile.headimgurl || user.city;
+    const isWechat = !isEmpty(user.profile.headimgurl);
     const avatarWechat = isWechat ? user.profile.headimgurl : '';
     onData(null, {
       loggedIn: !!user,
@@ -20,9 +20,7 @@ const initData = ({ context }, onData) => {
   } else {
     onData(null, { loggedIn: user});
   }
-
 };
-
 
 const depsToProps = (context, actions) => ({
   context

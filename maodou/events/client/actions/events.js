@@ -1,5 +1,7 @@
 import { browserHistory } from 'react-router';
 import { handleEventError } from 'lib/helpers';
+import { defaultImgUrl } from 'lib/helpers/defaultValue';
+import { isEmpty } from 'lodash/lang';
 
 export default {
   /**** User Actions ****/
@@ -17,7 +19,9 @@ export default {
       const unit = event.target.unit.value;
       const fee = event.target.fee.value;
       const desc = $('#editor').summernote('code');
-      Meteor.call('events.add', title, coverUrl, time, location, limit, unit, fee, desc, (err) => {
+      const imgUrl = isEmpty(coverUrl) ? defaultImgUrl : coverUrl;
+
+      Meteor.call('events.add', title, imgUrl, time, location, limit, unit, fee, desc, (err) => {
         if (err) {
           console.log(err);
           handleEventError(err);

@@ -4,6 +4,7 @@ import collections from '../lib/collections';
 import permissions from './permissions';
 import publications from './publications';
 import methods from './methods';
+import { addInstancesCount } from 'lib/helpers/instancesHelper';
 
 export default {
   configs,
@@ -36,6 +37,7 @@ export default {
       };
       const userId = Accounts.createUser(adminUser);
       context.Roles.addUsersToRoles(userId, ['admin']);
+      addInstancesCount('user');
     }
   }
 };

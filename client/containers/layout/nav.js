@@ -16,6 +16,16 @@ const userEvents = {
 const lifecycle = {
   componentDidMount() {
     $('.dropdown-toggle').dropdown();
+
+  },
+  componentWillMount() {
+    const { dispatch, setNavBar } = this.props;
+    let setNavbarState = () => {
+      let innerWidth = window.innerWidth;
+      dispatch(setNavBar(innerWidth));
+    };
+    setNavbarState();
+    window.onresize = setNavbarState;
   }
 };
 
@@ -32,7 +42,7 @@ const subscriptions = ({ context }, onData) => {
         nickname,
         packages,
         isReady: true,
-        isAdmin: Roles.userIsInRole(Meteor.user(), ['admin'])
+        isAdmin: Roles.userIsInRole(Meteor.user(), ['admin']),
       });
     }
   } else {
@@ -41,12 +51,14 @@ const subscriptions = ({ context }, onData) => {
 };
 
 const mapStateToProps = (state) => ({
-
+  innerWidth: state.navbarWidth
 });
 
 const depsToProps = (context, actions) => ({
   context,
-  setLanguage: actions.core.setLanguage
+  dispatch: context.dispatch,
+  setLanguage: actions.core.setLanguage,
+  setNavBar: actions.core.setNavBar
 });
 
 export default composeAll(

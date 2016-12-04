@@ -7,8 +7,8 @@ export default class UserCollections extends Component {
 
   render() {
     return(
-      <div className='container'>
-        <h1 style={{paddingTop: '100px'}}>我的收藏</h1>
+      <div>
+        <h1>我的收藏</h1>
       </div>
     );
   }

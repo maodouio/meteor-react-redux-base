@@ -1,5 +1,7 @@
 import { browserHistory } from 'react-router';
 import { handlePostError } from 'lib/helpers';
+import { defaultImgUrl } from 'lib/helpers/defaultValue';
+import { isEmpty } from 'lodash/lang';
 
 export default {
   /**** User Actions ****/
@@ -18,7 +20,8 @@ export default {
       const title = event.target.title.value;
       const author = event.target.author.value;
       const content = $('#editor').summernote('code');
-      Meteor.call('posts.add', category, coverUrl, title, author, content, (err) => {
+      const imgUrl = isEmpty(coverUrl) ? defaultImgUrl : coverUrl;
+      Meteor.call('posts.add', category, imgUrl, title, author, content, (err) => {
         if (err) {
           console.log(err);
           handlePostError(err);

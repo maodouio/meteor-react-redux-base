@@ -1,5 +1,5 @@
 import UsersAdmin from './components/admin';
-import UsersList from './components/admin/usersList';
+import UsersList from './containers/admin/usersList';
 
 export default function (injectDeps, { configs }) {
   const routes = [

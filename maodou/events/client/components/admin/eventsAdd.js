@@ -22,7 +22,7 @@ export default class EventsAdd extends React.Component {
           <h1>新建活动</h1>
           <form onSubmit={(e) => dispatch(addEvent(e, coverUrl))}>
             <div id="upload-container">
-              <a className="btn btn-success" id="pickfiles" href="#">上传封面</a>
+              <a className="btn btn-success" id="pickfiles" href="#">上传封面(选填)</a>
             </div>
             <div className="post-coverImg">
               { beginUpload ? <p>正在上传，请稍候...</p> : <span /> }
