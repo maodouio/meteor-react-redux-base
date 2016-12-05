@@ -1,4 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+import { List, Button } from 'antd-mobile/dist/antd-mobile';
+
+const Item = List.Item;
 
 export default class UserInfo extends Component {
   constructor(props) {
@@ -6,41 +9,16 @@ export default class UserInfo extends Component {
   }
 
   render() {
-    const styles = this.getStyles();
     const { nickname, email, sex, city, job, hobby} = this.props;
-    return(
-      <div style={styles.wrapper}>
-        <h3>个人资料</h3>
-        <ul className="list-group">
-          <li className="list-group-item"><p> <span style={styles.text}>用户名：</span><span style={styles.info}>{nickname}</span></p></li>
-          <li className="list-group-item"><p> <span style={styles.text}>邮箱：</span><span style={styles.info}>{email}</span></p></li>
-          <li className="list-group-item"><p> <span style={styles.text}>性别：</span><span style={styles.info}>{sex}</span></p></li>
-          <li className="list-group-item"><p> <span style={styles.text}>所在城市：</span><span style={styles.info}>{city}</span></p></li>
-          <li className="list-group-item"><p> <span style={styles.text}>职业：</span><span style={styles.info}>{job}</span></p></li>
-          <li className="list-group-item"><p> <span style={styles.text}>爱好：</span><span style={styles.info}>{hobby}</span></p></li>
-        </ul>
-        <button className='btn btn-default'>完善资料</button>
-      </div>
+    return (
+      <List style={{marginTop: '40%'}} renderHeader={() => '个人资料'}>
+        <Item extra={nickname}>用户名：</Item>
+        <Item extra={email}>邮箱：</Item>
+        <Item extra={sex}>性别：</Item>
+        <Item extra={city}>所在城市：</Item>
+        <Item extra={job}>职业：</Item>
+        <Item extra={hobby}>爱好：</Item>
+      </List>
     );
-  }
-
-  getStyles() {
-    return {
-      wrapper: {
-        width: '100%',
-        fontSize: '20px',
-        display: 'flex',
-        flexFlow: 'column wrap',
-        alignItems: 'center',
-        margin: '10px',
-      },
-      text: {
-        fontWeight: 'bold',
-      },
-      info: {
-        float: 'right',
-        marginRight: '20px',
-      },
-    };
   }
 }
