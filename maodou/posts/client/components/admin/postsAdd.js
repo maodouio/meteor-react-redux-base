@@ -1,5 +1,4 @@
 import React from 'react';
-// import LaddaButton from 'react-ladda';
 
 export default (props) => {
   return (

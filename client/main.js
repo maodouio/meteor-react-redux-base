@@ -1,4 +1,3 @@
-import 'bootstrap-sass';
 import App from './lib/app';
 import React from 'react';
 import thunk from 'redux-thunk';
