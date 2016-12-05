@@ -35,7 +35,6 @@ export default class UserCenter extends Component {
           <img src={props.avatarWechat} style={{width: '1.5rem', height: '1.5rem', borderRadius: '50%', lineHeight: '1.5rem'}}></img>
         </div>
         <h4 style={{fontSize: '.3rem'}}>{props.nickname}</h4>
-        <p style={{fontSize: '.3rem'}}>生命不息，奋斗不止</p>
         <Flex justify="between" style={{ width: '3.3rem' }}>
           { props.isAdmin ? <Button inline onClick={() => {browserHistory.push('/admin');}}>管理员后台</Button> : <div /> }
           <Button type="primary" inline onClick={() => {browserHistory.push('/user/share');}}>推荐给好友</Button>
@@ -49,7 +48,6 @@ export default class UserCenter extends Component {
           {userAvatar(props.nickname)}
         </div>
         <h4 style={{fontSize: '.3rem'}}>{props.nickname}</h4>
-        <p style={{fontSize: '.3rem'}}>生命不息，奋斗不止</p>
         <Flex justify="between" style={{ width: '3.3rem' }}>
           { props.isAdmin ? <Button inline onClick={() => {browserHistory.push('/admin');}}>管理员后台</Button> : <div /> }
           <Button type="primary" inline onClick={() => {browserHistory.push('/user/share');}}>推荐给好友</Button>
