@@ -10,7 +10,7 @@
     "bcrypt": "^1.0.0",
     "express": "^4.14.0",
     "i18n-react": "^0.3.0",
-    "jquery": "^3.1.1",
+    "jquery": "^2.2.2",
     "lodash": "^4.17.2",
     "meteor-node-stubs": "~0.2.4",
     "moment": "^2.17.1",
