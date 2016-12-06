@@ -42,8 +42,8 @@ export default class Footer extends React.Component {
         <TabBar.Item
           icon={{uri: 'http://obd9ssud2.bkt.clouddn.com/maodou/icons/courses.png'}}
           selectedIcon={{uri: 'http://obd9ssud2.bkt.clouddn.com/maodou/icons/coursesOn.png'}}
-          title="课程"
-          key="课程"
+          title="活动"
+          key="活动"
           selected={this.state.selectedTab === 'events'}
           onPress={() => {
             browserHistory.push('/events/list');
