@@ -1,11 +1,16 @@
-import { browserHistory } from 'react-router'
+import { browserHistory } from 'react-router';
 
 export default {
   permissionUp({ Meteor, swal, toastr }, username, addRoles) {
+    const target = Meteor.users.findOne({username: username});
+    if (!target) {
+      toastr['error']('纳入失败，用户没有找到', 'Error!');
+      return;
+    }
     const loggedInUser = Meteor.user();
     return () => {
       ( ! Roles.userIsInRole(loggedInUser._id, ['owner']) && addRoles === 'admin' ) ?
-      toastr["error"]("纳入失败，您没有权限", "Error!")
+      toastr['error']('纳入失败，您没有权限', 'Error!')
       :
       Meteor.call('permission.up', username, addRoles, (err) => {
         if (err) {
@@ -14,20 +19,17 @@ export default {
           swal({
             title: '纳入成功',
             type: 'success',
-            onClose() {
-              browserHistory.push('/admin/memberManage');
-            }
           });
         }
       });
-    }
+    };
   },
   permissionDown({ Meteor, swal, toastr }, user, id, itemRoles) {
     const loggedInUser = Meteor.user();
     console.log(user);
     return () => {
       ( ! Roles.userIsInRole(loggedInUser._id, ['owner'])) && Roles.userIsInRole(id, ['admin']) ?
-      toastr["error"]("撤销失败，您没有权限", "Error!")
+      toastr['error']('撤销失败，您没有权限', 'Error!')
       :
       Meteor.call('permission.down', id, itemRoles, (err) => {
         if (err) {
@@ -36,12 +38,9 @@ export default {
           swal({
             title: '撤销成功',
             type: 'success',
-            onClose() {
-              browserHistory.push('/admin/memberManage');
-            }
           });
         }
       });
-    }
+    };
   }
-}
+};
