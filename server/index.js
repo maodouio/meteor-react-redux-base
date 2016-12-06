@@ -30,10 +30,8 @@ export default {
     if (Meteor.users.find().count() === 0) {
       const adminUser = {
         username: 'admin',
-        email: 'admin@example.com',
         password: '123456',
-        emails: [{ address: 'admin@example.com', verified: true }],
-        profile: { nickname: 'Admin' },
+        profile: { nickname: 'Admin', loginMethod: 'WEB', phoneNumber: '12345678910' },
       };
       const userId = Accounts.createUser(adminUser);
       context.Roles.addUsersToRoles(userId, ['admin']);

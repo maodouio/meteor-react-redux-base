@@ -21,7 +21,7 @@ export default class UserCenter extends Component {
           <Link to='/user/collections'><Item arrow="horizontal">我的收藏</Item></Link>
           <Link to='/user/groups'><Item arrow="horizontal">我的小组</Item></Link>
           <Link to='/user/notifications'><Item arrow="horizontal">我的消息</Item></Link>
-          { this.props.loggedIn ? <Link to='/'><Item onClick={() => Meteor.logout()}>退出登录</Item></Link> : <span/>}
+          { this.props.loggedIn ? <Link to='/user'><Item onClick={() => Meteor.logout()}>退出登录</Item></Link> : <span/>}
         </List>
       </div>
     );
