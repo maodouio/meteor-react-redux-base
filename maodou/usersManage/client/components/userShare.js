@@ -3,6 +3,7 @@ import { qrcode } from 'meteor/dschulz:jquery-qrcode';
 import { $ }from 'meteor/jquery';
 import { isEmpty } from 'lodash/lang';
 import { defaultImgUrl } from 'lib/helpers/defaultValue';
+import { Card, Flex, WhiteSpace } from 'antd-mobile/dist/antd-mobile';
 
 export default class UserShare extends Component {
   constructor(props) {
@@ -29,31 +30,12 @@ export default class UserShare extends Component {
   }
 
   render() {
-    const styles = this.getStyles();
     return(
-      <div style={styles.wrap}>
-        <h3 style={styles.text}>请长按二维码保存或分享</h3>
-        <div id='qrcode' style={styles.qrcode}></div>
-      </div>
+      <Flex direction='column' justify='center' style={{paddingTop: '30%'}}>
+        <h3>请长按二维码保存或分享</h3>
+        <WhiteSpace size="lg" />
+        <div id='qrcode'></div>
+      </Flex>
     );
-  }
-
-  getStyles() {
-    return {
-      text: {
-        marginBottom: '20px',
-      },
-      wrap: {
-        display: 'flex',
-        width: '100%',
-        flexFlow: 'column wrap',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: '50px',
-      },
-      qrcode: {
-
-      },
-    };
   }
 }

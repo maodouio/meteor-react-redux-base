@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import { Link, browserHistory } from 'react-router';
+import { Link } from 'react-router';
 import { List, Button, Flex } from 'antd-mobile/dist/antd-mobile';
 import { userAvatar } from 'lib/helpers';
 
@@ -30,27 +30,27 @@ export default class UserCenter extends Component {
   renderUser(props) {
     if (props.isWechat) {
       return (
-        <Flex justify="around" direction="column" style={{height: '6rem', paddingTop: '1rem'}}>
-        <div>
-          <img src={props.avatarWechat} style={{width: '1.5rem', height: '1.5rem', borderRadius: '50%', lineHeight: '1.5rem'}}></img>
-        </div>
-        <h4 style={{fontSize: '.3rem'}}>{props.nickname}</h4>
-        <Flex justify="between" style={{ width: '3.3rem' }}>
-          { props.isAdmin ? <Button inline onClick={() => {browserHistory.push('/admin');}}>管理员后台</Button> : <div /> }
-          <Button type="primary" inline onClick={() => {browserHistory.push('/user/share');}}>推荐给好友</Button>
+        <Flex justify="around" direction="column" style={{height: '5rem', paddingTop: '1rem'}}>
+          <div>
+            <img src={props.avatarWechat} style={{width: '1.5rem', height: '1.5rem', borderRadius: '50%', lineHeight: '1.5rem'}}></img>
+          </div>
+          <h4 style={{fontSize: '.3rem'}}>{props.nickname}</h4>
+          <Flex justify="center" style={{ margin: '.1rem' }}>
+            { props.isAdmin ? <Link to='/admin'><Button inline>管理员后台</Button></Link> : <div /> }
+            <Link to='/user/share'><Button type="primary" inline>推荐给好友</Button></Link>
+          </Flex>
         </Flex>
-      </Flex>
       );
     }
     return (
-      <Flex justify="around" direction="column" style={{height: '6rem', paddingTop: '1rem'}}>
+      <Flex justify="around" direction="column" style={{height: '5rem', paddingTop: '1rem'}}>
         <div style={{width: '1.5rem', height: '1.5rem', borderRadius: '50%', backgroundColor: 'rebeccapurple', textAlign: 'center', color: '#fff', lineHeight: '1.5rem', fontSize: '1rem'}}>
           {userAvatar(props.nickname)}
         </div>
         <h4 style={{fontSize: '.3rem'}}>{props.nickname}</h4>
-        <Flex justify="between" style={{ width: '3.3rem' }}>
-          { props.isAdmin ? <Button inline onClick={() => {browserHistory.push('/admin');}}>管理员后台</Button> : <div /> }
-          <Button type="primary" inline onClick={() => {browserHistory.push('/user/share');}}>推荐给好友</Button>
+        <Flex justify="center" style={{ margin: '.1rem' }}>
+          { props.isAdmin ? <Link to='/admin'><Button inline>管理员后台</Button></Link> : <div /> }
+          <Link to='/user/share'><Button type="primary" inline>推荐给好友</Button></Link>
         </Flex>
       </Flex>
     );
@@ -58,12 +58,12 @@ export default class UserCenter extends Component {
 
   renderUserLogin() {
     return (
-      <Flex justify="around" direction="column" style={{height: '6rem', paddingTop: '1rem'}}>
+      <Flex justify="around" direction="column" style={{height: '5rem', paddingTop: '1rem'}}>
         <div style={{width: '2rem', height: '2rem', borderRadius: '50%', backgroundColor: 'rebeccapurple'}}></div>
         <p style={{fontSize: '.3rem'}}>生命不息，奋斗不止</p>
         <Flex justify="between" style={{ width: '3.3rem' }}>
-          <Button inline onClick={() => {browserHistory.push('/login');}}>登录</Button>
-          <Button type="primary" inline onClick={() => {browserHistory.push('/register');}}>注册</Button>
+          <Link to='/login'><Button inline>登录</Button></Link>
+          <Link to='/register'><Button type="primary" inline>注册</Button></Link>
         </Flex>
       </Flex>
     );
