@@ -1,9 +1,8 @@
 import {Meteor} from 'meteor/meteor';
-import {check} from 'meteor/check';
 import {Accounts} from 'meteor/accounts-base';
 import { addInstancesCount } from 'lib/helpers/instancesHelper';
 
-export default ({ Roles }) => {
+export default ({ Roles, check }) => {
   Accounts.emailTemplates.siteName = 'Maodou';
   Accounts.emailTemplates.from = 'Maodou <dev@maodou.io>';
   Accounts.urls.enrollAccount = (token) => {

@@ -12,17 +12,19 @@ export default class CustomersList extends React.Component {
         <table className="table table-striped table-hover">
           <thead>
             <tr>
+              <th>序号</th>
               <th>用户名</th>
-              <th>用户邮箱</th>
+              <th>手机号</th>
               <th>操作</th>
             </tr>
           </thead>
           <tbody>
             {users.map((user, index) =>
               Roles.userIsInRole(user._id, ['admin']) && ( !Roles.userIsInRole(user._id, ['owner']) ) ?
-              <tr key={index}>
+              <tr key={user._id}>
+                <td>{index+1}</td>
                 <td>{user.username}</td>
-                <td>{user.emails[0].address}</td>
+                <td>{user.profile.phoneNumber || '无'}</td>
                 <td><button className="btn btn-xs btn-danger"  onClick={(e) => this.props.dispatch(this.props.permissionDown(e, user._id, 'admin'))}>撤除管理员</button></td>
               </tr> : <tr key={index}></tr>
             )}
