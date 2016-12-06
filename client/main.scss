@@ -3,6 +3,7 @@
 @import "./lib/imports/theme-homer/style.scss";
 
 /* Overwrites */
+
 #navigation {
   z-index: 1000;
   height: 100%;
@@ -12,13 +13,25 @@
 #wrapper {
   position: static;
 }
+
 .admin-package-wrapper {
   padding: 5px 15px;
 }
+
 .splash {
   position: static;
   background: none;
   .spinner div {
     margin: 1px;
   }
+}
+
+blockquote {
+  border-left: 5px solid #f44;
+}
+
+img,
+p>img {
+  max-width: 100%;
+  height: auto;
 }

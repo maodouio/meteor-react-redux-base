@@ -12,7 +12,7 @@ export default class UserInfo extends Component {
   render() {
     const { nickname, phoneNumber, email, sex, city, job, hobby} = this.props;
     return (
-      <div style={{marginTop: '30%'}}>
+      <div style={{marginTop: '25%'}}>
         <List renderHeader={() => '个人资料'}>
           <Item extra={nickname}>用户名：</Item>
           <Item extra={phoneNumber}>手机号：</Item>
