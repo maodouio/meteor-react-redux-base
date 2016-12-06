@@ -4,7 +4,7 @@ import EmailForm from '../../containers/users/email-enrollment-form';
 import LoginForm from '../../containers/users/login-form';
 
 export default (props) => (
-  <div className="container" style={{ paddingTop: '70px'}}>
+  <div className="container">
     {/* props.isWechatVerified ? <span /> : props.notWechat ? <span /> :<EmailForm/> */}
     {/* props.avatar ? <img src={props.avatar} style={styles.avatar}></img> : <span /> */}
     {<LoginForm/>}

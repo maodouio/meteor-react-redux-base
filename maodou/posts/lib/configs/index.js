@@ -9,7 +9,7 @@ export default {
     categories: ['初创公司', '创业学院', '孵化服务'],
     UI: {
       listImgPosition: 'left',
-      categoriesPosition: 'bottom',
+      categoriesPosition: 'top',
       categoriesTabsColor: 'green'
     }
   }

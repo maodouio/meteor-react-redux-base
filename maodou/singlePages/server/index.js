@@ -14,6 +14,8 @@ export default {
     if (!Collections.Packages.findOne({ name: 'singlePages' })) {
       Collections.Packages.insert({
         name: 'singlePages',
+        moduleName: '单页面模块',
+        display: false,
         configs: context.configs.singlePages || {}
       });
     }

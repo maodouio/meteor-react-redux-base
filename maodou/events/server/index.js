@@ -5,6 +5,7 @@ import methods from './methods';
 import configs from '../lib/configs';
 import privateConfigs from 'server/configs/events';
 import seeds from './seed.js';
+import { addInstancesCount } from 'lib/helpers/instancesHelper';
 
 export default {
   configs,
@@ -18,12 +19,15 @@ export default {
     if (!Collections.Packages.findOne({ name: 'events' })) {
       Collections.Packages.insert({
         name: 'events',
+        moduleName: '活动模块',
+        display: true,
         configs: context.configs.events || {}
       });
     }
     if (Collections.Events.find().count() < seeds.data.length) {
       for (let i = 0; i < seeds.data.length; i++) {
         Collections.Events.insert(seeds.data[i]);
+        addInstancesCount('course');
       }
     }
   }

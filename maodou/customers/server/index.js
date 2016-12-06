@@ -17,6 +17,8 @@ export default {
     if (!Collections.Packages.findOne({ name: 'customers' })) {
       Collections.Packages.insert({
         name: 'customers',
+        moduleName: '客户模块',
+        display: false,
         configs: context.configs.customers || {}
       });
     }

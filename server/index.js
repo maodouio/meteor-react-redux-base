@@ -4,6 +4,7 @@ import collections from '../lib/collections';
 import permissions from './permissions';
 import publications from './publications';
 import methods from './methods';
+import { addInstancesCount } from 'lib/helpers/instancesHelper';
 
 export default {
   configs,
@@ -21,6 +22,8 @@ export default {
     if (!Collections.Packages.findOne({ name: 'core' })) {
       Collections.Packages.insert({
         name: 'core',
+        moduleName: '核心模块',
+        display: true,
         configs: context.configs.core || {}
       });
     }
@@ -36,32 +39,12 @@ export default {
       context.Roles.addUsersToRoles(ownerId, ['owner', 'admin', 'member', 'user']);
       const adminUser = {
         username: 'admin',
-        email: 'admin@example.com',
         password: '123456',
-        emails: [{ address: 'admin@example.com', verified: true }],
-        profile: { nickname: 'admin' },
+        profile: { nickname: 'Admin', loginMethod: 'WEB', phoneNumber: '12345678910' },
       };
-      const adminId = Accounts.createUser(adminUser);
-      context.Roles.addUsersToRoles(adminId, ['admin', 'member', 'user']);
-      const memberUser = {
-        username: 'member',
-        email: 'member@example.com',
-        password: '123456',
-        emails: [{ address: 'member@example.com', verified: true }],
-        profile: { nickname: 'member' },
-      };
-      const memberId = Accounts.createUser(memberUser);
-      context.Roles.addUsersToRoles(memberId, ['member', 'user']);
-      const userUser = {
-        username: 'user',
-        email: 'user@example.com',
-        password: '123456',
-        emails: [{ address: 'user@example.com', verified: true }],
-        profile: { nickname: 'user' },
-      };
-      const userId = Accounts.createUser(userUser);
-      context.Roles.addUsersToRoles(userId, ['user']);
-
+      const userId = Accounts.createUser(adminUser);
+      context.Roles.addUsersToRoles(userId, ['admin']);
+      addInstancesCount('user');
     }
   }
 };

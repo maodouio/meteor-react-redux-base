@@ -1,5 +1,7 @@
 import { browserHistory } from 'react-router';
 import { handleEventError } from 'lib/helpers';
+import { defaultImgUrl } from 'lib/helpers/defaultValue';
+import { isEmpty } from 'lodash/lang';
 
 export default {
   /**** User Actions ****/
@@ -17,7 +19,9 @@ export default {
       const unit = event.target.unit.value;
       const fee = event.target.fee.value;
       const desc = $('#editor').summernote('code');
-      Meteor.call('events.add', title, coverUrl, time, location, limit, unit, fee, desc, (err) => {
+      const imgUrl = isEmpty(coverUrl) ? defaultImgUrl : coverUrl;
+
+      Meteor.call('events.add', title, imgUrl, time, location, limit, unit, fee, desc, (err) => {
         if (err) {
           console.log(err);
           handleEventError(err);
@@ -62,14 +66,8 @@ export default {
   deleteEvent({ Meteor, toastr, swal }, event, id) {
     return () => {
       event.preventDefault();
-      swal({
-        title: '确定删除吗？',
-        text: '此操作不可撤销',
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonText: '删除',
-        cancelButtonText: '取消'
-      }).then(() => {
+      const isCon = confirm('此操作不可撤销,确定要删除吗？');
+      if (isCon) {
         Meteor.call('events.delete', id, (err) => {
           if (err) {
             toastr.error('删除失败');
@@ -77,12 +75,7 @@ export default {
             toastr.success('删除成功');
           }
         });
-      }, (dismiss) => {
-        if (dismiss === 'cancel') {
-          console.log('cancel');
-        }
-      });
+      }
     };
   }
-
 };

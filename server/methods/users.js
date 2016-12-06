@@ -1,6 +1,7 @@
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
 import {Accounts} from 'meteor/accounts-base';
+import { addInstancesCount } from 'lib/helpers/instancesHelper';
 
 export default ({ Roles }) => {
   Accounts.emailTemplates.siteName = "Maodou";
@@ -45,18 +46,27 @@ Maodou team
     },
     'users.register'(data) {
       check(data, Object);
+      const user = Meteor.users.findOne({'profile.phoneNumber': data.phoneNumber});
+      if (user) {
+        throw new Meteor.Error('error', 'phone exist.');
+      }
       let userId;
       try {
         userId = Accounts.createUser({
           username: data.username,
-          email: data.email,
           password: data.password,
-          profile: { nickname: data.username },
+          profile: {
+            nickname: data.username,
+            phoneNumber : data.phone,
+            phoneVerificationCode : data.verifyCode,
+            loginMethod: 'WEB',
+          },
         });
+        addInstancesCount('user');
+        Roles.addUsersToRoles(userId, ['user']);
       } catch (err) {
         throw new Meteor.Error(400, err.reason);
       }
-      Roles.addUsersToRoles(userId, ['user']);
       // try {
       //   Accounts.sendVerificationEmail(userId, data.email);
       // } catch (e) {
@@ -84,6 +94,13 @@ Maodou team
       } else {
         throw new Meteor.Error(500);
       }
+    },
+    'verifyUser' (phoneNumber) {
+      const info = Meteor.users.findOne({'profile.phoneNumber': phoneNumber}, { fields: { 'profile': 1}});
+      if (!info) {
+        throw new Meteor.Error('UserNotFound', 'user not found');
+      }
+      return info;
     }
   });
 };

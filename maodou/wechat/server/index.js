@@ -17,6 +17,8 @@ export default {
     if (!Collections.Packages.findOne({ name: 'wechat' })) {
       Collections.Packages.insert({
         name: 'wechat',
+        moduleName: '微信登录模块',
+        display: true,
         configs: context.configs.wechat || {},
         privateConfigs: context.privateConfigs.wechat || {}
       });

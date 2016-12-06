@@ -29,3 +29,4 @@ summernote:summernote    # TODO: This package has bootstrap included. However we
 onokumus:metismenu
 webpack:webpack
 webpack:react
+dschulz:jquery-qrcode

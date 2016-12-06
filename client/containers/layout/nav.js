@@ -1,23 +1,6 @@
 import { useDeps } from 'react-simple-di';
-import { withHandlers, withTracker, withRedux, composeAll, withLifecycle } from 'react-komposer-plus';
+import { withTracker, withRedux, composeAll } from 'react-komposer-plus';
 import Nav from '../../components/layout/nav';
-
-const userEvents = {
-  setLang({ context, setLanguage }, event, lang) {
-    event.preventDefault();
-    context.T.setTexts(context.i18n[lang]);
-    context.dispatch(setLanguage(lang));
-  },
-  login: ({ context }, event) => {
-
-  }
-};
-
-const lifecycle = {
-  componentDidMount() {
-    $('.dropdown-toggle').dropdown();
-  }
-};
 
 const subscriptions = ({ context }, onData) => {
   const { Meteor, Collections, Roles } = context;
@@ -31,24 +14,29 @@ const subscriptions = ({ context }, onData) => {
       isOwner: Roles.userIsInRole(Meteor.user(), ['owner']),
       isAdmin: Roles.userIsInRole(Meteor.user(), ['admin'])
     });
+  if (Meteor.subscribe('packages.list').ready()) {
+    const corePkg = Collections.Packages.findOne({ name: 'core' });
+    if (corePkg) {
+      onData(null, {
+        appName: corePkg.configs.appName,
+        loggedIn: !!context.Meteor.user(),
+        isReady: true,
+      });
+    }
   } else {
-    onData(null, {});
+    onData(null, {isReady: false});
   }
 };
 
 const mapStateToProps = (state) => ({
-
 });
 
 const depsToProps = (context, actions) => ({
   context,
-  setLanguage: actions.core.setLanguage
 });
 
 export default composeAll(
-  withLifecycle(lifecycle),
   withTracker(subscriptions),
-  withHandlers(userEvents),
   withRedux(mapStateToProps),
   useDeps(depsToProps)
 )(Nav);
