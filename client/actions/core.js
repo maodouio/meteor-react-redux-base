@@ -2,9 +2,6 @@ export default {
   setLanguage(i18n) {
     return { type: 'SET_LANGUAGE', i18n };
   },
-  setNavBar(innerWidth) {
-    return { type: 'NAVBAR_WIDTH', innerWidth };
-  },
   saveConfigs({ Meteor, toastr }, configs) {
     return (disptch) => {
       Meteor.call('core.saveConfigs', configs, (err) => {

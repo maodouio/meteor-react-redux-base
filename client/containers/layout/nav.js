@@ -14,17 +14,18 @@ const subscriptions = ({ context }, onData) => {
       isOwner: Roles.userIsInRole(Meteor.user(), ['owner']),
       isAdmin: Roles.userIsInRole(Meteor.user(), ['admin'])
     });
-  if (Meteor.subscribe('packages.list').ready()) {
-    const corePkg = Collections.Packages.findOne({ name: 'core' });
-    if (corePkg) {
-      onData(null, {
-        appName: corePkg.configs.appName,
-        loggedIn: !!context.Meteor.user(),
-        isReady: true,
-      });
+    if (Meteor.subscribe('packages.list').ready()) {
+      const corePkg = Collections.Packages.findOne({ name: 'core' });
+      if (corePkg) {
+        onData(null, {
+          appName: corePkg.configs.appName,
+          loggedIn: !!context.Meteor.user(),
+          isReady: true,
+        });
+      }
+    } else {
+      onData(null, { isReady: false });
     }
-  } else {
-    onData(null, {isReady: false});
   }
 };
 

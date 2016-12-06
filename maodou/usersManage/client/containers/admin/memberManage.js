@@ -8,7 +8,7 @@ const subscription = ({ context }, onData) => {
   Meteor.call('validateAdmin', Meteor.user(), (err) => {
     if (err) {
       browserHistory.push('/');
-      toastr.error("当前用户无权访问");
+      toastr.error('当前用户无权访问');
     }
   });
   if (Meteor.subscribe('users.list').ready()) {

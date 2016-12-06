@@ -30,20 +30,11 @@ export default {
     if (Meteor.users.find().count() === 0) {
       const ownerUser = {
         username: 'owner',
-        email: 'owner@example.com',
         password: '123456',
-        emails: [{ address: 'owner@example.com', verified: true }],
-        profile: { nickname: 'owner' },
+        profile: { nickname: 'owner', loginMethod: 'WEB', phoneNumber: '12345678910' },
       };
       const ownerId = Accounts.createUser(ownerUser);
-      context.Roles.addUsersToRoles(ownerId, ['owner', 'admin', 'member', 'user']);
-      const adminUser = {
-        username: 'admin',
-        password: '123456',
-        profile: { nickname: 'Admin', loginMethod: 'WEB', phoneNumber: '12345678910' },
-      };
-      const userId = Accounts.createUser(adminUser);
-      context.Roles.addUsersToRoles(userId, ['admin']);
+      context.Roles.addUsersToRoles(ownerId, ['owner']);
       addInstancesCount('user');
     }
   }

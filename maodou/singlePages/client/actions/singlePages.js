@@ -32,7 +32,7 @@ export default {
       });
     };
   },
-  changeContent({ Meteor, swal, toastr }, sectionName) {
+  changeContent({ Meteor, toastr }, sectionName) {
     return () => {
       const content = $('.editor').summernote('code');
       Meteor.call('singlePages.changeContent', sectionName, content, (err) => {

@@ -31,7 +31,7 @@ export default class UsersList extends Component {
           <tr style={{fontSize: '16px'}}>
           <th>序号</th>
           <th>名称</th>
-          <th>邮箱</th>
+          <th>手机号</th>
           <th>注册日期</th>
           <th>角色</th>
           <th>操作</th>
@@ -41,8 +41,8 @@ export default class UsersList extends Component {
           {users.map((user, index) =>
             <tr key={user._id} style={{fontSize: '16px'}}>
               <td style={{lineHeight: '50px'}}>{index+1}</td>
-              <td style={{lineHeight: '50px'}}>{user.profile.nickname}</td>
-              <td style={{lineHeight: '50px'}}>{this.renderEmail(user)}</td>
+              <td style={{lineHeight: '50px'}}>{user.profile.nickname || '无'}</td>
+              <td style={{lineHeight: '50px'}}>{user.profile.phoneNumber || '无'}</td>
               <td style={{lineHeight: '50px'}}>{moment(user.createdAt).format('YYYY-MM-DD')}</td>
               <td style={{lineHeight: '50px'}}>{this.renderRole(user)}</td>
               <td style={{lineHeight: '50px'}}>
@@ -56,12 +56,6 @@ export default class UsersList extends Component {
     );
   }
 
-  renderEmail(user) {
-    if (user.profile.headimgurl) {
-      return '未知';
-    }
-    return user.emails[0].address;
-  }
   renderRole(user) {
     if (user.roles) {
       return user.roles[0];

@@ -13,12 +13,4 @@ export default {
         return state;
     }
   },
-  navbarWidth(state='', action) {
-    switch ( action.type) {
-      case 'NAVBAR_WIDTH':
-        return action.innerWidth;
-      default:
-        return state;
-    }
-  }
 };

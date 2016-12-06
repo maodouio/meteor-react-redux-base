@@ -4,30 +4,28 @@ import {Accounts} from 'meteor/accounts-base';
 import { addInstancesCount } from 'lib/helpers/instancesHelper';
 
 export default ({ Roles }) => {
-  Accounts.emailTemplates.siteName = "Maodou";
-  Accounts.emailTemplates.from = "Maodou <dev@maodou.io>";
+  Accounts.emailTemplates.siteName = 'Maodou';
+  Accounts.emailTemplates.from = 'Maodou <dev@maodou.io>';
   Accounts.urls.enrollAccount = (token) => {
     return Meteor.absoluteUrl(`reset-password/${token}`);
   };
   Accounts.emailTemplates.enrollAccount = {
     subject(user) {
-      return "Reset your password on maodou.io";
+      return 'Reset your password on maodou.io';
     },
     text(user, url) {
       return `Hello!
-Click the link below to verify your email address and reset your password on maodou.io.
-${url}
-If you didn't request this email, please ignore it.
-Thanks,
-Maodou team
-`
+        Click the link below to verify your email address and reset your password on maodou.io.
+        ${url}
+        If you didn't request this email, please ignore it.
+        Thanks,
+        Maodou team`;
     },
     html(user, url) {
       // This is where HTML email content would go.
       // See the section about html emails below.
     }
   };
-
 
   Meteor.methods({
     'users.enrollWithEmail'(email) {
@@ -75,6 +73,7 @@ Maodou team
       // }
     },
     'validateOwner' (user) {
+      check(user, Object);
       if (Roles.userIsInRole(user, ['owner'])) {
         return true;
       } else {
@@ -82,6 +81,7 @@ Maodou team
       }
     },
     'validateAdmin' (user) {
+      check(user, Object);
       if (Roles.userIsInRole(user, ['admin', 'owner'])) {
         return true;
       } else {
@@ -89,6 +89,7 @@ Maodou team
       }
     },
     'validateMember' (user) {
+      check(user, Object);
       if (Roles.userIsInRole(user, ['member', 'admin', 'owner'])) {
         return true;
       } else {
@@ -96,6 +97,7 @@ Maodou team
       }
     },
     'verifyUser' (phoneNumber) {
+      check(phoneNumber, String);
       const info = Meteor.users.findOne({'profile.phoneNumber': phoneNumber}, { fields: { 'profile': 1}});
       if (!info) {
         throw new Meteor.Error('UserNotFound', 'user not found');

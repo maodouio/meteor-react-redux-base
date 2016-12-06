@@ -24,8 +24,6 @@ export default class LoginForm extends React.Component {
               <div className="panel-body">
                 <form onSubmit={this.onSubmit} id="loginForm">
                   <div className="form-group">
-                    <label className="control-label" htmlFor="username">邮箱</label>
-                    <input type="text" ref={(c) => this._emailInput = c} placeholder="owner@example.com" title="Please enter you username" required="" name="username" id="username" className="form-control" />
                     <label className="control-label">手机号</label>
                     <input type="text" ref='phone' title="请输入手机号" className="form-control" />
                   </div>

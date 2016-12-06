@@ -26,8 +26,6 @@ export default function (routes, injectDeps, context) {
         require.ensure([], (require) => {
           let routes = [
             {path: 'core', component: require('./containers/admin')},
-            {path: 'adminManage', component: require('./containers/admin/adminManage')},
-            {path: 'memberManage', component: require('./containers/admin/memberManage')},
           ];
 
           routes = routes.concat(_.flatten(aggregate['/admin'].map(module =>

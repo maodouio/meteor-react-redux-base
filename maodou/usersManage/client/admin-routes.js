@@ -1,5 +1,7 @@
 import UsersAdmin from './components/admin';
 import UsersList from './containers/admin/usersList';
+import AdminManage from './containers/admin/adminManage';
+import MemberManage from './containers/admin/memberManage';
 
 export default function (injectDeps, { configs }) {
   const routes = [
@@ -9,6 +11,8 @@ export default function (injectDeps, { configs }) {
   const subMenu = configs.usersManage.subMenu;
   const subMenuComponents = [
     UsersList,
+    AdminManage,
+    MemberManage
   ];
   subMenu.map((menu, index) => {
     routes[0].childRoutes.push({

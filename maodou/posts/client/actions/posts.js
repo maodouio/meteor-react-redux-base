@@ -60,7 +60,7 @@ export default {
   addCover(context, url) {
     return { type: 'ADD_POST_COVER', url };
   },
-  deletePost({ Meteor, swal, toastr }, event, id) {
+  deletePost({ Meteor, toastr }, event, id) {
     return ()=> {
       event.preventDefault();
       const isCon = confirm('此操作不可撤销,确定要删除吗？');
