@@ -28,6 +28,15 @@ export default {
       });
     }
     if (Meteor.users.find().count() === 0) {
+      const ownerUser = {
+        username: 'owner',
+        email: 'owner@example.com',
+        password: '123456',
+        emails: [{ address: 'owner@example.com', verified: true }],
+        profile: { nickname: 'owner' },
+      };
+      const ownerId = Accounts.createUser(ownerUser);
+      context.Roles.addUsersToRoles(ownerId, ['owner', 'admin', 'member', 'user']);
       const adminUser = {
         username: 'admin',
         password: '123456',

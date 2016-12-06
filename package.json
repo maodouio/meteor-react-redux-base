@@ -17,10 +17,17 @@
     "pixeden-stroke-7-icon": "^1.2.3",
     "qiniu": "git+https://github.com/seanjsong/nodejs-sdk.v6.git",
     "qiniu-js": "^1.0.14-beta",
+<<<<<<< HEAD
+    "react": "^15.3.1",
+    "react-addons-pure-render-mixin": "^15.0.0",
+    "react-dom": "^15.3.1",
+    "react-helmet": "^3.2.2",
+=======
     "react": "^15.4.1",
     "react-addons-pure-render-mixin": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-helmet": "^3.2.3",
+>>>>>>> 009a77fb74e6a0d1d21b9c758ebd97eaefc4dd6a
     "react-komposer-plus": "^2.2.3",
     "react-mounter": "^1.2.0",
     "react-native": "^0.39.0",
@@ -30,7 +37,11 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
     "sortablejs": "^1.5.0-rc1",
+<<<<<<< HEAD
+    "sweetalert2": "^5.0.7",
+=======
     "sweetalert2": "^6.2.0",
+>>>>>>> 009a77fb74e6a0d1d21b9c758ebd97eaefc4dd6a
     "toastr": "^2.1.2",
     "wechat": "^2.0.3"
   },

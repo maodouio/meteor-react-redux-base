@@ -19,10 +19,10 @@ export default {
       Meteor.call('customers.add', index, title, category, customerName, salesName, desc, schedule, amount, author, (err) => {
         if (err) {
           console.log(err)
-          toastr["error"]("发布失败", "Error!");
+          toastr["error"]("添加失败", "Error!");
         } else {
           swal({
-            title: '发布成功',
+            title: '添加成功',
             type: 'success',
             onClose() {
               browserHistory.push('/admin/customers/list');

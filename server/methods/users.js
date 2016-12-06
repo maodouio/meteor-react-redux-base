@@ -74,8 +74,22 @@ Maodou team
       //   throw new Meteor.Error(400, 'Couldn\'t send verify email');
       // }
     },
+    'validateOwner' (user) {
+      if (Roles.userIsInRole(user, ['owner'])) {
+        return true;
+      } else {
+        throw new Meteor.Error(500);
+      }
+    },
     'validateAdmin' (user) {
-      if (Roles.userIsInRole(user, ['admin'])) {
+      if (Roles.userIsInRole(user, ['admin', 'owner'])) {
+        return true;
+      } else {
+        throw new Meteor.Error(500);
+      }
+    },
+    'validateMember' (user) {
+      if (Roles.userIsInRole(user, ['member', 'admin', 'owner'])) {
         return true;
       } else {
         throw new Meteor.Error(500);
