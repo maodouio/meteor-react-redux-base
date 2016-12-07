@@ -15,6 +15,7 @@ import wechatModule from 'maodou/wechat/client';
 import bizplansModule from 'maodou/bizplans/client';
 import customersModule from 'maodou/customers/client';
 import singlePagesModule from 'maodou/singlePages/client';
+import USzhejiang from 'maodou/USzhejiang/client'
 
 import { render } from 'react-dom';
 import { Router, browserHistory } from 'react-router';
@@ -38,6 +39,7 @@ app.loadModule(eventsModule);
 app.loadModule(bizplansModule);
 app.loadModule(customersModule);
 app.loadModule(singlePagesModule);
+app.loadModule(USzhejiang);
 
 app.init();
 
