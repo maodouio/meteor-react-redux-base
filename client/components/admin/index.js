@@ -1,6 +1,7 @@
 import React, { Component, PropTypes} from 'react';
 import Loding from '../common/loading';
 import { filter } from 'lodash/collection';
+import Helmet from 'react-helmet';
 
 export default class AdminCore extends Component {
   constructor(props) {
@@ -16,6 +17,7 @@ export default class AdminCore extends Component {
     }
     return (
       <div className="container">
+        <Helmet title='核心配置' />
         <div className="row">
           {this.renderCoreName()}
           {/* <div className="col-xs-12" style={{padding: '10px'}}>

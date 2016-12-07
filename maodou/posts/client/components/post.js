@@ -18,7 +18,7 @@ export default (props) => {
               </div>
             </div>
             <WhiteSpace />
-            <div className="post-content" dangerouslySetInnerHTML={{ __html: props.post.content }} style={{fontSize: '.4rem', lineHeight: '1.8'}}/>
+            <div className="post-content" dangerouslySetInnerHTML={{ __html: props.post.content }} style={{fontSize: '.3rem', lineHeight: '1.6'}}/>
           </div>
           :
           <Loading />

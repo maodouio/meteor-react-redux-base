@@ -1,6 +1,6 @@
 import UserCenter from './containers/userCenter';
 import UserInfo from './containers/userInfo';
-import MemberInfo from './components/memberInfo';
+import MemberInfo from './containers/memberInfo';
 import UserCollections from './components/userCollections';
 import UserGroups from './components/userGroups';
 import UserNotifications from './components/userNotifications';

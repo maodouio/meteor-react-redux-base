@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import Loading from 'client/components/common/loading';
 import moment from 'moment';
+import Helmet from 'react-helmet';
 
 export default class UsersList extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ export default class UsersList extends Component {
     const { users, status, isOwner } = this.props;
     return(
       <div className="admin-package-wrapper row">
+        <Helmet title='所有用户列表' />
         <div className="col-sm-12">
           <h1>管理用户
             { isOwner ? <Link to='/admin/users/admin' className='btn btn-success'>分配管理员</Link> : <span />}
