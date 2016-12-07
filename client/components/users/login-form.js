@@ -32,7 +32,6 @@ export default class LoginForm extends React.Component {
                     <input type="password" ref='password' title="请输入密码" placeholder="******" className="form-control" />
                   </div>
                   <button type="submit" className="btn btn-success btn-block">登录</button>
-                  <Link className="btn btn-default btn-block" to="/register">注册</Link>
                 </form>
               </div>
             </div>

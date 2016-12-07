@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Button, Flex } from 'antd-mobile/dist/antd-mobile';
 import { Link } from 'react-router';
+import Helmet from 'react-helmet';
 
 export default class MemberInfo extends Component {
   constructor(props) {
@@ -11,6 +12,7 @@ export default class MemberInfo extends Component {
     const { isMember, loggedIn } = this.props;
     return(
       <Flex justify="center" algin='center' direction="column" style={{height: '5rem', paddingTop: '1rem'}}>
+        <Helmet title='我的会员' />
         { loggedIn ? this.renderMember(isMember) : this.renderLogin()}
       </Flex>
     );

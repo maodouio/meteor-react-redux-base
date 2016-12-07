@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import {Link} from 'react-router';
+import Helmet from 'react-helmet';
 
 export default class Register extends Component {
   constructor(props) {
@@ -21,6 +22,7 @@ export default class Register extends Component {
   render() {
     return (
       <div className="login-container" style={{paddingTop: '30%'}}>
+        <Helmet title='用户注册' />
         <div className="row">
           <div className="col-md-12">
             <div className="hpanel">

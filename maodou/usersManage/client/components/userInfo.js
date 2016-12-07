@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { List, Button } from 'antd-mobile/dist/antd-mobile';
 import { Link } from 'react-router';
+import Helmet from 'react-helmet';
 
 const Item = List.Item;
 
@@ -13,6 +14,7 @@ export default class UserInfo extends Component {
     const { nickname, phoneNumber, email, sex, city, job, hobby} = this.props;
     return (
       <div style={{marginTop: '25%'}}>
+        <Helmet title='用户资料' />
         <List renderHeader={() => '个人资料'}>
           <Item extra={nickname}>用户名：</Item>
           <Item extra={phoneNumber}>手机号：</Item>
