@@ -1,6 +1,7 @@
 import React,{ Component, PropTypes } from 'react';
 import Loading from 'client/components/common/loading';
 import moment from 'moment';
+import Helmet from 'react-helmet';
 
 export default class AdminManage extends Component {
   constructor(props) {
@@ -11,6 +12,7 @@ export default class AdminManage extends Component {
   renderUsers(users) {
     return (
       <div className="table-responsive">
+        <Helmet title='管理员列表' />
         <table className="table table-striped table-hover">
           <thead>
             <tr>

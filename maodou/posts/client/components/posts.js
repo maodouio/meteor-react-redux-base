@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
+import Helmet from 'react-helmet';
 // import Tabs from '../containers/tabs';
 import { Card, WingBlank, WhiteSpace } from 'antd-mobile/dist/antd-mobile';
 import Loading from 'client/components/common/loading';
@@ -8,7 +9,8 @@ import moment from 'moment';
 export default (props) => {
   const T = props.context.T;
   return (
-    <div style={{ padding: '1rem .3rem' }}>
+    <div style={{ padding: '1rem .2rem' }}>
+     <Helmet title='文章列表页' />
       {
         props.posts.status === 'ready' ?
           props.posts.data.length > 0 ?

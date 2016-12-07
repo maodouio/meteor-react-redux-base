@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import { Link } from 'react-router';
 import { List, Button, Flex } from 'antd-mobile/dist/antd-mobile';
 import { userAvatar } from 'lib/helpers';
+import Helmet from 'react-helmet';
 
 const Item = List.Item;
 
@@ -14,6 +15,7 @@ export default class UserCenter extends Component {
     const { loggedIn } =this.props;
     return (
       <div>
+        <Helmet title='用户中心' />
         { loggedIn ? this.renderUser(this.props) : this.renderUserLogin()}
         <List>
           <Link to='/user/vip'><Item arrow="horizontal">会员中心</Item></Link>
@@ -61,9 +63,8 @@ export default class UserCenter extends Component {
       <Flex justify="around" direction="column" style={{height: '5rem', paddingTop: '1rem'}}>
         <div style={{width: '2rem', height: '2rem', borderRadius: '50%', backgroundColor: 'rebeccapurple'}}></div>
         <p style={{fontSize: '.3rem'}}>生命不息，奋斗不止</p>
-        <Flex justify="between" style={{ width: '3.3rem' }}>
-          <Link to='/login'><Button inline>登录</Button></Link>
-          <Link to='/register'><Button type="primary" inline>注册</Button></Link>
+        <Flex justify="center" style={{ width: '3.3rem' }}>
+          <Link to='/login'><Button inline type="primary">登录</Button></Link>
         </Flex>
       </Flex>
     );
