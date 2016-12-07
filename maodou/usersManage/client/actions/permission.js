@@ -12,8 +12,8 @@ export default {
         toastr.error('纳入失败，用户已在列表中', 'Error!');
         return;
       }
-      if (Roles.userIsInRole(target, ['owner'])) {
-        toastr.error('你是最高权限者，不能降级', 'Error!');
+      if (Roles.userIsInRole(target, ['admin','owner'])) {
+        toastr.error('已有最高权限，不能降级', 'Error!');
         return;
       }
       Meteor.call('permission.up', target._id, role, (err) => {
