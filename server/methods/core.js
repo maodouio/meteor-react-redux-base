@@ -5,7 +5,7 @@ export default ({ Meteor, Collections }) => {
   const { Packages } = Collections;
   Meteor.methods(({
     'core.saveConfigs'(configs) {
-      check(configs, String);
+      check(configs, Object);
       Packages.update({ name: 'core' }, {
         $set: {
           'configs.appName': configs.appName

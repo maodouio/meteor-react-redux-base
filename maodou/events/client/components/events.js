@@ -10,7 +10,7 @@ export default (props) => {
   const T = props.context.T;
   return (
     <div style={{ padding: '1rem .3rem' }}>
-      <LiveBroadCast />
+      {/*<LiveBroadCast /> */}
       {
         props.events.status === 'ready' ?
           props.events.data.length > 0 ?

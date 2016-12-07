@@ -8,7 +8,7 @@ import moment from 'moment';
 export default (props) => {
   const T = props.context.T;
   return (
-    <div style={{ padding: '1rem .3rem' }}>
+    <div style={{ padding: '1rem .2rem' }}>
       {
         props.posts.status === 'ready' ?
           props.posts.data.length > 0 ?
