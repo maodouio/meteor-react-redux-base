@@ -6,4 +6,4 @@ export default (context) => {
   core(context);
   users(context);
   files(context);
-}
+};

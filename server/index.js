@@ -28,15 +28,13 @@ export default {
       });
     }
     if (Meteor.users.find().count() === 0) {
-      const adminUser = {
-        username: 'admin',
-        email: 'admin@example.com',
+      const ownerUser = {
+        username: 'owner',
         password: '123456',
-        emails: [{ address: 'admin@example.com', verified: true }],
-        profile: { nickname: 'Admin' },
+        profile: { nickname: 'owner', loginMethod: 'WEB', phoneNumber: '12345678910' },
       };
-      const userId = Accounts.createUser(adminUser);
-      context.Roles.addUsersToRoles(userId, ['admin']);
+      const ownerId = Accounts.createUser(ownerUser);
+      context.Roles.addUsersToRoles(ownerId, ['owner']);
       addInstancesCount('user');
     }
   }

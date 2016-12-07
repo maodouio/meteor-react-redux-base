@@ -10,4 +10,4 @@ export default ({ Meteor, Roles, Qiniu, privateConfigs }) => {
       return putPolicy.token();
     }
   });
-}
+};

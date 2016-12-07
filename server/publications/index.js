@@ -10,18 +10,15 @@ export default ({ Meteor, Collections }) => {
     return Packages.find({ name: 'core' });
   });
 
+  Meteor.publish(null, function (){
+    return Meteor.roles.find({});
+  });
+
   Meteor.publish('packages.list', () => {
     return Packages.find({});
   });
 
   Meteor.publish('instanceInfos', () => {
-    const count = InstanceInfos.find({}).count();
-    console.log(count);
-    if (count ===1) {
-      console.log(count.postsCount);
-      console.log(count.coursesCount);
-      console.log(count.usersCount);
-    }
     return InstanceInfos.find({});
   });
 };

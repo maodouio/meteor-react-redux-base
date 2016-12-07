@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 import Loading from 'client/components/common/loading';
 import moment from 'moment';
 
@@ -8,11 +9,13 @@ export default class UsersList extends Component {
   }
 
   render() {
-    const { users, status } = this.props;
+    const { users, status, isOwner } = this.props;
     return(
       <div className="admin-package-wrapper row">
         <div className="col-sm-12">
-          <h1>管理用户</h1>
+          <h1>管理用户
+            { isOwner ? <Link to='/admin/users/admin' className='btn btn-success'>分配管理员</Link> : <span />}
+          </h1>
           { status === 'ready' ?
             users.length > 0 ? this.renderUsers(users) : <div>抱歉，目前还没有用户！</div>
             : <Loading />
@@ -23,7 +26,6 @@ export default class UsersList extends Component {
   }
 
   renderUsers(users) {
-    console.log(users);
     return (
       <div className="table-responsive">
       <table className="table table-striped">
@@ -31,7 +33,7 @@ export default class UsersList extends Component {
           <tr style={{fontSize: '16px'}}>
           <th>序号</th>
           <th>名称</th>
-          <th>邮箱</th>
+          <th>手机号</th>
           <th>注册日期</th>
           <th>角色</th>
           <th>操作</th>
@@ -41,8 +43,8 @@ export default class UsersList extends Component {
           {users.map((user, index) =>
             <tr key={user._id} style={{fontSize: '16px'}}>
               <td style={{lineHeight: '50px'}}>{index+1}</td>
-              <td style={{lineHeight: '50px'}}>{user.profile.nickname}</td>
-              <td style={{lineHeight: '50px'}}>{this.renderEmail(user)}</td>
+              <td style={{lineHeight: '50px'}}>{user.profile.nickname || '无'}</td>
+              <td style={{lineHeight: '50px'}}>{user.profile.phoneNumber || '无'}</td>
               <td style={{lineHeight: '50px'}}>{moment(user.createdAt).format('YYYY-MM-DD')}</td>
               <td style={{lineHeight: '50px'}}>{this.renderRole(user)}</td>
               <td style={{lineHeight: '50px'}}>
@@ -56,12 +58,6 @@ export default class UsersList extends Component {
     );
   }
 
-  renderEmail(user) {
-    if (user.profile.headimgurl) {
-      return '未知';
-    }
-    return user.emails[0].address;
-  }
   renderRole(user) {
     if (user.roles) {
       return user.roles[0];
@@ -69,3 +65,11 @@ export default class UsersList extends Component {
     return 'user';
   }
 }
+
+UsersList.propTypes = {
+  users: PropTypes.array,
+  status: PropTypes.string,
+  isOwner: PropTypes.bool,
+  dispatch: PropTypes.func,
+  deleteUser: PropTypes.func,
+};

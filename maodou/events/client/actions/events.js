@@ -63,7 +63,7 @@ export default {
       });
     };
   },
-  deleteEvent({ Meteor, toastr, swal }, event, id) {
+  deleteEvent({ Meteor, toastr }, event, id) {
     return () => {
       event.preventDefault();
       const isCon = confirm('此操作不可撤销,确定要删除吗？');

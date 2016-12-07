@@ -10,7 +10,7 @@ export default class LiveBroadCast extends Component {
       <Card>
         <Card.Header
           thumb={defaultImgUrl}
-          thumbStyle={{width: '100%', height: '2.5rem'}}
+          thumbStyle={{width: '100%'}}
         />
         <Card.Body>
           <p style={{fontSize: '1.3em'}}>

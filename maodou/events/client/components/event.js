@@ -22,7 +22,7 @@ export default (props) => {
               <p>人数限制：{props.event.limit}</p>
             </div>
             <WhiteSpace />
-            <div className="event-content" dangerouslySetInnerHTML={{ __html: props.event.desc }} />
+            <div className="event-content" dangerouslySetInnerHTML={{ __html: props.event.desc }} style={{fontSize: '.4rem'}}/>
           </div>
           :
           <Loading />

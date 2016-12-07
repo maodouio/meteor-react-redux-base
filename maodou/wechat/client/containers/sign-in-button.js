@@ -71,10 +71,10 @@ const composer = () => {
         }
 
         const {openid, ...profile} = r;
+        profile.loginMethod = 'WECHAT';
         const loginRequest = {
           openid,
           profile,
-          loginMethod: "WECHAT",
           createdAt: new Date()
         };
         Accounts.callLoginMethod({

@@ -9,7 +9,7 @@ import LiveBroadCast from './LiveBroadCast';
 export default (props) => {
   const T = props.context.T;
   return (
-    <div style={{ paddingTop: '1rem' }}>
+    <div style={{ padding: '1rem .3rem' }}>
       <LiveBroadCast />
       {
         props.events.status === 'ready' ?
