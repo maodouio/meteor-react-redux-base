@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 import Loading from 'client/components/common/loading';
 import moment from 'moment';
 
@@ -8,11 +9,13 @@ export default class UsersList extends Component {
   }
 
   render() {
-    const { users, status } = this.props;
+    const { users, status, isOwner } = this.props;
     return(
       <div className="admin-package-wrapper row">
         <div className="col-sm-12">
-          <h1>管理用户</h1>
+          <h1>管理用户
+            { isOwner ? <Link to='/admin/users/admin' className='btn btn-success'>分配管理员</Link> : <span />}
+          </h1>
           { status === 'ready' ?
             users.length > 0 ? this.renderUsers(users) : <div>抱歉，目前还没有用户！</div>
             : <Loading />
@@ -23,7 +26,6 @@ export default class UsersList extends Component {
   }
 
   renderUsers(users) {
-    console.log(users);
     return (
       <div className="table-responsive">
       <table className="table table-striped">
@@ -63,3 +65,11 @@ export default class UsersList extends Component {
     return 'user';
   }
 }
+
+UsersList.propTypes = {
+  users: PropTypes.array,
+  status: PropTypes.string,
+  isOwner: PropTypes.bool,
+  dispatch: PropTypes.func,
+  deleteUser: PropTypes.func,
+};

@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Loading from 'client/components/common/loading';
 
-export default class CustomersList extends React.Component {
+export default class MemberManage extends Component {
   constructor(props) {
     super(props);
   }
@@ -23,7 +23,7 @@ export default class CustomersList extends React.Component {
               Roles.userIsInRole(user._id, ['member']) && ( !Roles.userIsInRole(user._id, ['owner']) ) ?
               <tr key={user._id}>
                 <td>{index+1}</td>
-                <td>{user.username}</td>
+                <td>{user.profile.nickname || '无'}</td>
                 <td>{user.profile.phoneNumber || '无'}</td>
                 <td><button className="btn btn-xs btn-danger"  onClick={(e) => this.props.dispatch(this.props.permissionDown(e, user._id, 'member'))}>撤除会员</button></td>
               </tr> : <tr key={index}></tr>

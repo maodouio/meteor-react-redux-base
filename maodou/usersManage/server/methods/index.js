@@ -12,27 +12,19 @@ export default (context) => {
       Meteor.users.remove(id);
       minusInstancesCount('user');
     },
-    'permission.down'(id, itemRoles) {
+    'permission.down'(id) {
       check(id, String);
-      check(itemRoles, String);
 
-      const roles = itemRoles === 'admin' ? 'member' : 'user';
-      Roles.setUserRoles(id, ['user']);
-      Roles.addUsersToRoles(id, [roles]);
+      Roles.setUserRoles(id, []);
+      Roles.addUsersToRoles(id, ['user']);
     },
-    'permission.up'(username, addRoles) {
-      check(username, String);
-      check(addRoles, String);
+    'permission.up'(id, role) {
+      //each user only have one role: user.roles.length === 1
+      check(id, String);
+      check(role, String);
 
-      let roles;
-      if ( addRoles === 'admin' ){
-        roles = ['admin', 'member'];
-      }
-      else {
-        roles = ['member'];
-      }
-      const user = Meteor.users.findOne( {username: username} );
-      Roles.addUsersToRoles(user._id, roles);
+      Roles.setUserRoles(id, []);
+      Roles.addUsersToRoles(id, [role]);
     }
   });
 };

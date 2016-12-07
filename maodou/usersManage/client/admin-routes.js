@@ -6,12 +6,12 @@ import MemberManage from './containers/admin/memberManage';
 export default function (injectDeps, { configs }) {
   const routes = [
     {path: 'usersManage', component: UsersAdmin, childRoutes:[]},
+    {path: 'users/admin', component: AdminManage, childRoutes:[]},
   ];
 
   const subMenu = configs.usersManage.subMenu;
   const subMenuComponents = [
     UsersList,
-    AdminManage,
     MemberManage
   ];
   subMenu.map((menu, index) => {

@@ -3,11 +3,12 @@ import { withTracker, composeAll } from 'react-komposer-plus';
 import UsersList from '../../components/admin/usersList';
 
 const data = ({ context }, onData) => {
-  const { Meteor } = context;
+  const { Meteor, Roles } = context;
   if (Meteor.subscribe('users.list').ready()) {
     const users = Meteor.users.find({}).fetch();
-    document.title = '用户列表';
-    onData(null, { status: 'ready', users});
+    const currentUser = Meteor.user();
+    const isOwner = Roles.userIsInRole(currentUser, ['owner']);
+    onData(null, { status: 'ready', users, isOwner});
   } else {
     onData(null, { status: 'pending', users: [] });
   }

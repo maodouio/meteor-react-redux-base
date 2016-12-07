@@ -1,18 +1,13 @@
 import { useDeps } from 'react-simple-di';
-import { compose, withHandlers, withTracker, withRedux, composeAll } from 'react-komposer-plus';
+import { withTracker, composeAll } from 'react-komposer-plus';
 import { browserHistory } from 'react-router';
 import MemberManage from '../../components/admin/memberManage';
 
 const subscription = ({ context }, onData) => {
-  const { Meteor, Collections, toastr } = context;
-  Meteor.call('validateAdmin', Meteor.user(), (err) => {
-    if (err) {
-      browserHistory.push('/');
-      toastr.error('当前用户无权访问');
-    }
-  });
+  const { Meteor, Collections } = context;
   if (Meteor.subscribe('users.list').ready()) {
-    const users = Collections.Users.find().fetch({roles: ['member', 'admin']});
+    const users = Collections.Users.find({roles: ['member']}).fetch();
+    console.log(users);
     onData(null, {
       users: { status: 'ready', data: users }
     });
