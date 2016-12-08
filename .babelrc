@@ -4,6 +4,10 @@
       {
         "libraryName": "antd-mobile",
         "style": true
+      },
+      {
+        "libraryName": "antd",
+        "style": true
       }
     ]]
   ],

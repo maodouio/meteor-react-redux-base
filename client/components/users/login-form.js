@@ -17,7 +17,7 @@ export default class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="login-container" style={{paddingTop: '30%'}}>
+      <div className="login-container">
         <div className="row">
           <div className="col-md-12">
             <div className="hpanel">
@@ -25,14 +25,13 @@ export default class LoginForm extends React.Component {
                 <form onSubmit={this.onSubmit} id="loginForm">
                   <div className="form-group">
                     <label className="control-label">手机号</label>
-                    <input style={{fontSize: 22, height: 42}} type="text" ref='phone' title="请输入手机号" className="form-control" />
+                    <input style={{fontSize: 22, height: 42}} type="text" ref='phone' title="请输入手机号" defaultValue='12345678910' className="form-control" />
                   </div>
                   <div className="form-group">
                     <label className="control-label">密码</label>
-                    <input style={{fontSize: 22, height: 42}} type="password" ref='password' title="请输入密码" placeholder="******" className="form-control" />
+                    <input style={{fontSize: 22, height: 42}} type="password" ref='password' title="请输入密码" defaultValue='123456' className="form-control" />
                   </div>
                   <button style={{fontSize: 32}} type="submit" className="btn btn-success btn-block">登录</button>
-                  <Link style={{fontSize: 32}} className="btn btn-default btn-block" to="/register">注册</Link>
                 </form>
               </div>
             </div>

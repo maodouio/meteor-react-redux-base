@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import { TabBar } from 'antd-mobile/dist/antd-mobile';
 import { browserHistory } from 'react-router';
 
-export default class Footer extends React.Component {
+export default class Footer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -59,11 +59,11 @@ export default class Footer extends React.Component {
           selectedIcon={{uri: 'http://obd9ssud2.bkt.clouddn.com/maodou/icons/meOn.png'}}
           title="我的"
           key="我的"
-          selected={this.state.selectedTab === 'yellowTab'}
+          selected={this.state.selectedTab === 'users'}
           onPress={() => {
             browserHistory.push('/user');
             this.setState({
-              selectedTab: 'yellowTab',
+              selectedTab: 'users',
             });
           }}
         >
@@ -74,3 +74,6 @@ export default class Footer extends React.Component {
     );
   }
 }
+
+Footer.propTypes = {
+};

@@ -11,8 +11,7 @@ export const UIState = {
 export default (props) => {
   switch (props.uiState) {
     case UIState.IDLE:
-      return <a href={props.authUrl}><i className="fa fa-weixin"></i>微信一键登录</a>;
-
+      return <a href={props.authUrl}><i className="fa fa-weixin fa-3x" style={{marginTop: '50px'}}></i></a>;
     case UIState.LOGGED_IN:
       browserHistory.push('/user');
       return;
