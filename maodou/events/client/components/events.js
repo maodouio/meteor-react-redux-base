@@ -24,7 +24,7 @@ export default (props) => {
                     thumbStyle={{width: '100%'}}
                   />
                   <Card.Body>
-                    <p style={{fontSize: '1.3em'}}>
+                    <p style={{fontSize: '1.3em', color: '#333'}}>
                       <b>{event.title}</b>
                     </p>
                     <p style={{
