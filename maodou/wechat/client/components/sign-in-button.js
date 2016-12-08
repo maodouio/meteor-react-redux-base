@@ -13,8 +13,7 @@ export default (props) => {
     case UIState.IDLE:
       return <a href={props.authUrl}><i className="fa fa-weixin fa-3x" style={{marginTop: '50px'}}></i></a>;
     case UIState.LOGGED_IN:
-      browserHistory.push('/user');
-      return;
+      return <span>登录成功</span>;
     case UIState.LOGGING_IN:
       return <span>正在登录...</span>;
 

@@ -6,17 +6,13 @@ import Login from '../../components/users/login';
 
 function composer({context}, onData)  {
   const user = context().Meteor.user();
-  if (user && Array.isArray(user.emails) && user.emails.length > 0) {
-    const isWechatVerified = user.profile.headimgurl && user.emails[0].verified;
-    const isWechat = user.profile.headimgurl || user.city;
+  if (user) {
+    const isWechat = user.profile.loginMethod === 'WECHAT';
     const nickname = user.profile.nickname;
-    const avatar = isWechat ? user.profile.headimgurl : '';
     onData(null, {
       loggedIn: !!user,
-      notWechat: !isWechat,
-      isWechatVerified,
+      isWechat,
       nickname,
-      avatar
     });
   } else {
     onData(null, {loggedIn: user});

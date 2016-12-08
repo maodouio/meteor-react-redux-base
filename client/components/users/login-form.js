@@ -1,7 +1,9 @@
 import React, { PropTypes } from 'react';
 import {Link} from 'react-router';
+import { InputItem, Button, Flex, WhiteSpace, WingBlank } from 'antd-mobile/dist/antd-mobile';
+import { createForm } from 'rc-form';
 
-export default class LoginForm extends React.Component {
+class LoginForm extends React.Component {
   constructor(props) {
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
@@ -9,40 +11,43 @@ export default class LoginForm extends React.Component {
 
   onSubmit(e) {
     e.preventDefault();
-    const { dispatch, loginWithPassword } = this.props;
-    const phone = this.refs.phone.value;
-    const password = this.refs.password.value;
+    const { phone, password } = this.props.form.getFieldsValue();
+    const { dispatch, loginWithPassword} = this.props;
     dispatch(loginWithPassword(phone, password));
   }
 
   render() {
+    const { getFieldProps } = this.props.form;
     return (
-      <div className="login-container">
-        <div className="row">
-          <div className="col-md-12">
-            <div className="hpanel">
-              <div className="panel-body">
-                <form onSubmit={this.onSubmit} id="loginForm">
-                  <div className="form-group">
-                    <label className="control-label">手机号</label>
-                    <input style={{fontSize: 22, height: 42}} type="text" ref='phone' title="请输入手机号" defaultValue='12345678910' className="form-control" />
-                  </div>
-                  <div className="form-group">
-                    <label className="control-label">密码</label>
-                    <input style={{fontSize: 22, height: 42}} type="password" ref='password' title="请输入密码" defaultValue='123456' className="form-control" />
-                  </div>
-                  <button style={{fontSize: 32}} type="submit" className="btn btn-success btn-block">登录</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Flex direction='column' align='center'>
+        <WhiteSpace size="lg" />
+        <WingBlank size="lg">
+          <InputItem
+            {...getFieldProps('phone')}
+            type='phone'
+            placeholder='123 4567 8910'
+            clear
+          >手机号：
+          </InputItem>
+          <InputItem
+            {...getFieldProps('password')}
+            type='password'
+            placeholder='123456'
+            clear
+          >密码：
+          </InputItem>
+          <Button type='primary' inline onClick={this.onSubmit}>确定</Button>
+        </WingBlank>
+        <WhiteSpace size="lg" />
+      </Flex>
     );
   }
 }
 
 LoginForm.propTypes = {
+  form: PropTypes.object,
   dispatch: PropTypes.func,
   loginWithPassword: PropTypes.func,
 };
+
+export default  createForm()(LoginForm);

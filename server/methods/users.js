@@ -64,12 +64,6 @@ export default ({ Roles, check }) => {
       } catch (err) {
         throw new Meteor.Error(400, err.reason);
       }
-      // try {
-      //   Accounts.sendVerificationEmail(userId, data.email);
-      // } catch (e) {
-      //   Meteor.users.remove(userId);
-      //   throw new Meteor.Error(400, 'Couldn\'t send verify email');
-      // }
     },
     'validateOwner' (user) {
       check(user, Object);
@@ -97,11 +91,23 @@ export default ({ Roles, check }) => {
     },
     'verifyUser' (phoneNumber) {
       check(phoneNumber, String);
-      const info = Meteor.users.findOne({'profile.phoneNumber': phoneNumber}, { fields: { 'profile': 1}});
+      const info = Meteor.users.findOne({'profile.phoneNumber': phoneNumber}, { fields: { 'profile': 1, username: 1}});
       if (!info) {
         throw new Meteor.Error('UserNotFound', 'user not found');
       }
       return info;
+    },
+    'updateWechatUserPhone'(id, phone, password) {
+      check(id, String);
+      check(phone, String);
+      check(password, String);
+
+      const user = Meteor.users.findOne({'profile.phoneNumber': phone}, { fields: { 'username': 1}});
+      if (user) {
+        throw new Meteor.Error('error', 'phone exist.');
+      }
+      Meteor.users.update({_id: id}, { $set: {'profile.phoneNumber': phone}}, {upsert: true});
+      Accounts.setPassword(id, password);
     }
   });
 };
