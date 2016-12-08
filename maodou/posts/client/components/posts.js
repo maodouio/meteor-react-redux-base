@@ -22,9 +22,9 @@ export default (props) => {
                     thumbStyle={{width: '100%'}}
                   />
                   <Card.Body>
-                    <span>
+                    <p style={{fontSize: '1.3em', color: '#333'}}>
                       <b>{post.title}</b>
-                    </span>
+                    </p>
                   </Card.Body>
                   <Card.Footer content={post.category} extra={<span>{moment(post.createdAt).format('YYYY.MM.DD')}</span>} />
                 </Card>
