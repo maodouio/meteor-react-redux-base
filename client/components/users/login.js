@@ -8,12 +8,12 @@ import WechatLogin from '../../containers/users/wechatLogin';
 
 export default class Login extends Component {
   render() {
-    const { isWechat, nickname, loggedIn } = this.props;
+    const { isWechat, nickname, loggedIn, isBind } = this.props;
     return (
       <div style={{paddingTop: '25%'}}>
         <Helmet title='用户登录' />
         <WhiteSpace />
-        { isWechat ? < WechatLogin /> : this.renderTabs()}
+        { loggedIn ? isWechat ? isBind ? <span style={{marginLeft: '1rem'}}>已经绑定手机号</span> : <WechatLogin /> : this.renderTabs() : this.renderTabs()}
         <WhiteSpace />
       </div>
     );
@@ -42,4 +42,5 @@ Login.propTypes = {
   isWechat: PropTypes.bool,
   nickname: PropTypes.string,
   loggedIn: PropTypes.bool,
+  isBind: PropTypes.bool,
 };

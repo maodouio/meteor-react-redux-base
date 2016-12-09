@@ -106,7 +106,7 @@ export default ({ Roles, check }) => {
       if (user) {
         throw new Meteor.Error('error', 'phone exist.');
       }
-      Meteor.users.update({_id: id}, { $set: {'profile.phoneNumber': phone}}, {upsert: true});
+      Meteor.users.update({_id: id}, { $set: {'profile.phoneNumber': phone, 'profile.isBind': true}}, {upsert: true});
       Accounts.setPassword(id, password);
     }
   });

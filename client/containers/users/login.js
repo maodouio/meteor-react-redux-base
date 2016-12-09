@@ -13,6 +13,7 @@ function composer({context}, onData)  {
       loggedIn: !!user,
       isWechat,
       nickname,
+      isBind: user.profile.isBind || false,
     });
   } else {
     onData(null, {loggedIn: user});

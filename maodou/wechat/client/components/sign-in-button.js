@@ -1,5 +1,7 @@
 import React from 'react';
-import { browserHistory } from 'react-router';
+import { Link, browserHistory } from 'react-router';
+import ShowToast from 'client/components/common/showToast';
+import { Toast, WingBlank } from 'antd-mobile/dist/antd-mobile';
 
 export const UIState = {
   IDLE: 'idle',
@@ -11,13 +13,23 @@ export const UIState = {
 export default (props) => {
   switch (props.uiState) {
     case UIState.IDLE:
-      return <a href={props.authUrl}><i className="fa fa-weixin fa-3x" style={{marginTop: '50px'}}></i></a>;
+      return <a href={props.authUrl}><i className="fa fa-weixin fa-4x" style={{marginTop: '1rem'}}></i></a>;
     case UIState.LOGGED_IN:
-      return <span>登录成功</span>;
+      return (
+        <WingBlank>
+          <ShowToast type='success' text='登录成功' />
+        </WingBlank>
+      );
     case UIState.LOGGING_IN:
-      return <span>正在登录...</span>;
-
+      return (
+        <WingBlank>
+          <ShowToast type='loading' text='正在登录...' />
+        </WingBlank>
+      );
     default:
-      return <div>登录失败 <a href={props.authUrl}>重试登录</a></div>;
+      return <div>
+        <ShowToast type='fail' text='登录失败' />
+        <a href={props.authUrl}>重试登录</a>
+      </div>;
   }
-}
+};
