@@ -5,6 +5,7 @@ import { Tabs, WhiteSpace } from 'antd-mobile/dist/antd-mobile';
 import WeChatSignIn from 'maodou/wechat/client/containers/sign-in-button';
 import LoginForm from '../../containers/users/login-form';
 import WechatLogin from '../../containers/users/wechatLogin';
+import { browserHistory } from 'react-router';
 
 export default class Login extends Component {
   render() {
@@ -13,7 +14,7 @@ export default class Login extends Component {
       <div style={{paddingTop: '25%'}}>
         <Helmet title='用户登录' />
         <WhiteSpace />
-        { loggedIn ? isWechat ? isBind ? <span style={{marginLeft: '1rem'}}>已经绑定手机号</span> : <WechatLogin /> : this.renderTabs() : this.renderTabs()}
+        { loggedIn ? isWechat ? isBind ? browserHistory.push('/user') : <WechatLogin /> : this.renderTabs() : this.renderTabs()}
         <WhiteSpace />
       </div>
     );

@@ -2,7 +2,7 @@ export default {
   setLanguage(i18n) {
     return { type: 'SET_LANGUAGE', i18n };
   },
-  selectedTab(tabName) {
+  selectedTab(context, tabName) {
     return { type: 'SELECTEDTAB', tabName};
   },
   saveConfigs({ Meteor, toastr }, configs) {

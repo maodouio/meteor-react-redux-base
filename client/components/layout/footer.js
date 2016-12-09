@@ -6,7 +6,6 @@ export default class Footer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'posts',
       hidden: false,
     };
   }
@@ -16,6 +15,7 @@ export default class Footer extends Component {
     });
   }
   render() {
+    const {dispatch, selectedTab, selectedTabName} = this.props;
     return (
       <TabBar
         unselectedTintColor="#949494"
@@ -28,12 +28,10 @@ export default class Footer extends Component {
           key="文章"
           icon={{uri: 'http://obd9ssud2.bkt.clouddn.com/maodou/icons/news.png'}}
           selectedIcon={{uri: 'http://obd9ssud2.bkt.clouddn.com/maodou/icons/newsOn.png'}}
-          selected={this.state.selectedTab === 'posts'}
+          selected={selectedTabName === 'posts'}
           onPress={() => {
             browserHistory.push('/posts/list');
-            this.setState({
-              selectedTab: 'posts',
-            });
+            dispatch(selectedTab('posts'));
           }}
           data-seed="logId"
         >
@@ -44,12 +42,10 @@ export default class Footer extends Component {
           selectedIcon={{uri: 'http://obd9ssud2.bkt.clouddn.com/maodou/icons/coursesOn.png'}}
           title="活动"
           key="活动"
-          selected={this.state.selectedTab === 'events'}
+          selected={selectedTabName === 'events'}
           onPress={() => {
             browserHistory.push('/events/list');
-            this.setState({
-              selectedTab: 'events',
-            });
+            dispatch(selectedTab('events'));
           }}
         >
           {this.renderContent}
@@ -59,12 +55,10 @@ export default class Footer extends Component {
           selectedIcon={{uri: 'http://obd9ssud2.bkt.clouddn.com/maodou/icons/meOn.png'}}
           title="我的"
           key="我的"
-          selected={this.state.selectedTab === 'users'}
+          selected={selectedTabName === 'users'}
           onPress={() => {
             browserHistory.push('/user');
-            this.setState({
-              selectedTab: 'users',
-            });
+            dispatch(selectedTab('users'));
           }}
         >
           {this.renderContent}
@@ -76,4 +70,7 @@ export default class Footer extends Component {
 }
 
 Footer.propTypes = {
+  dispatch: PropTypes.func,
+  selectedTab: PropTypes.func,
+  selectedTabName: PropTypes.string,
 };

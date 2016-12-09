@@ -9,6 +9,7 @@ const mapStateToProps = ({selectedTabName}) => ({
 const depsToProps = (context, actions) => ({
   context,
   dispatch: context.dispatch,
+  selectedTab: actions.core.selectedTab,
 });
 
 export default composeAll(

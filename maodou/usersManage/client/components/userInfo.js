@@ -24,7 +24,7 @@ export default class UserInfo extends Component {
           <Item extra={job}>职业：</Item>
           <Item extra={hobby}>爱好：</Item>
         </List>
-        <Link to='/user'><Button type='primary' inline>完善资料</Button></Link>
+        <Button type='primary' inline>完善资料</Button>
       </div>
     );
   }

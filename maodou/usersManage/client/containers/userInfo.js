@@ -1,6 +1,5 @@
 import { useDeps } from 'react-simple-di';
-import { compose, withTracker, withRedux, composeAll } from 'react-komposer-plus';
-import { isEmpty } from 'lodash/lang';
+import { withTracker, composeAll } from 'react-komposer-plus';
 
 import UserInfo from '../components/userInfo';
 
@@ -8,9 +7,9 @@ const initData = ({ context }, onData) => {
   const { Meteor } = context;
   const user = Meteor.user();
   if (user) {
-    const isWechat = user.profile.loginMethod === 'WECHAT';
-    const city = isWechat ? !isEmpty(user.profile.city) ? user.profile.city : '未知' : '未知';
-    const sex = isWechat ? !isEmpty(user.profile.sex) ? user.profile.sex ===1 ? '男': '女' : '未知' : '未知';
+    // const isWechat = user.profile.loginMethod === 'WECHAT';
+    const city = user.profile.city ? user.profile.city : '未知';
+    const sex = user.profile.sex ? parseInt(user.profile.sex) ===1 ? '男': '女' : '未知';
     const nickname = user.profile.nickname || '未知';
     const phoneNumber = user.profile.phoneNumber || '未知';
     const job = user.profile.job || '未知';
@@ -36,6 +35,6 @@ const depsToProps = (context, actions) => ({
 });
 
 export default composeAll(
-  compose(initData),
+  withTracker(initData),
   useDeps(depsToProps)
 )(UserInfo);
