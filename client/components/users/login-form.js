@@ -23,16 +23,18 @@ class LoginForm extends React.Component {
         <WhiteSpace size="lg" />
         <WingBlank size="lg">
           <InputItem
-            {...getFieldProps('phone')}
+            {...getFieldProps('phone', {
+              initialValue: '123 4567 8910',
+            })}
             type='phone'
-            placeholder='123 4567 8910'
             clear
           >手机号：
           </InputItem>
           <InputItem
-            {...getFieldProps('password')}
+            {...getFieldProps('password', {
+              initialValue: '123456',
+            })}
             type='password'
-            placeholder='123456'
             clear
           >密码：
           </InputItem>

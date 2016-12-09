@@ -31,7 +31,7 @@ export default {
       const ownerUser = {
         username: 'owner',
         password: '123456',
-        profile: { nickname: 'owner', loginMethod: 'WEB', phoneNumber: '12345678910' },
+        profile: { nickname: 'owner', loginMethod: 'WEB', phoneNumber: '123 4567 8910' },
       };
       const ownerId = Accounts.createUser(ownerUser);
       context.Roles.addUsersToRoles(ownerId, ['owner']);

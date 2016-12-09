@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Button, Flex } from 'antd-mobile/dist/antd-mobile';
 import { Link } from 'react-router';
 import Helmet from 'react-helmet';
+import ShowNoticeBar from 'client/components/common/showNoticeBar';
 
 export default class MemberInfo extends Component {
   constructor(props) {
@@ -22,14 +23,14 @@ export default class MemberInfo extends Component {
     if (isMember) {
       return(
         <div>
-          <h3>您已经是会员了</h3>
+          <ShowNoticeBar type='info' text='您已经是会员了'/>
         </div>
       );
     }
     return(
       <div>
-        <h3>您还不是会员</h3>
-        <p>成为会员，享受更多权益</p>
+        <ShowNoticeBar type='info' text='您还不是会员'/>
+        <ShowNoticeBar type='info' text='成为会员，享受更多权益'/>
         <Link to=''><Button type='primary' inline>成为会员</Button></Link>
       </div>
     );
@@ -38,7 +39,7 @@ export default class MemberInfo extends Component {
   renderLogin() {
     return(
       <div>
-        <h3>尚未登录</h3>
+        <ShowNoticeBar type='info' text='尚未登录'/>
         <Link to='/login'><Button type='primary' inline>去登录</Button></Link>
       </div>
     );
