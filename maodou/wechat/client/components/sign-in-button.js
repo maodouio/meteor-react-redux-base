@@ -1,5 +1,6 @@
-import React from 'react';
-import { browserHistory } from 'react-router';
+import React, { Component } from 'react';
+import ShowToast from 'client/components/common/showToast';
+import { Toast, WingBlank, Button } from 'antd-mobile/dist/antd-mobile';
 
 export const UIState = {
   IDLE: 'idle',
@@ -8,18 +9,23 @@ export const UIState = {
   ERROR: 'error'
 };
 
-export default (props) => {
-  switch (props.uiState) {
-    case UIState.IDLE:
-      return <a href={props.authUrl}><i className="fa fa-weixin"></i>微信一键登录</a>;
-
-    case UIState.LOGGED_IN:
-      browserHistory.push('/user');
-      return;
-    case UIState.LOGGING_IN:
-      return <span>正在登录...</span>;
-
-    default:
-      return <div>登录失败 <a href={props.authUrl}>重试登录</a></div>;
+export default class SignInButton extends Component {
+  render() {
+    const { isError, isLoggingIn, isLoggedIn, isDefault, authUrl } = this.props;
+    return(
+      <div>
+        { isDefault ? <Button type='ghost' onClick={() => {window.location.href = authUrl;}}>微信登录</Button> : <span />}
+        { isLoggingIn ? <WingBlank>
+            <ShowToast type='loading' text='正在登录...' />
+          </WingBlank> : <span />}
+        { isLoggedIn ?  <WingBlank>
+            <ShowToast type='success' text='登录成功' />
+          </WingBlank> : <span />}
+        { isError ?  <div>
+            <a href={authUrl}>重试登录</a>
+          </div> : <span />}
+      </div>
+    );
   }
 }
+

@@ -48,25 +48,21 @@ const appId = ({ context, redirectUrl }, onData) => {
 };
 
 const composer = () => {
-  let uiState = UIState.IDLE; // closure variable
-
   return ({context, location}, onData) => {
     const {Meteor, Accounts} = context;
     const code = getParameterByName('code');
 
-    if (Meteor.loggingIn()) {
-      uiState = UIState.LOGGING_IN;
-      onData(null, {uiState});
-    } else if (Meteor.user()) {
-      uiState = UIState.LOGGED_IN;
-      onData(null, {uiState});
-    } else if (code && uiState === UIState.IDLE) {
-      uiState = UIState.LOGGING_IN;
-      onData(null, {uiState});
+    if (Meteor.user()) {
+      onData(null, { isLoggedIn: true});
+    } else if (code) {
+      onData(null, {
+        isLoggingIn: true,
+      });
       Meteor.call('wechatAuth.getUserInfo', code, (e, r) => {
         if (e) {
-          uiState = UIState.ERROR;
-          onData(null, {uiState});
+          onData(null, {
+            isError: true,
+          });
           return;
         }
 
@@ -80,14 +76,12 @@ const composer = () => {
         Accounts.callLoginMethod({
           methodArguments: [loginRequest],
           userCallback: e => {
-            uiState = UIState.ERROR;
-            onData(null, {uiState});
+            onData(null, {isError: true});
           }
         });
       });
     } else {
-      uiState = UIState.IDLE;
-      onData(null, {uiState});
+      onData(null, {isDefault: true});
     }
   };
 };

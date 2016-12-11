@@ -1,5 +1,5 @@
 import { useDeps } from 'react-simple-di';
-import { compose, withTracker, withRedux, composeAll } from 'react-komposer-plus';
+import { withTracker, composeAll } from 'react-komposer-plus';
 import UserCenter from '../components/userCenter';
 
 const initData = ({ context }, onData) => {
@@ -26,6 +26,6 @@ const depsToProps = (context, actions) => ({
 });
 
 export default composeAll(
-  compose(initData),
+  withTracker(initData),
   useDeps(depsToProps)
 )(UserCenter);

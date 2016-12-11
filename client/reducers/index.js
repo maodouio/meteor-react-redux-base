@@ -13,4 +13,12 @@ export default {
         return state;
     }
   },
+  selectedTabName(state = 'posts', action) {
+    switch (action.type) {
+      case 'SELECTEDTAB':
+        return action.tabName;
+      default:
+        return state;
+    }
+  }
 };

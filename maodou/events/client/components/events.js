@@ -24,7 +24,7 @@ export default (props) => {
                     thumbStyle={{width: '100%'}}
                   />
                   <Card.Body>
-                    <p style={{fontSize: '1.3em'}}>
+                    <p style={{fontSize: '1.3em', color: '#333'}}>
                       <b>{event.title}</b>
                     </p>
                     <p style={{
@@ -39,7 +39,7 @@ export default (props) => {
                   <Card.Footer extra={
                     <div>
                       <span style={{marginRight: '20px'}}><i className="fa fa-map-marker" aria-hidden="true"></i>{event.location}</span>
-                      <span style={{marginRight: '10px'}}><i className="fa fa-calendar" aria-hidden="true"></i>{moment(event.createdAt).format('YYYY.MM.DD')}</span>
+                      <span style={{marginRight: '10px'}}><i className="fa fa-calendar" aria-hidden="true"></i>{moment(event.time).format('YYYY.MM.DD')}</span>
                     </div>
                     } />
                 </Card>

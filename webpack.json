@@ -3,5 +3,8 @@
   "devtool": "source-map",
   "devServer": {
     "host": "localhost"
+  },
+  "resolve": {
+    "extensions": ["", ".web.jsx", ".web.js", ".js", ".jsx", ".json"]
   }
 }

@@ -1,6 +1,5 @@
 import { useDeps } from 'react-simple-di';
-import { compose, withTracker, withRedux, composeAll } from 'react-komposer-plus';
-import { isEmpty } from 'lodash/lang';
+import { withTracker, composeAll } from 'react-komposer-plus';
 
 import MemberInfo from '../components/memberInfo';
 
@@ -23,6 +22,6 @@ const depsToProps = (context, actions) => ({
 });
 
 export default composeAll(
-  compose(initData),
+  withTracker(initData),
   useDeps(depsToProps)
 )(MemberInfo);

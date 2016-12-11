@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { List, Button } from 'antd-mobile/dist/antd-mobile';
+import { List, Button, Flex, WhiteSpace } from 'antd-mobile/dist/antd-mobile';
 import { Link } from 'react-router';
 import Helmet from 'react-helmet';
 
@@ -13,7 +13,7 @@ export default class UserInfo extends Component {
   render() {
     const { nickname, phoneNumber, email, sex, city, job, hobby} = this.props;
     return (
-      <div style={{marginTop: '25%'}}>
+      <div style={{fontSize: '.3rem', paddingTop: '1rem'}}>
         <Helmet title='用户资料' />
         <List renderHeader={() => '个人资料'}>
           <Item extra={nickname}>用户名：</Item>
@@ -24,7 +24,10 @@ export default class UserInfo extends Component {
           <Item extra={job}>职业：</Item>
           <Item extra={hobby}>爱好：</Item>
         </List>
-        <Link to='/user'><Button type='primary' inline>完善资料</Button></Link>
+        <WhiteSpace size='md' />
+        <Flex justify='center' >
+          <Button type='ghost' inline>完善资料</Button>
+        </Flex>
       </div>
     );
   }

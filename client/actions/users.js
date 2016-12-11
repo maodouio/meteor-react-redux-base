@@ -6,6 +6,26 @@ export default {
       Meteor.call('users.enrollWithEmail', email, callback);
     };
   },
+  wechatGetPhone({ Meteor, toastr }, id, username, phone, password) {
+    return () => {
+      Meteor.call('updateWechatUserPhone', id, phone, password, (err) => {
+        if (err) {
+          console.log(err);
+          toastr.error('绑定失败');
+        }else {
+          Meteor.loginWithPassword(username, password, (err) => {
+            if (err) {
+              console.log(err);
+              toastr.error('绑定失败');
+            } else {
+              toastr.success('绑定成功');
+              browserHistory.push('/user');
+            }
+          });
+        }
+      });
+    };
+  },
   loginWithPassword({ Meteor, toastr }, phone, password, callback) {
     return () => {
       Meteor.call('verifyUser', phone, (err, info) => {
@@ -13,7 +33,7 @@ export default {
           console.log(err);
           toastr.error('登录失败，手机号不正确');
         } else {
-          Meteor.loginWithPassword(info.profile.nickname, password, (err) => {
+          Meteor.loginWithPassword(info.username, password, (err) => {
             if (err) {
               console.log(err);
               if (err.reason === 'User not found') {

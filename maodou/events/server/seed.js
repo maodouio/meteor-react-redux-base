@@ -1,51 +1,156 @@
 export default {
   data: [{
-    title: 'Kubernetes喊你来开船啦',
-    coverUrl: 'https://ohjdeohom.qnssl.com/base/events-k8s.jpg',
-    desc: `Kubernetes这个词起源于古希腊，意为「舵手」。
-          它的核心功能就是应用的自动发布、自动恢复、自动扩展、
-          滚动升级，毋庸置疑kubernetes能提供编程生产力方面的极大收益，
-          简化人工和自动化的系统管理。`,
-    time: new Date(2016, 11, 12),
-    location: '清华fit楼',
+    title: '思考x创变',
+    coverUrl: 'https://ohn5es96r.qnssl.com/base/events/events-think1.jpg',
+    desc: `<p>思考，是人类的天赋与财富，
+      是我们生而为人的证明之一，比如所谓我思故我在，
+      然而，思考与思想一直也是人类自古之痛，
+      于个体于群体，想太多想太少想得不多不少都未必好，
+      思考到底要让人爱还是要让人恨？</p>
+      <p>思想，是我们思考的过程、结果、形态、还是统称？
+      我们更易认为思考是痛苦的，思想才是财富，稀缺的财富，
+      思想好像是那些有能力承担承受了思考的痛苦的思维的结晶，
+      我们喜欢那些伟大的思想，被他们鼓舞和点燃，与照亮，
+      同时我们也知道我们都好难于自问一句，我有思想么？</p>
+      <p>书籍，是人类思想传承的那个“能量块”，
+      那些原本千丝万缕的思绪抽离出来，梳理出来，萃取出来，
+      然后成为那种可以传承、传播，滋养百人千人万人的智慧之源，
+      百倍千倍地延展了人的个体的生命，于广度于宽度于长度，
+      我们谓之书海（无涯），谓之书山（有路），谓之（琅琅）书声，</p>
+      <p>阅读，是我们认知世界的方式之一，
+      从书籍里，我们汲取知识、获取思考、娱乐消遣，
+      基础阅读、检视阅读、分析阅读、主题阅读，《如何阅读一本书》
+      主食阅读、美食阅读、蔬果阅读、甜点阅读，没有越界、不成阅读，
+      个体阅读、群体阅读、立体阅读、推动阅读，智慧工程、无尽可能，</p>
+      <p>想象，是阅读最大的乐趣和意义之一，
+      好像源于思考，却又好像完全不是一回事，
+      白日梦的欢乐，想象憧憬美好的嘴角上翘，
+      好似构建一种抽象意像的超越思考的一种思维本能，
+      也好似人类自我娱乐、思维运动、生存本能的一种馈赠，</p>
+      <p>创造，一种从无到有的过程，
+      非人类独有，却是人类最重要的生存能力之一，
+      人类的发展史，几乎伴随着人类发明创造的历史，
+      创造不易，创造也伴随着破坏，
+      书籍和阅读既因创造而生，也成为滋养更多创造的源泉，</p>
+      <p>改变，是人类的天性，
+      一如我们的细胞一直在裂变，身体一直在新陈代谢，
+      应变和改变，是一种生存本能，从小，到老，
+      然而，我们都习惯于呆在舒适区，
+      我们只喜欢自己主动的改变，不喜欢被改变，</p>
+      <p>创变，创造变化，changemaker
+      是真正能活在21世纪的人的必选项，之一，
+      但凡触碰，好似重生，但凡拥有，引领众生，
+      其实只是一种生存本能，然而稀有并珍贵，
+      我们阅读、思考、行动以求变，然而，哪那么容易？</p>
+      <p>书声，如果人和书之间可以有声，
+      我们想挖掘这种声音，挖掘那种力量，
+      阅读，本就是人和书所构建的动词，远不止是知识和智慧本身，
+      思考，是阅读可以带给我们的最好礼物之一，
+      创变，或许是人和人之间可以互相影响的最好礼物，之一。</p>
+      <p><img alt="" src="https://ohn5es96r.qnssl.com/base/events/events-think1.jpg"></p>
+      <blockquote>
+      <p>2016.12.18
+      书声之『思考x创变』
+      七位思考者，七位创变者
+      我们阅读，
+      我们思考，我们创变</p>
+      </blockquote>
+      <p>朱宁，周洋，程龙，张宁，陈鹏，周培元，莫浩薇
+      敬请期待！</p>
+    `,
+    time: new Date(2016, 11, 18),
+    location: '黄浦剧场一楼黑匣子剧场',
+    limit: '300',
+    fee: '0',
+    unit: 'rmb'
+  }, {
+    title: '北大剧社2016秋季演出季大戏《唐璜》',
+    coverUrl: 'https://ohn5es96r.qnssl.com/base/events/events-beida.jpg',
+    desc: `<blockquote>
+      <p>I</p>
+      </blockquote>
+      <p>伊甸园里，有的是福泽、安详、天真无邪。那一对圣洁的男女，在被逐出乐园之前，连接吻也不曾尝试。（可是亚当夏娃是怎样打发时间的呢？）</p>
+      <blockquote>
+      <p>II</p>
+      </blockquote>
+      <p>道德统治的世间，罪恶消弭无形。
+      男的正直稳重专一忠诚，女的端庄贤淑温柔忠诚。
+      （贤德，在这世界里，说实话，乏味而枯索）</p>
+      <blockquote>
+      <p>III</p>
+      </blockquote>
+      <p>热情怎么隐藏得住自己？越试图遮掩，热情就越发明显。打开窗户吧，我的美人，别怕深闺家教严苛，别怕婚期即将到来，别怕床畔尚有别人，别怕鬓已星星亡夫入土。别怕！我的美人！</p>
+      <blockquote>
+      <p>IV</p>
+      </blockquote>
+      <p>伊甸园的美德啊，是一片空白！人世间的道德啊，是一个牢笼！坚贞不渝，从一而终，年轻轻就心如古井，这只对傻瓜才有用。
+      我有一颗心，爱全地球，恨不得多来几个旁的世界让我去征服！我的名字是罪恶，也是自由。循着我的名字而来吧！我是唐璜。</p>
+      <p>导演：天韵/也文儿</p>
+      <p>原著：莫里哀</p>
+      <p>翻译：李健吾/宁春</p>
+      <p>改编：天韵/陈天如</p>
+      <p>演员：梁中良 王佚菲 王鸿钧 邓玉菡 梅杰 卜宇超 陈天如 金炜璍 曲奇 孙逸舟 琥珀酱 百力 孙嘉泽</p>
+      <p>舞美灯光设计：也文儿</p>
+      <p>舞台监督：王敢当/柳雨薇/百力</p>
+      <p>海报：焦丛</p>`,
+    time: new Date(2016, 11, 22),
+    location: '东城区美术馆后街77号77剧场',
+    limit: '1000',
+    fee: '0',
+    unit: 'rmb'
+  }, {
+    title: '第四届中国音乐产业大会',
+    coverUrl: 'https://ohn5es96r.qnssl.com/base/events/events-music.jpg',
+    desc: `<p><img alt="" src="https://ohn5es96r.qnssl.com/base/events/events-music1.jpg"></p>
+      <p><img alt="" src="https://ohn5es96r.qnssl.com/base/events/events-music2.jpg"></p>
+      <p><img alt="" src="https://ohn5es96r.qnssl.com/base/events/events-music3.jpg"></p>
+      <p><img alt="" src="https://ohn5es96r.qnssl.com/base/events/events-music4.jpg"></p>
+      <p><img alt="" src="https://ohn5es96r.qnssl.com/base/events/events-music5.jpg"></p>
+      <p><img alt="" src="https://ohn5es96r.qnssl.com/base/events/events-music6.png"></p>`,
+    time: new Date(2016, 11, 16),
+    location: '四季酒店5层',
+    limit: '2000',
+    fee: '0',
+    unit: 'rmb'
+  }, {
+    title: '年轻人如何平衡自己的理想与现实',
+    coverUrl: 'https://ohn5es96r.qnssl.com/base/events/events-writer.jpg',
+    desc: `<blockquote>
+      <p>活动概述：</p>
+      </blockquote>
+      <p>人生之旅，殊途同归。到底做什么有意义，过什么生活从不后悔，判断标准在自己心中。就像画油画，一开始打底稿，然后层层叠叠勾描刮涂，中间堆上一团一团的色彩，逐步修饰成型。十多年后，隔远站开观看，轮廓才得以清晰。
+      你是否听说过追逐繁星的孩子？ 你是否也有漫长的低潮沉默，经历过挫败与痛苦？不要担心，黎明的前戏必是黑夜。让我们同“温暖大叔”沈嘉柯一起，探讨如何得到更好的人生。</p>
+      <blockquote>
+      <p>活动嘉宾：</p>
+      </blockquote>
+      <p><img alt="" src="https://ohn5es96r.qnssl.com/base/events/events-writer1.jpg">
+      沈嘉柯</p>
+      <p>著名作家，2015年“当当影响力作家文学贡献榜”入围作家。其作品在中国重要的报刊《人民日报》《光明日报》《中国青年报》等发表，进入中国各大畅销排行榜与好书榜。</p>
+      <p>他曾当过记者、杂志主编等，在中国最早的心理咨询刊物工作，主持晚间心理热线，在《正信》开辟有问答专栏，在新浪开有文化专栏，在南方周末网开有电影评论专栏。</p>
+      <p>他的散文随笔温暖治愈，犀利却不失温厚，为千万青年读者所喜爱，被各大媒体广泛转载，伴随无数年轻人成长。</p>
+      <blockquote>
+      <p>活动时间：</p>
+      </blockquote>
+      <p>2016年12月11日  14:00-16:30</p>
+      <blockquote>
+      <p>活动地点：</p>
+      </blockquote>
+      <p>言几又书店西红门店（西红门荟聚商场三楼）</p>
+      <blockquote>
+      <p>活动主办方：</p>
+      </blockquote>
+      <p>时代华语图书股份有限公司+当当网</p>
+      <blockquote>
+      <p>活动流程：</p>
+      </blockquote>
+      <p>○ 14：30-14：40 主持人开场</p>
+      <p>○ 14：40-15：20 沈嘉柯分享</p>
+      <p>○ 15：20-16：00 现场互动</p>
+    `,
+    time: new Date(2016, 11, 11),
+    location: '西红门荟聚商城三楼言几又书店',
     limit: '100',
     fee: '0',
-    unit: 'rmb'
-  }, {
-    title: '清华技术讲座：硅谷最新的React/Redux 和 Meteor共存之道',
-    coverUrl: 'https://ohjdeohom.qnssl.com/base/events-meteor.jpg',
-    desc: `Meteor 是一个新鲜出炉的现代网站开发平台，基础构架是 Node.JS +MongoDB，
-          它把这个基础构架同时延伸到了浏览器端，如果 App 用纯 JavaScript 写成，
-          JS APIs 和 DB APIs 就可以同时在服务器端和客户端无差异地调用，
-          本地和远程数据通过 DDP（Distributed Data Protocol）协议传输。`,
-    time: new Date(2016, 10, 6),
-    location: '清华fit楼',
-    limit: '50',
-    fee: '0',
-    unit: 'rmb'
-  }, {
-    title: '携程技术中心React Native Meetup',
-    coverUrl: 'https://ohjdeohom.qnssl.com/base/events-reactnative.jpg',
-    desc: `一年半前，随着React Native的到来，这些痛点都被一一解决。
-          目前看来，它是移动开发的一大方向，后起的Weex，微信小程序，无一例外，
-          都有参考React Native的设计。<br>
-          不过React Native框架的使用，以及和现有业务的整合，性能优化，门槛并不低，
-          各个公司在业务实践过程中都遇到各自不同的问题。<br>
-          本次沙龙，我们将就RN框架优化，业务实践方面的问题来做分享。<br>
-          10月23日，携程上海总部，一起来聆听移动开发最前沿的声音~`,
-    time: new Date(2016, 9, 23),
-    location: '（上海长宁）金钟路968号凌空SOHO',
-    limit: '500',
-    fee: '0',
-    unit: 'rmb'
-  }, {
-    title: '最后的风口',
-    coverUrl: 'https://ohjdeohom.qnssl.com/base/events-chuangyebang.jpg',
-    desc: `创业邦100未来领袖峰会暨2016创业邦年会`,
-    time: new Date(2016, 11, 2),
-    location: '（北京朝阳）国家会议中心',
-    limit: '8000',
-    fee: '288',
     unit: 'rmb'
   }]
 };
