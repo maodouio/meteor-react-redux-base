@@ -10,7 +10,7 @@ export default class Login extends Component {
   render() {
     const { isWechat, nickname, loggedIn, isBind } = this.props;
     return (
-      <div style={{paddingTop: '25%'}}>
+      <div style={{paddingTop: '45%'}}>
         <Helmet title='用户登录' />
         <WhiteSpace />
         { loggedIn ? isWechat ? isBind ? <span style={{marginLeft: '1rem'}}>已经绑定手机号</span> : <WechatLogin /> : this.renderTabs() : this.renderTabs()}
@@ -22,18 +22,7 @@ export default class Login extends Component {
   renderTabs() {
     const TabPane = Tabs.TabPane;
     return (
-      <Tabs defaultActiveKey="wechat">
-        <TabPane tab="微信登录" key="wechat">
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-            <WeChatSignIn/>
-          </div>
-        </TabPane>
-        <TabPane tab="手机号登录" key="phone">
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-            <LoginForm/>
-          </div>
-        </TabPane>
-      </Tabs>
+      <LoginForm />
     );
   }
 }

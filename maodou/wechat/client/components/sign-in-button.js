@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, browserHistory } from 'react-router';
 import ShowToast from 'client/components/common/showToast';
-import { Toast, WingBlank } from 'antd-mobile/dist/antd-mobile';
+import { Toast, WingBlank, Button } from 'antd-mobile/dist/antd-mobile';
 
 export const UIState = {
   IDLE: 'idle',
@@ -11,9 +11,10 @@ export const UIState = {
 };
 
 export default (props) => {
+  console.log(props);
   switch (props.uiState) {
     case UIState.IDLE:
-      return <a href={props.authUrl}><i className="fa fa-weixin fa-4x" style={{marginTop: '1rem'}}></i></a>;
+      return <Button type='ghost' onClick={() => {window.location.href = props.authUrl;}}>微信登录</Button>;
     case UIState.LOGGED_IN:
       return (
         <WingBlank>
