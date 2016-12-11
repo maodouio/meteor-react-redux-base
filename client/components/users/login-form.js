@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
 import {Link} from 'react-router';
-import { InputItem, Button, Flex, WhiteSpace, WingBlank } from 'antd-mobile/dist/antd-mobile';
+import { InputItem, Button, Flex, WhiteSpace, WingBlank, List } from 'antd-mobile/dist/antd-mobile';
 import { createForm } from 'rc-form';
+import WeChatSignIn from 'maodou/wechat/client/containers/sign-in-button';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -19,16 +20,15 @@ class LoginForm extends React.Component {
   render() {
     const { getFieldProps } = this.props.form;
     return (
-      <Flex direction='column' align='center'>
-        <WhiteSpace size="lg" />
-        <WingBlank size="lg">
+      <div>
+        <List direction='column' align='center'>
           <InputItem
             {...getFieldProps('phone', {
               initialValue: '123 4567 8910',
             })}
             type='phone'
             clear
-          >手机号：
+          >手机号
           </InputItem>
           <InputItem
             {...getFieldProps('password', {
@@ -36,12 +36,16 @@ class LoginForm extends React.Component {
             })}
             type='password'
             clear
-          >密码：
+          >密码
           </InputItem>
-          <Button type='primary' inline onClick={this.onSubmit}>确定</Button>
-        </WingBlank>
-        <WhiteSpace size="lg" />
-      </Flex>
+        </List>
+        <WhiteSpace />
+        <Flex style={{padding: '0 1rem'}} direction="column" justify="around">
+          <Button type='ghost' onClick={this.onSubmit}>登录</Button>
+          <WhiteSpace />
+          <WeChatSignIn />
+        </Flex>
+      </div>
     );
   }
 }

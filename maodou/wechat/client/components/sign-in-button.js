@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Link, browserHistory } from 'react-router';
 import ShowToast from 'client/components/common/showToast';
-import { Toast, WingBlank } from 'antd-mobile/dist/antd-mobile';
+import { Toast, WingBlank, Button } from 'antd-mobile/dist/antd-mobile';
 
 export const UIState = {
   IDLE: 'idle',
@@ -15,9 +14,7 @@ export default class SignInButton extends Component {
     const { isError, isLoggingIn, isLoggedIn, isDefault, authUrl } = this.props;
     return(
       <div>
-        { isDefault ? <a href={authUrl}>
-            <i className="fa fa-weixin fa-4x" style={{marginTop: '1rem'}}></i>
-          </a> : <span />}
+        { isDefault ? <Button type='ghost' onClick={() => {window.location.href = authUrl;}}>微信登录</Button> : <span />}
         { isLoggingIn ? <WingBlank>
             <ShowToast type='loading' text='正在登录...' />
           </WingBlank> : <span />}
