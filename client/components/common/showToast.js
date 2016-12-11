@@ -26,7 +26,7 @@ export default class ShowToast extends Component {
       case 'offline':
         return Toast.offline(text, 1);
       case 'loading':
-        return Toast.loading(text);
+        return Toast.loading(text, 2);
     }
   }
 }

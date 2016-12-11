@@ -3,6 +3,7 @@
     ["import", [
       {
         "libraryName": "antd-mobile",
+        "libraryDirectory": "lib",
         "style": true
       },
       {

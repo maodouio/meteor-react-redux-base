@@ -20,11 +20,13 @@ class WechatLogin extends Component {
   render() {
     const { getFieldProps } = this.props.form;
     return(
-      <Flex direction='column' align='center'>
+      <Flex direction='column' align='center' style={{fontSize: '.3rem'}}>
         <WhiteSpace size="lg" />
         <WingBlank size="lg">
           <p>欢迎你，{this.props.nickname}</p>
+          <WhiteSpace size="lg" />
           <div>绑定手机 以后可以使用手机号直接登录</div>
+          <WhiteSpace size="lg" />
           <InputItem
             {...getFieldProps('phone')}
             type='phone'
@@ -32,6 +34,7 @@ class WechatLogin extends Component {
             clear
           >手机号：
           </InputItem>
+          <WhiteSpace size="lg" />
           <InputItem
             {...getFieldProps('password')}
             type='password'
@@ -39,8 +42,12 @@ class WechatLogin extends Component {
             clear
           >密码：
           </InputItem>
-          <Button type='primary' inline onClick={this.handleClick}>确定</Button>
-          <Link to='/user'><Button type='ghost' inline>以后再说</Button></Link>
+          <WhiteSpace size="lg" />
+          <Flex justify='center'>
+            <Button type='primary' inline onClick={this.handleClick}>确定</Button>
+            <WhiteSpace size="lg" />
+            <Link to='/user' style={{marginLeft: '.2rem'}}><Button type='ghost' inline>以后再说</Button></Link>
+          </Flex>
         </WingBlank>
         <WhiteSpace size="lg" />
       </Flex>
