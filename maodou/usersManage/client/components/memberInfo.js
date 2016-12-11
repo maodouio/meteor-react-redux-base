@@ -45,7 +45,7 @@ export default class MemberInfo extends Component {
     const Brief = Item.Brief;
 
     return(
-      <List style={{marginTop: '.8rem'}}
+      <List style={{marginTop: '.4rem'}}
         renderHeader= { () => '会员权益'}
       >
       <Item wrap multipleLine arrow="horizontal">精选内容<Brief>每周为您推送一篇精心准备的，深度解剖的文章．</Brief></Item>
@@ -61,7 +61,7 @@ export default class MemberInfo extends Component {
       <div>
         <ShowNoticeBar type='info' text='尚未登录'/>
         <Flex justify='center' algin='center'>
-          <Link to='/login'><Button type='warning' inline>去登录</Button></Link>
+          <Link to='/login'><Button type='ghost' inline>去登录</Button></Link>
         </Flex>
       </div>
     );

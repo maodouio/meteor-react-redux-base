@@ -19,27 +19,27 @@ export default class UserNotifications extends Component {
     const Item = List.Item;
     const Brief = Item.Brief;
     return(
-      <List>
+      <List style={{marginTop: '.2rem'}}>
         <Item arrow="horizontal" multipleLine>系统消息<Brief>想探索更多的内容，赶快加入小组吧！</Brief></Item>
         <Item arrow="horizontal" multipleLine>系统消息<Brief>恭喜，您已成为会员！</Brief></Item>
-        <Item arrow="horizontal" multipleLine>系统消息<Brief>恭喜您，注册成功．</Brief></Item>
+        <Item arrow="horizontal" multipleLine>系统消息<Brief>恭喜，您已注册成功，赶快浏览内容或者完善资料吧！</Brief></Item>
       </List>
     );
   }
 
   render() {
     return(
-      <WingBlank size="lg" style={{fontSize: '.3rem', paddingTop: '1rem'}}>
+      <WingBlank size="sm" style={{fontSize: '.3rem', paddingTop: '1rem'}}>
         <Helmet title='消息通知' />
-        <WhiteSpace size="lg" />
+        <WhiteSpace size="md" />
         <SegmentedControl
           values={['我的消息', '小组消息']}
           onChange={this.handleChange}
         />
-        <Flex justify='center' direction='column' style={{marginTop: '.8rem'}}>
-          { this.state.index ? this.renderNotice() : <p>暂无消息!</p> }
+        <Flex justify='center' direction='column'>
+          { this.state.index ? this.renderNotice() : <p style={{marginTop: '.8rem'}}>暂无消息!</p> }
         </Flex>
-        <WhiteSpace size="lg" />
+        <WhiteSpace size="sm" />
       </WingBlank>
     );
   }

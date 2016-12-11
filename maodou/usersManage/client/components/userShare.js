@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react';
+import Helmet from 'react-helmet';
 import { qrcode } from 'meteor/dschulz:jquery-qrcode';
 import { $ }from 'meteor/jquery';
 import { isEmpty } from 'lodash/lang';
 import { defaultImgUrl } from 'lib/helpers/defaultValue';
-import { Card, Flex, WhiteSpace } from 'antd-mobile/dist/antd-mobile';
+import { Flex, WhiteSpace } from 'antd-mobile/dist/antd-mobile';
 
 export default class UserShare extends Component {
   constructor(props) {
@@ -31,8 +32,9 @@ export default class UserShare extends Component {
 
   render() {
     return(
-      <Flex direction='column' justify='center' style={{paddingTop: '30%'}}>
-        <h3>请长按二维码保存或分享</h3>
+      <Flex direction='column' justify='center' style={{fontSize: '.3rem', paddingTop: '1rem'}}>
+        <Helmet title='我的推广' />
+        <p>请长按二维码保存或分享</p>
         <WhiteSpace size="lg" />
         <div id='qrcode'></div>
       </Flex>
