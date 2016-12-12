@@ -2,6 +2,7 @@ import SinglePages from '../lib/collections/singlePages';
 
 import simpleConfig from './simple';
 import creativeConfig from './creative';
+import tenseConfig from './tense';
 
 const register = (config) => {
   const template = SinglePages.findOne({templateName: config.templateName});
@@ -19,9 +20,11 @@ const register = (config) => {
     defaultTemplate: false,
     ...config
   });
+
 };
 
 export default () => {
   register(simpleConfig);
   register(creativeConfig);
+  register(tenseConfig);
 };
