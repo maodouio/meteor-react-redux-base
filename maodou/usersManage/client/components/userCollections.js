@@ -18,21 +18,22 @@ export default class UserCollections extends Component {
   renderCollection() {
     return(
       <div style={{marginTop: '.2rem'}}>
-        <Card full>
+        <Card>
           <Card.Header
             title='一个投资人为什么投身...'
             thumb='https://ohn5es96r.qnssl.com/base/posts/post-img5.jpg'
-            thumbStyle={{width: '400px', height: '300px'}}
+            thumbStyle={{width: '100%'}}
           />
-          <Card.Footer content="精选内容" extra={<div>2016-12-4</div>} />
+          <Card.Footer content="精选内容" extra={<span>2016-12-4</span>} />
         </Card>
-        <Card full>
+        <WhiteSpace />
+        <Card>
           <Card.Header
             title='内容创业的春天并未...'
             thumb='https://ohn5es96r.qnssl.com/base/posts/post-img2.jpg'
-            thumbStyle={{width: '400px', height: '300px'}}
+            thumbStyle={{width: '100%'}}
           />
-          <Card.Footer content="精选内容" extra={<div>2016-12-4</div>} />
+          <Card.Footer content="精选内容" extra={<span>2016-12-4</span>} />
         </Card>
       </div>
     );
@@ -40,18 +41,20 @@ export default class UserCollections extends Component {
 
   render() {
     return(
-      <WingBlank size="md" style={{fontSize: '.3rem', paddingTop: '1rem'}}>
+      <div style={{fontSize: '.3rem', paddingTop: '1rem'}}>
         <Helmet title='我的收藏' />
         <WhiteSpace size="md" />
-        <SegmentedControl
-          values={['文章收藏', '活动收藏']}
-          onChange={this.handleChange}
-        />
+        <WingBlank>
+          <SegmentedControl
+            values={['文章收藏', '活动收藏']}
+            onChange={this.handleChange}
+          />
+        </WingBlank>
         <Flex justify='center' direction='column'>
           { this.state.index ? this.renderCollection() : <p style={{marginTop: '.8rem'}}>暂无活动收藏!</p> }
         </Flex>
         <WhiteSpace size="md" />
-      </WingBlank>
+      </div>
     );
   }
 }

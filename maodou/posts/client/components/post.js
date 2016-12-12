@@ -10,7 +10,7 @@ export default (props) => {
         props.post ?
           <div style={{margin: '1.5rem 0', color: '#515355'}}>
             <div className="post-head">
-              <h1>{props.post.title}</h1>
+              <h1 style={{fontSize: '.5rem'}}>{props.post.title}</h1>
               <span style={{color: '#1296db'}}>{props.post.category}</span>
               <div>
                 <span>{props.post.author}</span>

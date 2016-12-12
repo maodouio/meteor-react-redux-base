@@ -15,7 +15,7 @@ export default (props) => {
         props.event ?
           <div style={{margin: '1.5rem 0', color: '#515355'}}>
             <div className="event-head">
-              <h1>{props.event.title}</h1>
+              <h1 style={{fontSize: '.5rem'}}>{props.event.title}</h1>
               <div>
                 <span>Admin</span>&nbsp;
                 <span style={{fontStyle: 'italic', fontSize: '0.2rem', color: '#b2b2b2', marginLeft: '10px'}}>{moment(props.event.createdAt).format('YYYY-MM-DD')}</span>

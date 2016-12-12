@@ -13,7 +13,7 @@ export default class SignInButton extends Component {
   render() {
     const { isError, isLoggingIn, isLoggedIn, isDefault, authUrl } = this.props;
     return(
-      <div>
+      <div style={{width: '100%'}}>
         { isDefault ? <Button type='ghost' onClick={() => {window.location.href = authUrl;}}>微信登录</Button> : <span />}
         { isLoggingIn ? <WingBlank>
             <ShowToast type='loading' text='正在登录...' />

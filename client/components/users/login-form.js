@@ -41,7 +41,7 @@ class LoginForm extends React.Component {
         </List>
         <WhiteSpace />
         <Flex style={{padding: '0 1rem'}} direction="column" justify="around">
-          <Button type='ghost' onClick={this.onSubmit}>登录</Button>
+          <Button onClick={this.onSubmit}>登录</Button>
           <WhiteSpace />
           <WeChatSignIn />
         </Flex>

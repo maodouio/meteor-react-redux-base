@@ -38,7 +38,7 @@ export default class UserCenter extends Component {
           </div>
           <h4 style={{fontSize: '.3rem'}}>{props.nickname}</h4>
           <Flex justify="center" style={{ margin: '.1rem' }}>
-            { props.isAdmin ? <Link to='/admin'><Button inline>管理员后台</Button></Link> : <div /> }
+            { props.isAdmin ? <Link to='/admin'><Button style={{marginRight: '.5rem'}} inline>管理员后台</Button></Link> : <div /> }
             <Link to='/user/share'><Button type="primary" inline>推荐给好友</Button></Link>
           </Flex>
         </Flex>
@@ -51,7 +51,7 @@ export default class UserCenter extends Component {
         </div>
         <h4 style={{fontSize: '.3rem'}}>{props.nickname}</h4>
         <Flex justify="center" style={{ margin: '.1rem' }}>
-          { props.isAdmin ? <Link to='/admin'><Button inline>管理员后台</Button></Link> : <div /> }
+          { props.isAdmin ? <Link to='/admin'><Button style={{marginRight: '.5rem'}} inline>管理员后台</Button></Link> : <div /> }
           <Link to='/user/share'><Button type="primary" inline>推荐给好友</Button></Link>
         </Flex>
       </Flex>
