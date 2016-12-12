@@ -29,18 +29,20 @@ export default class UserNotifications extends Component {
 
   render() {
     return(
-      <WingBlank size="sm" style={{fontSize: '.3rem', paddingTop: '1rem'}}>
+      <div style={{fontSize: '.3rem', paddingTop: '1rem'}}>
         <Helmet title='消息通知' />
         <WhiteSpace size="md" />
-        <SegmentedControl
-          values={['我的消息', '小组消息']}
-          onChange={this.handleChange}
-        />
-        <Flex justify='center' direction='column'>
+        <WingBlank>
+          <SegmentedControl
+            values={['我的消息', '小组消息']}
+            onChange={this.handleChange}
+          />
+        </WingBlank>
+        <div>
           { this.state.index ? this.renderNotice() : <p style={{marginTop: '.8rem'}}>暂无消息!</p> }
-        </Flex>
+        </div>
         <WhiteSpace size="sm" />
-      </WingBlank>
+      </div>
     );
   }
 }
