@@ -9,7 +9,7 @@ import moment from 'moment';
 export default (props) => {
   const T = props.context.T;
   return (
-    <div style={{ padding: '1rem .2rem' }}>
+    <WingBlank size='md' style={{ padding: '1rem 0' }}>
      <Helmet title='文章列表页' />
       {
         props.posts.status === 'ready' ?
@@ -34,6 +34,6 @@ export default (props) => {
             <div>抱歉，目前还没有文章！</div> :
           <Loading />
       }
-    </div>
+    </WingBlank>
   );
 };
