@@ -20,7 +20,7 @@ export default {
           </ol>
           <div class="carousel-inner" role="listbox">
             <div class="item active">
-              <img width='100%' height='100%' src=/images/tense/lbt1.jpg" alt="..." />
+              <img width='100%' height='100%' src="/images/tense/lbt1.jpg" alt="..." />
               <div class="carousel-caption">
                 ...
               </div>
