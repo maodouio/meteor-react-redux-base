@@ -28,7 +28,7 @@ export default class MainPage extends Component {
                         <span className="icon-bar"></span>
                         <span className="icon-bar"></span>
                       </button>
-                      <a className="navbar-brand" href="/" style={{marginLeft: '30px'}}>{logoName}</a> 
+                      <a className="navbar-brand" href="/" style={{marginLeft: '50px'}}>{logoName}</a>
                     </div>
                     <div className="collapse navbar-collapse" id="main-navbar" style={{float: 'right'}}>
                       <ul className="nav navbar-nav">
@@ -90,14 +90,14 @@ const styles = {
     textAlign: 'center',
   },
   link: {
-    fontSize: '20px',
+    // fontSize: '20px',
     textTransform: 'capitalize'
   }
 };
 const renderUser = (nickname) => {
   return (
     <ul className="nav navbar-nav navbar-right">
-      <li><Link>欢迎，{nickname}<span className="caret" /></Link></li>
+      <li><Link>欢迎，{nickname}</Link></li>
       <li><Link to="/" onClick={(e) => Meteor.logout()}>退出</Link></li>
     </ul>
   );

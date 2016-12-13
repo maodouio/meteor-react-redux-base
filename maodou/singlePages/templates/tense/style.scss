@@ -885,10 +885,19 @@ ul.socials li {
   }
 
   section#pricing{
-    background-image: url();
-    background-color: #f5f5f5;
+    background-image: url(images/tense/Silicon-Valley.jpg);
+    // background-color: #f5f5f5;
     .pricing-table{
         padding: 35px;
+    }
+    span {
+      color: #f7f9fa;
+    }
+    p{
+      color: #ddd;
+    }
+    li {
+      color: #000;
     }
     header .pricing-badge{
     	    text-transform: uppercase;
@@ -1665,9 +1674,10 @@ ul.socials li {
     padding-right: 15px;
   }
   .partnersLogo{
-    height: 30px;
+    height: 120px;
     text-align: center;
     img{
+      margin-top: 25px;
       position: relative;
       top: 50%;
       transform: translateY(-50%);
@@ -1684,6 +1694,34 @@ ul.socials li {
   }
   .padding0{
     padding: 0;
+  }
+  .logoimg{
+    background-image: url(images/tense/logoimg.png);
+    position:absolute;
+    z-index:99999;
+    width: 260px;
+    height: 90px;
+    top:0;
+    left: 0;
+  }
+  #works{
+    background-image: url(images/tense/bgimg1500x770.jpg);
+    h2{
+      color:rgba(247, 249, 250, 0.82);
+    }
+  }
+  #team{
+    ul{
+      -webkit-padding-start: 0;
+      li{
+        padding: 0 10px;
+      }
+    }
+  }
+  #partners{
+    .partnersLogo p{
+      margin-top: -30px;
+    }
   }
   #google-map-container.map-right{
     float: right;

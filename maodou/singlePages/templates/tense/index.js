@@ -20,19 +20,19 @@ export default {
           </ol>
           <div class="carousel-inner" role="listbox">
             <div class="item active">
-              <img width='100%' height='100%' src="/images/p1.jpg" alt="..." />
+              <img width='100%' height='100%' src=/images/tense/lbt1.jpg" alt="..." />
               <div class="carousel-caption">
                 ...
               </div>
             </div>
             <div class="item">
-              <img width='100%' height='100%' src="/images/p2.jpg" alt="..." />
+              <img width='100%' height='100%' src="/images/tense/lbt2.jpg" alt="..." />
               <div class="carousel-caption">
                 ...
               </div>
             </div>
             <div class="item">
-              <img width='100%' height='100%' src="/images/p3.jpg" alt="..." />
+              <img width='100%' height='100%' src="/images/tense/lbt3.jpg" alt="..." />
               <div class="carousel-caption">
                 ...
               </div>

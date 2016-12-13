@@ -7,7 +7,8 @@ export default class Home extends React.Component{
   render () {
     return (
       <div id='Tense' className="main-content">
-            <section style={{padding: '0 0'}}>
+            <section id='carousel' style={{padding: '0 0'}}>
+              <div className='logoimg'></div>
               <div id="carousel-example-generic" className="carousel slide" data-ride="carousel">
                 <ol className="carousel-indicators">
                   <li data-target="#carousel-example-generic" data-slide-to="0" className="active"></li>
@@ -16,19 +17,19 @@ export default class Home extends React.Component{
                 </ol>
                 <div className="carousel-inner" role="listbox">
                   <div className="item active">
-                    <img width='100%' height='100%' src="/images/p1.jpg" alt="..." />
+                    <img width='100%' height='100%' src="/images/tense/lbt1.jpg" alt="..." />
                     <div className="carousel-caption">
                       ...
                     </div>
                   </div>
                   <div className="item">
-                    <img width='100%' height='100%' src="/images/p2.jpg" alt="..." />
+                    <img width='100%' height='100%' src="/images/tense/lbt2.jpg" alt="..." />
                     <div className="carousel-caption">
                       ...
                     </div>
                   </div>
                   <div className="item">
-                    <img width='100%' height='100%' src="/images/p3.jpg" alt="..." />
+                    <img width='100%' height='100%' src="/images/tense/lbt3.jpg" alt="..." />
                     <div className="carousel-caption">
                       ...
                     </div>
