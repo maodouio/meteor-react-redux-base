@@ -1,30 +1,5 @@
 @import "{}/node_modules/toastr/toastr.scss";
 @import "{}/node_modules/pixeden-stroke-7-icon/pe-icon-7-stroke/scss/pe-icon-7-stroke.scss";
-@import "./lib/imports/theme-homer/style.scss";
-
-/* Overwrites */
-
-#navigation {
-  z-index: 1000;
-  height: 100%;
-  background: #f7f9fa;
-}
-
-#wrapper {
-  position: static;
-}
-
-.admin-package-wrapper {
-  padding: 5px 15px;
-}
-
-.splash {
-  position: static;
-  background: none;
-  .spinner div {
-    margin: 1px;
-  }
-}
 
 blockquote {
   border-left: 5px solid #f44;
