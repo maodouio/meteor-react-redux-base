@@ -2,7 +2,7 @@ export default {
   templateName: 'Tense',
   logoName: 'Tense',
   headTitle: 'Tense Template',
-  preview: 'https://ohjdeohom.qnssl.com/simple.png?imageView2/2/w/200/h/300/interlace/0/q/100',
+  preview: 'https://ohn5es96r.qnssl.com/base/singlePages/tense/preview.png?imageView2/2/w/200/h/300/interlace/0/q/100',
   selected: false,
   sections: [
     {
