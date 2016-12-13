@@ -7,6 +7,13 @@ export default ({ Meteor, Collections }) => {
           'configs.appName': configs.appName
         }
       });
+    },
+    'resetData'(){
+      Collections.Users.remove({});
+      Collections.Posts.remove({});
+      Collections.Events.remove({});
+      Collections.Bizplans.remove({});
+      Collections.SinglePages.remove({});
     }
   }));
 };
