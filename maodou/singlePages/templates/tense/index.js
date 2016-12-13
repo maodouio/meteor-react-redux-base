@@ -892,23 +892,22 @@ export default {
       display: true,
       content: `
       <section class='contactUs' id="contact">
-      <div class="contained-image">
-
-        <iframe class="map-right" id='google-map-container' src="https://www.google.cn/maps/embed?pb=!1m18!1m12!1m3!1d3170.4507519396566!2d-121.98725088485696!3d37.37917114259411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fc9e4f5297417%3A0x820c186aeca0239d!2zMzM1MCBTY290dCBCbHZkICM2NCwgU2FudGEgQ2xhcmEsIENBIDk1MDUx576O5Zu9!5e0!3m2!1szh-CN!2scn!4v1481440812689"></iframe>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-5 sectional-medium">
-              <h2 class="section-heading space-bottom wow fadeInUp">
-                  <small>in case you need to</small>
-                  contact us
-              </h2>
-              <span style={{font-size:'16px'}}><i class="fa fa-phone-square" aria-hidden="true"></i> +1(408)831-8669</span><br/><br/>
-              <span style={{font-size:'16px'}}><i class="fa fa-envelope-square" aria-hidden="true"></i> info@zjfutureus.com</span><br/><br/>
-              <span style={{font-size:'16px'}}><i class='fa fa-map-marker' aria-hidden="true"></i> 3350 Scott Blvd #64, Santa Clara, CA</span>
+        <div class="contained-image">
+          <iframe class="map-right" id='google-map-container' src="https://www.google.com/maps/embed/v1/place?q=3350%20Scott%20Blvd%20%2364%2C%20Santa%20Clara%2C%20CA&key=AIzaSyAn0Mfg_y9-YjBY_M7IE58xqzLXbg10h5k"></iframe>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-5 sectional-medium">
+                <h2 class="section-heading space-bottom wow fadeInUp">
+                    <small>in case you need to</small>
+                    contact us
+                </h2>
+                <span style={{font-size:'16px'}}><i class="fa fa-phone-square" aria-hidden="true"></i> +1(408)831-8669</span><br/><br/>
+                <span style={{font-size:'16px'}}><i class="fa fa-envelope-square" aria-hidden="true"></i> info@zjfutureus.com</span><br/><br/>
+                <span style={{font-size:'16px'}}><i class='fa fa-map-marker' aria-hidden="true"></i> 3350 Scott Blvd #64, Santa Clara, CA</span>
+              </div>
             </div>
-
           </div>
-        </div></div>
+        </div>
       </section>
       `
     },
