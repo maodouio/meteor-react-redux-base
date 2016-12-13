@@ -1,11 +1,12 @@
 import { useDeps } from 'react-simple-di';
 import {compose, withHandlers, withTracker, withState, withRedux, withLifecycle, composeAll } from 'react-komposer-plus';
-import { browserHistory } from 'react-router'
+import { browserHistory } from 'react-router';
 import 'client/lib/plupload/js/moxie';
 import 'client/lib/plupload/js/plupload.dev.js';
 import 'qiniu-js/dist/qiniu.min';
 
 import PostsEdit from '../../components/admin/postsEdit';
+import { options } from 'lib/helpers/summernoteConfig';
 
 const lifeCycle = {
   // 离开页面时，清除图片url地址
@@ -16,7 +17,8 @@ const lifeCycle = {
   componentDidMount() {
     const {qiniuDomain, dispatch, addCover, setState} = this.props;
     $('#editor').summernote({
-      height: 450
+      height: 450,
+      ...options
     });
 
     Meteor.call('files.token', function(err, token) {

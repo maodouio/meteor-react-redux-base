@@ -38,9 +38,9 @@ export default class UserNotifications extends Component {
             onChange={this.handleChange}
           />
         </WingBlank>
-        <div>
+        <Flex justify='center'>
           { this.state.index ? this.renderNotice() : <p style={{marginTop: '.8rem'}}>暂无消息!</p> }
-        </div>
+        </Flex>
         <WhiteSpace size="sm" />
       </div>
     );

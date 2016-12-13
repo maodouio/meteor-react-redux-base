@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon, Button, Rate } from 'antd';
+import { Icon, Button, Rate, DatePicker } from 'antd';
 import { WingBlank } from 'antd-mobile';
 
 export default class Test extends Component {
@@ -27,6 +27,7 @@ export default class Test extends Component {
           <Rate onChange={this.handleChange} value={value} />
         {value && <span className="ant-rate-text">{value} stars</span>}
         </span>
+        <DatePicker />
       </div>
     );
   }

@@ -43,6 +43,7 @@ export default function (routes, injectDeps, context) {
       component: injectDeps(Layout),
       indexRoute: {component: Home},
       childRoutes: [
+        // remember remove path /reset in production env
         { path: '/reset', component: () => Meteor.call('resetData') },
         { path: '/test', component: () => <Test /> },
         { path: '/register', component: () => <Register /> },

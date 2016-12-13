@@ -6,6 +6,7 @@ import 'client/lib/plupload/js/plupload.dev.js';
 import 'qiniu-js/dist/qiniu.min';
 
 import EventsEdit from '../../components/admin/eventsEdit';
+import { options } from 'lib/helpers/summernoteConfig';
 
 const lifeCycle = {
   // 离开页面时，清除图片url地址
@@ -16,7 +17,8 @@ const lifeCycle = {
   componentDidMount() {
     const {qiniuDomain, dispatch, addCover, setState} = this.props;
     $('#editor').summernote({
-      height: 350
+      height: 350,
+      ...options
     });
 
     Meteor.call('files.token', function(err, token) {

@@ -20,9 +20,9 @@ export default class UserCollections extends Component {
       <div style={{marginTop: '.2rem'}}>
         <Card>
           <Card.Header
-            title='一个投资人为什么投身...'
+            title='一个投资人为什么投...'
             thumb='https://ohn5es96r.qnssl.com/base/posts/post-img5.jpg'
-            thumbStyle={{width: '100%'}}
+            thumbStyle={{width: '400px', height: '300px'}}
           />
           <Card.Footer content="精选内容" extra={<span>2016-12-4</span>} />
         </Card>
@@ -31,7 +31,7 @@ export default class UserCollections extends Component {
           <Card.Header
             title='内容创业的春天并未...'
             thumb='https://ohn5es96r.qnssl.com/base/posts/post-img2.jpg'
-            thumbStyle={{width: '100%'}}
+            thumbStyle={{width: '400px', height: '300px'}}
           />
           <Card.Footer content="精选内容" extra={<span>2016-12-4</span>} />
         </Card>

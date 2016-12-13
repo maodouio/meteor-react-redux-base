@@ -1,8 +1,12 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 
 export default (props) => {
   return (
     <div className="admin-package-wrapper row">
+      <Helmet
+        title='添加新文章'
+      />
       <div className="col-sm-12">
         <h1>添加新文章</h1>
         <form onSubmit={(e) => props.dispatch(props.addPost(e, props.coverUrl))}>
