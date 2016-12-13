@@ -3,7 +3,7 @@ import { Spin } from 'antd';
 
 export default () => (
   <div style={styles.wrap}>
-    <Spin size='large' tip='Loading...'/>
+    <Spin size='large' tip='加载中...'/>
   </div>
 );
 
@@ -13,6 +13,5 @@ const styles = {
     height: '100%',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
   }
 };

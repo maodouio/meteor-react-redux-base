@@ -36,6 +36,18 @@ export default {
       const ownerId = Accounts.createUser(ownerUser);
       context.Roles.addUsersToRoles(ownerId, ['owner']);
       addInstancesCount('user');
+
+      for (let i = 99; i >= 0; i--) {
+        Accounts.createUser({
+          username: `user${i}`,
+          profile: {
+            nickname: `user${i}`,
+            loginMethod: 'WEB',
+            phoneNumber: '123 1231 1231'
+          }
+        });
+        context.Roles.addUsersToRoles(ownerId, ['user']);
+      }
     }
   }
 };
