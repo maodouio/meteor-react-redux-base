@@ -2,7 +2,8 @@ import React from 'react';
 import Posts from '../../../maodou/posts/client/containers/posts';
 
 export default (props) => (
-  <div className="container">
+  // TODO: remove the container in order to solve the CSS pollution
+  <div>
     {/* props.display ? <Posts /> : renderMaodou() */}
     <Posts />
   </div>
