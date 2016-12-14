@@ -19,11 +19,11 @@ const styles = {
     display: 'flex',
   },
   left: {
-    width: '220px',
+    width: '200px',
     height: '100vh',
   },
   right: {
-    width: 'calc(100vh - 220px)',
+    width: 'calc(100vh - 200px)',
     flex: '1 1 auto',
     display: 'flex',
     flexFlow: 'column wrap',

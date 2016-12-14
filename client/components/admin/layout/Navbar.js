@@ -26,7 +26,7 @@ export default class AdminMenu extends Component {
       menu: {
         height: '60px',
         lineHeight: '60px',
-        fontSize: '20px',
+        fontSize: '16px',
         textAlign: 'center',
         float: 'right'
       },

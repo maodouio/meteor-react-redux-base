@@ -74,12 +74,12 @@ export default class AdminMenu extends Component {
         textAlign: 'center',
       },
       subMenu: {
-        fontSize: '20px',
+        fontSize: '16px',
         height: '50px',
         lineHeight: '50px',
       },
       subMenu1: {
-        fontSize: '20px',
+        fontSize: '16px',
         height: '100px',
         lineHeight: '100px',
       }
