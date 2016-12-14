@@ -374,7 +374,7 @@
       color: #333;
   }
   .features-title{
-      font-size: 16px;
+      font-size: 20px;
       letter-spacing: 2px;
       font-weight: 600;
   }
@@ -384,7 +384,7 @@
   }
   .icon-box i{
   	margin-bottom: 15px;
-    font-size: 4em;
+    font-size: 6em;
     color: #222;
   }
 
@@ -885,7 +885,9 @@ ul.socials li {
   }
 
   section#pricing{
-    background-image: url(images/tense/Silicon-Valley.jpg);
+    background-image: url(images/tense/pricingBg.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     // background-color: #f5f5f5;
     .pricing-table{
         padding: 35px;
@@ -1705,9 +1707,12 @@ ul.socials li {
     left: 0;
   }
   #works{
-    background-image: url(images/tense/bgimg1500x770.jpg);
+    background-image: url(images/tense/workBg1.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
     h2{
-      color:rgba(247, 249, 250, 0.82);
+      color:rgba(247, 249, 250, 0.99);
     }
   }
   #team{
@@ -1722,6 +1727,9 @@ ul.socials li {
     .partnersLogo p{
       margin-top: -30px;
     }
+  }
+  .aboutTitle{
+
   }
   #google-map-container.map-right{
     float: right;

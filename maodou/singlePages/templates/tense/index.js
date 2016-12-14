@@ -81,70 +81,26 @@ export default {
       <section class="section-bg-alt sectional-large shuoming-about" id="about-us">
           <div class="container">
               <div class="row">
-                  <div class="col-md-12 paddingB100">
-                      <h2 class="section-heading center white space-bottom">
+              <div className="col-md-12">
+                      <h2 className="section-heading center white space-bottom">
                           about tense
                       </h2>
-                      <p class="center white capitalize">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, iure iste! Accusamus ipsam, iusto nesciunt! Repudiandae ducimus officiis quo rerum odio fugiat cumque, quibusdam dolore maiores quae deleniti, autem praesentium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia alias voluptatibus ut placeat atque maxime asperiores laborum nobis, qui optio nemo obcaecati, non eos. Labore necessitatibus velit accusantium repellendus, esse.
+                      <p className="center white capitalize">
+                          美国浙江创新中心成立于2013年，前身为杭州创新中心，由浙江杭州未来科技出资建立，是浙江省市区三级政府在美国的窗口.<br />中心定位为浙江与美国间，集科技创新、跨境投融资、教育培训、国际运营服务于一体的创新平台。美国浙江创新中心以促进科技成果转化，连接中美创新发展的桥梁，培养高新技术企业和企业家为宗旨，提升企业创新能力，对接中美高新科技领域资源，宣传引进高新科技潜力项目，提供联合办公空间、国际投融资、企业运营指导等服务，为浙江以及全国企业，打开通往美国硅谷的直通车，面向国际顶尖科技领域的窗口，降低企业在美创业风险和成本，催化科技创新，加速企业发展与成长。
                       </p>
-                  </div>
-              </div>
-          </div>
-      </section>
-      <section class="sectional-medium shuoming-about">
-          <div class="container">
-              <div class="row">
-                  <div class="col-md-12">
-                      <ul class="nav nav-pills" id="reverse-tab">
-                          <li class="active"><a href="#usability" data-toggle="tab"><i class="fa fa-industry" aria-hidden="true"></i> USABILITY</a></li>
-                          <li><a href="#ideas" data-toggle="tab"><i class="fa fa-line-chart" aria-hidden="true"></i> NEW IDEAS</a></li>
-                          <li><a href="#direction" data-toggle="tab"><i class="fa fa-list-alt" aria-hidden="true"></i> DIRECTION</a></li>
-                          <li><a href="#uxd" data-toggle="tab"><i class="fa fa-rocket" aria-hidden="true"></i> UX DESIGN</a></li>
-                      </ul>
-                      <div class="tab-content tab-content-horizontal-left-top">
-                          <div class="tab-pane fade in active" id="usability">
-                              <div class="col-md-5">
-                                  <img src="images/tense-iphone-6.png" alt="tense-in-iphone" class="img-responsive wow bounceIn" />
-                              </div>
-                              <div class="col-md-7">
-                                  <div class="sectional-medium">
-                                      <h3 class="section-heading space-top space-bottom">GREAT USABILITY TESTING</h3>
-                                      <p>
-                                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque nemo aliquam a laborum magnam molestiae cupiditate voluptas, doloribus. Quae hic qui dicta quisquam delectus! Nam ut eum maxime, dignissimos itaque!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ullam non accusamus distinctio dolorum quas obcaecati vel perferendis nihil sint, id molestias inventore facere nulla molestiae? Placeat soluta nam voluptatem!
-                                      </p>
-                                      <p>
-                                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque nemo aliquam a laborum magnam molestiae cupiditate voluptas, doloribus. Quae hic qui dicta quisquam delectus! Nam ut eum maxime, dignissimos itaque!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ullam non accusamus distinctio dolorum quas obcaecati vel perferendis nihil sint, id molestias inventore facere nulla molestiae? Placeat soluta nam voluptatem!
-                                      </p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="tab-pane fade" id="ideas">
-                              <div class="col-md-7">
-                                  <div class="sectional-medium">
-                                      <h3 class="section-heading space-top space-bottom">NEW IDEAS IMPLEMENTED</h3>
-                                      <p>
-                                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque nemo aliquam a laborum magnam molestiae cupiditate voluptas, doloribus. Quae hic qui dicta quisquam delectus! Nam ut eum maxime, dignissimos itaque!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ullam non accusamus distinctio dolorum quas obcaecati vel perferendis nihil sint, id molestias inventore facere nulla molestiae? Placeat soluta nam voluptatem!
-                                      </p>
-                                      <p>
-                                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque nemo aliquam a laborum magnam molestiae cupiditate voluptas, doloribus. Quae hic qui dicta quisquam delectus! Nam ut eum maxime, dignissimos itaque!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ullam non accusamus distinctio dolorum quas obcaecati vel perferendis nihil sint, id molestias inventore facere nulla molestiae? Placeat soluta nam voluptatem!
-                                      </p>
-                                  </div>
-                              </div>
-                              <div class="col-md-5">
-                                  <img src="images/tense-left-half-macbook-air.png" alt="tense-in-macbook" />
-                              </div>
-                          </div>
-                          <div class="tab-pane fade" id="direction">
-                              <div class="col-md-12">
-                                  <img src="images/tense-left-full-macbook-air.png" alt="tense-in-macbook" class="img-responsive" />
-                              </div>
-                          </div>
-                          <div class="tab-pane fade" id="uxd">
-                              <p class="  fadeIn">Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna.Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus</p>
-                          </div>
+                      <h4 className='aboutTitle white'>环境建设：</h4>
+                      <div className='white'>
+                        <p className='vacate2chars'>现有建筑总面积5000平方尺，坐落于世界科技创新核心美国硅谷，紧邻圣克拉拉会议中心，三星、戴尔、甲骨文、思科等高新科技公司，环境宜人、交通便利。创新中心建有封闭式办公室，开放式联合办公空间，多功能会议厅、商务中心、多功能活动室、公共厨房、专用停车场等公共服务设施。水、电、通信、光纤等基础设施配套齐全，布局合理，并配备有智能安保系统。中心采用节能环保管理理念，配用自然采光系统、声光感应控制，自动通风设备、被动降噪系统等先进的技术与设备，为入驻企业提供一个舒适的工作环境。中心还为每个会议室还配备了交互式电子黑板系统，方便企业进行会议交流。<br /><br /></p>
                       </div>
-                  </div>
+                      <h4 className='aboutTitle white'>运营模式：</h4>
+                      <div className='white'>
+                        <p className='vacate2chars'>中心按“项目甄选入住+咨询导师+培训加速孵化+天使投资”的运营方式，推出会员制服务模式，打造集体化服务平台和共享环境，为创新创业企业和有意于在海外扩展的企业提供包括落地服务、法律会计、市场开拓、风险投资、人才培育、国际交流、专业技术支持等全方位的服务。在大幅降低企业经营成本、提高企业成活率的同时，培育提升企业自主创新能力和综合竞争力。<br /><br /></p>
+                      </div>
+                      <h4 className='aboutTitle white'>投融资平台：</h4>
+                      <div className='white'>
+                        <p className='vacate2chars'>跨境投融资服务平台，对接中美优质资源，主要为投融资相关项目和投资方提供项目融资，项目路演，项目对接等一站式服务。目前已建立起1000万美元的母基金，用于和硅谷知名的孵化器合作。<br /><br /></p>
+                      </div>
+                </div>
               </div>
           </div>
       </section>
