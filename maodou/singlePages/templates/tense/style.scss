@@ -1728,8 +1728,29 @@ ul.socials li {
       margin-top: -30px;
     }
   }
-  .aboutTitle{
+  .diy{
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    margin-left: -300px;
+    width: 600px;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.7);
 
+    h2{
+      color: #fff;
+    }
+    p {
+      font-size: 19px;
+      line-height: 160%;
+      color: #fff;
+    }
+  }
+  #carousel{
+    text-align: center;
+  }
+  .copyright{
+    margin-left: -5px;
   }
   #google-map-container.map-right{
     float: right;

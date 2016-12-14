@@ -18,21 +18,13 @@ export default class Home extends React.Component{
                 <div className="carousel-inner" role="listbox">
                   <div className="item active">
                     <img width='100%' height='100%' src="/images/tense/lbt1.jpg" alt="..." />
-                    <div className="carousel-caption">
-                      ...
-                    </div>
+
                   </div>
                   <div className="item">
                     <img width='100%' height='100%' src="/images/tense/lbt2.jpg" alt="..." />
-                    <div className="carousel-caption">
-                      ...
-                    </div>
                   </div>
                   <div className="item">
                     <img width='100%' height='100%' src="/images/tense/lbt3.jpg" alt="..." />
-                    <div className="carousel-caption">
-                      ...
-                    </div>
                   </div>
                 </div>
 
@@ -44,6 +36,10 @@ export default class Home extends React.Component{
                   <span className="glyphicon glyphicon-chevron-right"></span>
                   <span className="sr-only">Next</span>
                 </a>
+              </div>
+              <div className="diy">
+                <h2>The Future Among Us</h2>
+                <p>美国浙江创新中心为浙江以及全国企业，打开通往美国硅谷的直通车，面向国际顶尖科技领域的窗口，降低企业在美创业风险和成本，催化科技创新，加速企业发展与成长。</p>
               </div>
             </section>
             <section className="sectional-large-top bg-off-white shuoming-welcome">
