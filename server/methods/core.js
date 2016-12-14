@@ -23,6 +23,11 @@ export default ({ Meteor, Collections }) => {
     },
     'packages.posts'() {
       return Packages.findOne({name: 'posts'}, {fields: {'display': 1}});
+    },
+    'resetData'(){
+      Collections.Users.remove({});
+      Collections.Posts.remove({});
+      Collections.Events.remove({});
     }
   }));
 };

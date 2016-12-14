@@ -26,8 +26,8 @@ export default class Footer extends Component {
         <TabBar.Item
           title="文章"
           key="文章"
-          icon={{uri: 'http://obd9ssud2.bkt.clouddn.com/maodou/icons/news.png'}}
-          selectedIcon={{uri: 'http://obd9ssud2.bkt.clouddn.com/maodou/icons/newsOn.png'}}
+          icon={{uri: 'https://ohn5es96r.qnssl.com/base/icon/news.png'}}
+          selectedIcon={{uri: 'https://ohn5es96r.qnssl.com/base/icon/newsOn.png'}}
           selected={selectedTabName === 'posts'}
           onPress={() => {
             browserHistory.push('/posts/list');
@@ -38,8 +38,8 @@ export default class Footer extends Component {
           {this.renderContent}
         </TabBar.Item>
         <TabBar.Item
-          icon={{uri: 'http://obd9ssud2.bkt.clouddn.com/maodou/icons/courses.png'}}
-          selectedIcon={{uri: 'http://obd9ssud2.bkt.clouddn.com/maodou/icons/coursesOn.png'}}
+          icon={{uri: 'https://ohn5es96r.qnssl.com/base/icon/courses.png'}}
+          selectedIcon={{uri: 'https://ohn5es96r.qnssl.com/base/icon/coursesOn.png'}}
           title="活动"
           key="活动"
           selected={selectedTabName === 'events'}
@@ -51,8 +51,8 @@ export default class Footer extends Component {
           {this.renderContent}
         </TabBar.Item>
         <TabBar.Item
-          icon={{uri: 'http://obd9ssud2.bkt.clouddn.com/maodou/icons/me.png'}}
-          selectedIcon={{uri: 'http://obd9ssud2.bkt.clouddn.com/maodou/icons/meOn.png'}}
+          icon={{uri: 'https://ohn5es96r.qnssl.com/base/icon/me.png'}}
+          selectedIcon={{uri: 'https://ohn5es96r.qnssl.com/base/icon/meOn.png'}}
           title="我的"
           key="我的"
           selected={selectedTabName === 'users'}
