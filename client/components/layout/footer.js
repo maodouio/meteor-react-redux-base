@@ -5,9 +5,6 @@ import { browserHistory } from 'react-router';
 export default class Footer extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      hidden: false,
-    };
   }
   // renderContent() {
   //   this.setState({
@@ -21,7 +18,7 @@ export default class Footer extends Component {
         unselectedTintColor="#949494"
         tintColor="#33A3F4"
         barTintColor="white"
-        hidden={this.state.hidden}
+        hidden={selectedTabName === 'hideNav'}
       >
         <TabBar.Item
           title="文章"

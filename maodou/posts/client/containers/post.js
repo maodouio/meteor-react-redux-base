@@ -1,19 +1,20 @@
 import { useDeps } from 'react-simple-di';
 import { compose, withLifecycle, composeAll } from 'react-komposer-plus';
-import { browserHistory } from 'react-router'
+import { browserHistory } from 'react-router';
 
 import Post from '../components/post';
 
 const lifeCycle = {
   componentDidMount() {
-    const {dispatch, hideMainNav} = this.props;
-    dispatch(hideMainNav(''));
-  }
+    const {dispatch, selectedTab} = this.props;
+    dispatch(selectedTab('hideNav'));
+  },
+
   componentWillUnmount(){
-    const {dispatch, hideMainNav} = this.props;
-    dispatch(hideMainNav(''));
+    const {dispatch, selectedTab} = this.props;
+    dispatch(selectedTab('posts'));
   }
-}
+};
 
 const initData = ({ context, params }, onData) => {
   const { Meteor, toastr } = context;
@@ -35,7 +36,7 @@ const initData = ({ context, params }, onData) => {
 const depsToProps = (context, actions) => ({
   context,
   dispatch: context.dispatch,
-  hideMainNav: actions.posts.hideMainNav,
+  selectedTab: actions.core.selectedTab,
 });
 
 export default composeAll(
