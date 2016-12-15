@@ -9,11 +9,11 @@ export default class Footer extends Component {
       hidden: false,
     };
   }
-  renderContent() {
-    this.setState({
-      hidden: !this.state.hidden,
-    });
-  }
+  // renderContent() {
+  //   this.setState({
+  //     hidden: !this.state.hidden,
+  //   });
+  // }
   render() {
     const {dispatch, selectedTab, selectedTabName} = this.props;
     return (
@@ -33,9 +33,7 @@ export default class Footer extends Component {
             browserHistory.push('/posts/list');
             dispatch(selectedTab('posts'));
           }}
-          data-seed="logId"
         >
-          {this.renderContent}
         </TabBar.Item>
         <TabBar.Item
           icon={{uri: 'https://ohn5es96r.qnssl.com/base/icon/courses.png'}}
@@ -48,7 +46,6 @@ export default class Footer extends Component {
             dispatch(selectedTab('events'));
           }}
         >
-          {this.renderContent}
         </TabBar.Item>
         <TabBar.Item
           icon={{uri: 'https://ohn5es96r.qnssl.com/base/icon/me.png'}}
@@ -61,10 +58,8 @@ export default class Footer extends Component {
             dispatch(selectedTab('users'));
           }}
         >
-          {this.renderContent}
         </TabBar.Item>
       </TabBar>
-
     );
   }
 }

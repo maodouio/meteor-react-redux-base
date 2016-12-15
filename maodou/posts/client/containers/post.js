@@ -1,8 +1,19 @@
 import { useDeps } from 'react-simple-di';
-import { compose, withTracker, withRedux, composeAll } from 'react-komposer-plus';
+import { compose, withLifecycle, composeAll } from 'react-komposer-plus';
 import { browserHistory } from 'react-router'
 
 import Post from '../components/post';
+
+const lifeCycle = {
+  componentDidMount() {
+    const {dispatch, hideMainNav} = this.props;
+    dispatch(hideMainNav(''));
+  }
+  componentWillUnmount(){
+    const {dispatch, hideMainNav} = this.props;
+    dispatch(hideMainNav(''));
+  }
+}
 
 const initData = ({ context, params }, onData) => {
   const { Meteor, toastr } = context;
@@ -22,10 +33,13 @@ const initData = ({ context, params }, onData) => {
 };
 
 const depsToProps = (context, actions) => ({
-  context
+  context,
+  dispatch: context.dispatch,
+  hideMainNav: actions.posts.hideMainNav,
 });
 
 export default composeAll(
   compose(initData),
+  withLifecycle(lifeCycle),
   useDeps(depsToProps)
 )(Post);

@@ -16,10 +16,10 @@ export default (props) => {
           <div style={{margin: '1.5rem 0', color: '#515355'}}>
             <div className="event-head">
               <h1 style={{fontSize: '.5rem'}}>{props.event.title}</h1>
-              <div>
+              {/*<div>
                 <span>Admin</span>&nbsp;
                 <span style={{fontStyle: 'italic', fontSize: '0.2rem', color: '#b2b2b2', marginLeft: '10px'}}>{moment(props.event.createdAt).format('YYYY-MM-DD')}</span>
-              </div>
+              </div> */}
               <Table
                 style={{margin: '0.3rem 0'}}
                 direction="horizon"

@@ -13,7 +13,7 @@ export default (props) => {
     return (
       <span>
         <Icon type="eye" /> 1000
-        <Icon type="star" style={{marginLeft: '.2rem'}}/> 60
+        <Icon type="heart" style={{marginLeft: '.2rem'}}/> 60
       </span>
     );
   };

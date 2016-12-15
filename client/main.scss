@@ -26,12 +26,17 @@
   }
 }
 
+// post content style
 blockquote {
   border-left: 5px solid #f44;
+  p {
+    font-size: .3rem;
+  }
 }
 
 p>img {
   max-width: 100%;
   width: 100%;
   height: auto;
+  margin: .2rem 0;
 }
