@@ -5,6 +5,6 @@
     "host": "localhost"
   },
   "resolve": {
-    "extensions": ["", ".web.jsx", ".web.js", ".js", ".jsx", ".json"]
+    "extensions": ["", ".web.js", ".js", ".jsx", ".json"]
   }
 }
