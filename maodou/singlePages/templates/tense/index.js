@@ -12,6 +12,7 @@ export default {
       display: true,
       content: `
       <section class='padding0' id='carousel'>
+      <div className='logodiv'><img className='logoimg' src="images/tense/logoimg2.png" /></div>
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -55,7 +56,7 @@ export default {
           <div class="container">
               <div class="row">
                   <div class="col-md-12 center">
-                      <img src="images/light-bulb.svg" alt="idea" width="100px" class="wow bounceIn" />
+                      <img src="images/tense/light-bulb.svg" alt="idea" width="100px" class="wow bounceIn" />
                       <h1 class="big-heading wow fadeInUp space-bottom animated">WELCOME TO TENSE</h1>
                       <h4 class="big-sub-heading">JOIN OVER 100k+ SATISFIED CUSTOMRES</h4>
                       <p class="uppercase">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque a, beatae voluptatem. Repellat aspernatur, placeat autem sequi omnis, provident. Est magni cum, voluptatem repellat atque nobis culpa voluptates iste omnis.</p>

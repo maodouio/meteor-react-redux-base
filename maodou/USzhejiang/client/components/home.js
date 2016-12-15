@@ -8,7 +8,7 @@ export default class Home extends React.Component{
     return (
       <div id='Tense' className="main-content">
             <section id='carousel' style={{padding: '0 0'}}>
-              <div className='logoimg'></div>
+              <div className='logodiv'><img className='logoimg' src="images/tense/logoimg2.png" /></div>
               <div id="carousel-example-generic" className="carousel slide" data-ride="carousel">
                 <ol className="carousel-indicators">
                   <li data-target="#carousel-example-generic" data-slide-to="0" className="active"></li>
@@ -760,7 +760,6 @@ export default class Home extends React.Component{
             <section className='contactUs' id="contact">
             <div className="contained-image">
 
-              <iframe className="map-right" id='google-map-container' src="https://www.google.cn/maps/embed?pb=!1m18!1m12!1m3!1d3170.4507519396566!2d-121.98725088485696!3d37.37917114259411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fc9e4f5297417%3A0x820c186aeca0239d!2zMzM1MCBTY290dCBCbHZkICM2NCwgU2FudGEgQ2xhcmEsIENBIDk1MDUx576O5Zu9!5e0!3m2!1szh-CN!2scn!4v1481440812689"></iframe>
               <div className="container">
                 <div className="row">
                   <div className="col-md-5 sectional-medium">
