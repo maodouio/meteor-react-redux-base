@@ -10,16 +10,16 @@ export default (props) => {
       {
         props.post ?
           <div style={{margin: '1.5rem 0'}}>
-            <p style={{fontSize: '.4rem'}}>{props.post.title}</p>
+            <p style={{fontSize: '.3rem'}}>{props.post.title}</p>
             <WhiteSpace />
-            <div style={{color: '#1296db', fontSize: '.3rem'}}>
+            <div style={{color: '#1296db', fontSize: '.15rem'}}>
               <span><Icon type="user" /> {props.post.author}</span>
-              <span style={{marginLeft: '.3rem'}}><Icon type="tag-o" /> {props.post.category}</span>
-              <span style={{marginLeft: '.4rem'}}><Icon type="message" /> 50</span>
-              <span style={{marginRight: '.2rem', float: 'right'}}><Icon type="clock-circle-o" /> {moment(props.post.createdAt).format('YYYY-MM-DD')}</span>
+              <span style={{marginLeft: '.2rem'}}><Icon type="tag-o" /> {props.post.category}</span>
+              <span style={{marginLeft: '.3rem'}}><Icon type="message" /> 50</span>
+              <span style={{marginLeft: '.4rem'}}><Icon type="clock-circle-o" /> {moment(props.post.createdAt).format('YYYY-MM-DD')}</span>
             </div>
             <WhiteSpace />
-            <div dangerouslySetInnerHTML={{ __html: props.post.content }} style={{color: '#515355', fontSize: '.3rem', lineHeight: '1.6'}}/>
+            <div dangerouslySetInnerHTML={{ __html: props.post.content }} style={{color: '#515355', fontSize: '.25rem', lineHeight: '1.8'}}/>
             <WhiteSpace />
             <PostTab />
           </div>

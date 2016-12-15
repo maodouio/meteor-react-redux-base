@@ -33,7 +33,7 @@ export default class PostTab extends React.Component {
         </TabBar.Item>
         <TabBar.Item
           key="like"
-          selectedIcon={{uri: 'https://ohn5es96r.qnssl.com/base/icon/like.png'}}
+          selectedIcon={{uri: 'https://ohn5es96r.qnssl.com/base/icon/likes.png'}}
           selected={true}
         >
         </TabBar.Item>
