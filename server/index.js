@@ -37,7 +37,7 @@ export default {
       context.Roles.addUsersToRoles(ownerId, ['owner']);
       addInstancesCount('user');
 
-      for (let i = 99; i >= 0; i--) {
+      for (let i = 98; i >= 0; i--) {
         Accounts.createUser({
           username: `user${i}`,
           profile: {
