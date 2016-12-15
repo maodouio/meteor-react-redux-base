@@ -2,12 +2,22 @@ import React from 'react';
 import {Link} from 'react-router';
 import Helmet from 'react-helmet';
 // import Tabs from '../containers/tabs';
-import { Card, WingBlank, WhiteSpace } from 'antd-mobile/dist/antd-mobile';
+import { Card, WingBlank, WhiteSpace, Icon } from 'antd-mobile/dist/antd-mobile';
 import Loading from 'client/components/common/loading';
 import moment from 'moment';
 
 export default (props) => {
   const T = props.context.T;
+
+  const renderFooter = () => {
+    return (
+      <span>
+        <Icon type="eye" /> 1000
+        <Icon type="star" style={{marginLeft: '.2rem'}}/> 60
+      </span>
+    );
+  };
+
   return (
     <WingBlank size='md' style={{ padding: '1rem 0' }}>
      <Helmet title='文章列表页' />
@@ -26,7 +36,7 @@ export default (props) => {
                       <b>{post.title}</b>
                     </p>
                   </Card.Body>
-                  <Card.Footer content={post.category} extra={<span>{moment(post.createdAt).format('YYYY.MM.DD')}</span>} />
+                  <Card.Footer content={<span><Icon type="tag" /> {post.category}</span>} extra={renderFooter()} />
                 </Card>
                 <WhiteSpace />
               </Link>
