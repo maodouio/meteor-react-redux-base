@@ -15,24 +15,28 @@ export default class PostTab extends React.Component {
       >
         <TabBar.Item
           key="share"
+          title='分享'
           selectedIcon={{uri: 'https://ohn5es96r.qnssl.com/base/icon/share.png'}}
           selected={true}
         >
         </TabBar.Item>
         <TabBar.Item
-          key="comment"
-          selectedIcon={{uri: 'https://ohn5es96r.qnssl.com/base/icon/comment.png'}}
-          selected={true}
-        >
-        </TabBar.Item>
-        <TabBar.Item
           key="collection"
+          title='收藏'
           selectedIcon={{uri: 'https://ohn5es96r.qnssl.com/base/icon/heart.png'}}
           selected={true}
         >
         </TabBar.Item>
         <TabBar.Item
+          key="comment"
+          title='50'
+          selectedIcon={{uri: 'https://ohn5es96r.qnssl.com/base/icon/comment.png'}}
+          selected={true}
+        >
+        </TabBar.Item>
+        <TabBar.Item
           key="like"
+          title='666'
           selectedIcon={{uri: 'https://ohn5es96r.qnssl.com/base/icon/likes.png'}}
           selected={true}
         >
