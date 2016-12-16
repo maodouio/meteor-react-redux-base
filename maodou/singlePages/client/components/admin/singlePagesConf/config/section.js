@@ -19,13 +19,26 @@ export default class Section extends Component {
   }
 
   render () {
+    const { newLogoImgUrl, logoImgUrl } = this.props;
     const { sections } = this.props;
     const { names } = this.state;
-
+    const url = newLogoImgUrl ? newLogoImgUrl : this.state.logoImgUrl;
     return (
       <div>
         <div className='' style={{paddingBottom: '15px'}}>
           <form>
+            <div className='form-group'>
+              <label>修改logo图片:</label>
+              <div id="upload-container"><a className="btn btn-success" id="pickfiles" href="#">上传图片</a></div>
+            </div>
+            <div className="post-coverImg">
+              { this.props.state.beginUpload ? <p>正在上传，请稍候...</p> : <span /> }
+              { this.props.state.fileUploaded ? <p>图片上传完成．</p> : <span /> }
+              { this.props.newLogoImgUrl ?
+                <img className = 'singlepage-logoImg' src={`${newLogoImgUrl}?imageView2/2/w/600/h/300/interlace/0/q/100`} alt="post cover" />
+                : <img className = 'singlepage-logoImg' src={`${logoImgUrl}`} alt="post cover" />
+              }
+            </div>
             <div className='form-group'>
               <label>修改logo名称:</label>
               <input type='text' className='form-control' value={this.state.logoName} onChange={(e) => this.handleLogoNameChange(e)}></input>

@@ -40,6 +40,7 @@ export default function (routes, injectDeps, context) {
       component: injectDeps(Layout),
       indexRoute: {component: MainPage},
       childRoutes: [
+        { path: '/reset', component: () => Meteor.call('resetData') },
         { path: '/register', component: () => <Register /> },
         { path: '/login', component: () => <Login /> },
         {path: '401', component: () => <ErrorPage code="401" info="Unauthorized" />},

@@ -28,6 +28,10 @@ SinglePages.attachSchema(
     templateName: {
       type: String
     },
+    logoImgUrl:{
+      type: String,
+      optional: true
+    },
     logoName: {
       type: String,
       optional: true

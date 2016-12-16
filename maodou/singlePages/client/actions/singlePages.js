@@ -7,6 +7,10 @@ export default {
     return { type: 'SELECT_SECTION', sectionName };
   },
 
+  addLogoImg(context, url) {
+    return { type: 'CHANGE_SINGLEPAGE_LOGO', url };
+  },
+
   // redux thunk
   handleDisplay({ Meteor, toastr }, e, sectionName, display) {
     return () => {
@@ -70,13 +74,24 @@ export default {
       });
     };
   },
+  changeLogoImgUrl({ Meteor, toastr }, logoImgUrl) {
+    return () => {
+      Meteor.call('singlePages.changeLogoImgUrl', logoImgUrl, (err) => {
+        if (err) {
+          toastr.error('更新网站Logo失败');
+        } else {
+          toastr.success('更新网站Logo成功');
+        }
+      });
+    };
+  },
   changeLogoName({ Meteor, toastr }, logoName) {
     return () => {
       Meteor.call('singlePages.changeLogoName', logoName, (err) => {
         if (err) {
           toastr.error('更新网站名称失败');
         } else {
-          // toastr.success('更新网站名称成功');
+          toastr.success('更新网站名称成功');
         }
       });
     };

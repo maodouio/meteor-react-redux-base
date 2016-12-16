@@ -5,15 +5,21 @@ import _ from 'lodash';
 import MainPage from '../components/mainPage';
 
 const subscription = ({ context }, onData) => {
-  const { Meteor, Collections } = context;
+  const { Meteor, Roles, Collections } = context;
+  const corePkg = Collections.Packages.findOne({ name: 'core' });
+
   if (Meteor.subscribe('singlePages.selected').ready()) {
     const singlePage = Collections.SinglePages.findOne();
-
+    const nickname = Meteor.user() ? Meteor.user().profile.nickname : '';
     const sortedSections = _.sortBy(singlePage.sections, ['index']);
     const data = { ...singlePage, sections: sortedSections };
 
     onData(null, {
-      singlePage: { status: 'ready', data }
+      singlePage: { status: 'ready', data },
+      appName: corePkg.configs.appName,
+      loggedIn: !!context.Meteor.user(),
+      nickname,
+      isAdmin: Roles.userIsInRole(Meteor.user(), ['admin'])
     });
   } else {
     onData(null, {

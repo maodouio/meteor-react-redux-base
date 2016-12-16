@@ -12,6 +12,7 @@ import bizplansModule from 'maodou/bizplans/server';
 import customersModule from 'maodou/customers/server';
 import singlePagesModule from 'maodou/singlePages/server';
 
+
 //系统变量MAIL_URL配置，暂时放在这里
 process.env.MAIL_URL = Meteor.settings.mailUrl;
 
