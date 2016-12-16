@@ -4,7 +4,7 @@ import Nav from '../../containers/layout/nav';
 
 export default (props) => (
   <div className="landing-page">
-    <Nav />
+    {/*<Nav />*/}
     {props.children}
     {/*<Footer />*/}
   </div>

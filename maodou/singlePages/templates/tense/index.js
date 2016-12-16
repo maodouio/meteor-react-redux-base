@@ -1,5 +1,8 @@
+// <div class='logodiv'><img class='logoimg' src="images/tense/logo66x64.png" /></div>
+
 export default {
   templateName: 'Tense',
+  logoImgUrl: '/images/tense/logo66x64.png',
   logoName: 'Tense',
   headTitle: 'Tense Template',
   preview: 'https://ohn5es96r.qnssl.com/base/singlePages/tense/preview.png?imageView2/2/w/200/h/300/interlace/0/q/100',
@@ -12,7 +15,7 @@ export default {
       display: true,
       content: `
       <section class='padding0' id='carousel'>
-      <div className='logodiv'><img className='logoimg' src="images/tense/logoimg2.png" /></div>
+
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>

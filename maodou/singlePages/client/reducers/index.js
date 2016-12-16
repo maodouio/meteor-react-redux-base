@@ -6,5 +6,13 @@ export default {
       default:
         return state;
     }
+  },
+  singlePageLogo(state = '', action) {
+    switch (action.type){
+      case 'CHANGE_SINGLEPAGE_LOGO':
+        return action.url;
+      default:
+        return state;
+    }
   }
 };

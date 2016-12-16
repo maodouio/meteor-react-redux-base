@@ -10,7 +10,7 @@ export default class MainPage extends Component {
 
   render () {
     const { singlePage } = this.props;
-    const { templateName, logoName, headTitle, sections } = singlePage.data;
+    const { templateName,logoImgUrl, logoName, headTitle, sections } = singlePage.data;
 
     if (singlePage.status === 'pending') {
       return <Loading />;
@@ -28,6 +28,7 @@ export default class MainPage extends Component {
                         <span className="icon-bar"></span>
                         <span className="icon-bar"></span>
                       </button>
+                      <div className='logodiv'><img className='logoimg' src={logoImgUrl} /></div>
                       <a className="navbar-brand" href="/" style={{marginLeft: '50px'}}>{logoName}</a>
                     </div>
                     <div className="collapse navbar-collapse" id="main-navbar" style={{float: 'right'}}>

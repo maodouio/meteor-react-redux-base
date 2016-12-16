@@ -1698,17 +1698,7 @@ ul.socials li {
   .padding0{
     padding: 0;
   }
-  .logodiv{
-    // background-image: url(images/tense/logoimg.png);
-    position:fixed;;
-    z-index:99999;
-    height: 55px;
-    top:0;
-    left: 0;
-    img{
-      // height: 100%;
-    }
-  }
+
   #works{
     background-image: url(images/tense/workBg.jpg);
     background-size: 100% 100%;
@@ -1759,5 +1749,17 @@ ul.socials li {
     float: right;
     width: 55%;
     height: 300px;
+  }
+}
+.logodiv{
+  // background-image: url(images/tense/logoimg.png);
+  position:fixed;;
+  z-index:99999;
+  height: 80px;
+  top:0;
+  left: 0;
+  img{
+    position: fixed;
+    left: 0;
   }
 }

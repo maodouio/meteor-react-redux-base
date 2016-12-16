@@ -4,6 +4,9 @@ export default (context) => {
   const { Meteor, Collections } = context;
   const { SinglePages } = Collections;
   Meteor.methods({
+    'singlePages.changeLogoImgUrl' (logoImgUrl) {
+      SinglePages.update({ selected: true, defaultTemplate: false,  }, { $set: { logoImgUrl } });
+    },
     'singlePages.changeLogoName' (logoName) {
       SinglePages.update({ selected: true, defaultTemplate: false,  }, { $set: { logoName } });
     },
