@@ -2,7 +2,7 @@ import React from 'react';
 import {useDeps} from 'react-simple-di';
 import {composeAll, withTracker} from 'react-komposer-plus';
 
-import EmailEnrollmentForm from '../../components/users/login-form';
+import LoginForm from '../../components/users/login-form';
 
 function composer({context}, onData) {
   onData(null, {
@@ -20,4 +20,4 @@ const depsToProps = (context, actions) => ({
 export default composeAll(
   withTracker(composer),
   useDeps(depsToProps)
-)(EmailEnrollmentForm);
+)(LoginForm);

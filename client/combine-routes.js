@@ -7,7 +7,7 @@ import ErrorPage from './components/common/errorPage';
 import Layout from './containers/layout';
 import AdminLayout from './containers/admin/layout';
 import Register from './containers/users/register';
-import Login from './containers/users/login';
+import LoginForm from './containers/users/login-form';
 import Test from './components/test';
 // import MainPage from '../maodou/singlePages/client/containers/mainPage';
 
@@ -47,7 +47,7 @@ export default function (routes, injectDeps, context) {
         { path: '/reset', component: () => Meteor.call('resetData') },
         { path: '/test', component: () => <Test /> },
         { path: '/register', component: () => <Register /> },
-        { path: '/login', component: () => <Login /> },
+        { path: '/login', component: () => <LoginForm /> },
         {path: '401', component: () => <ErrorPage code="401" info="Unauthorized" />},
         {path: 'reset-password/:token', component: (props) => <ResetPassword token={props.params.token} />},
         ...aggregate['/'],

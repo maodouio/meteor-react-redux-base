@@ -10,16 +10,16 @@ export default class MemberInfo extends Component {
   }
 
   render() {
-    const { isMember, loggedIn } = this.props;
+    const { isMember, loggedIn, isApplying } = this.props;
     return(
       <Flex justify="center" algin='center' direction="column" style={{fontSize: '.3rem', paddingTop: '1rem'}}>
         <Helmet title='我的会员' />
-        { loggedIn ? this.renderMember(isMember) : this.renderLogin()}
+        { loggedIn ? this.renderMember(isMember, isApplying) : this.renderLogin()}
       </Flex>
     );
   }
 
-  renderMember(isMember) {
+  renderMember(isMember, isApplying) {
     if (isMember) {
       return(
         <div>
@@ -30,12 +30,17 @@ export default class MemberInfo extends Component {
     }
     return(
       <div>
-        <ShowNoticeBar type='info' text='您还不是会员'/>
-        <ShowNoticeBar type='info' text='成为会员，享受更多权益'/>
-        <Flex justify='center'>
-          <Button type='ghost' inline>成为会员</Button>
-        </Flex>
-        { this.renderDescribe()}
+        { isApplying ?
+          <ShowNoticeBar type='info' text='会员正在审核中！'/> :
+          <div>
+            <ShowNoticeBar type='info' text='您还不是会员'/>
+            <ShowNoticeBar type='info' text='成为会员，享受更多权益'/>
+            <Flex justify='center'>
+            <Link to='/user/addtomember'><Button type='ghost' inline>成为会员</Button></Link>
+            </Flex>
+          </div>
+        }
+        { this.renderDescribe() }
       </div>
     );
   }
@@ -71,4 +76,5 @@ export default class MemberInfo extends Component {
 MemberInfo.propTypes = {
   loggedIn: PropTypes.bool,
   isMember: PropTypes.bool,
+  isApplying: PropTypes.bool,
 };

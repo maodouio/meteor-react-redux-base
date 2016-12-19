@@ -5,6 +5,7 @@ import UserCollections from './components/userCollections';
 import UserGroups from './components/userGroups';
 import UserNotifications from './components/userNotifications';
 import UserShare from './components/userShare';
+import AddToMember from './containers/addToMember';
 
 export default function (injectDeps, { configs }) {
   const routes = {
@@ -17,7 +18,8 @@ export default function (injectDeps, { configs }) {
       {path: 'user/collections', component: UserCollections},
       {path: 'user/groups', component: UserGroups},
       {path: 'user/notifications', component: UserNotifications},
-      {path: 'user/share', component: UserShare}
+      {path: 'user/share', component: UserShare},
+      {path: 'user/addtomember', component: AddToMember}
     ]
   };
 
