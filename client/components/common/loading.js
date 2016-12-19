@@ -1,17 +1,17 @@
 import React from 'react';
+import { Spin } from 'antd';
 
 export default () => (
-  <div className="splash">
-    <div className="splash-title">
-      <h1>Loading...</h1>
-      {/*<p>some loading descriptions</p>*/}
-      <div className="spinner">
-        <div className="rect1" />
-        <div className="rect2" />
-        <div className="rect3" />
-        <div className="rect4" />
-        <div className="rect5" />
-      </div>
-    </div>
+  <div style={styles.wrap}>
+    <Spin size='large' tip='加载中...'/>
   </div>
 );
+
+const styles = {
+  wrap: {
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+  }
+};
