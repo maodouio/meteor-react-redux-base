@@ -1,28 +1,31 @@
 import React from 'react';
-import { WingBlank, WhiteSpace } from 'antd-mobile/dist/antd-mobile';
+import { WingBlank, WhiteSpace, Icon } from 'antd-mobile/dist/antd-mobile';
 import Loading from 'client/components/common/loading';
 import moment from 'moment';
+import PostTab from './postTab';
 
 export default (props) => {
   return (
-    <WingBlank className="post">
+    <div>
+      <WingBlank>
       {
         props.post ?
-          <div style={{margin: '1.5rem 0', color: '#515355'}}>
-            <div className="post-head">
-              <h1 style={{fontSize: '.5rem'}}>{props.post.title}</h1>
-              <span style={{color: '#1296db'}}>{props.post.category}</span>
-              <div>
-                <span>{props.post.author}</span>
-                <span style={{fontStyle: 'italic', fontSize: '0.2rem', color: '#b2b2b2', marginLeft: '10px'}}>{moment(props.post.createdAt).format('YYYY-MM-DD')}</span>
-              </div>
+          <div style={{margin: '1rem 0'}}>
+            <p style={{fontSize: '.3rem', margin: '.1rem 0'}}>{props.post.title}</p>
+            <div style={{color: '#1296db', fontSize: '.15rem'}}>
+              <span><Icon type="user" /> {props.post.author}</span>
+              <span style={{marginLeft: '.3rem'}}><Icon type="message" /> 50</span>
+              <span style={{marginLeft: '.4rem'}}><Icon type="clock-circle-o" /> {moment(props.post.createdAt).format('YYYY-MM-DD')}</span>
             </div>
             <WhiteSpace />
-            <div className="post-content" dangerouslySetInnerHTML={{ __html: props.post.content }} style={{fontSize: '.3rem', lineHeight: '1.6'}}/>
+            <div dangerouslySetInnerHTML={{ __html: props.post.content }} style={{color: '#515355', fontSize: '.25rem', lineHeight: '1.8'}}/>
+            <WhiteSpace />
           </div>
           :
           <Loading />
       }
-    </WingBlank>
+      </WingBlank>
+      <PostTab />
+    </div>
   );
 };

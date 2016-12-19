@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import {Link} from 'react-router';
 import { InputItem, Button, Flex, WhiteSpace, WingBlank, List } from 'antd-mobile/dist/antd-mobile';
 import { createForm } from 'rc-form';
+import Helmet from 'react-helmet';
 import WeChatSignIn from 'maodou/wechat/client/containers/sign-in-button';
 
 class LoginForm extends React.Component {
@@ -20,7 +21,8 @@ class LoginForm extends React.Component {
   render() {
     const { getFieldProps } = this.props.form;
     return (
-      <div>
+      <div style={{paddingTop: '45%'}}>
+        <Helmet title='用户登录' />
         <List direction='column' align='center'>
           <InputItem
             {...getFieldProps('phone', {

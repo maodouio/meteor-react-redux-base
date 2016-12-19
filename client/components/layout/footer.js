@@ -5,15 +5,12 @@ import { browserHistory } from 'react-router';
 export default class Footer extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      hidden: false,
-    };
   }
-  renderContent() {
-    this.setState({
-      hidden: !this.state.hidden,
-    });
-  }
+  // renderContent() {
+  //   this.setState({
+  //     hidden: !this.state.hidden,
+  //   });
+  // }
   render() {
     const {dispatch, selectedTab, selectedTabName} = this.props;
     return (
@@ -21,7 +18,7 @@ export default class Footer extends Component {
         unselectedTintColor="#949494"
         tintColor="#33A3F4"
         barTintColor="white"
-        hidden={this.state.hidden}
+        hidden={selectedTabName === 'hideNav'}
       >
         <TabBar.Item
           title="文章"
@@ -33,9 +30,7 @@ export default class Footer extends Component {
             browserHistory.push('/posts/list');
             dispatch(selectedTab('posts'));
           }}
-          data-seed="logId"
         >
-          {this.renderContent}
         </TabBar.Item>
         <TabBar.Item
           icon={{uri: 'https://ohn5es96r.qnssl.com/base/icon/courses.png'}}
@@ -48,7 +43,6 @@ export default class Footer extends Component {
             dispatch(selectedTab('events'));
           }}
         >
-          {this.renderContent}
         </TabBar.Item>
         <TabBar.Item
           icon={{uri: 'https://ohn5es96r.qnssl.com/base/icon/me.png'}}
@@ -61,10 +55,8 @@ export default class Footer extends Component {
             dispatch(selectedTab('users'));
           }}
         >
-          {this.renderContent}
         </TabBar.Item>
       </TabBar>
-
     );
   }
 }
