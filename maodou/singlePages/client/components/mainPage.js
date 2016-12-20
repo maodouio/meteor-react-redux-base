@@ -35,15 +35,15 @@ export default class MainPage extends Component {
                       <ul className="nav navbar-nav">
                         { sections.map((section) => this.renderHeader(section)) }
                       </ul>
-
-                      {this.props.isAdmin ?
-                        <ul className="nav navbar-nav navbar-right">
-                          <li><Link to="/admin">管理员后台</Link></li>
-                        </ul>
-                         : <span />
+                       {
+                         !this.props.loggedIn ?
+                         <ul className="nav navbar-nav navbar-right">
+                           <li><Link to="/login"></Link></li>
+                         </ul> :
+                         <ul className="nav navbar-nav navbar-right">
+                           <li><Link to="/admin" style = {{ paddingLeft:'5px', paddingRight:'10px'}}><i className="fa fa-caret-right" aria-hidden="true"></i></Link></li>
+                         </ul>
                        }
-                       {this.props.loggedIn ? renderUser(this.props.nickname) : renderLogin() }
-
                     </div>
                   </div>
                 </nav>}
@@ -54,6 +54,9 @@ export default class MainPage extends Component {
             <h3>No content...</h3>
           }
         </div>
+        {this.props.loggedIn ?
+        <Link to="/" style = {styles.out} onClick={(e) => Meteor.logout()}><i className="pe-7s-upload pe-rotate-90"></i></Link>
+        :<span />}
       </div>
     );
   }
@@ -96,20 +99,10 @@ const styles = {
   link: {
     // fontSize: '20px',
     textTransform: 'capitalize'
+  },
+  out: {
+    position: 'fixed',
+    bottom: '0',
+    right: '0'
   }
 };
-const renderUser = (nickname) => {
-  return (
-    <ul className="nav navbar-nav navbar-right">
-      <li><Link>欢迎，{nickname}</Link></li>
-      <li><Link to="/" onClick={(e) => Meteor.logout()}>退出</Link></li>
-    </ul>
-  );
-};
-
-const renderLogin = () => (
-  <ul className="nav navbar-nav navbar-right">
-    <li><Link to="/login">登录</Link></li>
-    <li><Link to="/register">注册</Link></li>
-  </ul>
-);
