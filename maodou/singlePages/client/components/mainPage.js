@@ -64,7 +64,7 @@ export default class MainPage extends Component {
 
   renderHeader(section) {
     if (section.display) {
-      if (section.name === 'footer') {
+      if (section.name === 'BLANK') {
         return '';
       }
       return (

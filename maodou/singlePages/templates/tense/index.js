@@ -102,7 +102,14 @@ export default {
               </div>
           </div>
       </section>
-
+      `
+    },
+    {
+      name: '关于我们-附加',
+      anchorName: 'about-add',
+      index: 4,
+      display: true,
+      content: `
 <!-------------------------------------4个带<i>标签的备选内容，如果不需要可将以下代码全部删掉---------------------------->
       <section class="sectional-medium">
           <div class="container">
@@ -169,7 +176,7 @@ export default {
     {
       name: '服务介绍',
       anchorName: 'services',
-      index: 4,
+      index: 5,
       display: true,
       content: `
       <section class="section-bg-main sectional-large shuoming-service" id="services">
@@ -250,7 +257,7 @@ export default {
     {
       name: '工作项目',
       anchorName: 'work',
-      index: 5,
+      index: 6,
       display: true,
       content: `
       <section class="sectional-large shuoming-ourwork" id="works">
@@ -403,7 +410,7 @@ export default {
     {
       name: '新闻活动',
       anchorName: 'news',
-      index: 6,
+      index: 7,
       display: true,
       content: `
       <section class="sectional-medium" id="news">
@@ -534,7 +541,7 @@ export default {
     {
       name: '团队',
       anchorName: 'team',
-      index: 7,
+      index: 8,
       display: true,
       content: `
       <section class="sectional-large" id="team">
@@ -644,7 +651,7 @@ export default {
     {
       name: '价格',
       anchorName: 'pricing',
-      index: 8,
+      index: 9,
       display: true,
       content: `
       <section class="sectional-large" id="pricing">
@@ -770,7 +777,7 @@ export default {
     {
       name: '客户评价',
       anchorName: 'theySay',
-      index: 9,
+      index: 10,
       display: true,
       content: `
       <section class="sectional-large section-bg-main" id='say'>
@@ -892,7 +899,7 @@ export default {
     {
       name: '合作伙伴',
       anchorName: 'partners',
-      index: 10,
+      index: 11,
       display: true,
       content: `
       <section class="sectional-medium" id="partners" style={{padding:'50px 0', background-color:'#f5f5f5'}}>
@@ -925,7 +932,7 @@ export default {
               <p></p>
             </div>
             <div class='col-md-2 col-sm-4 col-xs-6 partnersLogo'>
-<!----------------------------图片大小（宽X高）小于：130X130 ------------------------------->  
+<!----------------------------图片大小（宽X高）小于：130X130 ------------------------------->
               <img src="/images/tense/logo6.png" alt=""/>
               <p></p>
             </div>
@@ -937,7 +944,7 @@ export default {
     {
       name: '联系我们',
       anchorName: 'contact',
-      index: 11,
+      index: 12,
       display: true,
       content: `
       <section class='contactUs' id="contact">
@@ -963,7 +970,7 @@ export default {
     {
       name: 'footer',
       anchorName: 'footer',
-      index: 12,
+      index: 13,
       display: true,
       content: `
       <footer id='footer'>
