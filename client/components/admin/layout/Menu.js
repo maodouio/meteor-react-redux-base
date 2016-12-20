@@ -14,7 +14,7 @@ export default class AdminMenu extends Component {
         browserHistory.push('/admin/core');
         return;
       case '2':
-        browserHistory.push('/admin/core');
+        browserHistory.push('/admin/wechat');
         return;
       case '3':
         browserHistory.push('/admin/posts/configure');
@@ -54,6 +54,8 @@ export default class AdminMenu extends Component {
         mode='inline'
       >
         <Menu.Item key='1' style={styles.subMenu1}><Icon type='home' />核心配置</Menu.Item>
+        <Menu.Item key='2' style={styles.subMenu}><Icon type='lock' />微信配置</Menu.Item>
+
         <Menu.Divider />
         <Menu.Item key='3' style={styles.subMenu}><Icon type='setting' />文章配置</Menu.Item>
         <Menu.Item key='4' style={styles.subMenu}><Icon type='bars' />所有文章</Menu.Item>
