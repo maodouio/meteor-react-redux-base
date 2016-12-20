@@ -967,7 +967,12 @@ ul.socials li {
       padding: 28px 60px;
       border-radius: 0px;
   }
-  #reverse-tab.nav.nav-pills li a i, img{
+  #reverse-tab.nav.nav-pills li a i{
+      display: block;
+      font-size: 5em;
+      color: #222;
+  }
+  #reverse-tab.nav.nav-pills li a img{
       display: block;
       font-size: 5em;
       color: #222;
@@ -1723,8 +1728,8 @@ ul.socials li {
   }
   .diy{
     position: absolute;
-    top: 54%;
-    left: 50%;
+    top: 50%;
+    left: 27%;
     margin-left: -300px;
     width: 600px;
     padding: 20px 50px;

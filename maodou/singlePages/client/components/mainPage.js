@@ -19,7 +19,7 @@ export default class MainPage extends Component {
     return (
       <div>
         <Helmet title={headTitle} />
-        {/*<nav className="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        {<nav className="navbar navbar-default navbar-fixed-top topnav" role="navigation">
                   <div className="container-fluid">
                     <div className="navbar-header">
                       <button type="button" data-target="#main-navbar" data-toggle="collapse" className="navbar-toggle collapsed">
@@ -35,16 +35,11 @@ export default class MainPage extends Component {
                       <ul className="nav navbar-nav">
                         { sections.map((section) => this.renderHeader(section)) }
                       </ul>
-                      {this.props.isAdmin ?
-                        <ul className="nav navbar-nav navbar-right">
-                          <li><Link to="/admin">管理员后台</Link></li>
-                        </ul>
-                         : <span />
-                       }
-                       {this.props.loggedIn ? renderUser(this.props.nickname) : renderLogin() }
+
+
                     </div>
                   </div>
-                </nav>*/}
+                </nav>}
         <div id={templateName}>
           {
             sections.length > 0 ?
@@ -55,6 +50,14 @@ export default class MainPage extends Component {
       </div>
     );
   }
+
+  // {this.props.isAdmin ?
+  //   <ul className="nav navbar-nav navbar-right">
+  //     <li><Link to="/admin">管理员后台</Link></li>
+  //   </ul>
+  //    : <span />
+  //  }
+  //  {this.props.loggedIn ? renderUser(this.props.nickname) : renderLogin() }
 
   renderHeader(section) {
     if (section.display) {

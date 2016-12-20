@@ -110,7 +110,7 @@ export default {
                   <div class="col-md-12">
                       <ul class="nav nav-pills" id="reverse-tab">
 
-                      <!-----如果需要换小图标，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>-------->
+<!-----如果需要换小图标，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>-------->
                           <li class="active"><a href="#usability" data-toggle="tab"><i class="fa fa-diamond"></i> USABILITY</a></li>
                           <li><a href="#ideas" data-toggle="tab"><i class="fa fa-cubes"></i> NEW IDEAS</a></li>
                           <li><a href="#direction" data-toggle="tab"><i class="fa fa-line-chart"></i> DIRECTION</a></li>
@@ -130,9 +130,7 @@ export default {
                                       <p>
                                           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque nemo aliquam a laborum magnam molestiae cupiditate voluptas, doloribus. Quae hic qui dicta quisquam delectus! Nam ut eum maxime, dignissimos itaque!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ullam non accusamus distinctio dolorum quas obcaecati vel perferendis nihil sint, id molestias inventore facere nulla molestiae? Placeat soluta nam voluptatem!
                                       </p>
-                                      <div class="sectional-medium">
-                                          <a href="" class="btn btn-3d btn-base-white border-base thick btn-lg">discover more</a>
-                                      </div>
+
                                   </div>
                               </div>
                           </div>
@@ -146,9 +144,7 @@ export default {
                                       <p>
                                           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque nemo aliquam a laborum magnam molestiae cupiditate voluptas, doloribus. Quae hic qui dicta quisquam delectus! Nam ut eum maxime, dignissimos itaque!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ullam non accusamus distinctio dolorum quas obcaecati vel perferendis nihil sint, id molestias inventore facere nulla molestiae? Placeat soluta nam voluptatem!
                                       </p>
-                                      <div class="sectional-medium">
-                                          <a href="" class="btn btn-3d btn-base-white border-base thick btn-lg">discover more</a>
-                                      </div>
+
                                   </div>
                               </div>
                               <div class="col-md-5">
@@ -264,6 +260,7 @@ export default {
                   <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0s">
                       <div class="thumbnail same-img-ratio hover-effect-7 image-hover-effect-1 ">
                           <figure class="hover-mask-4">
+<!--------------------图片大小（宽X高）：600X400-------------------->
                               <img src="images/tense/600X400(1.png" alt="image" />
                               <a class="figure-zoom" data-rel="lightcase" href="images/tense/600X400(1.png"><i class="fa fa-search"></i></a>
                               <a class="figure-link" href="#"><i class="fa fa-link"></i></a>
@@ -284,6 +281,7 @@ export default {
                   <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.1s">
                       <div class="thumbnail same-img-ratio hover-effect-7 image-hover-effect-1">
                           <figure class="hover-mask-4">
+<!--------------------图片大小（宽X高）：600X400-------------------->
                               <img src="images/tense/600X400(2.png" alt="image" />
                               <a class="figure-zoom" data-rel="lightcase" href="images/tense/600X400(2.png"><i class="fa fa-search"></i></a>
                               <a class="figure-link" href="#"><i class="fa fa-link"></i></a>
@@ -304,6 +302,7 @@ export default {
                   <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.2s">
                       <div class="thumbnail same-img-ratio hover-effect-7 image-hover-effect-1 ">
                           <figure class="hover-mask-4">
+<!--------------------图片大小（宽X高）：600X400-------------------->
                               <img src="images/tense/600X400(3.png" alt="image" />
                               <a class="figure-zoom" data-rel="lightcase" href="images/tense/600X400(3.png"><i class="fa fa-search"></i></a>
                               <a class="figure-link" href="#"><i class="fa fa-link"></i></a>
@@ -324,6 +323,7 @@ export default {
                   <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.3s">
                       <div class="thumbnail same-img-ratio hover-effect-7 image-hover-effect-1 ">
                           <figure class="hover-mask-4">
+<!--------------------图片大小（宽X高）：600X400-------------------->
                               <img src="images/tense/600X400(4.png" alt="image" />
                               <a class="figure-zoom" data-rel="lightcase" href="images/tense/600X400(4.png"><i class="fa fa-search"></i></a>
                               <a class="figure-link" href="#"><i class="fa fa-link"></i></a>
@@ -344,6 +344,7 @@ export default {
                   <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.4s">
                       <div class="thumbnail same-img-ratio hover-effect-7 image-hover-effect-1 ">
                             <figure class="hover-mask-4">
+<!--------------------图片大小（宽X高）：600X400-------------------->
                                 <img src="images/tense/600X400(5.png" alt="image" />
                                 <a class="figure-zoom" data-rel="lightcase" href="images/tense/600X400(5.png"><i class="fa fa-search"></i></a>
                                 <a class="figure-link" href="#"><i class="fa fa-link"></i></a>
@@ -364,6 +365,7 @@ export default {
                   <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.5s">
                       <div class="thumbnail same-img-ratio hover-effect-7 image-hover-effect-1 ">
                           <figure class="hover-mask-4">
+<!--------------------图片大小（宽X高）：600X400-------------------->
                               <img src="images/tense/600X400(6.png" alt="image" />
                               <a class="figure-zoom" data-rel="lightcase" href="images/tense/600X400(6.png"><i class="fa fa-search"></i></a>
                               <a class="figure-link" href="#"><i class="fa fa-link"></i></a>
@@ -417,6 +419,7 @@ export default {
                                 <div class="thumbnail same-img-ratio ">
                                     <figure class="hover-mask-4">
                                         <a href="blog-single.php" class="image-link"><i class='fa fa-link'></i></a>
+<!----------------------------图片大小（宽X高）：600X400------------------------------->
                                         <img src="images/tense/600X400-1.png" alt="img" />
                                     </figure>
                                     <div class="thumb-body">
@@ -448,6 +451,7 @@ export default {
                                   <div class="thumbnail same-img-ratio ">
                                       <figure class="hover-mask-4">
                                           <a href="blog-single.php" class="image-link"><i class='fa fa-link'></i></a>
+<!----------------------------图片大小（宽X高）：600X400------------------------------->
                                           <img src="images/tense/600X400-2.png" alt="img" />
                                       </figure>
                                       <div class="thumb-body">
@@ -479,6 +483,7 @@ export default {
                                   <div class="thumbnail same-img-ratio">
                                       <figure class="hover-mask-4">
                                           <a href="blog-single.php" class="image-link"><i class='fa fa-link'></i></a>
+<!----------------------------图片大小（宽X高）：600X400------------------------------->
                                           <img src="images/tense/600X400-3.png" alt="img" />
                                       </figure>
                                       <div class="thumb-body">
@@ -542,6 +547,7 @@ export default {
                   <div class="col-md-3 col-sm-6">
                       <div class="thumbnail same-img-ratio hover-effect-8 wow fadeInUp" data-wow-delay="0s">
                           <figure class="hover-mask-6">
+<!----------------------------图片大小（宽X高）：400X400------------------------------->
                               <img src="images/tense/member1.png" alt="image" />
                               <figcaption class="center">
                                   <header>
@@ -564,6 +570,7 @@ export default {
                   <div class="col-md-3 col-sm-6">
                       <div class="thumbnail same-img-ratio hover-effect-8 wow fadeInUp" data-wow-delay="0.1s">
                           <figure class="hover-mask-6">
+<!----------------------------图片大小（宽X高）：400X400------------------------------->
                               <img src="images/tense/member2.png" alt="image" />
                               <figcaption class="center">
                                 <header>
@@ -586,6 +593,7 @@ export default {
                   <div class="col-md-3 col-sm-6">
                       <div class="thumbnail same-img-ratio hover-effect-8 wow fadeInUp" data-wow-delay="0.2s">
                           <figure class="hover-mask-6">
+<!----------------------------图片大小（宽X高）：400X400------------------------------->
                               <img src="images/tense/member3.png" alt="image" />
                               <figcaption class="center">
                                   <header>
@@ -608,6 +616,7 @@ export default {
                   <div class="col-md-3 col-sm-6">
                       <div class="thumbnail same-img-ratio hover-effect-8 wow fadeInUp" data-wow-delay="0.3s">
                           <figure class="hover-mask-6">
+<!----------------------------图片大小（宽X高）：400X400------------------------------->
                               <img src="images/tense/member4.png" alt="image" />
                               <figcaption class="center">
                                   <header>
@@ -776,6 +785,7 @@ export default {
                       <div class="thumbnail thumbnail-transperant single-testimonial testimonial-horizontal square-rounded circle-rounded">
                         <div class="thumb-body">
                           <figure>
+<!----------------------------图片大小（宽X高）：300X300  格式：PNG------------------------------->
                               <img src="images/tense/say1.png" class="img-circle" alt="image" />
                           </figure>
                           <article>
@@ -792,6 +802,7 @@ export default {
                       <div class="thumbnail thumbnail-transperant single-testimonial testimonial-horizontal thumbnail-open-dotted-section square-rounded circle-rounded">
                           <div class="thumb-body">
                             <figure>
+<!----------------------------图片大小（宽X高）：300X300  格式：PNG------------------------------->
                               <img src="images/tense/say2.png" class="img-circle" alt="image" />
                           </figure>
                           <article>
@@ -808,6 +819,7 @@ export default {
                       <div class="thumbnail thumbnail-transperant single-testimonial testimonial-horizontal thumbnail-open-dotted-section square-rounded circle-rounded">
                           <div class="thumb-body">
                             <figure>
+<!----------------------------图片大小（宽X高）：300X300  格式：PNG------------------------------->
                               <img src="images/tense/say3.png" class="img-circle" alt="image" />
                           </figure>
                           <article>
@@ -824,6 +836,7 @@ export default {
                       <div class="thumbnail thumbnail-transperant single-testimonial testimonial-horizontal thumbnail-open-dotted-section square-rounded circle-rounded">
                           <div class="thumb-body">
                             <figure>
+<!----------------------------图片大小（宽X高）：300X300  格式：PNG------------------------------->
                               <img src="images/tense/say4.png" class="img-circle" alt="image" />
                           </figure>
                           <article>
@@ -840,6 +853,7 @@ export default {
                       <div class="thumbnail thumbnail-transperant single-testimonial testimonial-horizontal thumbnail-open-dotted-section square-rounded circle-rounded">
                           <div class="thumb-body">
                             <figure>
+<!----------------------------图片大小（宽X高）：300X300  格式：PNG------------------------------->
                               <img src="images/tense/say5.png" class="img-circle" alt="image" />
                           </figure>
                           <article>
@@ -856,6 +870,7 @@ export default {
                       <div class="thumbnail thumbnail-transperant single-testimonial testimonial-horizontal thumbnail-open-dotted-section square-rounded circle-rounded">
                           <div class="thumb-body">
                             <figure>
+<!----------------------------图片大小（宽X高）：300X300  格式：PNG------------------------------->
                               <img src="images/tense/say6.png" class="img-circle" alt="image" />
                           </figure>
                             <article>
@@ -885,26 +900,32 @@ export default {
           <h2 class="section-heading space-bottom-large center">OUR PARTNERS</h2>
           <div class='row'>
             <div class='col-md-2 col-sm-4 col-xs-6 partnersLogo'>
+<!----------------------------图片大小（宽X高）小于：130X130 ------------------------------->
               <img src="/images/tense/logo1.png" alt=""/>
               <p></p>
             </div>
             <div class='col-md-2 col-sm-4 col-xs-6 partnersLogo'>
+<!----------------------------图片大小（宽X高）小于：130X130 ------------------------------->
               <img src="/images/tense/logo2.png" alt=""/>
               <p></p>
             </div>
             <div class='col-md-2 col-sm-4 col-xs-6 partnersLogo'>
+<!----------------------------图片大小（宽X高）小于：130X130 ------------------------------->
               <img src="/images/tense/logo3.png" alt=""/>
               <p></p>
             </div>
             <div class='col-md-2 col-sm-4 col-xs-6 partnersLogo'>
+<!----------------------------图片大小（宽X高）小于：130X130 ------------------------------->
               <img src="/images/tense/logo4.png" alt=""/>
               <p></p>
             </div>
             <div class='col-md-2 col-sm-4 col-xs-6 partnersLogo'>
+<!----------------------------图片大小（宽X高）小于：130X130 ------------------------------->
               <img src="/images/tense/logo5.png" alt=""/>
               <p></p>
             </div>
             <div class='col-md-2 col-sm-4 col-xs-6 partnersLogo'>
+<!----------------------------图片大小（宽X高）小于：130X130 ------------------------------->  
               <img src="/images/tense/logo6.png" alt=""/>
               <p></p>
             </div>
