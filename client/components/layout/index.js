@@ -4,7 +4,7 @@ import Footer from './footer';
 
 export default (props) => (
   <div className="landing-page">
-    {/*<Nav />*/}
+    {<Nav />}
     {props.children}
     {/*<Footer />*/}
   </div>
