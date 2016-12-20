@@ -16,7 +16,7 @@ export default {
       const limit = event.target.limit.value;
       const unit = event.target.unit.value;
       const fee = event.target.fee.value;
-      const desc = $('#editor').summernote('code');
+      const desc = $('#editor').html();
       Meteor.call('events.add', title, coverUrl, time, location, limit, unit, fee, desc, (err) => {
         if (err) {
           console.log(err);
@@ -37,7 +37,7 @@ export default {
       const limit = event.target.limit.value;
       const unit = event.target.unit.value;
       const fee = event.target.fee.value;
-      const desc = $('#editor').summernote('code');
+      const desc = $('#editor').html();
       const eventData = {
         title,
         time,

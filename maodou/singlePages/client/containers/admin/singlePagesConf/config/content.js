@@ -92,6 +92,7 @@ const lifeCycle = {
     this.editor = new wangEditor('editor');
     this.editor.config.customUpload = true;
     this.editor.config.customUploadInit = uploadInit;
+    this.editor.config.menuFixed = false;
     this.editor.create();
     this.editor.$txt.html(content);
   },

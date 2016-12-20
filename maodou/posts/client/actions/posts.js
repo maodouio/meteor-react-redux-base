@@ -17,7 +17,7 @@ export default {
       const category = event.target.category.value;
       const title = event.target.title.value;
       const author = event.target.author.value;
-      const content = $('#editor').summernote('code');
+      const content = $('#editor').html();
       Meteor.call('posts.add', category, coverUrl, title, author, content, (err) => {
         if (err) {
           console.log(err);
@@ -35,7 +35,7 @@ export default {
       const category = event.target.category.value;
       const title = event.target.title.value;
       const author = event.target.author.value;
-      const content = $('#editor').summernote('code');
+      const content = $('#editor').html();
       const postData = {
         category,
         title,

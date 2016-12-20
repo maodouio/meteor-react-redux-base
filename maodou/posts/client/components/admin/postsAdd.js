@@ -34,7 +34,7 @@ export default (props) => {
           <br />
           <input className="form-control" type="text" placeholder="文章作者或者文章来源" name="author" />
           <br />
-          <div id="editor" />
+          <div id="editor"></div>
           <button className="btn btn-success" type="submit">发布</button>
         </form>
       </div>

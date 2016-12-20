@@ -19,7 +19,7 @@ export default class MainPage extends Component {
     return (
       <div>
         <Helmet title={headTitle} />
-        {<nav className="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        {/*<nav className="navbar navbar-default navbar-fixed-top topnav" role="navigation">
                   <div className="container-fluid">
                     <div className="navbar-header">
                       <button type="button" data-target="#main-navbar" data-toggle="collapse" className="navbar-toggle collapsed">
@@ -44,7 +44,7 @@ export default class MainPage extends Component {
                        {this.props.loggedIn ? renderUser(this.props.nickname) : renderLogin() }
                     </div>
                   </div>
-                </nav>}
+                </nav>*/}
         <div id={templateName}>
           {
             sections.length > 0 ?

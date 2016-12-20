@@ -102,6 +102,72 @@ export default {
               </div>
           </div>
       </section>
+
+<!-------------------------------------4个带<i>标签的备选内容，如果不需要可将以下代码全部删掉---------------------------->
+      <section class="sectional-medium">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                      <ul class="nav nav-pills" id="reverse-tab">
+
+                      <!-----如果需要换小图标，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>-------->
+                          <li class="active"><a href="#usability" data-toggle="tab"><i class="fa fa-diamond"></i> USABILITY</a></li>
+                          <li><a href="#ideas" data-toggle="tab"><i class="fa fa-cubes"></i> NEW IDEAS</a></li>
+                          <li><a href="#direction" data-toggle="tab"><i class="fa fa-line-chart"></i> DIRECTION</a></li>
+                          <li><a href="#uxd" data-toggle="tab"><i class="fa fa-paper-plane-o"></i> UX DESIGN</a></li>
+                      </ul>
+                      <div class="tab-content tab-content-horizontal-left-top">
+                          <div class="tab-pane fade in active" id="usability">
+                              <div class="col-md-5">
+                                  <img src="images/tense-iphone-6.png" alt="tense-in-iphone" class="img-responsive wow bounceIn" />
+                              </div>
+                              <div class="col-md-7">
+                                  <div class="sectional-medium">
+                                      <h3 class="section-heading space-top space-bottom">GREAT USABILITY TESTING</h3>
+                                      <p>
+                                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque nemo aliquam a laborum magnam molestiae cupiditate voluptas, doloribus. Quae hic qui dicta quisquam delectus! Nam ut eum maxime, dignissimos itaque!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ullam non accusamus distinctio dolorum quas obcaecati vel perferendis nihil sint, id molestias inventore facere nulla molestiae? Placeat soluta nam voluptatem!
+                                      </p>
+                                      <p>
+                                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque nemo aliquam a laborum magnam molestiae cupiditate voluptas, doloribus. Quae hic qui dicta quisquam delectus! Nam ut eum maxime, dignissimos itaque!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ullam non accusamus distinctio dolorum quas obcaecati vel perferendis nihil sint, id molestias inventore facere nulla molestiae? Placeat soluta nam voluptatem!
+                                      </p>
+                                      <div class="sectional-medium">
+                                          <a href="" class="btn btn-3d btn-base-white border-base thick btn-lg">discover more</a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="tab-pane fade" id="ideas">
+                              <div class="col-md-7">
+                                  <div class="sectional-medium">
+                                      <h3 class="section-heading space-top space-bottom">NEW IDEAS IMPLEMENTED</h3>
+                                      <p>
+                                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque nemo aliquam a laborum magnam molestiae cupiditate voluptas, doloribus. Quae hic qui dicta quisquam delectus! Nam ut eum maxime, dignissimos itaque!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ullam non accusamus distinctio dolorum quas obcaecati vel perferendis nihil sint, id molestias inventore facere nulla molestiae? Placeat soluta nam voluptatem!
+                                      </p>
+                                      <p>
+                                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque nemo aliquam a laborum magnam molestiae cupiditate voluptas, doloribus. Quae hic qui dicta quisquam delectus! Nam ut eum maxime, dignissimos itaque!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ullam non accusamus distinctio dolorum quas obcaecati vel perferendis nihil sint, id molestias inventore facere nulla molestiae? Placeat soluta nam voluptatem!
+                                      </p>
+                                      <div class="sectional-medium">
+                                          <a href="" class="btn btn-3d btn-base-white border-base thick btn-lg">discover more</a>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-5">
+                                  <img src="images/tense-left-half-macbook-air.png" alt="tense-in-macbook" />
+                              </div>
+                          </div>
+                          <div class="tab-pane fade" id="direction">
+                              <div class="col-md-12">
+                                  <img src="images/tense-left-full-macbook-air.png" alt="tense-in-macbook" class="img-responsive" />
+                              </div>
+                          </div>
+                          <div class="tab-pane fade" id="uxd">
+                              <p class="  fadeIn">Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna.Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
       `
     },
     {
@@ -118,6 +184,7 @@ export default {
               <div class="row">
                   <div class="col-md-3 col-sm-6">
                       <div class="icon-box center space-bottom wow fadeInUp" data-wow-delay="0.03s">
+<!-----如果需要换小图标，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
                           <i class="fa fa-random" aria-hidden="true"></i>
                           <h4 class="features-title">BETTER UX</h4>
                           <p>Sed justo eros, cursus nec ultrices to istique eget nisi. Fusce conguet ripoi bulum lacinia.</p>
@@ -125,6 +192,7 @@ export default {
                   </div>
                   <div class="col-md-3 col-sm-6">
                       <div class="icon-box center space-bottom wow fadeInUp" data-wow-delay=".1s">
+<!-----如果需要换小图标，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
                           <i class="fa fa-video-camera" aria-hidden="true"></i>
                           <h4 class="features-title">SMART IDEAS</h4>
                           <p>Sed justo eros, cursus nec ultrices to istique eget nisi. Fusce conguet ripoi bulum lacinia.</p>
@@ -132,6 +200,7 @@ export default {
                   </div>
                   <div class="col-md-3 col-sm-6">
                       <div class="icon-box center space-bottom wow fadeInUp" data-wow-delay=".17s">
+<!-----如果需要换小图标，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
                           <i class="fa fa-globe" aria-hidden="true"></i>
                           <h4 class="features-title">RESPONSIVENESS</h4>
                           <p>Sed justo eros, cursus nec ultrices to istique eget nisi. Fusce conguet ripoi bulum lacinia.</p>
@@ -139,6 +208,7 @@ export default {
                   </div>
                   <div class="col-md-3 col-sm-6">
                       <div class="icon-box center space-bottom wow fadeInUp" data-wow-delay=".24s">
+<!-----如果需要换小图标，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
                           <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                           <h4 class="features-title">PREMIUM SUPPORT</h4>
                           <p>Sed justo eros, cursus nec ultrices to istique eget nisi. Fusce conguet ripoi bulum lacinia.</p>
@@ -146,6 +216,7 @@ export default {
                   </div>
                   <div class="col-md-3 col-sm-6">
                       <div class="icon-box center wow fadeInUp" data-wow-delay=".05s">
+<!-----如果需要换小图标，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
                           <i class="fa fa-handshake-o" aria-hidden="true"></i>
                           <h4 class="features-title">UNLIMITED COLOR</h4>
                           <p>Sed justo eros, cursus nec ultrices to istique eget nisi. Fusce conguet ripoi bulum lacinia.</p>
@@ -153,6 +224,7 @@ export default {
                   </div>
                   <div class="col-md-3 col-sm-6">
                       <div class="icon-box center wow fadeInUp" data-wow-delay=".13s">
+<!-----如果需要换小图标，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
                           <i class="fa fa-mortar-board" aria-hidden="true"></i>
                           <h4 class="features-title">BETTER VIEW</h4>
                           <p>Sed justo eros, cursus nec ultrices to istique eget nisi. Fusce conguet ripoi bulum lacinia.</p>
@@ -160,6 +232,7 @@ export default {
                   </div>
                   <div class="col-md-3 col-sm-6">
                       <div class="icon-box center wow fadeInUp" data-wow-delay=".21s">
+<!-----如果需要换小图标，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
                           <i class="fa fa-exchange" aria-hidden="true"></i>
                           <h4 class="features-title">BETTER VIEW</h4>
                           <p>Sed justo eros, cursus nec ultrices to istique eget nisi. Fusce conguet ripoi bulum lacinia.</p>
@@ -167,6 +240,7 @@ export default {
                   </div>
                   <div class="col-md-3 col-sm-6">
                       <div class="icon-box center wow fadeInUp" data-wow-delay=".29s">
+<!-----如果需要换小图标，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
                           <i class="fa fa-dollar" aria-hidden="true"></i>
                           <h4 class="features-title">BETTER VIEW</h4>
                           <p>Sed justo eros, cursus nec ultrices to istique eget nisi. Fusce conguet ripoi bulum lacinia.</p>
