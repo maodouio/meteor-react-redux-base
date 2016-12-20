@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ShowToast from 'client/components/common/showToast';
 import { Toast, WingBlank, Button } from 'antd-mobile/dist/antd-mobile';
+import { browserHistory } from 'react-router';
 
 export const UIState = {
   IDLE: 'idle',
@@ -20,6 +21,7 @@ export default class SignInButton extends Component {
           </WingBlank> : <span />}
         { isLoggedIn ?  <WingBlank>
             <ShowToast type='success' text='登录成功' />
+            {browserHistory.push('/user')}
           </WingBlank> : <span />}
         { isError ?  <div>
             <a href={authUrl}>重试登录</a>
