@@ -32,7 +32,7 @@ export default (props) => {
                     thumbStyle={{width: '100%'}}
                   />
                   <Card.Body>
-                    <p style={{fontSize: '1.3em', color: '#333'}}>
+                    <p style={{fontSize: '.3rem', color: '#333'}}>
                       <b>{post.title}</b>
                     </p>
                   </Card.Body>

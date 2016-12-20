@@ -58,6 +58,7 @@ export default {
           }
         } else {
           toastr.info('申请已送出，请等待！');
+          browserHistory.push('/user');
         }
       });
     };

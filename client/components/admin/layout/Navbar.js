@@ -1,22 +1,35 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Menu, Icon } from 'antd';
+import { browserHistory } from 'react-router';
 
 export default class AdminMenu extends Component {
   constructor(props){
     super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    switch(e.key) {
+      case '1':
+        return;
+      case '2':
+        Meteor.logout();
+        browserHistory.push('/');
+        return;
+      default:
+        browserHistory.push('/admin/core');
+    }
   }
 
   render() {
     const styles = this.getStyles();
     return(
-      <Menu
+      <Menu onClick={this.handleClick}
         style={styles.menu}
         mode='horizontal'
       >
-        <Menu.Item key='1'><Icon type='setting' />路由名称</Menu.Item>
-        <Menu.Item key='2'><Icon type='setting' />用户指引</Menu.Item>
-        <Menu.Item key='4'><Icon type='setting' />用户名</Menu.Item>
-        <Menu.Item key='5'><Icon type='setting' />退出</Menu.Item>
+        <Menu.Item key='1'><Icon type='user' />{this.props.username}</Menu.Item>
+        <Menu.Item key='2'><Icon type='logout' />退出</Menu.Item>
       </Menu>
     );
   }
@@ -33,3 +46,7 @@ export default class AdminMenu extends Component {
     });
   }
 }
+
+AdminMenu.propTypes = {
+  username: PropTypes.string,
+};

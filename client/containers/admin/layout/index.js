@@ -8,14 +8,10 @@ const subscriptions = ({ context }, onData) => {
   Meteor.call('validateAdmin', Meteor.user(), (err) => {
     if (err) {
       browserHistory.push('/');
-      toastr.error("当前用户无权访问");
-    } else {
-      _.keys(context.configs).map((module) => {
-        Meteor.subscribe(`${module}.configs`)
-      })
-      onData(null, {})
+      toastr.error('当前用户无权访问');
     }
-  })
+    onData(null, {});
+  });
 };
 
 const depsToProps = (context, actions) => ({

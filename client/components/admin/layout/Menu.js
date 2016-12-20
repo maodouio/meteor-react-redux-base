@@ -37,6 +37,9 @@ export default class AdminMenu extends Component {
       case '9':
         browserHistory.push('/admin/users/member');
         return;
+      case '10':
+        browserHistory.push('/admin/users/applyingmember');
+        return;
       default:
         browserHistory.push('/admin/core');
     }
@@ -50,18 +53,18 @@ export default class AdminMenu extends Component {
         style={styles.menu}
         mode='inline'
       >
-        <Menu.Item key='1' style={styles.subMenu1}><Icon type='setting' />仪表盘</Menu.Item>
-        <Menu.Item key='2' style={styles.subMenu1}><Icon type="plus-square" />新增</Menu.Item>
+        <Menu.Item key='1' style={styles.subMenu1}><Icon type='home' />核心配置</Menu.Item>
         <Menu.Divider />
         <Menu.Item key='3' style={styles.subMenu}><Icon type='setting' />文章配置</Menu.Item>
-        <Menu.Item key='4' style={styles.subMenu}><Icon type='setting' />所有文章</Menu.Item>
-        <Menu.Item key='5' style={styles.subMenu}><Icon type='setting' />新建文章</Menu.Item>
+        <Menu.Item key='4' style={styles.subMenu}><Icon type='bars' />所有文章</Menu.Item>
+        <Menu.Item key='5' style={styles.subMenu}><Icon type='plus-circle-o' />新建文章</Menu.Item>
         <Menu.Divider />
-        <Menu.Item key='6' style={styles.subMenu}><Icon type='setting' />所有活动</Menu.Item>
-        <Menu.Item key='7' style={styles.subMenu}><Icon type='setting' />新建活动</Menu.Item>
+        <Menu.Item key='6' style={styles.subMenu}><Icon type='bars' />所有活动</Menu.Item>
+        <Menu.Item key='7' style={styles.subMenu}><Icon type='plus-circle-o' />新建活动</Menu.Item>
         <Menu.Divider />
-        <Menu.Item key='8' style={styles.subMenu}><Icon type='setting' />所有用户</Menu.Item>
-        <Menu.Item key='9' style={styles.subMenu}><Icon type='setting' />会员管理</Menu.Item>
+        <Menu.Item key='8' style={styles.subMenu}><Icon type='bars' />所有用户</Menu.Item>
+        <Menu.Item key='9' style={styles.subMenu}><Icon type='user' />会员管理</Menu.Item>
+        <Menu.Item key='10' style={styles.subMenu}><Icon type='user' />待通过会员管理</Menu.Item>
       </Menu>
     );
   }
