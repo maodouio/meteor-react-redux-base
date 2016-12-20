@@ -36,6 +36,13 @@ export default class MainPage extends Component {
                         { sections.map((section) => this.renderHeader(section)) }
                       </ul>
 
+                      {this.props.isAdmin ?
+                        <ul className="nav navbar-nav navbar-right">
+                          <li><Link to="/admin">管理员后台</Link></li>
+                        </ul>
+                         : <span />
+                       }
+                       {this.props.loggedIn ? renderUser(this.props.nickname) : renderLogin() }
 
                     </div>
                   </div>
@@ -51,13 +58,6 @@ export default class MainPage extends Component {
     );
   }
 
-  // {this.props.isAdmin ?
-  //   <ul className="nav navbar-nav navbar-right">
-  //     <li><Link to="/admin">管理员后台</Link></li>
-  //   </ul>
-  //    : <span />
-  //  }
-  //  {this.props.loggedIn ? renderUser(this.props.nickname) : renderLogin() }
 
   renderHeader(section) {
     if (section.display) {
