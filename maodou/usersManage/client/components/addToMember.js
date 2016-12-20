@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Helmet from 'react-helmet';
-import { InputItem, Button, Flex, WhiteSpace, WingBlank } from 'antd-mobile/dist/antd-mobile';
+import { InputItem, Button, Flex, WhiteSpace, List } from 'antd-mobile/dist/antd-mobile';
 import { createForm } from 'rc-form';
 
 class AddToMember extends Component {
@@ -23,9 +23,9 @@ class AddToMember extends Component {
       <Flex direction='column' align='center' style={{fontSize: '.3rem', paddingTop: '1rem'}}>
         <WhiteSpace size="lg" />
         <Helmet title='申请会员' />
-        <WingBlank size="lg">
-          <div>完善以下资料，申请成为会员.</div>
-          <WhiteSpace />
+        <div>完善以下资料，申请成为会员.</div>
+        <WhiteSpace />
+        <List direction='column' align='center'>
           <InputItem
             {...getFieldProps('phone')}
             type='phone'
@@ -39,7 +39,7 @@ class AddToMember extends Component {
             type='email'
             placeholder='username@example.com'
             clear
-          >邮箱
+          >邮箱：
           </InputItem>
           <WhiteSpace />
           <InputItem
@@ -47,7 +47,7 @@ class AddToMember extends Component {
             type='text'
             placeholder='(选填)'
             clear
-          >工作
+          >工作：
           </InputItem>
           <WhiteSpace />
           <InputItem
@@ -55,13 +55,13 @@ class AddToMember extends Component {
             type='text'
             placeholder='(选填)'
             clear
-          >爱好
+          >爱好：
           </InputItem>
-          <WhiteSpace size="lg" />
-          <Flex justify='center'>
-            <Button type='primary' inline onClick={this.handleClick}>申请</Button>
-          </Flex>
-        </WingBlank>
+        </List>
+        <WhiteSpace size="lg" />
+        <Flex justify='center'>
+          <Button type='primary' inline onClick={this.handleClick}>申请</Button>
+        </Flex>
       </Flex>
     );
   }
