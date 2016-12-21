@@ -38,10 +38,10 @@ export default class MainPage extends Component {
                        {
                          !this.props.loggedIn ?
                          <ul className="nav navbar-nav navbar-right">
-                           <li><Link to="/login"></Link></li>
+                           <li><Link to="/login" style = {styles.in}></Link></li>
                          </ul> :
                          <ul className="nav navbar-nav navbar-right">
-                           <li><Link to="/admin" style = {{ paddingLeft:'5px', paddingRight:'10px'}}><i className="fa fa-caret-right" aria-hidden="true"></i></Link></li>
+                           <li><Link to="/admin" style = {styles.in}><i className="fa fa-caret-right" aria-hidden="true"></i></Link></li>
                          </ul>
                        }
                     </div>
@@ -99,6 +99,10 @@ const styles = {
   link: {
     // fontSize: '20px',
     textTransform: 'capitalize'
+  },
+  in: {
+    paddingLeft:'5px',
+    paddingRight:'10px'
   },
   out: {
     position: 'fixed',
