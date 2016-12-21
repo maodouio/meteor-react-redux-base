@@ -38,7 +38,7 @@ export default {
   },
   changeContent({ Meteor, swal, toastr }, sectionName) {
     return () => {
-      const content = $('.editor').summernote('code');
+      const content = $('#editor').html();
       Meteor.call('singlePages.changeContent', sectionName, content, (err) => {
         if (err) {
           toastr.error('失败', 'Error!');
@@ -91,7 +91,7 @@ export default {
         if (err) {
           toastr.error('更新网站名称失败');
         } else {
-          toastr.success('更新网站名称成功');
+          // toastr.success('更新网站名称成功');
         }
       });
     };
