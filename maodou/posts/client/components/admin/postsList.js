@@ -10,7 +10,7 @@ export default class PostsList extends Component {
     return(
       <div className="admin-package-wrapper row">
         <div className="col-sm-12">
-          <h1>管理文章</h1>
+          <h1 style={{marginBottom: '20px'}}>管理文章</h1>
           { this.props.posts.status === 'ready' ?
             data.length > 0 ? this.renderPosts(data) : <div>抱歉，目前还没有文章！</div>
             : <Loading />

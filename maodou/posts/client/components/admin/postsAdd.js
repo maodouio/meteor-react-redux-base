@@ -8,7 +8,7 @@ export default (props) => {
         title='添加新文章'
       />
       <div className="col-sm-12">
-        <h1>添加新文章</h1>
+        <h1 style={{marginBottom: '20px'}}>添加新文章</h1>
         <form onSubmit={(e) => props.dispatch(props.addPost(e, props.coverUrl))}>
           <div className="form-group">
             <label htmlFor="select-category">选择分类</label>

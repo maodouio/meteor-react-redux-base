@@ -10,7 +10,7 @@ export default class EventsList extends Component {
     return(
       <div className="admin-package-wrapper row">
         <div className="col-sm-12">
-          <h1>管理活动</h1>
+          <h1 style={{marginBottom: '20px'}}>管理活动</h1>
           { status === 'ready' ?
             data.length > 0 ? this.renderEvents(data) : <div>抱歉，目前还没有活动！</div>
             : <Loading />

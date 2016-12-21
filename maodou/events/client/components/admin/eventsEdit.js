@@ -20,7 +20,7 @@ export default class EventsEdit extends React.Component {
     return (
       <div className="row">
         <div className="col-sm-12">
-          <h1>编辑活动</h1>
+          <h1 style={{marginBottom: '20px'}}>编辑活动</h1>
           <form onSubmit={(e) => dispatch(updateEvent(e, event._id, url))}>
             <div id="upload-container">
               <a className="btn btn-success" id="pickfiles" href="#">更换封面</a>

@@ -21,6 +21,8 @@ const subscriptions = ({ context }, onData) => {
     const appId = wechatPkg.configs.appId;
     const appSecret = wechatPkg.privateConfigs.appSecret;
     onData(null, { appId, appSecret });
+  } else {
+    onData(null, {appId: '', appSecret: ''});
   }
 };
 
