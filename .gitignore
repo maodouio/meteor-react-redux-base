@@ -1,8 +1,7 @@
 node_modules
 .idea
-deploy/
+.deploy
+
 npm-debug.log
 .DS_Store
 mup.json
-mup-demo.json
-mup-staging.json

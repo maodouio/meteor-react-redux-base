@@ -45,7 +45,7 @@ export default class ApplyingMemberManage extends Component {
     const { data, status } = this.props.users;
     return(
       <div>
-        { status === 'ready' ? data.length > 0 ? this.renderUsers(data) : <div>暂时没有用户申请．</div> : <Loading /> }
+        { status === 'ready' ? data.length > 0 ? this.renderUsers(data) : <h5>暂时没有用户申请．</h5> : <Loading /> }
       </div>
     );
   }

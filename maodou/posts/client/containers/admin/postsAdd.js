@@ -108,9 +108,12 @@ const lifeCycle = {
 
 const data = ({ context }, onData) => {
   const { Collections } = context;
-  const pkg = Collections.Packages.findOne({ name: 'posts' }) || {};
-  const configs = pkg.configs || {};
-  onData(null, { categories: configs.categories || [] });
+  const pkg = Collections.Packages.findOne({ name: 'posts' });
+  if (pkg) {
+    onData(null, { categories: pkg.configs.categories });
+  } else {
+    onData(null, { categories: ['精选内容', '创业者说', '深度好文'] });
+  }
 };
 
 const mapStateToProps = (state)=> ({
