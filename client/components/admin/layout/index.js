@@ -1,6 +1,6 @@
 import React from 'react';
-import AdminMenu from './Menu';
 import Navbar from '../../../containers/admin/layout/Navbar';
+import AdminMenu from '../../../containers/admin/layout/Menu';
 
 export default (props) => (
   <div style={styles.container}>

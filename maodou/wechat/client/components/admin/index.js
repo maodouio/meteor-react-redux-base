@@ -1,10 +1,10 @@
 import React from 'react';
 
 export default (props) => (
-  <div className="container">
-    <div className="row">
-      <div className="col-xs-12">
-        <h4>微信配置</h4>
+  <div>
+    <div>
+      <div>
+        <h4 style={{marginBottom: '20px'}}>微信配置</h4>
         <form onSubmit={props.saveWechatConfigs}>
           <div className="form-group">
             <label>AppId</label>

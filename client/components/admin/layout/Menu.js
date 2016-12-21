@@ -10,15 +10,18 @@ export default class AdminMenu extends Component {
 
   handleClick(e) {
     switch(e.key) {
+      case '0':
+        browserHistory.push('/');
+        return;
       case '1':
         browserHistory.push('/admin/core');
         return;
       case '2':
         browserHistory.push('/admin/wechat');
         return;
-      case '3':
-        browserHistory.push('/admin/posts/configure');
-        return;
+      // case '3':
+      //   browserHistory.push('/admin/posts/configure');
+      //   return;
       case '4':
         browserHistory.push('/admin/posts/list');
         return;
@@ -53,11 +56,11 @@ export default class AdminMenu extends Component {
         style={styles.menu}
         mode='inline'
       >
-        <Menu.Item key='1' style={styles.subMenu1}><Icon type='home' />核心配置</Menu.Item>
+        <Menu.Item key='0' style={styles.subMenu1}><Icon type='home' />{this.props.appName}</Menu.Item>
+        <Menu.Item key='1' style={styles.subMenu}><Icon type='setting' />核心配置</Menu.Item>
         <Menu.Item key='2' style={styles.subMenu}><Icon type='lock' />微信配置</Menu.Item>
 
         <Menu.Divider />
-        <Menu.Item key='3' style={styles.subMenu}><Icon type='setting' />文章配置</Menu.Item>
         <Menu.Item key='4' style={styles.subMenu}><Icon type='bars' />所有文章</Menu.Item>
         <Menu.Item key='5' style={styles.subMenu}><Icon type='plus-circle-o' />新建文章</Menu.Item>
         <Menu.Divider />

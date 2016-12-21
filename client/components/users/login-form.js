@@ -21,7 +21,7 @@ class LoginForm extends React.Component {
   render() {
     const { getFieldProps } = this.props.form;
     return (
-      <div style={{paddingTop: '45%'}}>
+      <div style={{paddingTop: '2rem'}}>
         <Helmet title='用户登录' />
         <List direction='column' align='center'>
           <InputItem

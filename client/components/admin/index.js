@@ -16,9 +16,9 @@ export default class AdminCore extends Component {
       return <Loding />;
     }
     return (
-      <div className="container">
+      <div>
         <Helmet title='核心配置' />
-        <div className="row">
+        <div>
           {this.renderCoreName()}
           {/* <div className="col-xs-12" style={{padding: '10px'}}>
                       <h3>模块配置，最多选择4个模块(已选择{selectedModule.length-1}个)</h3>
@@ -38,11 +38,11 @@ export default class AdminCore extends Component {
 
   renderCoreName() {
     return (
-      <div className="col-xs-12">
-        <h4>核心配置</h4>
+      <div>
+        <h4 style={{marginBottom: '20px'}}>核心配置</h4>
         <form onSubmit={this.props.saveCoreConfigs}>
           <div className="form-group">
-            <label className='col-md-3'>网站名称</label>
+            <label>网站名称</label>
             <input type="text" name="appName" className="form-control" defaultValue={this.props.appName} />
           </div>
           <button className="btn btn-success" type='submit'>提交</button>
