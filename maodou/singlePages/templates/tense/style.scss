@@ -1732,7 +1732,7 @@ ul.socials li {
     top: 50%;
     left: 27%;
     margin-left: -25%;
-    width: 42%;
+    width: 600px;
     padding: 20px 50px;
     background: rgba(0, 0, 0, 0.7);
 
@@ -1761,5 +1761,15 @@ ul.socials li {
       margin: 0;
       padding: 18px 30px;
     }
-}
+  }
+  @media only screen and (max-width: 1190px) {
+    .diy {
+      top: 30%;
+    }
+    @media only screen and (max-width: 860px) {
+      .diy {
+        display: none;
+      }
+    }
+  }
 }
