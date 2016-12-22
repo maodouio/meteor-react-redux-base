@@ -59,10 +59,10 @@ export default {
           <div class="container">
               <div class="row">
                   <div class="col-md-12 center">
-                      <img src="images/tense/light-bulb.svg" alt="idea" width="100px" class="wow bounceIn" />
                       <h1 class="big-heading wow fadeInUp space-bottom animated">WELCOME TO TENSE</h1>
                       <h4 class="big-sub-heading">JOIN OVER 100k+ SATISFIED CUSTOMRES</h4>
                       <p class="uppercase">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque a, beatae voluptatem. Repellat aspernatur, placeat autem sequi omnis, provident. Est magni cum, voluptatem repellat atque nobis culpa voluptates iste omnis.</p>
+<!----------------------------参考： 图片比例（宽 ：高） 3 : 2 图片大小 1200X800 格式：jpg-------------------------->
                       <img src="images/tense/welcome.jpg" class="img-space-top img-responsive wow fadeInUp" alt="" />
                   </div>
               </div>
@@ -110,7 +110,6 @@ export default {
       index: 4,
       display: true,
       content: `
-<!-------------------------------------4个带<i>标签的备选内容，如果不需要可将以下代码全部删掉---------------------------->
       <section class="sectional-medium">
           <div class="container">
               <div class="row">
@@ -126,6 +125,7 @@ export default {
                       <div class="tab-content tab-content-horizontal-left-top">
                           <div class="tab-pane fade in active" id="usability">
                               <div class="col-md-5">
+<!--------------------第一个图--------参考： 图片比例（宽 ：高） 4 : 5 图片大小 1200X1500 格式：PNG-------------------------->
                                   <img src="images/tense-iphone-6.png" alt="tense-in-iphone" class="img-responsive wow bounceIn" />
                               </div>
                               <div class="col-md-7">
@@ -155,11 +155,13 @@ export default {
                                   </div>
                               </div>
                               <div class="col-md-5">
+<!------------------第二个图----------参考： 图片比例（宽 ：高） 11 : 6 图片大小 1100X600 格式：PNG-------------------------->
                                   <img src="images/tense-left-half-macbook-air.png" alt="tense-in-macbook" />
                               </div>
                           </div>
                           <div class="tab-pane fade" id="direction">
                               <div class="col-md-12">
+<!------------------第三个图----------参考： 图片比例（宽 ：高） 1327 : 716 图片大小 1327X716 格式：PNG-------------------------->
                                   <img src="images/tense-left-full-macbook-air.png" alt="tense-in-macbook" class="img-responsive" />
                               </div>
                           </div>
@@ -187,7 +189,7 @@ export default {
               <div class="row">
                   <div class="col-md-3 col-sm-6">
                       <div class="icon-box center space-bottom wow fadeInUp" data-wow-delay="0.03s">
-<!-----如果需要换小图标，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
+<!-----小图标 1，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
                           <i class="fa fa-random" aria-hidden="true"></i>
                           <h4 class="features-title">联合办公</h4>
                           <p>可与其他团队分享信息、知识、技能和拓宽社交圈子等等，适合小型的创业团队。</p>
@@ -195,7 +197,7 @@ export default {
                   </div>
                   <div class="col-md-3 col-sm-6">
                       <div class="icon-box center space-bottom wow fadeInUp" data-wow-delay=".1s">
-<!-----如果需要换小图标，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
+<!-----小图标 2，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
                           <i class="fa fa-video-camera" aria-hidden="true"></i>
                           <h4 class="features-title">项目路演</h4>
                           <p>企业或创业代表在讲台上向投资方讲解项目属性、发展计划和融资计划。</p>
@@ -203,7 +205,7 @@ export default {
                   </div>
                   <div class="col-md-3 col-sm-6">
                       <div class="icon-box center space-bottom wow fadeInUp" data-wow-delay=".17s">
-<!-----如果需要换小图标，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
+<!-----小图标 3，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
                           <i class="fa fa-globe" aria-hidden="true"></i>
                           <h4 class="features-title">海外并购</h4>
                           <p>一国，通过一定的渠道和支付手段，将另一国企业的一定份额的股权直至整个。</p>
@@ -211,7 +213,7 @@ export default {
                   </div>
                   <div class="col-md-3 col-sm-6">
                       <div class="icon-box center space-bottom wow fadeInUp" data-wow-delay=".24s">
-<!-----如果需要换小图标，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
+<!-----小图标 4，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
                           <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                           <h4 class="features-title">会员一体化</h4>
                           <p>多个原来相互独立的主体通过某种方式逐步在同一体系下彼此包容，相互合作。</p>
@@ -219,7 +221,7 @@ export default {
                   </div>
                   <div class="col-md-3 col-sm-6">
                       <div class="icon-box center wow fadeInUp" data-wow-delay=".05s">
-<!-----如果需要换小图标，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
+<!-----小图标 5，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
                           <i class="fa fa-handshake-o" aria-hidden="true"></i>
                           <h4 class="features-title">商务对接</h4>
                           <p>为您提供包括项目撮合、人才推荐、资金资本对接等多种商务对接服务。</p>
@@ -227,7 +229,7 @@ export default {
                   </div>
                   <div class="col-md-3 col-sm-6">
                       <div class="icon-box center wow fadeInUp" data-wow-delay=".13s">
-<!-----如果需要换小图标，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
+<!-----小图标 6，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
                           <i class="fa fa-mortar-board" aria-hidden="true"></i>
                           <h4 class="features-title">教育培训</h4>
                           <p>提供教育资源和培训信息为主要内容的专门性网站或培训机构。</p>
@@ -235,7 +237,7 @@ export default {
                   </div>
                   <div class="col-md-3 col-sm-6">
                       <div class="icon-box center wow fadeInUp" data-wow-delay=".21s">
-<!-----如果需要换小图标，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
+<!-----小图标 7，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
                           <i class="fa fa-exchange" aria-hidden="true"></i>
                           <h4 class="features-title">技术交流</h4>
                           <p>以技术援助、合作开发、科技人员交流等方式进行的无偿的技术转让。</p>
@@ -243,7 +245,7 @@ export default {
                   </div>
                   <div class="col-md-3 col-sm-6">
                       <div class="icon-box center wow fadeInUp" data-wow-delay=".29s">
-<!-----如果需要换小图标，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
+<!-----小图标 8，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>--->
                           <i class="fa fa-dollar" aria-hidden="true"></i>
                           <h4 class="features-title">投融资直通车</h4>
                           <p>通过投资融资活动，壮大企业实力，获取企业更大效益的方式。</p>
@@ -267,10 +269,10 @@ export default {
                   <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0s">
                       <div class="thumbnail same-img-ratio hover-effect-7 image-hover-effect-1 ">
                           <figure class="hover-mask-4">
-<!--------------------图片大小（宽X高）：600X400-------------------->
+<!-------------Work 1-------参考：图片比例（宽 ：高）3 ：2 图片大小 600X400 格式：PNG-------------------->
                               <img src="images/tense/600X400(1.png" alt="image" />
-                              <a class="figure-zoom" data-rel="lightcase" href="images/tense/600X400(1.png"><i class="fa fa-search"></i></a>
                               <a class="figure-link" href="#"><i class="fa fa-link"></i></a>
+                              <a class="figure-zoom" data-rel="lightcase" href="images/tense/600X400(1.png"><i class="fa fa-search"></i></a>
                               <figcaption class="center">
                               <header>
                                   <h5><a href="">nepal faces earthquake</a></h5>
@@ -288,10 +290,10 @@ export default {
                   <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.1s">
                       <div class="thumbnail same-img-ratio hover-effect-7 image-hover-effect-1">
                           <figure class="hover-mask-4">
-<!--------------------图片大小（宽X高）：600X400-------------------->
+<!-------------Work 2-------参考：图片比例（宽 ：高）3 ：2 图片大小 600X400 格式：PNG-------------------->
                               <img src="images/tense/600X400(2.png" alt="image" />
-                              <a class="figure-zoom" data-rel="lightcase" href="images/tense/600X400(2.png"><i class="fa fa-search"></i></a>
                               <a class="figure-link" href="#"><i class="fa fa-link"></i></a>
+                              <a class="figure-zoom" data-rel="lightcase" href="images/tense/600X400(2.png"><i class="fa fa-search"></i></a>
                               <figcaption class="center">
                               <header>
                                   <h5><a href="">nepal faces earthquake</a></h5>
@@ -309,10 +311,10 @@ export default {
                   <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.2s">
                       <div class="thumbnail same-img-ratio hover-effect-7 image-hover-effect-1 ">
                           <figure class="hover-mask-4">
-<!--------------------图片大小（宽X高）：600X400-------------------->
+<!-------------Work 3-------参考：图片比例（宽 ：高）3 ：2 图片大小 600X400 格式：PNG-------------------->
                               <img src="images/tense/600X400(3.png" alt="image" />
-                              <a class="figure-zoom" data-rel="lightcase" href="images/tense/600X400(3.png"><i class="fa fa-search"></i></a>
                               <a class="figure-link" href="#"><i class="fa fa-link"></i></a>
+                              <a class="figure-zoom" data-rel="lightcase" href="images/tense/600X400(3.png"><i class="fa fa-search"></i></a>
                               <figcaption class="center">
                               <header>
                                   <h5><a href="">nepal faces earthquake</a></h5>
@@ -330,10 +332,10 @@ export default {
                   <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.3s">
                       <div class="thumbnail same-img-ratio hover-effect-7 image-hover-effect-1 ">
                           <figure class="hover-mask-4">
-<!--------------------图片大小（宽X高）：600X400-------------------->
+<!-------------Work 4-------参考：图片比例（宽 ：高）3 ：2 图片大小 600X400 格式：PNG-------------------->
                               <img src="images/tense/600X400(4.png" alt="image" />
-                              <a class="figure-zoom" data-rel="lightcase" href="images/tense/600X400(4.png"><i class="fa fa-search"></i></a>
                               <a class="figure-link" href="#"><i class="fa fa-link"></i></a>
+                              <a class="figure-zoom" data-rel="lightcase" href="images/tense/600X400(4.png"><i class="fa fa-search"></i></a>
                               <figcaption class="center">
                               <header>
                                   <h5><a href="">nepal faces earthquake</a></h5>
@@ -351,11 +353,11 @@ export default {
                   <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.4s">
                       <div class="thumbnail same-img-ratio hover-effect-7 image-hover-effect-1 ">
                             <figure class="hover-mask-4">
-<!--------------------图片大小（宽X高）：600X400-------------------->
+<!-------------Work 5-------参考：图片比例（宽 ：高）3 ：2 图片大小 600X400 格式：PNG-------------------->
                                 <img src="images/tense/600X400(5.png" alt="image" />
-                                <a class="figure-zoom" data-rel="lightcase" href="images/tense/600X400(5.png"><i class="fa fa-search"></i></a>
                                 <a class="figure-link" href="#"><i class="fa fa-link"></i></a>
-                                <figcaption class="center">
+                                <a class="figure-zoom" data-rel="lightcase" href="images/tense/600X400(5.png"><i class="fa fa-search"></i></a>
+                                  <figcaption class="center">
                                     <header>
                                         <h5><a href="">nepal faces earthquake</a></h5>
                                     </header>
@@ -372,10 +374,10 @@ export default {
                   <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.5s">
                       <div class="thumbnail same-img-ratio hover-effect-7 image-hover-effect-1 ">
                           <figure class="hover-mask-4">
-<!--------------------图片大小（宽X高）：600X400-------------------->
+<!-------------Work 6-------参考：图片比例（宽 ：高）3 ：2 图片大小 600X400 格式：PNG-------------------->
                               <img src="images/tense/600X400(6.png" alt="image" />
-                              <a class="figure-zoom" data-rel="lightcase" href="images/tense/600X400(6.png"><i class="fa fa-search"></i></a>
                               <a class="figure-link" href="#"><i class="fa fa-link"></i></a>
+                              <a class="figure-zoom" data-rel="lightcase" href="images/tense/600X400(6.png"><i class="fa fa-search"></i></a>
                               <figcaption class="center">
                                   <header>
                                       <h5><a href="">nepal faces earthquake</a></h5>
@@ -425,9 +427,9 @@ export default {
                             <div class="col-sm-6 col-md-4 filter-item wow fadeInDown" data-wow-delay="0.1s">
                                 <div class="thumbnail same-img-ratio ">
                                     <figure class="hover-mask-4">
-                                        <a href="blog-single.php" class="image-link"><i class='fa fa-link'></i></a>
-<!----------------------------图片大小（宽X高）：600X400------------------------------->
+<!-------------New 1-------参考：图片比例（宽 ：高）3 ：2 图片大小 600X400 格式：PNG-------------------->
                                         <img src="images/tense/600X400-1.png" alt="img" />
+                                        <a href="blog-single.php" class="image-link"><i class='fa fa-link'></i></a>
                                     </figure>
                                     <div class="thumb-body">
                                         <div>
@@ -456,9 +458,9 @@ export default {
                               <div class="col-sm-6 col-md-4 filter-item wow fadeInDown" data-wow-delay="0.1s">
                                   <div class="thumbnail same-img-ratio ">
                                       <figure class="hover-mask-4">
-                                          <a href="blog-single.php" class="image-link"><i class='fa fa-link'></i></a>
-<!----------------------------图片大小（宽X高）：600X400------------------------------->
+<!-------------New 1-------参考：图片比例（宽 ：高）3 ：2 图片大小 600X400 格式：PNG-------------------->
                                           <img src="images/tense/600X400-2.png" alt="img" />
+                                          <a href="blog-single.php" class="image-link"><i class='fa fa-link'></i></a>
                                       </figure>
                                       <div class="thumb-body">
                                           <div>
@@ -487,9 +489,9 @@ export default {
                               <div class="col-sm-6 col-md-4  filter-item wow fadeInDown" data-wow-delay="0.2s">
                                   <div class="thumbnail same-img-ratio">
                                       <figure class="hover-mask-4">
-                                          <a href="blog-single.php" class="image-link"><i class='fa fa-link'></i></a>
-<!----------------------------图片大小（宽X高）：600X400------------------------------->
+<!-------------New 3-------参考：图片比例（宽 ：高）3 ：2 图片大小 600X400 格式：PNG-------------------->
                                           <img src="images/tense/600X400-3.png" alt="img" />
+                                          <a href="blog-single.php" class="image-link"><i class='fa fa-link'></i></a>
                                       </figure>
                                       <div class="thumb-body">
                                           <div>
@@ -551,7 +553,7 @@ export default {
                   <div class="col-md-3 col-sm-6">
                       <div class="thumbnail same-img-ratio hover-effect-8 wow fadeInUp" data-wow-delay="0s">
                           <figure class="hover-mask-6">
-<!----------------------------图片大小（宽X高）：400X400------------------------------->
+<!-------------------Person 1---------参考：图片比例（宽:高）1 : 1 图片大小 400X400 格式：PNG------------------------------->
                               <img src="images/tense/member1.png" alt="image" />
                               <figcaption class="center">
                                   <header>
@@ -574,7 +576,7 @@ export default {
                   <div class="col-md-3 col-sm-6">
                       <div class="thumbnail same-img-ratio hover-effect-8 wow fadeInUp" data-wow-delay="0.1s">
                           <figure class="hover-mask-6">
-<!----------------------------图片大小（宽X高）：400X400------------------------------->
+<!-------------------Person 2---------参考：图片比例（宽:高）1 : 1 图片大小 400X400 格式：PNG------------------------------->
                               <img src="images/tense/member2.png" alt="image" />
                               <figcaption class="center">
                                 <header>
@@ -597,7 +599,7 @@ export default {
                   <div class="col-md-3 col-sm-6">
                       <div class="thumbnail same-img-ratio hover-effect-8 wow fadeInUp" data-wow-delay="0.2s">
                           <figure class="hover-mask-6">
-<!----------------------------图片大小（宽X高）：400X400------------------------------->
+<!-------------------Person 3---------参考：图片比例（宽:高）1 : 1 图片大小 400X400 格式：PNG------------------------------->
                               <img src="images/tense/member3.png" alt="image" />
                               <figcaption class="center">
                                   <header>
@@ -620,7 +622,7 @@ export default {
                   <div class="col-md-3 col-sm-6">
                       <div class="thumbnail same-img-ratio hover-effect-8 wow fadeInUp" data-wow-delay="0.3s">
                           <figure class="hover-mask-6">
-<!----------------------------图片大小（宽X高）：400X400------------------------------->
+<!-------------------Person 4---------参考：图片比例（宽:高）1 : 1 图片大小 400X400 格式：PNG------------------------------->
                               <img src="images/tense/member4.png" alt="image" />
                               <figcaption class="center">
                                   <header>
@@ -789,7 +791,7 @@ export default {
                       <div class="thumbnail thumbnail-transperant single-testimonial testimonial-horizontal square-rounded circle-rounded">
                         <div class="thumb-body">
                           <figure>
-<!----------------------------图片大小（宽X高）：300X300  格式：PNG------------------------------->
+<!---------Person 1----------参考：图片比例（宽 ：高）1 ：1  图片大小 200X200 格式：PNG---------------------->
                               <img src="images/tense/say1.png" class="img-circle" alt="image" />
                           </figure>
                           <article>
@@ -806,7 +808,7 @@ export default {
                       <div class="thumbnail thumbnail-transperant single-testimonial testimonial-horizontal thumbnail-open-dotted-section square-rounded circle-rounded">
                           <div class="thumb-body">
                             <figure>
-<!----------------------------图片大小（宽X高）：300X300  格式：PNG------------------------------->
+<!---------Person 2----------参考：图片比例（宽 ：高）1 ：1  图片大小 200X200 格式：PNG---------------------->
                               <img src="images/tense/say2.png" class="img-circle" alt="image" />
                           </figure>
                           <article>
@@ -823,7 +825,7 @@ export default {
                       <div class="thumbnail thumbnail-transperant single-testimonial testimonial-horizontal thumbnail-open-dotted-section square-rounded circle-rounded">
                           <div class="thumb-body">
                             <figure>
-<!----------------------------图片大小（宽X高）：300X300  格式：PNG------------------------------->
+<!---------Person 3----------参考：图片比例（宽 ：高）1 ：1  图片大小 200X200 格式：PNG---------------------->
                               <img src="images/tense/say3.png" class="img-circle" alt="image" />
                           </figure>
                           <article>
@@ -840,7 +842,7 @@ export default {
                       <div class="thumbnail thumbnail-transperant single-testimonial testimonial-horizontal thumbnail-open-dotted-section square-rounded circle-rounded">
                           <div class="thumb-body">
                             <figure>
-<!----------------------------图片大小（宽X高）：300X300  格式：PNG------------------------------->
+<!---------Person 4----------参考：图片比例（宽 ：高）1 ：1  图片大小 200X200 格式：PNG---------------------->
                               <img src="images/tense/say4.png" class="img-circle" alt="image" />
                           </figure>
                           <article>
@@ -857,7 +859,7 @@ export default {
                       <div class="thumbnail thumbnail-transperant single-testimonial testimonial-horizontal thumbnail-open-dotted-section square-rounded circle-rounded">
                           <div class="thumb-body">
                             <figure>
-<!----------------------------图片大小（宽X高）：300X300  格式：PNG------------------------------->
+<!---------Person 5----------参考：图片比例（宽 ：高）1 ：1  图片大小 200X200 格式：PNG---------------------->
                               <img src="images/tense/say5.png" class="img-circle" alt="image" />
                           </figure>
                           <article>
@@ -874,7 +876,7 @@ export default {
                       <div class="thumbnail thumbnail-transperant single-testimonial testimonial-horizontal thumbnail-open-dotted-section square-rounded circle-rounded">
                           <div class="thumb-body">
                             <figure>
-<!----------------------------图片大小（宽X高）：300X300  格式：PNG------------------------------->
+<!---------Person 6----------参考：图片比例（宽 ：高）1 ：1  图片大小 200X200 格式：PNG---------------------->
                               <img src="images/tense/say6.png" class="img-circle" alt="image" />
                           </figure>
                             <article>
@@ -954,6 +956,7 @@ export default {
                     <small>in case you need to</small>
                     contact us
                 </h2>
+<!-------------小图标，请到 http://fontawesome.io/icons/ 去选择，替换掉下边的<i class="XXXXXXXXXXXXXX"></i>------------->
                 <span style={{font-size:'16px'}}><i class="fa fa-phone-square" aria-hidden="true"></i> +1(408)831-8669</span><br/><br/>
                 <span style={{font-size:'16px'}}><i class="fa fa-envelope-square" aria-hidden="true"></i> info@zjfutureus.com</span><br/><br/>
                 <span style={{font-size:'16px'}}><i class='fa fa-map-marker' aria-hidden="true"></i> 3350 Scott Blvd #64, Santa Clara, CA</span>
