@@ -296,7 +296,7 @@
       border: 1px solid #fff !important;
   }
   h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
-      font-family: 'Merriweather Sans', 'sans-serif' !important;
+      // font-family: 'Merriweather Sans', 'sans-serif' !important;
       // color: #555;
       font-weight: 400;
       line-height: 1.2 !important;
@@ -964,7 +964,7 @@ ul.socials li {
   }
   #reverse-tab.nav.nav-pills li.active a{
       background-color: #444;
-      padding: 28px 60px;
+      padding: 28px 52px;
       border-radius: 0px;
   }
   #reverse-tab.nav.nav-pills li a i{
@@ -978,7 +978,8 @@ ul.socials li {
       color: #222;
   }
   #reverse-tab.nav.nav-pills li a{
-      padding: 28px 60px;
+      padding: 30px 60px;
+      margin: 0 19px;
       border-radius: 0px;
       font-size: 12px;
       letter-spacing: 1px;
@@ -1730,8 +1731,8 @@ ul.socials li {
     position: absolute;
     top: 50%;
     left: 27%;
-    margin-left: -300px;
-    width: 600px;
+    margin-left: -25%;
+    width: 42%;
     padding: 20px 50px;
     background: rgba(0, 0, 0, 0.7);
 
@@ -1755,16 +1756,10 @@ ul.socials li {
     width: 55%;
     height: 300px;
   }
+  @media only screen and (max-width: 990px) {
+    #reverse-tab.nav.nav-pills li a {
+      margin: 0;
+      padding: 18px 30px;
+    }
 }
-.logodiv{
-  // background-image: url(images/tense/logoimg.png);
-  position:fixed;;
-  z-index:99999;
-  height: 80px;
-  top:0;
-  left: 0;
-  img{
-    position: fixed;
-    left: 0;
-  }
 }

@@ -13,3 +13,110 @@ img {
 //     }
 //   }
 // }
+#main-navbar > ul > li > a {
+  font-size: 18px;
+  padding: 15px 25px;
+  padding-top: 45px;
+  color: #ddd;
+  border-width: 0  ;
+  background-color: rgba(34, 34, 34, 0);
+  &:hover{
+    color: #fff;
+    border-width: 0 ;
+    margin-top: 10px;
+  }
+  transition-delay: 0.5s;
+  transition: all 0.5s ease-in-out;
+}
+#main-navbar {
+  transition-delay: 0.5s;
+  transition: all 0.5s ease-in-out;
+}
+.container-fluid > .navbar-header > .navbar-brand {
+  color: #fff;
+  &:hover{
+    color: #fff;
+  }
+}
+.header{
+  border-width: 0 !important ;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 40px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0,0,0,.6)), to(transparent));
+  transition: all .5s;
+  height: 63px;
+  background-color: rgba(34, 34, 34, 0) ;
+  transition-delay: 0.5s;
+  transition: all 0.5s ease-in-out;
+  .navbar-header {
+
+    padding-left: 30px;
+    .navbar-brand {
+      padding-top: 45px;
+      font-size: 22px;
+      transition-delay: 0.5s;
+      transition: all 0.5s ease-in-out;
+    }
+    transition-delay: 0.5s;
+    transition: all 0.5s ease-in-out;
+  };
+}
+.scrolling{
+  height: 56px;
+  background: #000;
+  // padding-top: 3px;
+  padding-bottom: 10px;
+  box-shadow: 1px 1px 1px #000;
+  #main-navbar > ul > li > a {
+    padding: 15px 15px;
+    transition-delay: 0.5s;
+    transition: all 0.5s ease-in-out;
+  }
+  .container-fluid {
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0,0,0,1)), to(transparent));
+
+  }
+  .navbar-header {
+    padding-left: 0;
+    transition-delay: 0.5s;
+    transition: all 0.5s ease-in-out;
+    .navbar-brand {
+      padding-top: 15px;
+      transition-delay: 0.5s;
+      transition: all 0.5s ease-in-out;
+    }
+    .logodiv {
+      width: 66px;
+      transition-delay: 0.5s;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+  .container-fluid {
+    transition-delay: 0.5s;
+    transition: all 0.5s ease-in-out;
+  }
+  .nav_in {
+    color: #fff !important;
+    border-width: 0 ;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0) ;
+    transition-delay: 0.2s;
+    transition: all 0.2s ease-in-out;
+  }
+}
+.logodiv{
+  // background-image: url(images/tense/logoimg.png);
+  position:fixed;;
+  z-index:99999;
+  width: 90px;
+  top:0;
+  left: 0;
+  img{
+    position: fixed;
+    width: inherit;
+    left: 0;
+  }
+  transition-delay: 0.5s;
+  transition: all 0.5s ease-in-out;
+}

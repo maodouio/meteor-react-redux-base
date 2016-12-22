@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import Helmet from 'react-helmet';
-import Loading from 'client/components/common/loading';
+import Welcome from 'client/components/common/welcome';
+import navbar from 'maodou/singlePages/js/navbar';
+
 import {Link} from 'react-router';
 
 export default class MainPage extends Component {
@@ -8,18 +10,22 @@ export default class MainPage extends Component {
     super(props);
   }
 
+  componentDidUpdate () {
+    navbar();
+  }
+
   render () {
     const { singlePage } = this.props;
     const { templateName,logoImgUrl, logoName, headTitle, sections } = singlePage.data;
 
     if (singlePage.status === 'pending') {
-      return <Loading />;
+      return <Welcome />;
     }
 
     return (
       <div>
         <Helmet title={headTitle} />
-        {<nav className="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        {<nav className="navbar header navbar-fixed-top topnav" role="navigation" >
                   <div className="container-fluid">
                     <div className="navbar-header">
                       <button type="button" data-target="#main-navbar" data-toggle="collapse" className="navbar-toggle collapsed">
@@ -32,17 +38,14 @@ export default class MainPage extends Component {
                       <a className="navbar-brand" href="/" style={{marginLeft: '50px'}}>{logoName}</a>
                     </div>
                     <div className="collapse navbar-collapse" id="main-navbar" style={{float: 'right'}}>
-                      <ul className="nav navbar-nav">
+                      <ul className="nav navbar-nav nav_aPublic">
                         { sections.map((section) => this.renderHeader(section)) }
                       </ul>
                        {
-                         !this.props.loggedIn ?
+                         this.props.loggedIn ?
                          <ul className="nav navbar-nav navbar-right">
-                           <li><Link to="/login" style = {styles.in}></Link></li>
-                         </ul> :
-                         <ul className="nav navbar-nav navbar-right">
-                           <li><Link to="/admin" style = {styles.in}><i className="fa fa-caret-right" aria-hidden="true"></i></Link></li>
-                         </ul>
+                           <li><Link className = 'admin' to="/admin" style = {styles.in}><i className="fa fa-caret-right" aria-hidden="true"></i></Link></li>
+                         </ul> : <span />
                        }
                     </div>
                   </div>
@@ -66,6 +69,11 @@ export default class MainPage extends Component {
     if (section.display) {
       if (section.name === 'BLANK') {
         return '';
+      }
+      if (section.index === 1 ){
+        return (
+          <li key={section.name}><a href={`#${section.anchorName}`} className="nav_in" style={styles.link}>{section.name}</a></li>
+        );
       }
       return (
         <li key={section.name}><a href={`#${section.anchorName}`} style={styles.link}>{section.name}</a></li>
@@ -101,7 +109,7 @@ const styles = {
     textTransform: 'capitalize'
   },
   in: {
-    paddingLeft:'5px',
+    paddingLeft:'0',
     paddingRight:'10px'
   },
   out: {
