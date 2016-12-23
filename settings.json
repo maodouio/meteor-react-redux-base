@@ -18,8 +18,8 @@
   },
   "core": {
     "qiniu": {
-      "ACCESS_KEY": "w91fRk5eHMyQ3rbHUdXGFgBEM584K18b1q0bRDUd",
-      "SECRET_KEY": "PFGMTuFhXRNZs2DbIyKw6DbRd6QTL16z8X1KJ9_2"
+      "ACCESS_KEY": "Du_Lx2xanFiDZE0NBFyvjMhGzE9KYY2rrUiiDzbI",
+      "SECRET_KEY": "6JLS8xc9xGCws07A8WYM0E8Hg0rt0Qd_mLhfLlWi"
     }
   },
   "wechat": {

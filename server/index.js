@@ -29,7 +29,6 @@ export default {
         username: 'admin',
         email: 'admin@example.com',
         password: '123456',
-        emails: [{ address: 'admin@example.com', verified: true }],
         profile: { nickname: 'Admin' },
       };
       const userId = Accounts.createUser(adminUser);
