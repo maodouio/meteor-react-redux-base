@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import Helmet from 'react-helmet';
 import Welcome from 'client/components/common/welcome';
-import navbar from 'maodou/singlePages/js/navbar';
+
+// singlePage的缓动js和navbar样式js
+// import navbar from 'maodou/singlePages/js/navbar';
 
 import {Link} from 'react-router';
 
@@ -10,9 +12,10 @@ export default class MainPage extends Component {
     super(props);
   }
 
-  componentDidUpdate () {
-    navbar();
-  }
+  // componentDidUpdate () {
+  //   // singlePage的缓动js和navbar样式js
+  //   navbar();
+  // }
 
   render () {
     const { singlePage } = this.props;
@@ -25,7 +28,7 @@ export default class MainPage extends Component {
     return (
       <div>
         <Helmet title={headTitle} />
-        {<nav className="navbar header navbar-fixed-top topnav" role="navigation" >
+        {/*<nav className="navbar header navbar-fixed-top topnav" role="navigation" >
                   <div className="container-fluid">
                     <div className="navbar-header">
                       <button type="button" data-target="#main-navbar" data-toggle="collapse" className="navbar-toggle collapsed">
@@ -49,7 +52,7 @@ export default class MainPage extends Component {
                        }
                     </div>
                   </div>
-                </nav>}
+                </nav>*/}
         <div id={templateName}>
           {
             sections.length > 0 ?
