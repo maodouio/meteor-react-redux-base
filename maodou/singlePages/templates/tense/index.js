@@ -910,32 +910,32 @@ export default {
           <div class='row'>
             <div class='col-md-2 col-sm-4 col-xs-6 partnersLogo'>
 <!------- logo 1---参考：格式：PNG 尺寸比较灵活，100x100可以，800x500也可以 ------------------------------>
-              <img src="/images/tense/logo1.png" style="max-width: 100%;" alt=""/>
+              <img src="/images/logos/logo_1.png" style="max-width: 100%;" alt=""/>
               <p></p>
             </div>
             <div class='col-md-2 col-sm-4 col-xs-6 partnersLogo'>
 <!------- logo 2---参考：格式：PNG 尺寸比较灵活，100x100可以，800x500也可以 ------------------------------>
-              <img src="/images/tense/logo2.png" style="max-width: 100%;" alt=""/>
+              <img src="/images/logos/logo_2.png" style="max-width: 100%;" alt=""/>
               <p></p>
             </div>
             <div class='col-md-2 col-sm-4 col-xs-6 partnersLogo'>
 <!------- logo 3---参考：格式：PNG 尺寸比较灵活，100x100可以，800x500也可以 ------------------------------>
-              <img src="/images/tense/logo3.png" style="max-width: 100%;" alt=""/>
+              <img src="/images/logos/logo_3.png" style="max-width: 100%;" alt=""/>
               <p></p>
             </div>
             <div class='col-md-2 col-sm-4 col-xs-6 partnersLogo'>
 <!------- logo 4---参考：格式：PNG 尺寸比较灵活，100x100可以，800x500也可以 ------------------------------>
-              <img src="/images/tense/logo4.png" style="max-width: 100%;" alt=""/>
+              <img src="/images/logos/logo_4.png" style="max-width: 100%;" alt=""/>
               <p></p>
             </div>
             <div class='col-md-2 col-sm-4 col-xs-6 partnersLogo'>
 <!------- logo 5---参考：格式：PNG 尺寸比较灵活，100x100可以，800x500也可以 ------------------------------>
-              <img src="/images/tense/logo5.png" style="max-width: 100%;" alt=""/>
+              <img src="/images/logos/logo_5.png" style="max-width: 100%;" alt=""/>
               <p></p>
             </div>
             <div class='col-md-2 col-sm-4 col-xs-6 partnersLogo'>
 <!------- logo 6---参考：格式：PNG 尺寸比较灵活，100x100可以，800x500也可以 ------------------------------>
-              <img src="https://dummyimage.com/110x110/dfddb8/fff.png" style="max-width: 100%;" alt=""/>
+              <img src="/images/logos/logo_6.png" style="max-width: 100%;" alt=""/>
               <p></p>
             </div>
           </div>
