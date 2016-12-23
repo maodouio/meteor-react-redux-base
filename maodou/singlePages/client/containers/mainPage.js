@@ -1,7 +1,6 @@
 import { useDeps } from 'react-simple-di';
 import { withTracker, composeAll } from 'react-komposer-plus';
 import _ from 'lodash';
-
 import MainPage from '../components/mainPage';
 
 const subscription = ({ context }, onData) => {
